@@ -1,2 +1,4 @@
 site_name: Gmaster Documentation
 site_url: https://docs.gmaster.com
+theme:
+  name: material
