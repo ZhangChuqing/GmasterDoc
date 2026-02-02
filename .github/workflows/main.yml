@@ -1,0 +1,15 @@
+name: Remote SSH Command
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute remote SSH commands using password
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{secrets.KEY}}
+          port: ${{ secrets.PORT }}
+          script: cd /www/wwwroot/www.gmaster.wiki && rm -rf ./GmasterDoc || cd /www/wwwroot/www.gmaster.wiki && git clone https://github.com/Metalxiaoxiao/GmasterDoc.git && python3 -m venv .venv && source ./.venv/bin/activate && python -m pip install --upgrade pip && pip install mkdocs-material && cd ./GmasterDoc && mkdocs build
