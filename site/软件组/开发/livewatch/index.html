@@ -546,14 +546,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../Git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    常用git命令
+    Git
   
 
     
@@ -690,10 +690,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cortex-debug" class="md-nav__link">
+  <a href="#1-cortex-debug" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第一步 下载Cortex-Debug
+        1. 安装 Cortex-Debug
       
     </span>
   </a>
@@ -701,10 +701,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#launchjson" class="md-nav__link">
+  <a href="#2-launchjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第二步 修改launch.json
+        2. 修改 launch.json
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 常见问题排查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 可选优化项
       
     </span>
   </a>
@@ -1037,10 +1059,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cortex-debug" class="md-nav__link">
+  <a href="#1-cortex-debug" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第一步 下载Cortex-Debug
+        1. 安装 Cortex-Debug
       
     </span>
   </a>
@@ -1048,10 +1070,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#launchjson" class="md-nav__link">
+  <a href="#2-launchjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第二步 修改launch.json
+        2. 修改 launch.json
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 常见问题排查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 可选优化项
       
     </span>
   </a>
@@ -1076,9 +1120,14 @@
 
 
 <h1 id="livewatch">livewatch</h1>
-<h2 id="cortex-debug">第一步 下载Cortex-Debug</h2>
-<h2 id="launchjson">第二步 修改launch.json</h2>
-<p>在此附GSRL库，stlink适配的launch.json,记得添加自己的gcc path：</p>
+<p>Live Watch 是 Cortex-Debug 插件提供的实时变量监视功能，可在调试过程中高频刷新变量值，适合观察传感器数据、控制量等。</p>
+<hr />
+<h2 id="1-cortex-debug">1. 安装 Cortex-Debug</h2>
+<p>在 VS Code 扩展商店搜索并安装 <strong>Cortex-Debug</strong></p>
+<hr />
+<h2 id="2-launchjson">2. 修改 <code>launch.json</code></h2>
+<p>以下是 GSRL 库、ST-Link 适配的示例配置。<br />
+<strong>请根据你的本机环境修改 <code>gdbPath</code> 和 <code>executable</code> 路径。</strong></p>
 <pre><code class="language-bash">{
     &quot;version&quot;: &quot;0.2.0&quot;,
     &quot;configurations&quot;: [
@@ -1104,7 +1153,22 @@
     ]
 }
 </code></pre>
+<h2 id="3">3. 常见问题排查</h2>
+<p>若仍然没有数据刷新，检查：
+- 确认是否成功进入调试状态
+- 确认 gdbPath 指向正确的 arm-none-eabi-gdb.exe
+- 确认 .elf 文件路径正确（通常位于 build/Debug/）</p>
 <hr />
+<h2 id="4">4. 可选优化项</h2>
+<p>可根据需求调整刷新频率：</p>
+<pre><code class="language-bash">&quot;liveWatch&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;samplesPerSecond&quot;: （根据要求修改）
+}
+</code></pre>
+<p>samplesPerSecond 越高，刷新越快。但是太高可能占用较多调试资源（但暂时没遇到类似问题）</p>
+<hr />
+<p>如需支持 CMSIS-DAP 或其他烧录器，只需替换 configFiles 中的接口配置即可。</p>
 
 
 

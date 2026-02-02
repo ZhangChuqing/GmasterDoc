@@ -544,14 +544,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91/Git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    常用git命令
+    Git
   
 
     
@@ -987,15 +987,36 @@
 
 
 <h1 id="_1">串口读取数据</h1>
-<ul>
-<li>是否检测到端口（如果没有，换一根数据线或者换一个A或者C口；尽量不要使用扩展坞）</li>
-<li>端口是否选择正确</li>
-<li>驱动是否正确安装
-    请在设备管理器中查看端口是否有黄色警告图标，如果有，右键点击后安装驱动</li>
-<li>发送和接收的波特率是否对齐</li>
-<li>txrx是否正确连接（请注意tx连接rx，rx连接tx）</li>
-</ul>
+<p>按以下顺序排查：
+1. <strong>是否检测到端口</strong><br />
+   - 若没有，换一根数据线<br />
+   - 换另一个 USB 口（A 或 C 口）<br />
+   - 尽量不要使用扩展坞  </p>
+<ol>
+<li><strong>端口是否选择正确</strong>  </li>
+<li>
+<p>确认软件中选择的 COM 口和设备管理器一致  </p>
+</li>
+<li>
+<p><strong>驱动是否正确安装</strong>  </p>
+</li>
+<li>打开设备管理器  </li>
+<li>
+<p>若端口有黄色警告图标，右键更新/安装驱动  </p>
+</li>
+<li>
+<p><strong>波特率是否一致</strong>  </p>
+</li>
+<li>
+<p>发送端与接收端的波特率必须一致  </p>
+</li>
+<li>
+<p><strong>TX / RX 是否接反</strong>  </p>
+</li>
+<li><strong>TX 接 RX，RX 接 TX</strong>  </li>
+</ol>
 <hr />
+<p>如果仍无法读到数据，请记录现象并联系老登协助排查。</p>
 
 
 

@@ -546,14 +546,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../Git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    常用git命令
+    Git
   
 
     
@@ -665,7 +665,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        烧录线
+        烧录线序
       
     </span>
   </a>
@@ -673,10 +673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stlink" class="md-nav__link">
+  <a href="#1-st-link" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stlink
+        1. ST-Link
       
     </span>
   </a>
@@ -684,22 +684,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cmsis-dap" class="md-nav__link">
+  <a href="#2-cmsis-dap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CMSIS-DAP
+        2. CMSIS-DAP 无线烧录器
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CMSIS-DAP">
+    <nav class="md-nav" aria-label="2. CMSIS-DAP 无线烧录器">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        设置模式
+        2.1 设置模式
       
     </span>
   </a>
@@ -707,10 +707,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        设置无线通信
+        2.2 设置无线通信信道
       
     </span>
   </a>
@@ -718,30 +718,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        无线模式
+        2.3 无线模式配对
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="无线模式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        配对
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1107,7 +1090,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        烧录线
+        烧录线序
       
     </span>
   </a>
@@ -1115,10 +1098,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stlink" class="md-nav__link">
+  <a href="#1-st-link" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stlink
+        1. ST-Link
       
     </span>
   </a>
@@ -1126,22 +1109,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cmsis-dap" class="md-nav__link">
+  <a href="#2-cmsis-dap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CMSIS-DAP
+        2. CMSIS-DAP 无线烧录器
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CMSIS-DAP">
+    <nav class="md-nav" aria-label="2. CMSIS-DAP 无线烧录器">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        设置模式
+        2.1 设置模式
       
     </span>
   </a>
@@ -1149,10 +1132,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        设置无线通信
+        2.2 设置无线通信信道
       
     </span>
   </a>
@@ -1160,30 +1143,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        无线模式
+        2.3 无线模式配对
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="无线模式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        配对
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1210,33 +1176,57 @@
 
 
 <h1 id="_1">烧录器</h1>
-<h2 id="_2">烧录线</h2>
-<p>标准线序为绿黄黑红,分别对应3v3，GND，CLK，DIO</p>
-<h2 id="stlink">stlink</h2>
-<p>没啥好说的，插好线在flash.cfg内将烧录器改好即可使用。</p>
-<h2 id="cmsis-dap">CMSIS-DAP</h2>
-<h3 id="_3">设置模式</h3>
-<p>长按按键A，直到指示灯变为黄色。短按按键B，根据指示灯颜色调节为需要的模式。</p>
-<p>• 如果需要将配置保存到Flash中（即下次上电保持当前配置）：长按按键A，直到指示灯变为黄色闪烁，再短按按键A退出。</p>
-<p>• 如果只是临时使用，不保存配置到Flash：直接短按按键A退出。</p>
-<h3 id="_4">设置无线通信</h3>
-<p>长按按键B，直到指示灯变为闪烁状态。此时闪烁颜色和次数，表示当前所属WiFi信道：</p>
-<p>• 绿色 → 1-5 信道</p>
-<p>• 红色 → 6-10 信道</p>
-<p>• 蓝色 → 11-13 信道</p>
-<p>短按按键B选择目标信道后，长按按键A直到指示灯变为黄色闪烁，再短按按键A退出。</p>
-<p>⚠️ 主机和从机需要分别设置成一样的信道才可以通信，完成后主机和从机需要重新上电。</p>
-<h3 id="_5">无线模式</h3>
-<h4 id="_6">配对</h4>
+<h2 id="_2">烧录线序</h2>
+<p>标准线序为 <strong>绿-黄-黑-红</strong>，对应关系如下：</p>
+<ul>
+<li><strong>绿</strong> → 3.3V (3V3)</li>
+<li><strong>黄</strong> → GND</li>
+<li><strong>黑</strong> → CLK</li>
+<li><strong>红</strong> → DIO</li>
+</ul>
+<blockquote>
+<p>⚠️ 连接前请确认目标板电压为 3.3V，避免损坏设备。</p>
+</blockquote>
+<hr />
+<h2 id="1-st-link">1. ST-Link</h2>
+<p>ST-Link 配置很简单：</p>
 <ol>
-<li>
-<p>第一个模块按住按键B上电，直到指示灯变为紫色再松手。</p>
-</li>
-<li>
-<p>第二个模块按住B上电，它会在指示灯变紫后，瞬间两个模块分别变为主机（蓝色）和从机（绿色）。</p>
-</li>
+<li>按正确线序连接烧录线  </li>
+<li>在 <code>flash.cfg</code> 中将烧录器类型设置为 <strong>stlink</strong></li>
+<li>直接烧录即可</li>
 </ol>
-<p>此时两端已经自动设置好通信的参数和模式，如果需要可以通过按键进行更改。完成后主机和从机需要重新上电，在flash.cfg中将烧录器改为cmsis-dap即可使用。</p>
+<p><a id="2-cmsis-dap-无线烧录器"></a></p>
+<h2 id="2-cmsis-dap">2. CMSIS-DAP 无线烧录器</h2>
+<h3 id="21">2.1 设置模式</h3>
+<ol>
+<li><strong>长按按键 A</strong>，直到指示灯变为黄色（进入模式设置）  </li>
+<li><strong>短按按键 B</strong>，根据指示灯颜色选择目标模式  </li>
+<li>退出方式：  </li>
+<li><strong>保存配置到 Flash</strong>：长按 A 直到黄色闪烁，再短按 A 退出  </li>
+<li><strong>临时使用</strong>：直接短按 A 退出  </li>
+</ol>
+<h3 id="22">2.2 设置无线通信信道</h3>
+<ol>
+<li><strong>长按按键 B</strong>，直到指示灯开始闪烁  </li>
+<li>闪烁颜色与次数表示当前信道范围：  </li>
+<li><strong>绿色</strong> → 1–5 信道  </li>
+<li><strong>红色</strong> → 6–10 信道  </li>
+<li><strong>蓝色</strong> → 11–13 信道  </li>
+<li><strong>短按 B</strong> 切换信道  </li>
+<li>设置完成后，<strong>长按 A</strong> 直到黄色闪烁，再<strong>短按 A</strong> 退出  </li>
+</ol>
+<blockquote>
+<p>⚠️ 主机与从机需设置为<strong>相同信道</strong>，完成后需<strong>重新上电</strong>。</p>
+</blockquote>
+<h3 id="23">2.3 无线模式配对</h3>
+<ol>
+<li><strong>第一个模块</strong>按住 <strong>B</strong> 上电，直到指示灯变为紫色再松手  </li>
+<li><strong>第二个模块</strong>按住 <strong>B</strong> 上电，指示灯变紫后，两端会自动分配：  </li>
+<li><strong>主机</strong> → 蓝色  </li>
+<li><strong>从机</strong> → 绿色  </li>
+</ol>
+<p>此时通信参数已自动配置完成，如需修改可按键调整。完成后<strong>主机与从机需重新上电</strong>。  </p>
+<p>最后在 <code>flash.cfg</code> 中将烧录器改为 <strong>cmsis-dap</strong> 即可使用。</p>
 
 
 

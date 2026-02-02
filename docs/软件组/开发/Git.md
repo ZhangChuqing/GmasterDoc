@@ -145,6 +145,7 @@ git remote add upstream https://github.com/popchutty/GSRL.git
 • 远程fork仓库(origin)：存储在你的GitHub账号下的fork仓库
 • 远程上游仓库(upstream)：存储在原作者账号下的原始仓库
 
+<a id="创建和切换分支"></a>
 #### 4. 创建和切换分支
 永远不要直接在main分支上开发，必须新建分支。
 （可选）确保在main分支上并习惯性的同步一下上游最新代码：
@@ -178,7 +179,9 @@ git push --set-upstream origin <your-branch-name>
 git push -u origin <your-branch-name>
 ```
 
+<a id="开发和提交代码"></a>
 #### 5. 开发和提交代码
+
 在新建的分支上进行代码开发，以下是常用Git命令：
 - 暂存所有修改的文件
 ```bash
@@ -256,6 +259,7 @@ git push --force-with-lease
 在GitHub上打开你的fork仓库页面，切换到你刚刚推送的分支 <your-branch-name> ，点
 击 Compare & pull request 按钮，填写PR标题和描述后，点击 Create pull request 按钮提交
 PR请求。
+<a id="代码评审与收尾工作"></a>
 #### 代码评审与收尾工作
 PR创建后，等待代码评审人员的审核和反馈，若有修改建议，请在本地分支进行修改并提交，
 再重新推送到远程fork仓库(origin)，PR会自动更新。
@@ -325,7 +329,7 @@ git branch -d <your-branch-name>
 项目：
 - 若为基于GSRL库开发的项目：
 
-    a. 参照克隆fork仓库（及其子模块）[2. 克隆fork仓库（及其子模块）到本地](#2-克隆fork仓库及其子模块到本地)到本地中的命令，将<fork仓库地址>替换为GSRL原始仓库地址： https://github.com/popchutty/GSRL.git
+    a. 参照克隆fork仓库（及其子模块）[克隆fork仓库（及其子模块）到本地](#克隆fork仓库及其子模块到本地)到本地中的命令，将<fork仓库地址>替换为GSRL原始仓库地址： https://github.com/popchutty/GSRL.git
 
     b. 在终端中进入项目根目录（确保命令提示符路径为GSRL结尾），执行以下命令删除掉本地的Git仓库：
     ```bash
@@ -335,9 +339,9 @@ git branch -d <your-branch-name>
     c. 按照GitHub上空仓库中的提示（推送新仓库），将本地代码推送到新建的项目仓库中。
 
 - 创建和切换分支
-参照[4.创建和切换分支](#4-创建和切换分支)，跳过同步上游代码的步骤。
+参照[创建和切换分支](#创建和切换分支)，跳过同步上游代码的步骤。
 - 开发和提交代码
-参照[5.开发和提交代码](#5-开发和提交代码)。
+参照[开发和提交代码](#开发和提交代码)。
 - 合并到主分支
 在项目仓库中，直接将开发分支合并到main分支，有两种方式：
 1. (建议)通过GitHub网页界面发起Pull Request，经过代码评审后合并。

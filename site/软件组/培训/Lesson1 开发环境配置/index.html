@@ -671,14 +671,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91/Git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    常用git命令
+    Git
   
 
     
@@ -1195,14 +1195,14 @@
 <h2 id="_2">安装工具链</h2>
 <h3 id="_3">什么是工具链</h3>
 <p>在上面的介绍中提到，我们需要把代码转换为可执行的程序。在这里有一个初学者可能产生的误解: 代码不就是可以运行的吗？为什么还需要转换呢？其实，代码本身是不能直接运行的，它只是一个<strong>文本文件</strong>，计算机无法理解。因此，我们需要一个工具来将这个文本文件转换成计算机可以执行的二进制文件(也就是由0和1组成的可执行文件)。<br />
-那么这个工具是什么呢？如果以前有学过一点编程的同学可能会说是<strong>编译器</strong>(Compile)<a href="#fn1">[1]</a>。这个说法大体是正确的，但不够全面。事实上，在现代软件开发的过程中，从源代码到可执行文件的转换过程是由一系列工具组成的，这个工具的集合就被称为<strong>工具链</strong>(Toolchain)，而编译器则是工具链中的一个重要组成部分。关于工具链和构建过程将在以后的课程中详细介绍。<br />
+那么这个工具是什么呢？如果以前有学过一点编程的同学可能会说是<strong>编译器</strong>(Compile)<a id="fnref1"></a><a href="#fn1">[1]</a>。这个说法大体是正确的，但不够全面。事实上，在现代软件开发的过程中，从源代码到可执行文件的转换过程是由一系列工具组成的，这个工具的集合就被称为<strong>工具链</strong>(Toolchain)，而编译器则是工具链中的一个重要组成部分。关于工具链和构建过程将在以后的课程中详细介绍。<br />
 现在我们知道了工具链的概念: 工具链就是一个能够将一个或多个有着特殊格式的<strong>文本文件</strong>(源代码)经过包括编译(编排、翻译)等一系列处理步骤，最终生成一个或多个可执行文件的工具集合。</p>
 <h3 id="gcc">安装GCC</h3>
 <p><strong>GCC</strong>(GNU Compiler Collection)是一个开源的编译器套件，支持多种编程语言，包括C、C++、Fortran等。同时，GCC有着强大的跨平台支持，可以在Linux、Windows、macOS等操作系统上运行，是C语言开发的标准编译器之一。本教程将以Windows下的GCC为例，介绍如何安装工具链。</p>
 <ol>
 <li><strong>下载GCC</strong>: 访问 <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/">SourceForge MinGW-w64</a> 页面，下载<code>x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z</code>文件。或者在本教程文档的同目录下找到同名文件下载.</li>
 <li><strong>解压文件</strong>: 将下载的<code>.7z</code>文件解压到一个方便好记目录，比如<code>D:\Dev\env</code>下，切记路径不能包含中文(非ascii字符)和特殊符号。</li>
-<li><strong>记下路径</strong>: 解压后会得到一个名为<code>mingw64</code>的文件夹<a href="#fn2">[2]</a>，进入文件夹，打开<code>bin</code>目录，记下此时的路径，比如<code>D:\Dev\env\mingw64\bin</code>。可以看到bin目录下有很多以<code>.exe</code>结尾的可执行文件，这些就是GCC的编译器和相关工具。在其中，我们可以找到<code>gcc.exe</code>，这便是GCC编译器的主程序。双击一下它，没反应？别慌，这是因为它是一个命令行工具，没有图形化界面，需要在命令行中运行，马上我们就会用到它。</li>
+<li><strong>记下路径</strong>: 解压后会得到一个名为<code>mingw64</code>的文件夹<a id="fnref2"></a><a href="#fn2">[2]</a>，进入文件夹，打开<code>bin</code>目录，记下此时的路径，比如<code>D:\Dev\env\mingw64\bin</code>。可以看到bin目录下有很多以<code>.exe</code>结尾的可执行文件，这些就是GCC的编译器和相关工具。在其中，我们可以找到<code>gcc.exe</code>，这便是GCC编译器的主程序。双击一下它，没反应？别慌，这是因为它是一个命令行工具，没有图形化界面，需要在命令行中运行，马上我们就会用到它。</li>
 </ol>
 <hr />
 <h2 id="c_1">编写你的第一个C程序</h2>
@@ -1214,38 +1214,34 @@
 </li>
 <li>
 <p><strong>编写代码</strong>: 双击或右键使用<code>记事本</code>打开<code>hello.txt</code>文件，输入以下代码:</p>
-<p>```</p>
+<p>```bash</p>
 <h1 id="include">include <stdio.h></h1>
 <p>int main() {
     printf("Hello, World!\n");
     return 0;
-}</p>
-<p>```</p>
+}
+```</p>
 <p>保存并关闭文件。</p>
 </li>
 <li>
 <p><strong>编译代码</strong>: 回到一开始记下的gcc的bin文件夹==（以下所有使用到GCC的命令都需要在该目录下执行）==右键bin文件夹的空白处，选择<code>在终端中打开</code>(windows 11)或在资源管理器地址栏输入<code>cmd</code>并回车，打开命令提示符窗口。还记得我们之前记下的GCC的bin路径吗？这里以<code>D:\Dev\env\mingw64\bin</code>为例，实际请根据你记下的路径更改</p>
-<p>```
-gcc.exe -x c {工程路径}\hello.txt -o {工程路径}\hello.exe</p>
-<p>```</p>
+<p><code>bash
+gcc.exe -x c {工程路径}\hello.txt -o {工程路径}\hello.exe</code></p>
 <p>例如</p>
-<p>```
-gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstCProgram\hello.exe</p>
-<p>```</p>
+<p><code>bash
+gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstCProgram\hello.exe</code></p>
 <p>这条命令会将<code>hello.txt</code>文件编译成一个名为<code>hello.exe</code>的可执行文件。</p>
 </li>
 <li>
 <p><strong>运行程序</strong>: 先别急着退出终端，如果命令输入完成后没有报错，那就证明你的程序应该编译成功了，你可以检查一下文件夹中是否有出现<code>hello.exe</code>可执行文件。接下来回到工程目录并在新建终端中输入以下命令来运行程序:</p>
-<p>```
-.\hello.exe</p>
-<p>```</p>
+<p><code>bash
+.\hello.exe</code></p>
 <blockquote>
 <p>此处的<code>hello.exe</code>就是编译输出的程序，<code>.\</code>表示当前目录下，因此这条命令的意思是运行当前目录下的hello.exe程序，这种路径的表示方法叫<strong>相对路径</strong>。</p>
 </blockquote>
 <p>如果一切顺利，你应该会看到输出:</p>
-<p>```
-Hello, World!</p>
-<p>```</p>
+<p><code>bash
+Hello, World!</code></p>
 </li>
 </ol>
 <h3 id="_5">一些思考和反思</h3>
@@ -1257,9 +1253,7 @@ Hello, World!</p>
 <li>首先我们创建并编写源代码文件<code>hello.txt</code>，这就是我们所说的源代码，编译器通过读取这个文件中的内容来了解我们希望计算机执行的任务。不知道你有无注意到一个细节，在上面的教程中，我特意保留了新建文本文件的<code>.txt</code>后缀名，这是想告诉你，所谓的源代码，其实就是一个<strong>文本文件</strong>，其与其他文本文件没有本质区别，唯一的区别仅在于其内容符合特定的语法规范(C语言语法)。你可以更改文件的后缀名为<code>.c</code>，也就是变成<code>hello.c</code>，这实际上并不会改变文件的内容，它仍然是一个文本文件，只不过<code>.c</code>后缀名可以告诉编译器和系统: 这是一个特殊的文本文件，里面的内容是C语言的源代码，请你用针对C源代码的方式来编译或打开它。</li>
 <li>接着我们使用命令来调用GCC编译器为我们编译源代码文件，生成可执行文件<code>hello.exe</code>。关于什么是命令，这在以后的课程中会详细介绍，这里只需要知道，命令就是我们通过键盘输入的一些指令，计算机通过这些指令来执行特定的操作。接下来我来解释上面输入的命令每部分是什么意思。</li>
 </ol>
-<p>```
-gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstCProgram\hello.exe</p>
-<p>```</p>
+<p><code>gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstCProgram\hello.exe</code></p>
 <ul>
 <li><code>gcc.exe</code>: GCC编译器的主程序</li>
 <li><code>D:\Dev\project\myFirstCProgram\hello.txt</code>: 这是之前记下的工程目录路径，告诉GCC我们要编译的源代码文件在哪里，以及生成的可执行文件要放在哪里。</li>
@@ -1268,9 +1262,8 @@ gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstC
 <li><code>-o</code>: 这个选项告诉GCC，编译生成的可执行文件名和路径。</li>
 </ul>
 <p>你可以输入以下命令来获取更多关于GCC的帮助信息:</p>
-<p>```
-gcc.exe --help</p>
-<p>```</p>
+<p><code>bash
+gcc.exe --help</code></p>
 </li>
 <li>
 <p><strong>回顾反思</strong><br />
@@ -1294,14 +1287,13 @@ gcc.exe --help</p>
 <ol>
 <li>点击开始菜单(Windows图标)，搜索“环境变量”，选择“编辑系统环境变量”。</li>
 <li>在<code>高级</code>选项卡中，点击右下角<code>环境变量</code>按钮。</li>
-<li>在环境变量窗口中，找到上方<code>用户变量</code>区域<a href="#fn3">[3]</a>，找到名为<code>Path</code>的变量，选中后点击<code>编辑</code>。</li>
+<li>在环境变量窗口中，找到上方<code>用户变量</code>区域<a id="fnref3"></a><a href="#fn3">[3]</a>，找到名为<code>Path</code>的变量，选中后点击<code>编辑</code>。</li>
 <li>找到并打开之前GCC(MinGW)安装目录下的<code>bin</code>文件夹，比如<code>D:\Dev\env\mingw64\bin</code>，按<code>Ctrl+C</code>复制这个路径。</li>
 <li>在编辑环境变量窗口中，点击<code>新建</code>，将刚刚复制的目录路径按<code>Ctrl+V</code>粘贴进去，一路点击点击<code>确定</code>保存。</li>
 </ol>
 <h4 id="_9">验证设置</h4>
 <p>设置完成后，我们需要验证一下是否成功。右键<code>Windows徽标</code>，选择<code>终端</code>，或者按<code>Win + R</code>输入<code>cmd</code>打开一个新的命令提示符窗口(注意必须是新的窗口，因为环境变量的更改只会在新打开的窗口中生效)，输入以下命令:</p>
 <pre><code>gcc --help
-
 </code></pre>
 <p>如果你看到GCC的帮助信息，那么恭喜你，环境变量设置成功了！<br />
 现在你可以试着在其他地方打开终端，输入gcc命令，看看是否能成功运行。</p>
@@ -1358,25 +1350,22 @@ gcc.exe --help</p>
 <p>安装好插件之后，点击左上角<code>文件</code>-<code>打开文件...</code>，找到你在上一章节中编写第一个C程序的文件夹（当然也可以新建一个文件夹），点击<code>选择文件夹</code>。<br />
 打开左侧栏<code>资源管理器</code>，右键空白处新建文件，新建一个C源文件，例如<code>VSC_Hello.c</code>并打开。<br />
 尝试手打以下代码，体验VS Code的代码智能补全功能：</p>
-<pre><code>#include &lt;stdio.h&gt;
+<pre><code class="language-bash">#include &lt;stdio.h&gt;
 
 int main() {
     printf(&quot;Hello, VS Code!\n&quot;);
     return 0;
 }
-
 </code></pre>
 <p>完成后按<code>Ctrl + S</code>保存文件。<br />
 接下来就是编译运行可执行文件，你有两种方法：</p>
 <ul>
 <li>点击右上角<code>切换面板</code>或按<code>Ctrl+j</code>打开底部面板，在面板顶部栏选择<code>终端</code>以打开内置终端，输入上一章节的编译命令，例如:</li>
 </ul>
-<pre><code>gcc VSC_Hello.c -o VSC_Hello.exe
-
+<pre><code class="language-bash">gcc VSC_Hello.c -o VSC_Hello.exe
 </code></pre>
 <p>运行程序：</p>
-<pre><code>.\VSC_Hello.exe
-
+<pre><code class="language-bash">.\VSC_Hello.exe
 </code></pre>
 <ul>
 <li>除了输入命令外，我们刚刚安装的<code>Code Runner</code>插件为我们提供了更方便的方法：编写好程序并保存后，点击右上角小三角旁的下拉菜单，选择<code>Run Code</code>，或直接按<code>Ctrl + Alt + N</code>编译运行程序。可以看到，插件自动为我们执行了之前输入的gcc命令，是不是很方便？</li>
@@ -1387,7 +1376,7 @@ int main() {
 <li>
 <p>对于一个完整的开发环境，一般包括两个相对独立的部分：</p>
 <ul>
-<li>文本编辑器及相关开发辅助工具（如语言服务器<a href="#fn4">[4]</a>，源代码管理工具，构建工具等）</li>
+<li>文本编辑器及相关开发辅助工具（如语言服务器<a id="fnref4"></a><a href="#fn4">[4]</a>，源代码管理工具，构建工具等）</li>
 <li>工具链（包括编译器、链接器、调试器等）</li>
 </ul>
 <p>当然也有一些软件，针对某种或某类编程语言，将以上的文本编辑器，工具链和常用开发工具集成在一起，形成一种可以一键安装的软件，我们叫它<strong>集成开发环境(Integrated Development Environment, IDE)</strong>。<br />
@@ -1402,16 +1391,16 @@ int main() {
 <hr />
 <ol>
 <li>
-<p>除了编译器，还有<strong>解释器</strong>，其作用与编译器大体相同，只是工作方式有所区别 <a href="#fnref1">↩︎</a></p>
+<p><a id="fn1"></a>除了编译器，还有<strong>解释器</strong>，其作用与编译器大体相同，只是工作方式有所区别 <a href="#fnref1">↩︎</a></p>
 </li>
 <li>
-<p>MinGW，全称Minimalist GNU for Windows，是一个在Windows上运行的GNU工具链，其中包括我们需要的GCC编译器 <a href="#fnref2">↩︎</a></p>
+<p><a id="fn2"></a>MinGW，全称Minimalist GNU for Windows，是一个在Windows上运行的GNU工具链，其中包括我们需要的GCC编译器 <a href="#fnref2">↩︎</a></p>
 </li>
 <li>
-<p>系统变量对所用用户生效，而用户变量只对当前用户生效。因为一般Windows电脑都只有一个用户，因此在没有冲突的情况下，在这两个区域添加更改环境变量效果是一样的 <a href="#fnref3">↩︎</a></p>
+<p><a id="fn3"></a>系统变量对所用用户生效，而用户变量只对当前用户生效。因为一般Windows电脑都只有一个用户，因此在没有冲突的情况下，在这两个区域添加更改环境变量效果是一样的 <a href="#fnref3">↩︎</a></p>
 </li>
 <li>
-<p>语言服务器(LSP)，提供代码智能补全、高亮、定义跳转、错误提示等功能 <a href="#fnref4">↩︎</a></p>
+<p><a id="fn4"></a>语言服务器(LSP)，提供代码智能补全、高亮、定义跳转、错误提示等功能 <a href="#fnref4">↩︎</a></p>
 </li>
 </ol>
 

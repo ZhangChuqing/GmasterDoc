@@ -544,14 +544,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91/Git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    常用git命令
+    Git
   
 
     
@@ -987,16 +987,40 @@
 
 
 <h1 id="_1">烧录出错</h1>
-<ul>
-<li>终端红色报错如下--&gt;环境没配置好，将openocd路径加入环境变量</li>
-</ul>
-<pre><code class="language-bash">‘openocd’不是外部命令，也不是可运行的程序
-</code></pre>
-<ul>
-<li>烧录线线序是否正确</li>
-<li>无线烧录器是否配对（详情请看'开发'文件夹下'烧录器.md'）</li>
-<li>无线烧录器没有上电烧录</li>
-</ul>
+<ol>
+<li>
+<p>终端报错：openocd 找不到</p>
+<p><strong>现象：</strong>
+<code>bash
+'openocd' 不是内部或外部命令，也不是可运行的程序</code></p>
+<p><strong>原因：</strong>
+- 终端红色报错如下--&gt;环境没配置好，将openocd路径加入环境变量
+<code>bash
+‘openocd’不是外部命令，也不是可运行的程序</code></p>
+<p><strong>解决方法：</strong>
+- 将openocd路径加入环境变量</p>
+</li>
+<li>
+<p>烧录线序是否正确</p>
+</li>
+<li>
+<p>无线烧录器是否配对</p>
+<p>参考开发文档<a href="../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/#2-cmsis-dap-无线烧录器">烧录器</a></p>
+</li>
+<li>
+<p>无线烧录器没有上电烧录</p>
+</li>
+<li>
+<p>确认<strong>flash.cfg</strong>中烧录器类型正确</p>
+</li>
+<li>
+<p>更换 USB 线 / USB 口</p>
+</li>
+<li>
+<p>仍然无法正常烧录</p>
+<p>怀疑硬件，更换C板和烧录器。</p>
+</li>
+</ol>
 
 
 

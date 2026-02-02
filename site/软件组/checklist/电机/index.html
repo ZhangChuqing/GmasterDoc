@@ -544,14 +544,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91/Git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    常用git命令
+    Git
   
 
     
@@ -815,7 +815,7 @@
   <a href="#checklist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        checklist 多个电机均无法连接
+        Checklist：多个电机均无法连接
       
     </span>
   </a>
@@ -826,7 +826,7 @@
   <a href="#checklist_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        checklist 单个电机
+        Checklist：单个电机
       
     </span>
   </a>
@@ -846,10 +846,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-gsrltsk_testcpp431029" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 打开GSRL库内tsk_test.cpp文件。找到电机型号4310的测试代码段(约29行)。
+        1. 找到测试代码位置
       
     </span>
   </a>
@@ -882,7 +882,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 角速度闭环控制输出。（）
+        4. 角速度闭环控制输出。
       
     </span>
   </a>
@@ -1123,7 +1123,7 @@
   <a href="#checklist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        checklist 多个电机均无法连接
+        Checklist：多个电机均无法连接
       
     </span>
   </a>
@@ -1134,7 +1134,7 @@
   <a href="#checklist_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        checklist 单个电机
+        Checklist：单个电机
       
     </span>
   </a>
@@ -1154,10 +1154,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-gsrltsk_testcpp431029" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 打开GSRL库内tsk_test.cpp文件。找到电机型号4310的测试代码段(约29行)。
+        1. 找到测试代码位置
       
     </span>
   </a>
@@ -1190,7 +1190,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 角速度闭环控制输出。（）
+        4. 角速度闭环控制输出。
       
     </span>
   </a>
@@ -1221,29 +1221,36 @@
 
 <h1 id="_1">单个电机</h1>
 <h2 id="_2">简介</h2>
-<p>由于实验室经常出现电机疑似寄了但实则没寄的、寄了很久但没被发现让开发者挠头等严重影响工作效率和工作热情的情况。为节省测试时间，特此编写该测试文档。可直接在GSRL库task.cpp中调用testMotor()函数进行测试。
-此文档包含多人与电机苦战的血泪史。希望后续开发者不会被小小电机代码坑害。</p>
-<h2 id="checklist">checklist 多个电机均无法连接</h2>
+<p>实验室经常出现电机疑似寄了但其实没寄、寄了很久但没被发现的情况，严重影响开发效率。为节省排查时间，特此整理本测试文档。  </p>
+<p>可在 <strong>GSRL 库的 <code>tsk_test.cpp</code></strong> 中调用 <code>testMotor()</code> 进行快速验证。</p>
+<hr />
+<h2 id="checklist">Checklist：多个电机均无法连接</h2>
 <ul>
-<li>是否在不同的can上也存在相同id的3508（GSRL遗留问题）</li>
-<li>can总线上是否有60欧姆终端电阻？（一般来说第一个和最远的一个开120欧电阻，其余不开）</li>
+<li>是否在<strong>不同 CAN 上</strong>存在<strong>相同 ID 的 3508</strong>（GSRL 遗留问题）</li>
+<li>CAN 总线上是否有<strong>终端电阻</strong>  </li>
+<li>通常第一个与最远端 <strong>各开 120Ω</strong>  </li>
+<li>其余节点<strong>不开</strong>（否则等效电阻会变小）</li>
 </ul>
-<h2 id="checklist_1">checklist 单个电机</h2>
-<p>鉴于有时不一定需要单独拿下来看电机是否损坏，所以此checklist可帮助快速定位问题。
--  电机驱动器型号是否正确？
--  电机是否有反馈？（查看电机反馈数据，Motor类下ismotorconnected）
--  can总线上是否有60欧姆（总）终端电阻？
--  电机id是否正确？
--  PID是不是给的太小不足以驱动电机转动？
--  can线HL口是否接反？
--  can线、电源线通不通？     --&gt;打标
--  电调是否正确接上can口？电机是否正确接上电调？
--  电调与电机是否匹配？
--  电调是否有损坏？
--  是否存在其他鬼线？</p>
-<p>若以上均无问题，则电机大概率损坏。建议进入电机测试环节来证明猜测。</p>
+<h2 id="checklist_1">Checklist：单个电机</h2>
+<p>不一定需要拆下电机才能判断是否损坏，建议先按以下项逐条排查：</p>
+<ul>
+<li>电机驱动器型号是否正确？</li>
+<li>电机是否有反馈？（查看 <code>Motor</code> 类的 <code>isMotorConnected</code>）</li>
+<li>CAN 总线上是否有<strong>60Ω（总）</strong>终端电阻？</li>
+<li>电机 ID 是否正确？</li>
+<li>PID 是否给得太小，无法驱动转动？</li>
+<li>CAN 线 <strong>H/L 是否接反</strong>？</li>
+<li>CAN 线、电源线是否<strong>导通</strong>？</li>
+<li>电调是否正确接在 CAN 口？电机是否正确接电调？</li>
+<li>电调与电机是否匹配？</li>
+<li>电调是否损坏？</li>
+<li>是否存在其他“鬼线”（短路/干扰/错接）？</li>
+</ul>
+<p>若以上均无问题，电机大概率损坏，建议进入测试环节验证。</p>
+<hr />
 <h2 id="_3">测试步骤</h2>
-<h3 id="1-gsrltsk_testcpp431029">1. 打开GSRL库内tsk_test.cpp文件。找到电机型号4310的测试代码段(约29行)。</h3>
+<h3 id="1">1. 找到测试代码位置</h3>
+<p>打开 <code>GSRL/tsk_test.cpp</code>，找到电机型号 4310 的测试段（约 29 行）：</p>
 <pre><code class="language-bash">// Motor
 MotorDM4310 motor(1, 0, 3.1415926f, 40, 15, &amp;myPID);
 </code></pre>
@@ -1280,7 +1287,7 @@ MotorDM4310 motor(1, 0, 3.1415926f, 40, 15, &amp;myPID);
 <p>注意：
 - PID参数需要根据电机型号和负载情况进行调整，建议参考电机手册或官方示例代码。（一定要改，p只给10一般来说驱动不了）
 - 注意P limit是否调大。</p>
-<h3 id="4">4. 角速度闭环控制输出。（）</h3>
+<h3 id="4">4. 角速度闭环控制输出。</h3>
 <pre><code class="language-bash">while (1) {
         motor.angleClosedloopControl(1000.0f);
         transmitMotorsControlData();
