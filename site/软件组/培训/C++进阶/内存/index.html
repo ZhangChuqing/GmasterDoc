@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>内存 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">内存</a>
+</li>
+            
+<li>
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E6%8C%87%E9%92%88/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#memory-model" class="nav-link">内存模型（Memory Model）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 内存是什么</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-static" class="nav-link">2. 静态存储区（Static）——编译期确定的内存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-stack" class="nav-link">3. 栈（Stack）——自动管理的内存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-heap" class="nav-link">4. 堆（Heap）——手动管理的内存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 三种内存区域对比</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 实际例子：一个对象的内存分布</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 为什么移动语义需要理解内存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-gsrl" class="nav-link">8. 与 GSRL 的关系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9" class="nav-link">9. 与其他语言的对比</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="memory-model">内存模型（Memory Model）</h1>
+<p>理解内存是理解 C++ 程序行为的基础。这篇文档解释数据在内存中如何存储、变量如何分配和释放。</p>
+<hr />
+<h2 id="1">1. 内存是什么</h2>
+<p>内存是程序运行时存放一切数据的地方。每一个变量、每一个对象、每一个数组，都占据着内存中的某一段空间。</p>
+<p>在 C++ 中，内存主要分为三个区域：<strong>静态存储区（Static）</strong>、<strong>栈（Stack）</strong> 和 <strong>堆（Heap）</strong>。</p>
+<hr />
+<h2 id="2-static">2. 静态存储区（Static）——编译期确定的内存</h2>
+<h3 id="21">2.1 特点</h3>
+<ul>
+<li>程序启动时分配，程序结束时释放，生命周期贯穿整个运行期</li>
+<li>大小在编译期确定，运行时不可变</li>
+<li>不占用栈空间，也不占用堆空间，位于独立的数据段</li>
+</ul>
+<h3 id="22">2.2 什么数据放在静态存储区</h3>
+<pre><code class="language-cpp">int g_counter = 0;               // 全局变量——静态存储区
+static int s_id = 100;           // 文件作用域的静态变量——静态存储区
+
+void foo()
+{
+    static int callCount = 0;    // 函数内静态局部变量——静态存储区
+    callCount++;                 // 值在多次调用间保持
+}
+
+const char* msg = &quot;hello&quot;;       // 字符串字面量 &quot;hello&quot; 在静态存储区
+                                  // msg 指针本身在栈上
+</code></pre>
+<h3 id="23">2.3 静态存储区的内存布局</h3>
+<pre><code>高地址
+├───────────────
+│  栈（Stack）
+│  ├── 局部变量
+│  └── 函数调用栈帧
+├───────────────
+│      ↓
+│    （空闲）
+│      ↑
+├───────────────
+│  堆（Heap）
+│  ├── new/malloc 分配
+│  └── 动态增长
+├───────────────
+│  静态存储区
+│  ├── 全局变量 g_counter
+│  ├── 静态变量 s_id
+│  ├── 字符串字面量 &quot;hello&quot;
+│  └── 静态局部变量 foo::callCount
+├───────────────
+│  代码段（只读）
+│  └── 程序指令
+低地址
+</code></pre>
+<p>静态存储区在程序加载时就已经分配好，与栈、堆物理隔离。</p>
+<h3 id="24-gsrl">2.4 为什么 GSRL 中大量使用静态分配</h3>
+<p><a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/">嵌入式环境</a>（如机器人控制系统）对实时性和内存碎片敏感，静态分配有天然优势：</p>
+<ul>
+<li><strong>无运行时开销</strong>：编译期已确定布局，无需 <code>new</code>/<code>delete</code></li>
+<li><strong>无内存碎片</strong>：不会因反复分配/释放导致堆碎片化</li>
+<li><strong>可预测性</strong>：内存用量在编译期已知，不会出现运行时内存不足</li>
+</ul>
+<p>GSRL 中常见的大量数组、滤波器矩阵，如果能确定最大尺寸，优先用静态分配：</p>
+<pre><code class="language-cpp">// 静态分配：编译期确定大小，零运行时开销
+fp32 s_buffer[256];
+
+// 动态分配：灵活但需管理生命周期
+fp32* d_buffer = new fp32[size];
+// ...
+delete[] d_buffer;
+</code></pre>
+<hr />
+<h2 id="3-stack">3. 栈（Stack）——自动管理的内存</h2>
+<h3 id="31">3.1 特点</h3>
+<ul>
+<li>由编译器自动管理，函数调用时分配，函数返回时释放</li>
+<li>速度快，但空间有限（通常几 MB）</li>
+<li>后进先出（LIFO），像一摞盘子——最后放上去的最先被取走</li>
+</ul>
+<h3 id="32">3.2 什么数据放在栈上</h3>
+<pre><code class="language-cpp">void foo()
+{
+    int a = 42;           // a 在栈上
+    float b = 3.14f;      // b 在栈上
+    int arr[10];          // 整个数组在栈上
+    PIDParam param;       // 结构体在栈上（成员都在栈上）
+}  // 函数结束，以上全部自动释放
+</code></pre>
+<h3 id="33">3.3 栈的内存布局</h3>
+<pre><code>高地址
+├───────────────
+│  main 的栈帧
+│  ├── int x = 10
+│  ├── float y = 3.14
+│  └── ...
+├───────────────
+│  foo 的栈帧      ← 调用 foo() 时压入
+│  ├── int a = 42
+│  ├── float b = 3.14f
+│  └── int arr[10]   (40 字节)
+├───────────────      ← foo() 返回后弹出，全部释放
+│  main 的栈帧(继续)
+│  ...
+低地址
+</code></pre>
+<p>每次函数调用都会在栈顶"压入"一个新的栈帧（stack frame），包含该函数的局部变量。函数返回时栈帧被弹出，变量随之消失。</p>
+<hr />
+<h2 id="4-heap">4. 堆（Heap）——手动管理的内存</h2>
+<h3 id="41">4.1 特点</h3>
+<ul>
+<li>由程序员手动申请（<code>new</code>/<code>malloc</code>）和释放（<code>delete</code>/<code>free</code>）</li>
+<li>空间大（受系统可用内存限制）</li>
+<li>分配和释放较慢</li>
+<li>不遵循 LIFO 顺序，可以在任何时候分配和释放</li>
+</ul>
+<h3 id="42">4.2 什么数据放在堆上</h3>
+<pre><code class="language-cpp">void foo()
+{
+    int* p = new int(42);        // p 本身在栈上，但 *p（42）在堆上
+    fp32* arr = new fp32[100];   // arr 指针在栈上，100 个 fp32 在堆上
+
+    delete p;       // 手动释放
+    delete[] arr;   // 手动释放数组
+}
+</code></pre>
+<h3 id="43">4.3 堆的内存布局</h3>
+<pre><code>        栈                         堆
+    ┌──────────┐            ┌──────────────┐
+    │ p (指针) │──────→     │    42        │  ← int，4 字节
+    ├──────────┤            ├──────────────┤
+    │ arr(指针)│──────→     │ [0][1]...[99]│  ← fp32[100]，400 字节
+    └──────────┘            └──────────────┘
+</code></pre>
+<p>指针变量本身在栈上，但指针<strong>指向</strong>的数据在堆上。这是理解 C++ 内存模型的关键。</p>
+<h3 id="44">4.4 忘记释放会怎样——内存泄漏</h3>
+<pre><code class="language-cpp">void leak()
+{
+    int* p = new int[1000];  // 在堆上分配了 1000 个 int
+    // ... 做一些事 ...
+    // 忘记 delete[] p —— 函数返回后，指针 p 消失
+    // 但堆上的 1000 个 int 仍然占据着内存，且再也无法访问
+    // 这就是内存泄漏（memory leak）
+}
+</code></pre>
+<hr />
+<h2 id="5">5. 三种内存区域对比</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>静态存储区（Static）</th>
+<th>栈（Stack）</th>
+<th>堆（Heap）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>管理方式</td>
+<td>编译器自动</td>
+<td>编译器自动</td>
+<td>程序员手动（或智能指针）</td>
+</tr>
+<tr>
+<td>分配速度</td>
+<td>编译期完成</td>
+<td>极快（移动栈指针）</td>
+<td>较慢（需要查找空闲块）</td>
+</tr>
+<tr>
+<td>大小限制</td>
+<td>编译期固定</td>
+<td>小（通常 1~8 MB）</td>
+<td>大（受系统内存限制）</td>
+</tr>
+<tr>
+<td>生命周期</td>
+<td>程序整个运行期</td>
+<td>随函数调用/返回</td>
+<td>手动控制</td>
+</tr>
+<tr>
+<td>碎片问题</td>
+<td>无</td>
+<td>无</td>
+<td>可能出现</td>
+</tr>
+<tr>
+<td>典型用途</td>
+<td>全局变量、静态变量、字符串字面量</td>
+<td>局部变量、函数参数</td>
+<td>动态大小的数据、大对象</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 实际例子：一个对象的内存分布</h2>
+<pre><code class="language-cpp">class SimplePID
+{
+    PIDParam m_param;       // 三个 float，在对象内部
+    fp32* m_errorHistory;   // 一个指针（8 字节），在对象内部
+    int m_historySize;      // 一个 int（4 字节），在对象内部
+};
+</code></pre>
+<p>当你在栈上创建一个 <code>SimplePID</code>：</p>
+<pre><code>栈
+┌──────────────────────┐
+│ SimplePID 对象       │
+│  ├── m_param         │  ← 内嵌的三个 float，直接存在对象里
+│  │   ├── Kp (4字节)  │
+│  │   ├── Ki (4字节)  │
+│  │   └── Kd (4字节)  │
+│  ├── m_errorHistory  │  ← 这是个指针（8字节），存的是地址
+│  │       │           │
+│  │       ↓           │
+│  └── m_historySize   │  ← int，4 字节
+└──────────────────────┘
+                          ↓
+        堆
+    ┌──────────────────────┐
+    │ fp32[100]            │  ← 构造函数中 new 出来的
+    │ [0][0]...[0]         │     400 字节在堆上
+    └──────────────────────┘
+</code></pre>
+<p><strong>关键理解：</strong> 对象本身可能在栈上，但对象内部通过 <code>new</code> 分配的数据在堆上。<code>m_errorHistory</code> 只是一个"遥控器"（指针），真正的数据在别处。</p>
+<hr />
+<h2 id="7">7. 为什么移动语义需要理解内存</h2>
+<p>看这个场景：</p>
+<pre><code class="language-cpp">SimplePID pid1(param);                // pid1 在栈上，其 m_errorHistory 指向堆上数组
+SimplePID pid2(std::move(pid1));      // 移动构造
+</code></pre>
+<p>移动构造做的事情：<strong>只复制指针，不复制堆上的数据</strong>。</p>
+<pre><code>移动前：                         移动后：
+pid1.m_errorHistory → [堆数据]   pid1.m_errorHistory → nullptr
+pid2.m_errorHistory → nullptr     pid2.m_errorHistory → [堆数据]（同一个！）
+</code></pre>
+<p>如果不理解指针和堆，就无法理解为什么"复制一个指针"就完成了"移动"——实际上只是换了遥控器，电视机没动。</p>
+<hr />
+<h2 id="8-gsrl">8. 与 GSRL 的关系</h2>
+<p>在 GSRL 中，堆的使用是受限的（<a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/">嵌入式环境</a>），但理解三种内存区域的区别仍然重要：</p>
+<ul>
+<li>局部变量（如 <code>KalmanFilter</code> 实例）在栈上</li>
+<li><code>std::vector</code> 内部的数据在堆上</li>
+<li><code>new</code> 和 <code>delete</code> 在嵌入式环境中需谨慎使用</li>
+<li>静态分配（static allocation）在 GSRL 中更常见</li>
+</ul>
+<p>理解内存模型，才能在写移动构造函数、析构函数时，清楚地知道自己在操作什么。</p>
+<hr />
+<h2 id="9">9. 与其他语言的对比</h2>
+<p><strong>场景：创建一个数组，存放 1000 个数，用完销毁。</strong></p>
+<h3 id="python">Python</h3>
+<pre><code class="language-python">data = [0] * 1000
+
+# 离开作用域后，垃圾回收器会在某个时刻自动回收内存
+data = None  # 或直接离开作用域
+</code></pre>
+<p>Python 的内存由解释器全权管理，开发者无需关注分配与释放。代价是回收时机不可控（由 GC 策略决定），且无法直接感知内存布局。</p>
+<h3 id="java">Java</h3>
+<pre><code class="language-java">int[] data = new int[1000];
+
+// 离开作用域后，JVM 的 GC 自动回收
+data = null;
+</code></pre>
+<p>与 Python 类似，Java 中所有对象均分配在堆上，由 JVM 垃圾回收器统一管理。代价是 GC 触发时可能引起 Stop-The-World 暂停，在对实时性有严格要求的场景（如机器人控制）中不可接受。</p>
+<h3 id="c">C</h3>
+<pre><code class="language-c">int* data = (int*)malloc(1000 * sizeof(int));  // 手动在堆上分配
+
+// ... 使用 data ...
+
+free(data);  // 手动释放，遗漏则内存泄漏
+</code></pre>
+<p>C 没有构造函数/析构函数和智能指针机制，内存的分配与释放完全由开发者显式控制。</p>
+<h3 id="c_1">C++</h3>
+<pre><code class="language-cpp">// 方案 A：栈上分配，离开作用域自动释放
+int data_stack[1000];
+
+// 方案 B：堆上分配 + 手动管理（与 C 一致）
+int* data_heap = new int[1000];
+delete[] data_heap;
+
+// 方案 C：堆上分配 + 智能指针，自动管理
+auto data_smart = std::make_unique&lt;int[]&gt;(1000);
+// 离开作用域自动释放
+</code></pre>
+<p>C++ 允许开发者根据场景选择合适的内存管理策略——栈上自动回收、堆上手动控制、或通过智能指针实现自动管理。其核心哲学是"不为不使用的特性付出开销"（zero-overhead principle）：需要多大控制权，就承担多大责任。理解内存模型，正是做出正确选择的前提。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

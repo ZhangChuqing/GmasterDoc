@@ -1,0 +1,2601 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>通信协议 - Gmaster Documentation</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../checklist/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">自定义客户端协议</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">概述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#21" class="nav-link">2.1 指令概览</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#22" class="nav-link">2.2 详细协议定义</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#id" class="nav-link">附录二：ID 编号说明</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">附录三：自定义客户端示例通信代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">自定义客户端协议</h1>
+<h2 id="_2">概述</h2>
+<p>自定义客户端的数据流格式为 <strong>Protobuf v3</strong>（Protocol Buffers），采用 <strong>MQTT</strong> 作为发布/订阅消息传输协议。MQTT 直接传输 Protobuf 序列化的二进制流。topic 为对应的指令名。</p>
+<ul>
+<li><strong>服务器 IP 地址</strong>：192.168.12.1</li>
+<li><strong>端口</strong>：3333</li>
+<li><strong>自定义客户端 IP 地址</strong>：DHCP 自动分配</li>
+</ul>
+<h3 id="_3">通信流程</h3>
+<ol>
+<li>结合文档中的 Protobuf 消息格式编写 <code>.proto</code> 文件，用 protoc 生成不同语言的类代码；</li>
+<li>在发布者端，将对象序列化成二进制；</li>
+<li>通过 MQTT publish 把二进制发送到对应 Topic；</li>
+<li>在订阅者端，接收消息并用 Protobuf 反序列化。</li>
+</ol>
+<blockquote>
+<p>示例代码见附录三，其中 <code>MyMqttClient</code> 的 <code>clientID</code> 需填入所连接机器人对应的 ID 编号。</p>
+</blockquote>
+<h3 id="_4">图传码流数据</h3>
+<p>自定义客户端可通过 <strong>UDP 监听 3334 端口</strong> 获取图传码流数据。编码格式为 <strong>HEVC</strong>，每个 UDP 包的码流数据前 8 个字节固定为：</p>
+<ul>
+<li>帧编号（递增）：2 byte</li>
+<li>当前帧内分片序号：2 byte</li>
+<li>当前帧总字节数：4 byte</li>
+</ul>
+<hr />
+<h2 id="21">2.1 指令概览</h2>
+<table>
+<thead>
+<tr>
+<th>指令（message）名</th>
+<th>指令用途</th>
+<th>发送方/接收方</th>
+<th>最高 qos 等级</th>
+<th>频率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KeyboardMouseControl</td>
+<td>传输鼠标键盘输入</td>
+<td>自定义客户端 → 图传链路 → 机器人</td>
+<td>1</td>
+<td>75 Hz</td>
+</tr>
+<tr>
+<td>CustomControl</td>
+<td>最大 30 字节的自定义数据</td>
+<td>自定义客户端 → 图传链路 → 机器人</td>
+<td>1</td>
+<td>75 Hz</td>
+</tr>
+<tr>
+<td>GameStatus</td>
+<td>同步比赛全局状态信息</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>GlobalUnitStatus</td>
+<td>同步基地、前哨站和所有机器人状态</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>GlobalLogisticsStatus</td>
+<td>同步全局后勤信息</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>GlobalSpecialMechanism</td>
+<td>同步正在生效的全局特殊机制</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>Event</td>
+<td>全局事件通知</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>触发式发送</td>
+</tr>
+<tr>
+<td>RobotInjuryStat</td>
+<td>机器人一次存活期间累计受伤统计</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RobotRespawnStatus</td>
+<td>机器人复活状态同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RobotStaticStatus</td>
+<td>机器人固定属性和配置</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RobotDynamicStatus</td>
+<td>机器人实时数据</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>10 Hz</td>
+</tr>
+<tr>
+<td>RobotModuleStatus</td>
+<td>机器人各模块运行状态</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RobotPosition</td>
+<td>机器人空间坐标和朝向</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>Buff</td>
+<td>Buff 效果信息</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>获得增益时触发发送，此后 1 Hz 定频发送直到失去增益</td>
+</tr>
+<tr>
+<td>PenaltyInfo</td>
+<td>判罚信息同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>触发式发送</td>
+</tr>
+<tr>
+<td>RobotPathPlanInfo</td>
+<td>哨兵轨迹规划信息</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>MapClickInfoNotify</td>
+<td>云台手地图点击标记</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>触发式发送，频率限制与 1.3.1 小节一致</td>
+</tr>
+<tr>
+<td>RadarInfoToClient</td>
+<td>雷达发送的机器人位置信息</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>CustomByteBlock</td>
+<td>机器人自定义上传数据流（对应 0x0310）</td>
+<td>机器人 → 图传链路 → 自定义客户端</td>
+<td>1</td>
+<td>50 Hz</td>
+</tr>
+<tr>
+<td>AssemblyCommand</td>
+<td>工程装配指令</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>TechCoreMotionStateSync</td>
+<td>科技核心运动状态同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RobotPerformanceSelectionCommand</td>
+<td>地面机器人选择性能体系或控制方式</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RobotPerformanceSelectionSync</td>
+<td>步兵/英雄性能体系状态同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>CommonCommand</td>
+<td>机器人多种常用指令</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>触发式发送，最高 10 Hz</td>
+</tr>
+<tr>
+<td>HeroDeployModeEventCommand</td>
+<td>英雄部署模式相关指令</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>DeployModeStatusSync</td>
+<td>英雄部署模式状态同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RuneActivateCommand</td>
+<td>能量机关激活指令</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>RuneStatusSync</td>
+<td>能量机关状态同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>SentryStatusSync</td>
+<td>哨兵姿态相关信息同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>DartCommand</td>
+<td>飞镖控制指令</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>DartSelectTargetStatusSync</td>
+<td>飞镖目标选择状态同步</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>SentryCtrlCommand</td>
+<td>哨兵控制指令请求</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>SentryCtrlResult</td>
+<td>哨兵控制指令结果反馈</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>AirSupportCommand</td>
+<td>空中支援指令</td>
+<td>自定义客户端 → 服务器</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+<tr>
+<td>AirSupportStatusSync</td>
+<td>空中支援状态反馈</td>
+<td>服务器 → 自定义客户端</td>
+<td>1</td>
+<td>1 Hz</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="22">2.2 详细协议定义</h2>
+<h3 id="221-keyboardmousecontrol">2.2.1 KeyboardMouseControl</h3>
+<p><strong>用途</strong>：传输鼠标键盘输入。该数据将通过相机图传模块（接收端）发送给机器人。实际比赛时，操作手需提前选择键鼠控制指令来源为官方选手端或自定义客户端，同时仅能通过一个来源生成发送给机器人的键鼠指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>int32</td>
+<td>鼠标 x 轴移动速度，负值标识向左移动</td>
+</tr>
+<tr>
+<td>2</td>
+<td>int32</td>
+<td>鼠标 y 轴移动速度，负值标识向下移动</td>
+</tr>
+<tr>
+<td>3</td>
+<td>int32</td>
+<td>鼠标滚轮移动速度，负值标识向后滚动</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bool</td>
+<td>左键是否按下（false=抬起, true=按下）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bool</td>
+<td>右键是否按下（false=抬起, true=按下）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>键盘按键位掩码（bit0~bit15）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>bool</td>
+<td>中键是否按下（false=抬起, true=按下）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>键盘按键位掩码</strong>（每个 bit 对应一个按键，0=未按下，1=按下）：</p>
+<ul>
+<li>bit0 : W</li>
+<li>bit1 : S</li>
+<li>bit2 : A</li>
+<li>bit3 : D</li>
+<li>bit4 : Shift</li>
+<li>bit5 : Ctrl</li>
+<li>bit6 : Q</li>
+<li>bit7 : E</li>
+<li>bit8 : R</li>
+<li>bit9 : F</li>
+<li>bit10: G</li>
+<li>bit11: Z</li>
+<li>bit12: X</li>
+<li>bit13: C</li>
+<li>bit14: V</li>
+<li>bit15: B</li>
+</ul>
+<pre><code class="language-protobuf">message KeyboardMouseControl {
+    int32 mouse_x = 1;
+    int32 mouse_y = 2;
+    int32 mouse_z = 3;
+    bool left_button_down = 4;
+    bool right_button_down = 5;
+    uint32 keyboard_value = 6;
+    bool mid_button_down = 7;
+}
+</code></pre>
+<hr />
+<h3 id="222-customcontrol">2.2.2 CustomControl</h3>
+<p><strong>用途</strong>：最大 30 字节的自定义数据。该信息将通过常规链路以 0x0311 命令字发送给机器人。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>bytes</td>
+<td>最大 30 字节的自定义数据</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message CustomControl {
+    bytes data = 1;
+}
+</code></pre>
+<hr />
+<h3 id="223-gamestatus">2.2.3 GameStatus</h3>
+<p><strong>用途</strong>：同步比赛全局状态信息。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>当前局号（从 1 开始）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>总局数</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>红方得分</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>蓝方得分</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>当前阶段（枚举值见下表）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>int32</td>
+<td>当前阶段剩余时间（秒）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>int32</td>
+<td>当前阶段已过时间（秒）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>bool</td>
+<td>是否暂停</td>
+</tr>
+</tbody>
+</table>
+<p><strong>current_stage 枚举值</strong>：</p>
+<ul>
+<li>0：未开始比赛</li>
+<li>1：准备阶段</li>
+<li>2：十五秒裁判系统自检阶段</li>
+<li>3：五秒倒计时</li>
+<li>4：比赛中</li>
+<li>5：比赛结算中</li>
+</ul>
+<pre><code class="language-protobuf">message GameStatus {
+    uint32 current_round = 1;
+    uint32 total_rounds = 2;
+    uint32 red_score = 3;
+    uint32 blue_score = 4;
+    uint32 current_stage = 5;
+    int32 stage_remain_time = 6;
+    int32 stage_passed_time = 7;
+    bool is_paused = 8;
+}
+</code></pre>
+<hr />
+<h3 id="224-globalunitstatus">2.2.4 GlobalUnitStatus</h3>
+<p><strong>用途</strong>：同步基地、前哨站和所有机器人状态。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>己方基地当前血量（0=已摧毁）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>己方基地状态（枚举值见下）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>己方基地当前护盾值（0=无护盾）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>己方前哨站当前血量（0=已摧毁）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>己方前哨站状态（枚举值见下）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>对方基地当前血量（0=已摧毁）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>uint32</td>
+<td>对方基地状态</td>
+</tr>
+<tr>
+<td>8</td>
+<td>uint32</td>
+<td>对方基地当前护盾值（0=无护盾）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint32</td>
+<td>对方前哨站当前血量（0=已摧毁）</td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint32</td>
+<td>对方前哨站状态</td>
+</tr>
+<tr>
+<td>11</td>
+<td>repeated uint32</td>
+<td>所有机器人血量（先己方后对方）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>repeated int32</td>
+<td>己方机器人剩余累计发弹量</td>
+</tr>
+<tr>
+<td>13</td>
+<td>uint32</td>
+<td>己方累计总伤害</td>
+</tr>
+<tr>
+<td>14</td>
+<td>uint32</td>
+<td>对方累计总伤害</td>
+</tr>
+</tbody>
+</table>
+<p><strong>base_status 枚举值</strong>：</p>
+<ul>
+<li>0：无敌</li>
+<li>1：解除无敌，护甲未展开</li>
+<li>2：解除无敌，护甲展开</li>
+</ul>
+<p><strong>outpost_status 枚举值</strong>：</p>
+<ul>
+<li>0：无敌</li>
+<li>1：存活，解除无敌，中部装甲旋转</li>
+<li>2：存活，解除无敌，中部装甲停转</li>
+<li>3：被击毁，不可重建</li>
+<li>4：被击毁，可重建</li>
+<li>5：被击毁，重建中</li>
+</ul>
+<pre><code class="language-protobuf">message GlobalUnitStatus {
+    uint32 base_health = 1;
+    uint32 base_status = 2;
+    uint32 base_shield = 3;
+    uint32 outpost_health = 4;
+    uint32 outpost_status = 5;
+    uint32 enemy_base_health = 6;
+    uint32 enemy_base_status = 7;
+    uint32 enemy_base_shield = 8;
+    uint32 enemy_outpost_health = 9;
+    uint32 enemy_outpost_status = 10;
+    repeated uint32 robot_health = 11;
+    repeated int32 robot_bullets = 12;
+    uint32 total_damage_ally = 13;
+    uint32 total_damage_enemy = 14;
+}
+</code></pre>
+<hr />
+<h3 id="225-globallogisticsstatus">2.2.5 GlobalLogisticsStatus</h3>
+<p><strong>用途</strong>：同步全局后勤信息。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>己方当前经济</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint64</td>
+<td>己方累计总经济</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>己方科技等级（工程机器人曾装配最高难度）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>己方加密等级（雷达解析信息波机制）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message GlobalLogisticsStatus {
+    uint32 remaining_economy = 1;
+    uint64 total_economy_obtained = 2;
+    uint32 tech_level = 3;
+    uint32 encryption_level = 4;
+}
+</code></pre>
+<hr />
+<h3 id="226-globalspecialmechanism">2.2.6 GlobalSpecialMechanism</h3>
+<p><strong>用途</strong>：同步正在生效的全局特殊机制。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>repeated uint32</td>
+<td>正在生效的机制 ID 列表</td>
+</tr>
+<tr>
+<td>2</td>
+<td>repeated int32</td>
+<td>对应的时间参数（秒）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>mechanism_id 枚举值</strong>：</p>
+<ul>
+<li>1：己方堡垒被对方占领计时</li>
+<li>2：对方堡垒被己方占领计时</li>
+</ul>
+<pre><code class="language-protobuf">message GlobalSpecialMechanism {
+    repeated uint32 mechanism_id = 1;
+    repeated int32 mechanism_time_sec = 2;
+}
+</code></pre>
+<hr />
+<h3 id="227-event">2.2.7 Event</h3>
+<p><strong>用途</strong>：全局事件通知。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>int32</td>
+<td>事件编号（枚举值见下）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>string</td>
+<td>事件参数（含义随 event_id 变化）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>event_id 枚举值</strong>：</p>
+<ul>
+<li>1：击杀事件（参数为击杀者 id+被击毁机器人 id 的拼接）</li>
+<li>2：基地、前哨站被摧毁事件（参数值为被击毁的目标 id，如蓝方前哨站为 111）</li>
+<li>3：能量机关可激活次数变化（参数值为变化后可激活次数）</li>
+<li>4：能量机关当前可进入正在激活状态（无参数值）</li>
+<li>5：当前能量机关被成功激活的灯臂数量、平均环数（参数值为激活成功臂数+平均环数的拼接）</li>
+<li>6：能量机关被激活（含激活类型）</li>
+<li>7：己方英雄进入部署模式（无参数值）</li>
+<li>8：己方英雄造成狙击伤害（参数值为累计造成狙击伤害数量）</li>
+<li>9：对方英雄造成狙击伤害（参数值为累计造成狙击伤害数量）</li>
+<li>10：己方呼叫空中支援（无参数值）</li>
+<li>11：己方空中支援被打断（参数值为对方还剩余的可打断次数）</li>
+<li>12：对方呼叫空中支援（无参数值）</li>
+<li>13：对方空中支援被打断（参数值为己方还剩余的可打断次数）</li>
+<li>14：飞镖命中（参数值为命中目标：1 前哨站，2 基地固定目标，3 基地随机固定目标，4 基地随机移动目标，5 基地末端移动目标）</li>
+<li>15：双方飞镖闸门开启（参数值 1 为己方开启，2 为对方开启）</li>
+<li>16：己方基地遭到攻击（无参数值，每次触发存在 5s 内置冷却）</li>
+<li>17：双方前哨站停转（参数值 1 为己方前哨，2 为对方前哨）</li>
+<li>18：双方基地护甲展开（参数值 1 为己方基地，2 为对方基地）</li>
+</ul>
+<pre><code class="language-protobuf">message Event {
+    int32 event_id = 1;
+    string param = 2;
+}
+</code></pre>
+<hr />
+<h3 id="228-robotinjurystat">2.2.8 RobotInjuryStat</h3>
+<p><strong>用途</strong>：机器人一次存活期间累计受伤统计。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>该次存活累计受伤总计</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>撞击伤害</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>17mm 弹丸伤害</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>42mm 弹丸伤害</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>飞镖溅射伤害</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>模块离线扣血</td>
+</tr>
+<tr>
+<td>7</td>
+<td>uint32</td>
+<td>异常离线扣血</td>
+</tr>
+<tr>
+<td>8</td>
+<td>uint32</td>
+<td>判罚扣血</td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint32</td>
+<td>服务器强制使其战亡扣血</td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint32</td>
+<td>击杀者 ID（若未检测到击杀者，值为 0）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotInjuryStat {
+    uint32 total_damage = 1;
+    uint32 collision_damage = 2;
+    uint32 small_projectile_damage = 3;
+    uint32 large_projectile_damage = 4;
+    uint32 dart_splash_damage = 5;
+    uint32 module_offline_damage = 6;
+    uint32 offline_damage = 7;
+    uint32 penalty_damage = 8;
+    uint32 server_kill_damage = 9;
+    uint32 killer_id = 10;
+}
+</code></pre>
+<hr />
+<h3 id="229-robotrespawnstatus">2.2.9 RobotRespawnStatus</h3>
+<p><strong>用途</strong>：机器人复活状态同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>bool</td>
+<td>是否处于待复活状态</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>复活所需总读条</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>当前复活读条进度</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bool</td>
+<td>是否可以免费复活</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>花费金币复活所需金币数</td>
+</tr>
+<tr>
+<td>6</td>
+<td>bool</td>
+<td>是否允许花费金币复活</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotRespawnStatus {
+    bool is_pending_respawn = 1;
+    uint32 total_respawn_progress = 2;
+    uint32 current_respawn_progress = 3;
+    bool can_free_respawn = 4;
+    uint32 gold_cost_for_respawn = 5;
+    bool can_pay_for_respawn = 6;
+}
+</code></pre>
+<hr />
+<h3 id="2210-robotstaticstatus">2.2.10 RobotStaticStatus</h3>
+<p><strong>用途</strong>：机器人固定属性和配置。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>连接状态（0=未连接，1=已连接）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>上场状态（0=已上场，1=未上场）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>存活状态（0=未知，1=存活，2=战亡）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>机器人编号（见附录二）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>机器人类型</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>性能体系-发射机构（枚举值见下）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>uint32</td>
+<td>性能体系-底盘（枚举值见下）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>uint32</td>
+<td>当前等级</td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint32</td>
+<td>最大血量</td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint32</td>
+<td>最大热量</td>
+</tr>
+<tr>
+<td>11</td>
+<td>float</td>
+<td>热量冷却速率（每秒）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>uint32</td>
+<td>最大功率</td>
+</tr>
+<tr>
+<td>13</td>
+<td>uint32</td>
+<td>最大缓冲能量</td>
+</tr>
+<tr>
+<td>14</td>
+<td>uint32</td>
+<td>最大底盘能量</td>
+</tr>
+</tbody>
+</table>
+<p><strong>performance_system_shooter 枚举值</strong>：</p>
+<ul>
+<li>1：冷却优先</li>
+<li>2：爆发优先</li>
+<li>3：英雄近战优先</li>
+<li>4：英雄远程优先</li>
+</ul>
+<p><strong>performance_system_chassis 枚举值</strong>：</p>
+<ul>
+<li>1：血量优先</li>
+<li>2：功率优先</li>
+<li>3：英雄近战优先</li>
+<li>4：英雄远程优先</li>
+</ul>
+<pre><code class="language-protobuf">message RobotStaticStatus {
+    uint32 connection_state = 1;
+    uint32 field_state = 2;
+    uint32 alive_state = 3;
+    uint32 robot_id = 4;
+    uint32 robot_type = 5;
+    uint32 performance_system_shooter = 6;
+    uint32 performance_system_chassis = 7;
+    uint32 level = 8;
+    uint32 max_health = 9;
+    uint32 max_heat = 10;
+    float heat_cooling_rate = 11;
+    uint32 max_power = 12;
+    uint32 max_buffer_energy = 13;
+    uint32 max_chassis_energy = 14;
+}
+</code></pre>
+<hr />
+<h3 id="2211-robotdynamicstatus">2.2.11 RobotDynamicStatus</h3>
+<p><strong>用途</strong>：机器人实时数据。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>当前血量</td>
+</tr>
+<tr>
+<td>2</td>
+<td>float</td>
+<td>当前热量</td>
+</tr>
+<tr>
+<td>3</td>
+<td>float</td>
+<td>上一次弹丸射速</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>当前剩余底盘能量</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>当前缓冲能量</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>当前经验值</td>
+</tr>
+<tr>
+<td>7</td>
+<td>uint32</td>
+<td>距离下一次升级仍需获得的经验</td>
+</tr>
+<tr>
+<td>8</td>
+<td>uint32</td>
+<td>累计已发弹量</td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint32</td>
+<td>剩余允许发弹量</td>
+</tr>
+<tr>
+<td>10</td>
+<td>bool</td>
+<td>是否处于脱战状态</td>
+</tr>
+<tr>
+<td>11</td>
+<td>uint32</td>
+<td>脱战状态倒计时</td>
+</tr>
+<tr>
+<td>12</td>
+<td>bool</td>
+<td>是否可以远程补血</td>
+</tr>
+<tr>
+<td>13</td>
+<td>bool</td>
+<td>是否可以远程补弹</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotDynamicStatus {
+    uint32 current_health = 1;
+    float current_heat = 2;
+    float last_projectile_fire_rate = 3;
+    uint32 current_chassis_energy = 4;
+    uint32 current_buffer_energy = 5;
+    uint32 current_experience = 6;
+    uint32 experience_for_upgrade = 7;
+    uint32 total_projectiles_fired = 8;
+    uint32 remaining_ammo = 9;
+    bool is_out_of_combat = 10;
+    uint32 out_of_combat_countdown = 11;
+    bool can_remote_heal = 12;
+    bool can_remote_ammo = 13;
+}
+</code></pre>
+<hr />
+<h3 id="2212-robotmodulestatus">2.2.12 RobotModuleStatus</h3>
+<p><strong>用途</strong>：机器人各模块运行状态（0=离线，1=在线，2=因安装不规范被视为离线）。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>电源管理模块状态</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>RFID 模块状态</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>灯条模块状态</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>17mm 发射机构状态</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>42mm 发射机构状态</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>定位模块状态</td>
+</tr>
+<tr>
+<td>7</td>
+<td>uint32</td>
+<td>装甲模块状态</td>
+</tr>
+<tr>
+<td>8</td>
+<td>uint32</td>
+<td>图传模块状态</td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint32</td>
+<td>电容模块状态</td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint32</td>
+<td>主控状态</td>
+</tr>
+<tr>
+<td>11</td>
+<td>uint32</td>
+<td>激光检测模块状态</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotModuleStatus {
+    uint32 power_manager = 1;
+    uint32 rfid = 2;
+    uint32 light_strip = 3;
+    uint32 small_shooter = 4;
+    uint32 big_shooter = 5;
+    uint32 uwb = 6;
+    uint32 armor = 7;
+    uint32 video_transmission = 8;
+    uint32 capacitor = 9;
+    uint32 main_controller = 10;
+    uint32 laser_detector = 11;
+}
+</code></pre>
+<hr />
+<h3 id="2213-robotposition">2.2.13 RobotPosition</h3>
+<p><strong>用途</strong>：机器人空间坐标和朝向。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>float</td>
+<td>世界坐标 X 轴</td>
+</tr>
+<tr>
+<td>2</td>
+<td>float</td>
+<td>世界坐标 Y 轴</td>
+</tr>
+<tr>
+<td>3</td>
+<td>float</td>
+<td>世界坐标 Z 轴</td>
+</tr>
+<tr>
+<td>4</td>
+<td>float</td>
+<td>本机器人测速模块的朝向，单位：度，正北为 0 度</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotPosition {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float yaw = 4;
+}
+</code></pre>
+<hr />
+<h3 id="2214-buff">2.2.14 Buff</h3>
+<p><strong>用途</strong>：Buff 效果信息。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>机器人 ID</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>Buff 类型（枚举值见下）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>int32</td>
+<td>Buff 增益值</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>Buff 最大剩余时间</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>Buff 剩余时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>buff 类型枚举值</strong>：</p>
+<ul>
+<li>1：攻击增益</li>
+<li>2：防御增益</li>
+<li>3：射击热量冷却增益</li>
+<li>4：底盘功率增益</li>
+<li>5：回血增益</li>
+<li>6：可兑换允许发弹量</li>
+<li>7：地形跨越增益（预备）（指诸如检测到飞坡前半部分的场地交互模块，但未获取实际地形跨越增益的情况）</li>
+</ul>
+<pre><code class="language-protobuf">message Buff {
+    uint32 robot_id = 1;
+    uint32 buff_type = 2;
+    int32 buff_level = 3;
+    uint32 buff_max_time = 4;
+    uint32 buff_left_time = 5;
+}
+</code></pre>
+<hr />
+<h3 id="2215-penaltyinfo">2.2.15 PenaltyInfo</h3>
+<p><strong>用途</strong>：判罚信息同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>当前受罚类型（枚举值见下）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>当前受罚效果时长（秒）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>当前判罚数量</td>
+</tr>
+</tbody>
+</table>
+<p><strong>penalty_type 枚举值</strong>：</p>
+<ul>
+<li>1：黄牌</li>
+<li>2：双方黄牌</li>
+<li>3：红牌</li>
+<li>4：超功率</li>
+<li>5：超热量</li>
+<li>6：超射速</li>
+</ul>
+<pre><code class="language-protobuf">message PenaltyInfo {
+    uint32 penalty_type = 1;
+    uint32 penalty_effect_sec = 2;
+    uint32 total_penalty_num = 3;
+}
+</code></pre>
+<hr />
+<h3 id="2216-robotpathplaninfo">2.2.16 RobotPathPlanInfo</h3>
+<p><strong>用途</strong>：哨兵轨迹规划信息。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>哨兵意图（1=攻击，2=防守，3=移动）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>起始点 X 坐标（分米）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>起始点 Y 坐标（分米）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>repeated int32</td>
+<td>相对起始点 X 增量数组（-128~+127，长度 49）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>repeated int32</td>
+<td>相对起始点 Y 增量数组（-128~+127，长度 49）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>发送者 ID</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotPathPlanInfo {
+    uint32 intention = 1;
+    uint32 start_pos_x = 2;
+    uint32 start_pos_y = 3;
+    repeated int32 delta_x = 4;
+    repeated int32 delta_y = 5;
+    uint32 sender_id = 6;
+}
+</code></pre>
+<hr />
+<h3 id="2217-mapclickinfonotify">2.2.17 MapClickInfoNotify</h3>
+<p><strong>用途</strong>：云台手地图点击标记。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>发送范围（0=指定客户端，1=除哨兵，2=包含哨兵）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bytes</td>
+<td>目标机器人 ID 列表（固定 7 字节，如发送给自己方英雄和工程机器人，红方需要填入 1, 2；蓝方需要填入 101, 102，后续填 0）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>标记类型（1=攻击，2=防御，3=警戒，4=自定义）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>标定的对方 ID</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>自定义图标 ASCII 码</td>
+</tr>
+<tr>
+<td>6</td>
+<td>uint32</td>
+<td>标记模式（1=地图，2=对方机器人）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>uint32</td>
+<td>屏幕坐标 X（像素）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>uint32</td>
+<td>屏幕坐标 Y（像素）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>float</td>
+<td>地图坐标 X</td>
+</tr>
+<tr>
+<td>10</td>
+<td>float</td>
+<td>地图坐标 Y</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message MapClickInfoNotify {
+    uint32 is_send_all = 1;
+    bytes robot_id = 2;
+    uint32 mode = 3;
+    uint32 enemy_id = 4;
+    uint32 ascii = 5;
+    uint32 map_mode = 6;
+    uint32 screen_x = 7;
+    uint32 screen_y = 8;
+    float map_x = 9;
+    float map_y = 10;
+}
+</code></pre>
+<hr />
+<h3 id="2218-radarinfotoclient">2.2.18 RadarInfoToClient</h3>
+<p><strong>用途</strong>：雷达发送的机器人位置信息。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>目标机器人 ID</td>
+</tr>
+<tr>
+<td>2</td>
+<td>float</td>
+<td>目标位置 X（米）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>float</td>
+<td>目标位置 Y（米）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>float</td>
+<td>朝向角度</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>是否特殊标识（0=否；1=是；2=是，但目标机器人此时定位模块为离线状态）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RadarInfoToClient {
+    uint32 target_robot_id = 1;
+    float target_pos_x = 2;
+    float target_pos_y = 3;
+    float forward_angle = 4;
+    uint32 is_high_light = 5;
+}
+</code></pre>
+<hr />
+<h3 id="2219-custombyteblock">2.2.19 CustomByteBlock</h3>
+<p><strong>用途</strong>：自定义数据流（机器人端对应 0x0310）。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>bytes</td>
+<td>最大为 2.4 kbit 的自定义数据包</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message CustomByteBlock {
+    bytes data = 1;
+}
+</code></pre>
+<hr />
+<h3 id="2220-assemblycommand">2.2.20 AssemblyCommand</h3>
+<p><strong>用途</strong>：工程装配指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>装配操作类型（1=确认装配，2=取消装配）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>选中的装配难度</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message AssemblyCommand {
+    uint32 operation = 1;
+    uint32 difficulty = 2;
+}
+</code></pre>
+<hr />
+<h3 id="2221-techcoremotionstatesync">2.2.21 TechCoreMotionStateSync</h3>
+<p><strong>用途</strong>：科技核心运动状态同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>当前可选择的最高装配难度等级</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>科技核心状态（枚举值见下）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>对方科技核心状态（仅己方四级装配可用时有效，0=对方没有正在装配，1=对方正在装配非四级难度，2=对方正在装配四级难度）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>己方装配总剩余时长（仅己方正在四级装配时有效）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>己方单个步骤装配间隔剩余时长（仅己方正在四级装配时有效）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>status 枚举值</strong>：</p>
+<ul>
+<li>1：未进入装配状态</li>
+<li>2：已选择装配难度，科技核心移动中</li>
+<li>3：科技核心移动完成，可进行首个装配步骤</li>
+<li>4：上一个装配步骤已完成，可进行下一个装配步骤</li>
+<li>5：装配步骤已全部完成</li>
+<li>6：已确认装配，科技核心移动中</li>
+</ul>
+<pre><code class="language-protobuf">message TechCoreMotionStateSync {
+    uint32 maximum_difficulty_level = 1;
+    uint32 status = 2;
+    uint32 enemy_core_status = 3;
+    uint32 remain_time_all = 4;
+    uint32 remain_time_step = 5;
+}
+</code></pre>
+<hr />
+<h3 id="2222-robotperformanceselectioncommand">2.2.22 RobotPerformanceSelectionCommand</h3>
+<p><strong>用途</strong>：地面机器人选择性能体系或控制方式。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>发射机构性能体系（枚举值同 RobotStaticStatus）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>底盘性能体系（枚举值同 RobotStaticStatus）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>哨兵控制方式（0=自动控制，1=半自动控制）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotPerformanceSelectionCommand {
+    uint32 shooter = 1;
+    uint32 chassis = 2;
+    uint32 sentry_control = 3;
+}
+</code></pre>
+<hr />
+<h3 id="2223-robotperformanceselectionsync">2.2.23 RobotPerformanceSelectionSync</h3>
+<p><strong>用途</strong>：步兵/英雄性能体系状态同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>发射机构性能体系</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>底盘性能体系</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>哨兵控制方式选择</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RobotPerformanceSelectionSync {
+    uint32 shooter = 1;
+    uint32 chassis = 2;
+    uint32 sentry_control = 3;
+}
+</code></pre>
+<hr />
+<h3 id="2224-commoncommand">2.2.24 CommonCommand</h3>
+<p><strong>用途</strong>：机器人多种常用指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>指令类型（枚举值见下）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>参数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>cmd_type 枚举值</strong>：</p>
+<ul>
+<li>1：兑换 17mm 发弹量（仅剩余金币足以兑换时有效；参数值必须为 10 的倍数）</li>
+<li>2：兑换 42mm 发弹量（仅剩余金币足以兑换时有效）</li>
+<li>3：确认复活（若此时复活读条完成将立即复活）</li>
+<li>4：兑换立即复活（若此时符合规则要求，则会立即消耗金币兑换立即复活）</li>
+<li>5：远程兑换允许发弹量（若此时符合规则要求，则会立即消耗金币远程兑换允许发弹量）</li>
+<li>6：远程兑换血量（若此时符合规则要求，则会立即消耗金币远程兑换血量）</li>
+</ul>
+<pre><code class="language-protobuf">message CommonCommand {
+    uint32 cmd_type = 1;
+    uint32 param = 2;
+}
+</code></pre>
+<hr />
+<h3 id="2225-herodeploymodeeventcommand">2.2.25 HeroDeployModeEventCommand</h3>
+<p><strong>用途</strong>：英雄部署模式指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>模式（0=退出，1=进入）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message HeroDeployModeEventCommand {
+    uint32 mode = 1;
+}
+</code></pre>
+<hr />
+<h3 id="2226-deploymodestatussync">2.2.26 DeployModeStatusSync</h3>
+<p><strong>用途</strong>：英雄部署模式状态同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>当前部署模式状态（0=未部署，1=已部署）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message DeployModeStatusSync {
+    uint32 status = 1;
+}
+</code></pre>
+<hr />
+<h3 id="2227-runeactivatecommand">2.2.27 RuneActivateCommand</h3>
+<p><strong>用途</strong>：能量机关激活指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>激活（1=开启）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message RuneActivateCommand {
+    uint32 activate = 1;
+}
+</code></pre>
+<hr />
+<h3 id="2228-runestatussync">2.2.28 RuneStatusSync</h3>
+<p><strong>用途</strong>：能量机关状态同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>当前能量机关状态（枚举值见下）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>当前已激活的灯臂数量</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>总环数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rune_status 枚举值</strong>：</p>
+<ul>
+<li>1：未激活</li>
+<li>2：正在激活</li>
+<li>3：已激活</li>
+</ul>
+<pre><code class="language-protobuf">message RuneStatusSync {
+    uint32 rune_status = 1;
+    uint32 activated_arms = 2;
+    uint32 total_rings = 3;
+}
+</code></pre>
+<hr />
+<h3 id="2229-sentrystatussync">2.2.29 SentryStatusSync</h3>
+<p><strong>用途</strong>：哨兵姿态和弱化状态。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>姿态 ID（1=进攻姿态，2=防御姿态，3=移动姿态）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bool</td>
+<td>是否弱化</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message SentryStatusSync {
+    uint32 posture_id = 1;
+    bool is_weakened = 2;
+}
+</code></pre>
+<hr />
+<h3 id="2230-dartcommand">2.2.30 DartCommand</h3>
+<p><strong>用途</strong>：飞镖控制指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>目标 ID（1=前哨站，2=基地固定目标，3=基地随机固定目标，4=基地随机移动目标，5=基地末端移动目标）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bool</td>
+<td>闸门开关</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bool</td>
+<td>是否确认发射（默认为 0，1=确认发射）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message DartCommand {
+    uint32 target_id = 1;
+    bool open = 2;
+    bool confirm_launch = 3;
+}
+</code></pre>
+<hr />
+<h3 id="2231-dartselecttargetstatussync">2.2.31 DartSelectTargetStatusSync</h3>
+<p><strong>用途</strong>：飞镖目标选择状态同步。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>目标 ID</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>闸门状态（0=关闭，1=开启中，2=已开启）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message DartSelectTargetStatusSync {
+    uint32 target_id = 1;
+    uint32 open = 2;
+}
+</code></pre>
+<hr />
+<h3 id="2232-sentryctrlcommand">2.2.32 SentryCtrlCommand</h3>
+<p><strong>用途</strong>：哨兵控制指令请求。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>指令编号（枚举值见下）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>指令编号枚举值</strong>：</p>
+<ul>
+<li>1：补血点补弹</li>
+<li>2：补给站实体补弹</li>
+<li>3：远程补弹</li>
+<li>4：远程回血</li>
+<li>5：确认复活</li>
+<li>6：确认花费金币复活</li>
+<li>7：地图标点</li>
+<li>8：切换为进攻姿态</li>
+<li>9：切换为防御姿态</li>
+<li>10：切换为移动姿态</li>
+</ul>
+<pre><code class="language-protobuf">message SentryCtrlCommand {
+    uint32 command_id = 1;
+}
+</code></pre>
+<hr />
+<h3 id="2233-sentryctrlresult">2.2.33 SentryCtrlResult</h3>
+<p><strong>用途</strong>：哨兵控制指令结果反馈。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>对应的指令编号</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>执行结果码（0=成功，其他=失败）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message SentryCtrlResult {
+    uint32 command_id = 1;
+    uint32 result_code = 2;
+}
+</code></pre>
+<hr />
+<h3 id="2234-airsupportcommand">2.2.34 AirSupportCommand</h3>
+<p><strong>用途</strong>：空中支援指令。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>指令类型（枚举值见下）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>command_id 枚举值</strong>：</p>
+<ul>
+<li>1：免费呼叫空中支援</li>
+<li>2：花费金币呼叫空中支援（仍优先使用免费时长）</li>
+<li>3：中断空中支援</li>
+</ul>
+<pre><code class="language-protobuf">message AirSupportCommand {
+    uint32 command_id = 1;
+}
+</code></pre>
+<hr />
+<h3 id="2235-airsupportstatussync">2.2.35 AirSupportStatusSync</h3>
+<p><strong>用途</strong>：空中支援状态反馈。</p>
+<table>
+<thead>
+<tr>
+<th>数据编号</th>
+<th>数据类型</th>
+<th>数据用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>uint32</td>
+<td>空中支援状态（0=未进行，1=正在空中支援）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>uint32</td>
+<td>免费空中支援剩余时间</td>
+</tr>
+<tr>
+<td>3</td>
+<td>uint32</td>
+<td>付费空中支援已花费金币</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uint32</td>
+<td>当前激光检测模块是否正在检测到被照射（0=未被照射，1=被照射）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>uint32</td>
+<td>空中机器人被反制状态（0=发射机构因雷达反制而被锁定，1=发射机构正常）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-protobuf">message AirSupportStatusSync {
+    uint32 airsupport_status = 1;
+    uint32 left_time = 2;
+    uint32 cost_coins = 3;
+    uint32 laser_detected = 4;
+    uint32 shooter_status = 5;
+}
+</code></pre>
+<hr />
+<h2 id="id">附录二：ID 编号说明</h2>
+<h3 id="id_1">机器人 ID 编号</h3>
+<ul>
+<li>1  ：红方英雄机器人</li>
+<li>2  ：红方工程机器人</li>
+<li>3/4/5：红方步兵机器人（与机器人 ID 3~5 对应）</li>
+<li>6  ：红方空中机器人</li>
+<li>7  ：红方哨兵机器人</li>
+<li>8  ：红方飞镖</li>
+<li>9  ：红方雷达</li>
+<li>10 ：红方前哨站</li>
+<li>11 ：红方基地</li>
+<li>101：蓝方英雄机器人</li>
+<li>102：蓝方工程机器人</li>
+<li>103/104/105：蓝方步兵机器人（与机器人 ID 3~5 对应）</li>
+<li>106：蓝方空中机器人</li>
+<li>107：蓝方哨兵机器人</li>
+<li>108：蓝方飞镖</li>
+<li>109：蓝方雷达</li>
+<li>110：蓝方前哨站</li>
+<li>111：蓝方基地</li>
+</ul>
+<h3 id="id_2">选手端 ID</h3>
+<ul>
+<li>0x0101：红方英雄机器人选手端</li>
+<li>0x0102：红方工程机器人选手端</li>
+<li>0x0103/0x0104/0x0105：红方步兵机器人选手端（与机器人 ID 3~5 对应）</li>
+<li>0x0106：红方空中机器人选手端</li>
+<li>0x016A：蓝方空中机器人选手端</li>
+<li>0x0165：蓝方英雄机器人选手端</li>
+<li>0x0166：蓝方工程机器人选手端</li>
+<li>0x0167/0x0168/0x0169：蓝方步兵机器人选手端（与机器人 ID 3~5 对应）</li>
+<li>0x8080：裁判系统服务器（用于哨兵和雷达自主决策指令）</li>
+</ul>
+<hr />
+<h2 id="_5">附录三：自定义客户端示例通信代码</h2>
+<pre><code class="language-csharp">using MQTTnet;
+using MQTTnet.Client;
+using MQTTnet.Diagnostics;
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
+
+/// &lt;summary&gt;
+/// MQTT客户端
+/// &lt;/summary&gt;
+public class MyMqttClient {
+    private IMqttClient m_MqttClient = null;
+    private string m_ClientID;
+
+    /// &lt;summary&gt;
+    /// 创建客户端并连接服务器
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;clientID&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;ip&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;port&quot;&gt;&lt;/param&gt;
+    public MyMqttClient(string clientID, string ip = &quot;127.0.0.1&quot;, int port = 3333) {
+        m_ClientID = clientID;
+        // 客户端选项生成器
+        var options = new MqttClientOptionsBuilder()
+            .WithClientId(m_ClientID)
+            .WithTcpServer(ip, port)
+            .Build();
+        // 创建客户端
+        m_MqttClient = new MqttFactory().CreateMqttClient();
+        // 监测客户端连接/断开连接完成
+        m_MqttClient.ConnectedAsync += ClientConnected;
+        m_MqttClient.DisconnectedAsync += ClientDisConnected;
+        // 客户端接收到消息
+        m_MqttClient.ApplicationMessageReceivedAsync += ReceiveMsg;
+        // 连接服务器
+        m_MqttClient.ConnectAsync(options);
+    }
+
+    /// &lt;summary&gt;
+    /// 接收到消息
+    /// &lt;/summary&gt;
+    private Task ReceiveMsg(MqttApplicationMessageReceivedEventArgs args) {
+        Debugger.Log(DEBUGLOGENUM.CustomClient, $&quot;recv topic: {args.ApplicationMessage.Topic}&quot;);
+        // 消息post出现，以免出现消息堵塞
+        MqttSubProtoEvent ev = new MqttSubProtoEvent();
+        ev.topic = args.ApplicationMessage.Topic;
+        ev.data = args.ApplicationMessage.Payload;
+        ThreadPool.CustomClientLoop.PostEvent(ev);
+        return Task.CompletedTask;
+    }
+
+    /// &lt;summary&gt;
+    /// 断开连接完成
+    /// &lt;/summary&gt;
+    private Task ClientDisConnected(MqttClientDisconnectedEventArgs args) {
+        return Task.CompletedTask;
+    }
+
+    /// &lt;summary&gt;
+    /// 连接完成
+    /// &lt;/summary&gt;
+    private Task ClientConnected(MqttClientConnectedEventArgs args) {
+        Subscribe(&quot;KeyboardMouseControl&quot;);
+        Subscribe(&quot;CustomControl&quot;);
+        return Task.CompletedTask;
+    }
+
+    /// &lt;summary&gt;
+    /// 发布消息
+    /// &lt;/summary&gt;
+    public void PublishMsg(string topic, string message, MqttQualityOfServiceLevel level = MqttQualityOfServiceLevel.ExactlyOnce, bool isRetain = false) {
+        long unixUs = DateTime.UtcNow.Ticks / 10; // 微秒级
+        m_MqttClient.PublishStringAsync(topic, message, level, isRetain);
+    }
+
+    /// &lt;summary&gt;
+    /// 发布消息（字节数组）
+    /// &lt;/summary&gt;
+    public void PublishBytesMsg(string topic, byte[] message, MqttQualityOfServiceLevel level = MqttQualityOfServiceLevel.ExactlyOnce, bool isRetain = false) {
+        long unixUs = DateTime.UtcNow.Ticks / 10; // 微秒级
+        m_MqttClient.PublishBinaryAsync(topic, message, level, isRetain);
+    }
+
+    /// &lt;summary&gt;
+    /// 订阅主题
+    /// &lt;/summary&gt;
+    public void Subscribe(string topic) {
+        m_MqttClient.SubscribeAsync(new MqttTopicFilterBuilder().WithTopic(topic).Build());
+    }
+}
+</code></pre>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

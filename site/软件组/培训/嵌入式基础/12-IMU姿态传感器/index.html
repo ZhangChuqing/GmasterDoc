@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>12 IMU姿态传感器 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#imu" class="nav-link">IMU 姿态传感器</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-imu" class="nav-link">1. 概念——IMU 如何感知运动</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-bmi088gsrl-imu" class="nav-link">2. BMI088——GSRL 使用的 IMU 芯片</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 姿态解算原理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-gsrl-imu" class="nav-link">4. GSRL 中的 IMU 数据流</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-imu-gsrl" class="nav-link">5. IMU 与 GSRL 代码结构的关系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 常见问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="imu">IMU 姿态传感器</h1>
+<p>IMU（Inertial Measurement Unit，惯性测量单元）是机器人感知自身姿态的核心传感器。GSRL 使用 BMI088（6 轴 IMU）+ IST8310（3 轴磁力计）组成 9 轴姿态测量系统。本章从 MEMS 传感器原理讲起，一直到 GSRL 中完整的姿态解算数据流。</p>
+<blockquote>
+<p>上一篇：<a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN 通信原理与实践</a></p>
+</blockquote>
+<hr />
+<h2 id="1-imu">1. 概念——IMU 如何感知运动</h2>
+<h3 id="11">1.1 加速度计——测"比力"</h3>
+<p>加速度计测量的不是"加速度"，而是<strong>比力（Specific Force）</strong>——即除去重力之外的所有外力产生的加速度。</p>
+<pre><code>静止平放时：
+  加速度计测量值 = [0, 0, +1g]  ← 不是&quot;向上的加速度&quot;，而是支撑力抵消重力的结果
+
+自由落体时：
+  加速度计测量值 = [0, 0, 0]     ← 没有支撑力，真正失重
+
+向前加速时：
+  加速度计测量值 = [+a, 0, +1g]  ← X 轴测到向前的惯性力
+</code></pre>
+<p>MEMS 加速度计的物理原理：微机械结构中的质量块在加速度作用下发生位移，通过电容变化检测位移量。</p>
+<pre><code>简化模型:
+         ┌────────────┐
+   弹簧 ←│  质量块 m  │→ 弹簧
+         └────────────┘
+              │
+         ┌────┴────┐
+         │ 电容检测 │  → 位移 → 电压 → 加速度值
+         └─────────┘
+</code></pre>
+<blockquote>
+<p><strong>为什么不能只用加速度计测角度？</strong> 加速度计测量的是比力（重力 + 运动加速度的合力），而非纯重力方向。当机器人向前加速时，加速度计会"看到"一个斜向后的"伪重力"，误以为机体发生了倾斜。例如，机器人以 1g 向前加速时，加速度计读数相当于向后倾斜了 45°——但机体实际上是水平的。陀螺仪直接测量旋转角速度，不受线性加速度干扰，因此不存在这个问题。
+</p>
+</blockquote>
+<h3 id="12">1.2 陀螺仪——测角速度</h3>
+<p>陀螺仪测量的是绕各轴的<strong>旋转角速度</strong>（单位：°/s 或 rad/s），而非角度。</p>
+<pre><code>陀螺仪输出 = [ωx, ωy, ωz]  绕 X/Y/Z 轴的角速度
+
+对时间积分得到角度变化:
+  Δθ = ∫ ω dt
+</code></pre>
+<p>MEMS 陀螺仪利用<strong>科里奥利力（Coriolis Force）</strong>原理：一个振动的质量块在旋转时受到垂直于振动方向和旋转轴的力，检测这个力即可得到角速度。</p>
+<blockquote>
+<p><strong>为什么不能只用陀螺仪测角度？</strong> 陀螺仪通过积分角速度得到角度，但微小的零偏误差（如 0.1°/s）会在积分后持续累积：1 分钟累积 6° 误差，10 分钟就是 60°——完全错误。而且这个误差会随时间无限增长。加速度计和磁力计虽然瞬时有噪声，但它们提供的是绝对参考（重力方向永远指向地心、地磁场方向固定），可以用来不断校正陀螺仪的累积漂移。</p>
+</blockquote>
+<h3 id="13">1.3 磁力计——测地磁场方向</h3>
+<p>磁力计测量地球磁场在三个轴上的分量，用于修正偏航角（Yaw）的漂移。</p>
+<pre><code>地磁场 ≈ 0.5 高斯，从磁南极指向磁北极
+在北半球，磁力线从地下斜向上射出（磁倾角约 45°~70°）
+</code></pre>
+<p><strong>为什么需要磁力计</strong>：陀螺仪的积分误差会随时间累积，导致偏航角持续漂移。磁力计提供绝对的地磁参考方向，可以消除这种漂移。</p>
+<h3 id="14-vs">1.4 六轴 vs 九轴</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>传感器</th>
+<th>能测量</th>
+<th>局限性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>6 轴</strong></td>
+<td>加速度计 + 陀螺仪</td>
+<td>Roll, Pitch, Yaw（短时）</td>
+<td>Yaw 随时间漂移</td>
+</tr>
+<tr>
+<td><strong>9 轴</strong></td>
+<td>加速度计 + 陀螺仪 + 磁力计</td>
+<td>Roll, Pitch, Yaw（长期稳定）</td>
+<td>磁力计易受电机磁场干扰</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>为什么需要 9 轴（加磁力计）而非 6 轴就够了？</strong> 加速度计可以修正 Roll 和 Pitch 的漂移，但无法修正 Yaw：重力矢量始终指向下方，绕垂直轴的旋转不会改变重力在加速度计上的投影——换言之，加速度计对 Yaw 是"盲"的。陀螺仪的 Yaw 通道没有绝对参考，漂移无法被加速度计抑制。磁力计通过测量地磁场方向，为 Yaw 提供了唯一的绝对参考，使偏航角长期稳定。</p>
+</blockquote>
+<hr />
+<h2 id="2-bmi088gsrl-imu">2. BMI088——GSRL 使用的 IMU 芯片</h2>
+<h3 id="21">2.1 芯片特性</h3>
+<p>BMI088 是 Bosch 的高性能 6 轴 IMU，专为无人机和机器人设计：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>加速度计</th>
+<th>陀螺仪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>量程</td>
+<td>±3g / ±6g / ±12g / ±24g</td>
+<td>±125°/s ~ ±2000°/s</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>16-bit</td>
+<td>16-bit</td>
+</tr>
+<tr>
+<td>接口</td>
+<td>SPI（最高 10MHz）</td>
+<td>SPI（最高 10MHz）</td>
+</tr>
+<tr>
+<td>特点</td>
+<td>抗振动、低噪声</td>
+<td>低漂移、抗振动</td>
+</tr>
+<tr>
+<td>加速度计和陀螺仪是<strong>两颗独立芯片</strong></td>
+<td>各有自己的 SPI 片选</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>为什么选择 BMI088 而非常见的 MPU6050？</strong> BMI088 是 Bosch 专门为无人机和机器人场景设计的工业级 IMU，其振动抑制能力远超消费级芯片——在电机高速运转的强振动环境下仍能输出稳定数据。关键设计：加速度计和陀螺仪封装在同一模块但分属两块独立硅片，各自拥有独立的 SPI 接口和片选信号，可同时读取而无总线竞争，这在 1kHz 高频读取场景下至关重要。此外，BMI088 的噪声密度显著低于同级产品，姿态解算精度更高。
+</p>
+</blockquote>
+<h3 id="22-spi">2.2 SPI 连接拓扑</h3>
+<pre><code> STM32F407                          BMI088
+┌──────────┐                   ┌──────────────┐
+│          │──SCLK─────────────│SCL_ACC       │
+│  SPI1    │──MOSI─────────────│MOSI_ACC      │
+│          │──MISO─────────────│MISO_ACC/GYRO │ ← 共用 MISO
+│          │                   │              │
+│  GPIO_CS1│───────────────────│CS_ACC        │ ← 加速度计片选
+│  GPIO_CS2│───────────────────│CS_GYRO       │ ← 陀螺仪片选
+│          │                   │              │
+│  GPIO    │──INT1_ACC─────────│INT1_ACC      │ ← 加速度计数据就绪
+│  GPIO    │──INT1_GYRO────────│INT1_GYRO     │ ← 陀螺仪数据就绪
+└──────────┘                   └──────────────┘
+</code></pre>
+<blockquote>
+<p><strong>注意</strong>：加速度计和陀螺仪的 MISO 引脚可以共用，因为它们通过不同的 CS 信号分时选通。只有被 CS 拉低的芯片才会驱动 MISO。</p>
+</blockquote>
+<h3 id="23">2.3 寄存器读写协议</h3>
+<p>BMI088 使用标准的 <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI</a> 寄存器读写协议（CPOL=0, CPHA=0）：</p>
+<pre><code>读寄存器（2 字节帧）:
+  Master 发送: [0 | 1 (R) | A6..A0]  [dummy (0xFF)]
+  Slave  返回: [dummy               ]  [寄存器的值]
+
+写寄存器（2 字节帧）:
+  Master 发送: [0 | 0 (W) | A6..A0]  [要写入的值]
+
+bit7: 1=读, 0=写
+</code></pre>
+<p>对应 GSRL 中的实现（<code>dvc_imu.cpp</code>）：</p>
+<pre><code class="language-cpp">inline void BMI088::readSingleReg(const SPIConfig &amp;spiConfig,
+                                   uint8_t reg, uint8_t &amp;rxData)
+{
+    uint8_t txData[2] = {static_cast&lt;uint8_t&gt;(reg | 0x80), 0xFF};
+    uint8_t rxBuf[2];
+    HAL_GPIO_WritePin(spiConfig.csGPIOGroup, spiConfig.csGPIOPin, GPIO_PIN_RESET);
+    HAL_SPI_TransmitReceive(spiConfig.hspi, txData, rxBuf, 2, 100);
+    HAL_GPIO_WritePin(spiConfig.csGPIOGroup, spiConfig.csGPIOPin, GPIO_PIN_SET);
+    rxData = rxBuf[1];  // 第 2 字节是有效数据
+}
+</code></pre>
+<hr />
+<h2 id="3">3. 姿态解算原理</h2>
+<h3 id="31">3.1 为什么需要姿态解算</h3>
+<p>加速度计可以算出 Roll 和 Pitch（基于重力方向），陀螺仪可以积分得到角度变化，磁力计可以给出偏航参考。但三者各有缺陷：</p>
+<table>
+<thead>
+<tr>
+<th>传感器</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加速度计</td>
+<td>长期稳定（重力方向不变）</td>
+<td>对振动敏感，运动时测量的是"比力"而非重力</td>
+</tr>
+<tr>
+<td>陀螺仪</td>
+<td>瞬时响应快，不受线性加速度影响</td>
+<td>积分误差累积，长期漂移</td>
+</tr>
+<tr>
+<td>磁力计</td>
+<td>绝对方向参考</td>
+<td>响应慢，极易受电机/铁磁材料干扰</td>
+</tr>
+</tbody>
+</table>
+<p><strong>姿态解算的本质</strong>：融合三者数据，取长补短——用陀螺仪的短期精度修正加速度计的振动噪声，用加速度计和磁力计的长期稳定性消除陀螺仪的积分漂移。</p>
+<h3 id="32-vs-mahony-vs-ekf">3.2 互补滤波 vs Mahony vs EKF</h3>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>原理</th>
+<th>复杂度</th>
+<th>精度</th>
+<th>GSRL 中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>互补滤波</strong></td>
+<td>陀螺仪高通 + 加速度计低通 = 全频段</td>
+<td>低</td>
+<td>一般</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Mahony</strong></td>
+<td>基于 PI 补偿器的显式互补滤波</td>
+<td>中</td>
+<td>较好</td>
+<td><code>Mahony</code> 类</td>
+</tr>
+<tr>
+<td><strong>EKF</strong></td>
+<td>扩展卡尔曼滤波，最优状态估计</td>
+<td>高</td>
+<td>最好</td>
+<td><code>QuaternionEKF</code> 类</td>
+</tr>
+</tbody>
+</table>
+<p><a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">AHRS</a>（姿态航向参考系统）在 GSRL 的 Algorithm 层中实现，为上层 Task 提供欧拉角和四元数输出。GSRL 中的姿态解算架构：</p>
+<pre><code class="language-cpp">// 抽象接口
+class AHRS {
+public:
+    virtual void init() = 0;
+    const Vector3f &amp;update(const Vector3f &amp;gyro,
+                           const Vector3f &amp;accel,
+                           const Vector3f &amp;magnet = Vector3f());
+    const Vector3f &amp;getEulerAngle() const;
+    const fp32 *getQuaternion() const;
+};
+
+// Mahony 实现（PI 补偿器）
+class Mahony : public AHRS { ... };
+
+// 四元数扩展卡尔曼滤波（EKF）实现
+class QuaternionEKF : public AHRS { ... };
+</code></pre>
+<h3 id="33-vs">3.3 四元数 vs 欧拉角</h3>
+<p>姿态可以用两种方式表示：</p>
+<table>
+<thead>
+<tr>
+<th>表示法</th>
+<th>形式</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>欧拉角</strong></td>
+<td>(Roll, Pitch, Yaw)</td>
+<td>直观，人类可读</td>
+<td>万向节死锁（Gimbal Lock）</td>
+</tr>
+<tr>
+<td><strong>四元数</strong></td>
+<td>(q0, q1, q2, q3)</td>
+<td>无死锁，适合插值，计算高效</td>
+<td>不直观</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>为什么姿态解算内部使用四元数而非欧拉角？</strong> 欧拉角存在万向节死锁（Gimbal Lock）：当 Pitch 达到 ±90° 时，Roll 轴和 Yaw 轴重合，丢失一个旋转自由度——四旋翼做垂直翻转时就会遇到这个问题，导致姿态解算崩溃。而四元数在任何姿态下都是奇点自由的，不会死锁。此外，四元数乘法（姿态更新）只需 16 次乘法和 12 次加法，比 3×3 旋转矩阵乘法更高效，这对每毫秒都要做姿态更新的嵌入式系统意义重大。</p>
+</blockquote>
+<p>GSRL 内部使用四元数进行姿态更新，对外提供欧拉角接口：</p>
+<pre><code class="language-cpp">// 姿态解算后自动转换
+void AHRS::convertQuaternionToEulerAngle()
+{
+    // 四元数 → 欧拉角
+    // Roll  = atan2(2*(q0*q1 + q2*q3), 1 - 2*(q1*q1 + q2*q2))
+    // Pitch = asin(2*(q0*q2 - q3*q1))
+    // Yaw   = atan2(2*(q0*q3 + q1*q2), 1 - 2*(q2*q2 + q3*q3))
+
+    m_eulerAngle[0] = atan2f(2*(q0*q1 + q2*q3), 1-2*(q1*q1 + q2*q2));  // Roll
+    m_eulerAngle[1] = asinf(2*(q0*q2 - q3*q1));                        // Pitch
+    m_eulerAngle[2] = atan2f(2*(q0*q3 + q1*q2), 1-2*(q2*q2 + q3*q3));  // Yaw
+}
+</code></pre>
+<hr />
+<h2 id="4-gsrl-imu">4. GSRL 中的 IMU 数据流</h2>
+<h3 id="41">4.1 完整流程</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                     数据采集 (中断驱动)                       │
+│                                                             │
+│  BMI088 INT1 ──→ EXTI4 中断                                 │
+│    │                                                        │
+│    ├── readRawData()                                        │
+│    │   ├── SPI 读加速度计 X/Y/Z (6 字节)                     │
+│    │   └── SPI 读陀螺仪 X/Y/Z (6 字节，跳过 chipID)          │
+│    │                                                        │
+│    ├── dataCalibration()                                    │
+│    │   ├── 修正安装误差旋转矩阵 (installSpinMatrix)           │
+│    │   └── 减去零飘偏移 (gyroOffset / accelOffset)           │
+│    │                                                        │
+│    └── IMU::solveAttitude()                                 │
+│        │                                                    │
+│        ▼                                                    │
+│  ┌──────────────────────────────────────────────┐          │
+│  │        AHRS 姿态解算 (solveAttitude)         │          │
+│  │                                              │          │
+│  │  AHRS::update(gyro, accel, magnet)           │          │
+│  │    │                                         │          │
+│  │    ├── 第一次调用：initQuaternion()           │          │
+│  │    │   用加速度计估算初始 Roll/Pitch          │          │
+│  │    │   用磁力计估算初始 Yaw                   │          │
+│  │    │                                         │          │
+│  │    └── 后续调用：dataProcess()                │          │
+│  │        ├── 陀螺仪数据更新四元数（预测）       │          │
+│  │        ├── 加速度计修正 Roll/Pitch（观测）    │          │
+│  │        ├── 磁力计修正 Yaw（观测，可选）       │          │
+│  │        └── 四元数归一化 → 欧拉角              │          │
+│  │                                              │          │
+│  │  输出: m_eulerAngle [Roll, Pitch, Yaw]       │          │
+│  │        m_quaternion [q0, q1, q2, q3]        │          │
+│  └──────────────────────────────────────────────┘          │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="42">4.2 中断驱动的读取时机</h3>
+<p>GSRL 中的 IMU 数据读取由 BMI088 的 INT1 引脚触发：</p>
+<pre><code class="language-c">// stm32f4xx_it.c 中的加速度计数据就绪中断
+void EXTI4_IRQHandler(void)
+{
+    HAL_GPIO_EXTI_IRQHandler(INT1_ACCEL_Pin);
+}
+
+// 用户实现的 HAL 回调
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == INT1_ACCEL_Pin) {
+        imu.readRawData();        // 读取原始数据
+        imu.dataCalibration();    // 校准
+        imu.solveAttitude();      // 姿态解算
+    }
+}
+</code></pre>
+<p><strong>关键设计决策</strong>：BMI088 的加速度计 INT1 设为 2kHz 输出，陀螺仪 INT1 也是 2kHz。实际使用中可能不会每次都解算（计算量大），而是在任务中以固定频率（如 1kHz）读取 IMU 对象的最新姿态即可——因为姿态解算已经在<a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">中断</a>中完成。</p>
+<h3 id="43-bmi088">4.3 BMI088 的初始化流程</h3>
+<p>GSRL 中 <code>BMI088::init()</code> 的完整初始化和自检流程：</p>
+<pre><code>BMI088::init()
+    │
+    ├── selfTestAccel()     ← 加速度计自检
+    │   └── 检测芯片 ID、配置寄存器读写验证
+    │
+    ├── initAccel()          ← 加速度计初始化
+    │   ├── 配置量程 (±3g)
+    │   ├── 配置输出速率 (2kHz)
+    │   ├── 配置 INT1 输出
+    │   └── 配置低通滤波器
+    │
+    ├── selfTestGyro()       ← 陀螺仪自检
+    │   └── 检测芯片 ID、配置寄存器读写验证
+    │
+    ├── initGyro()           ← 陀螺仪初始化
+    │   ├── 配置量程 (±2000°/s)
+    │   ├── 配置带宽
+    │   ├── 配置 INT1 输出
+    │   └── 配置低通滤波器
+    │
+    └── 启动温度控制 PWM（可选）
+        └── HAL_TIM_PWM_Start()
+</code></pre>
+<h3 id="44-calibration">4.4 校准（Calibration）</h3>
+<p>校准信息在 <code>BMI088::CalibrationInfo</code> 结构体中定义：</p>
+<pre><code class="language-cpp">struct CalibrationInfo {
+    Vector3f gyroOffset;          // 陀螺仪零飘补偿（静止时角速度不为零）
+    Vector3f accelOffset;         // 加速度计零飘补偿
+    Vector3f magnetOffset;        // 磁力计零飘补偿
+    Matrix33f installSpinMatrix;  // 安装误差修正旋转矩阵
+};
+</code></pre>
+<p>校准过程：</p>
+<pre><code>① 陀螺仪零飘校准：
+   静止时采集 N 秒数据 → 取均值 → 作为 gyroOffset
+
+② 加速度计零飘校准：
+   多个姿态下采集数据 → 椭球拟合 → 得到 accelOffset
+
+③ 安装误差修正：
+   IMU 芯片可能未完美对齐机器人坐标轴
+   installSpinMatrix = 绕各轴的微小旋转修正
+
+④ 磁力计校准：
+   绕 8 字旋转采集数据 → 椭球拟合 → 得到 magnetOffset
+   （在 GSRL 中，磁力计校准可能在外部完成，烧录到 IST8310 配置中）
+</code></pre>
+<h3 id="45">4.5 温度控制</h3>
+<blockquote>
+<p><strong>为什么 IMU 需要温度控制？</strong> MEMS 陀螺仪和加速度计的输出会随温度变化而产生显著漂移：10°C 的温差可能导致陀螺仪零偏漂移数度/秒，足以让姿态在几秒内完全错误。BMI088 内置温度传感器，GSRL 可以配合加热电阻和 PID 温控回路，将芯片维持在恒定温度（通常 45~55°C），从根本上消除温度对传感器输出的影响，保证全季节、全工况下姿态数据的稳定一致。</p>
+</blockquote>
+<hr />
+<h2 id="5-imu-gsrl">5. IMU 与 GSRL 代码结构的关系</h2>
+<h3 id="51">5.1 在分层架构中的位置</h3>
+<pre><code>Task 层:
+  test_task() → imu.getEulerAngle()  // 直接获取欧拉角
+
+Device 层 (dvc_imu.hpp/cpp):
+  IMU (抽象基类)
+    └── BMI088 (SPI 驱动 + 数据校准 + 调用 AHRS)
+
+Algorithm 层 (alg_ahrs.hpp/cpp):
+  AHRS (姿态解算抽象接口)
+    ├── Mahony (PI 互补滤波)
+    └── QuaternionEKF (扩展卡尔曼滤波)
+
+Algorithm 层 (alg_filter.hpp/cpp):
+  KalmanFilter / LowPassFilter (EKF 底层使用的滤波器)
+
+Driver 层 (drv_spi.c):
+  SPI_Init / SPI_TransmitReceive_DMA / HAL_SPI_TxRxCpltCallback
+</code></pre>
+<h3 id="52">5.2 依赖关系</h3>
+<pre><code>BMI088
+  ├── 依赖 drv_spi (SPI 通信)
+  ├── 依赖 AHRS (姿态解算)
+  │     └── 依赖 KalmanFilter / LowPassFilter
+  ├── 依赖 IST8310 (磁力计，通过 I2C)
+  └── 依赖 HAL (GPIO 片选、TIM PWM 温度控制)
+</code></pre>
+<hr />
+<h2 id="6">6. 常见问题</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>排查方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roll/Pitch 抖动剧烈</td>
+<td>加速度计受振动影响</td>
+<td>降低加速度计低通滤波截止频率</td>
+</tr>
+<tr>
+<td>Yaw 持续漂移</td>
+<td>陀螺仪零飘未校准</td>
+<td>重新进行陀螺仪零飘标定</td>
+</tr>
+<tr>
+<td>姿态解算发散</td>
+<td>四元数未归一化或 EKF 发散</td>
+<td>检查 AHRS 初始化是否正确，启用卡方检验</td>
+</tr>
+<tr>
+<td>Yaw 角不准</td>
+<td>磁力计受电机磁场干扰</td>
+<td>将磁力计远离电机安装，或使用硬/软铁校准</td>
+</tr>
+<tr>
+<td>初始化后角度错误</td>
+<td>初始四元数计算错误</td>
+<td>确保 IMU 在初始化时保持静止</td>
+</tr>
+<tr>
+<td>SPI 读回全 0xFF 或全 0x00</td>
+<td>SPI 通信失败</td>
+<td>检查 CS 引脚电平切换、SPI 模式和时钟配置</td>
+</tr>
+<tr>
+<td>温度漂移大</td>
+<td>陀螺仪/加速度计温漂</td>
+<td>启用温度控制（BMI088 的恒温加热功能）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加速度计</td>
+<td>测量比力（重力 + 运动），静止时 = [0, 0, g]</td>
+</tr>
+<tr>
+<td>陀螺仪</td>
+<td>测量角速度，积分得角度，但有漂移</td>
+</tr>
+<tr>
+<td>磁力计</td>
+<td>测量地磁场方向，修正 Yaw 漂移</td>
+</tr>
+<tr>
+<td>姿态解算</td>
+<td>融合三传感器数据，互补滤波或 EKF</td>
+</tr>
+<tr>
+<td>四元数</td>
+<td>内部中间表示，无万向节死锁</td>
+</tr>
+<tr>
+<td>BMI088</td>
+<td>双 SPI 接口（加速度计 + 陀螺仪），INT1 中断驱动读取</td>
+</tr>
+<tr>
+<td>校准</td>
+<td>零飘 + 安装误差 + 磁力计椭球拟合</td>
+</tr>
+<tr>
+<td>GSRL 架构</td>
+<td>IMU(Base) → BMI088(SPI) + AHRS(算法) + IST8310(磁力计)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gsrl">与 GSRL 的关系</h3>
+<p><code>dvc_imu.hpp/cpp</code> 中的 <code>IMU</code> 基类和 <code>BMI088</code> 派生类是 GSRL 姿态感知的核心。它组合了 SPI 驱动（数据采集）、校准参数（零飘/安装误差修正）、AHRS 算法（姿态解算），向上提供简洁的 <code>getEulerAngle()</code> / <code>getGyro()</code> / <code>getAccel()</code> 接口。机器人底盘平衡、云台稳定、导航定位等所有上层控制都依赖于这一层提供的姿态信息。</p>
+<blockquote>
+<p>下一篇：<a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">GSRL 工程结构与运行机制</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

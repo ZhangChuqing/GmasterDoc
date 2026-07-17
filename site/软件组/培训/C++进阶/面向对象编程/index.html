@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>面向对象编程 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E5%86%85%E5%AD%98/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E5%A4%9A%E6%80%81/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#oop" class="nav-link">面向对象编程（OOP）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——为什么需要面向对象</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 类与对象</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 构造函数与析构函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-inheritance" class="nav-link">4. 继承（Inheritance）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 静态成员</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 类内类型定义</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-this" class="nav-link">7. this 指针</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-gsrl" class="nav-link">8. 与 GSRL 的关系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9" class="nav-link">9. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="oop">面向对象编程（OOP）</h1>
+<p>面向对象编程是一种将数据与操作数据的函数绑定在一起组织代码的范式。它解决的核心问题是：当程序规模增长时，如何让代码更易于理解、修改和复用。</p>
+<hr />
+<h2 id="1">1. 概念——为什么需要面向对象</h2>
+<h3 id="11">1.1 面向过程的问题</h3>
+<p>在面向过程的代码中，数据和函数是分离的：</p>
+<pre><code class="language-cpp">// 面向过程：数据与操作分离
+struct RobotState {
+    float x, y;       // 位置
+    float vx, vy;     // 速度
+    float heading;    // 朝向
+};
+
+void moveForward(RobotState* robot, float distance) {
+    robot-&gt;x += distance * cos(robot-&gt;heading);
+    robot-&gt;y += distance * sin(robot-&gt;heading);
+}
+
+void rotate(RobotState* robot, float angle) {
+    robot-&gt;heading += angle;
+}
+</code></pre>
+<p>这种方式在项目较小时可行，但随着代码膨胀，问题逐渐显现：</p>
+<ul>
+<li>任何函数都可以随意修改 <code>RobotState</code> 的内部数据，缺乏保护</li>
+<li>新增一种机器人类型（如带云台的机器人）时，所有相关函数都要修改</li>
+<li>数据与操作之间的关联关系不在代码中显式表达，阅读成本高</li>
+</ul>
+<h3 id="12">1.2 面向对象的解决思路</h3>
+<p>面向对象将<strong>数据</strong>和<strong>操作数据的方法</strong>封装在一起，形成"类"（Class）：</p>
+<pre><code class="language-cpp">// 面向对象：数据与操作绑定
+class Robot {
+public:
+    void moveForward(float distance) {
+        m_x += distance * cos(m_heading);
+        m_y += distance * sin(m_heading);
+    }
+
+    void rotate(float angle) {
+        m_heading += angle;
+    }
+
+    float getX() const { return m_x; }
+    float getY() const { return m_y; }
+
+private:
+    float m_x = 0.0f, m_y = 0.0f;
+    float m_vx = 0.0f, m_vy = 0.0f;
+    float m_heading = 0.0f;
+};
+</code></pre>
+<p><strong>类比</strong>：类是"蓝图"或"模板"，对象是根据蓝图创建出来的具体"实例"。一份 <code>Chassis</code> 类的定义可以创建出 <code>chassis1</code>、<code>chassis2</code> 等不同的底盘对象，它们结构相同但数据独立。</p>
+<hr />
+<h2 id="2">2. 类与对象</h2>
+<h3 id="21">2.1 类的基本结构</h3>
+<pre><code class="language-cpp">class Chassis {
+public:    // 公有成员——外部可以访问
+    void setSpeed(float vx, float vy) {
+        m_vx = vx;
+        m_vy = vy;
+    }
+
+    float getSpeedX() const { return m_vx; }  // const 表示不修改成员变量
+
+private:   // 私有成员——只有类内部可以访问
+    float m_vx = 0.0f;
+    float m_vy = 0.0f;
+    float m_omega = 0.0f;
+};
+</code></pre>
+<p><code>public</code> 和 <code>private</code> 是<strong>访问控制符</strong>，它们决定了哪些代码可以访问类成员。这是封装（Encapsulation）的语法基础。</p>
+<h3 id="22">2.2 访问控制的完整规则</h3>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>类内部访问</th>
+<th>子类访问</th>
+<th>外部访问</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table>
+<p>封装的核心理念：<strong>将数据设为 <code>private</code>，通过 <code>public</code> 接口提供受控的访问</strong>。这样外部代码无法随意篡改对象内部状态，降低了 bug 的产生概率。</p>
+<h3 id="23">2.3 创建和使用对象</h3>
+<pre><code class="language-cpp">int main() {
+    Chassis chassis;              // 在栈上创建对象
+    chassis.setSpeed(1.0f, 0.5f); // 通过公有接口操作
+
+    // chassis.m_vx = -1.0f;      // ❌ 编译错误：m_vx 是 private 成员
+
+    Chassis* pChassis = new Chassis();  // 在堆上创建对象
+    pChassis-&gt;setSpeed(2.0f, 0.0f);     // 指针用 -&gt; 访问成员
+    delete pChassis;                     // 手动释放堆上对象
+}
+</code></pre>
+<h3 id="24">2.4 声明与定义分离</h3>
+<p>在 GSRL 等工程中，类的声明通常放在 <code>.hpp</code> 头文件，成员函数的实现放在 <code>.cpp</code> 源文件：</p>
+<pre><code class="language-cpp">// chassis.hpp —— 声明
+class Chassis {
+public:
+    void setSpeed(float vx, float vy);  // 只声明，不实现
+    float getSpeedX() const;
+
+private:
+    float m_vx = 0.0f, m_vy = 0.0f;
+};
+
+// chassis.cpp —— 定义（实现）
+void Chassis::setSpeed(float vx, float vy) {
+    m_vx = vx;
+    m_vy = vy;
+}
+
+float Chassis::getSpeedX() const {
+    return m_vx;
+}
+</code></pre>
+<p><code>Chassis::</code> 是<strong>作用域限定符</strong>，告诉编译器这个函数属于 <code>Chassis</code> 类。分离声明与定义有助于控制编译依赖、加快增量编译速度。</p>
+<hr />
+<h2 id="3">3. 构造函数与析构函数</h2>
+<h3 id="31-constructor">3.1 构造函数（Constructor）</h3>
+<p>构造函数在对象创建时自动调用，负责初始化对象。其名称与类名相同，没有返回值。</p>
+<pre><code class="language-cpp">class SimplePID {
+public:
+    // 带参数的构造函数
+    SimplePID(PIDMode mode, float kp, float ki, float kd)
+        : m_mode(mode)              // 初始化列表
+        , m_kp(kp)
+        , m_ki(ki)
+        , m_kd(kd)
+    {}
+
+private:
+    PIDMode m_mode;
+    float m_kp, m_ki, m_kd;
+    float m_integral = 0.0f;       // 类内初始值（C++11）
+};
+
+// 使用
+SimplePID pid(PIDMode::PID_POSITION, 1.0f, 0.1f, 0.05f);
+</code></pre>
+<p><strong>初始化列表 vs 函数体内赋值：</strong></p>
+<p>初始化列表直接在对象构造时初始化成员，而函数体内赋值是先默认构造再赋值：</p>
+<pre><code class="language-cpp">// 初始化列表（推荐）
+SimplePID(PIDMode mode, float kp)
+    : m_mode(mode), m_kp(kp)     // 直接初始化，一步到位
+{}
+
+// 函数体内赋值（不推荐）
+SimplePID(PIDMode mode, float kp) {
+    m_mode = mode;               // 先默认构造，再赋值 = 两步
+    m_kp = kp;
+}
+</code></pre>
+<p>对于 <code>int</code>、<code>float</code> 等基本类型，差异很小。但对于 <code>std::string</code>、自定义类等复杂类型，初始化列表避免了额外的默认构造 + 赋值开销。</p>
+<p><strong>默认构造函数：</strong> 如果类没有定义任何构造函数，编译器会自动生成一个无参的默认构造函数。一旦定义了任意构造函数（有参的），编译器就不再生成默认构造函数——此时若仍需要无参构造，必须手动定义。</p>
+<h3 id="32-destructor">3.2 析构函数（Destructor）</h3>
+<p>析构函数在对象生命周期结束时自动调用，负责释放资源。名称是 <code>~类名()</code>，无参数无返回值。</p>
+<pre><code class="language-cpp">class DataLogger {
+public:
+    DataLogger(size_t size) {
+        m_buffer = new float[size];  // 在堆上分配
+        m_size = size;
+    }
+
+    ~DataLogger() {
+        delete[] m_buffer;           // 释放堆上内存
+    }
+
+private:
+    float* m_buffer;
+    size_t m_size;
+};
+</code></pre>
+<p><strong>关键规则：</strong>
+- 栈上的对象在离开作用域时自动调用析构函数
+- 堆上的对象在 <code>delete</code> 时调用析构函数
+- 如果类通过 <code>new[]</code> 分配了资源，析构函数中必须用 <code>delete[]</code> 释放（不能混用 <code>delete</code>）</p>
+<h3 id="33">3.3 拷贝构造与拷贝赋值</h3>
+<p>当对象被拷贝时，需要决定"怎么拷贝"。默认的拷贝行为是<strong>逐成员拷贝</strong>（浅拷贝），这对持有指针的类是危险的：</p>
+<pre><code class="language-cpp">DataLogger a(100);
+DataLogger b = a;  // 浅拷贝：a.m_buffer 和 b.m_buffer 指向同一块内存！
+// a 和 b 析构时会重复 delete 同一块内存 → 崩溃
+</code></pre>
+<p>正确的做法是定义<strong>深拷贝</strong>：</p>
+<pre><code class="language-cpp">class DataLogger {
+public:
+    // 拷贝构造：分配新内存，复制数据
+    DataLogger(const DataLogger&amp; other)
+        : m_size(other.m_size)
+    {
+        m_buffer = new float[m_size];
+        for (size_t i = 0; i &lt; m_size; ++i) {
+            m_buffer[i] = other.m_buffer[i];
+        }
+    }
+
+    // 拷贝赋值：释放旧内存，分配新内存，复制数据
+    DataLogger&amp; operator=(const DataLogger&amp; other) {
+        if (this != &amp;other) {         // 防止自赋值
+            delete[] m_buffer;         // 释放旧内存
+            m_size = other.m_size;
+            m_buffer = new float[m_size];
+            for (size_t i = 0; i &lt; m_size; ++i) {
+                m_buffer[i] = other.m_buffer[i];
+            }
+        }
+        return *this;
+    }
+
+    ~DataLogger() { delete[] m_buffer; }
+private:
+    float* m_buffer = nullptr;
+    size_t m_size = 0;
+};
+</code></pre>
+<p><strong>三法则（Rule of Three）：</strong> 如果一个类需要自定义析构函数、拷贝构造函数或拷贝赋值运算符中的任意一个，那么它很可能需要全部三个。因为它们都涉及资源管理。</p>
+<blockquote>
+<p>GSRL 的嵌入式环境中，许多类通过静态分配避免了动态内存，因此不需要自定义拷贝/析构。但如果类内部使用了 <code>new</code>，就必须正确处理三法则。</p>
+</blockquote>
+<hr />
+<h2 id="4-inheritance">4. 继承（Inheritance）</h2>
+<p>继承允许一个类复用另一个类的接口和实现，表达"是一个（is-a）"的关系。</p>
+<h3 id="41">4.1 基本语法</h3>
+<pre><code class="language-cpp">// 基类：过滤器接口
+class Filter {
+public:
+    virtual ~Filter() = default;
+    virtual float update(float input) = 0;  // 纯虚函数，详见《多态.md》
+};
+
+// 派生类：卡尔曼滤波器 &quot;是一个&quot; 过滤器
+class KalmanFilter : public Filter {
+public:
+    float update(float input) override {
+        // 卡尔曼滤波的具体实现
+        return m_state;
+    }
+private:
+    float m_state = 0.0f;
+};
+
+// 派生类：移动平均滤波器 &quot;是一个&quot; 过滤器
+class MovingAverage : public Filter {
+public:
+    float update(float input) override {
+        // 移动平均的具体实现
+        return m_average;
+    }
+private:
+    float m_average = 0.0f;
+};
+</code></pre>
+<h3 id="42">4.2 继承类型</h3>
+<pre><code class="language-cpp">class Child : public Parent    {};  // 公有继承：父类 public → 子类 public（最常见）
+class Child : protected Parent {};  // 保护继承：父类 public → 子类 protected
+class Child : private Parent   {};  // 私有继承：父类 public → 子类 private
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>继承方式</th>
+<th>父类 <code>public</code> 在子类中变为</th>
+<th>父类 <code>protected</code> 在子类中变为</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td><code>public</code></td>
+<td><code>protected</code></td>
+<td>"是一个"关系（标准多态）</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td><code>protected</code></td>
+<td><code>protected</code></td>
+<td>复用实现但不暴露接口</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td><code>private</code></td>
+<td><code>private</code></td>
+<td>纯实现复用（"用...实现"）</td>
+</tr>
+</tbody>
+</table>
+<p>GSRL 中绝大多数继承是 <code>public</code> 继承。如果只是为了复用代码而非表达"是一个"关系，优先考虑组合（将对象作为成员变量）而非继承。</p>
+<h3 id="43">4.3 子类构造函数的初始化顺序</h3>
+<pre><code class="language-cpp">class Filter {
+public:
+    Filter(float cutoff) : m_cutoff(cutoff) {}
+protected:
+    float m_cutoff;
+};
+
+class KalmanFilter : public Filter {
+public:
+    KalmanFilter(float cutoff, float q)
+        : Filter(cutoff)    // 先调用父类构造函数
+        , m_q(q)            // 再初始化子类成员
+    {}
+
+private:
+    float m_q;
+};
+</code></pre>
+<p><strong>构造顺序：</strong> 父类 → 子类成员（按声明顺序） → 子类构造函数体<br />
+<strong>析构顺序：</strong> 子类析构函数体 → 子类成员 → 父类（与构造顺序相反）</p>
+<hr />
+<h2 id="5">5. 静态成员</h2>
+<p>静态成员属于类本身，而不是属于某个特定对象。所有对象共享同一份静态成员。</p>
+<pre><code class="language-cpp">class Chassis {
+public:
+    static int getInstanceCount() { return s_instanceCount; }
+
+    Chassis()  { s_instanceCount++; }
+    ~Chassis() { s_instanceCount--; }
+
+private:
+    static int s_instanceCount;  // 声明
+};
+
+int Chassis::s_instanceCount = 0;  // 定义（必须在类外）
+</code></pre>
+<p>静态成员存储在<strong>静态存储区</strong>（详见《内存.md》），生命周期贯穿整个程序运行期。在 GSRL 中，静态成员常用于单例模式、全局配置等场景。</p>
+<hr />
+<h2 id="6">6. 类内类型定义</h2>
+<p>GSRL 代码中常见在类内部定义枚举和类型别名：</p>
+<pre><code class="language-cpp">class Chassis {
+public:
+    enum ChassisMode : uint8_t {
+        CHASSIS_NO_FORCE = 0,
+        FOLLOW_GIMBAL,
+        SPINNING
+    };
+
+    void setMode(ChassisMode mode) { m_mode = mode; }
+
+private:
+    ChassisMode m_mode = CHASSIS_NO_FORCE;
+};
+
+// 使用
+Chassis chassis;
+chassis.setMode(Chassis::FOLLOW_GIMBAL);  // 通过类名访问
+</code></pre>
+<p>将枚举定义在类内部可以避免全局命名空间污染，并清晰地表达"这个模式枚举属于 Chassis 类"。</p>
+<hr />
+<h2 id="7-this">7. <code>this</code> 指针</h2>
+<p>每个非静态成员函数内部都有一个隐式的 <code>this</code> 指针，指向调用该函数的对象：</p>
+<pre><code class="language-cpp">class Chassis {
+public:
+    Chassis&amp; setSpeed(float vx) {
+        this-&gt;m_vx = vx;   // this-&gt; 可以省略
+        return *this;       // 返回对象自身的引用（链式调用）
+    }
+private:
+    float m_vx;
+};
+
+chassis.setSpeed(1.0f).setOmega(0.5f);  // 链式调用
+</code></pre>
+<hr />
+<h2 id="8-gsrl">8. 与 GSRL 的关系</h2>
+<p>在 GSRL 中，面向对象被广泛使用：</p>
+<ul>
+<li><code>BTNode</code> 是所有行为树节点的基类，<code>BTComposite</code>、<code>BTAction</code> 等均继承自它</li>
+<li><code>Controller</code> 是控制器接口，<code>SimplePID</code> 通过公有继承实现该接口</li>
+<li><code>Filter&lt;T&gt;</code> 是滤波器基类，<code>KalmanFilter</code>、<code>MovingAverage</code> 等派生类各自实现滤波算法</li>
+<li><code>Chassis</code>、<code>Gimbal</code> 是机器人子系统类，封装各自的状态与行为</li>
+</ul>
+<p>在嵌入式环境下，GSRL 的类设计遵循以下约束：</p>
+<ul>
+<li>优先使用静态分配或栈上分配，减少堆上的 <code>new</code>/<code>delete</code></li>
+<li>成员变量在声明时赋予类内初始值，降低未初始化风险</li>
+<li>通过 <code>private</code> 保护内部状态，仅暴露必要的 <code>public</code> 接口</li>
+<li>使用枚举类（<code>enum</code>）定义模式，而非魔数（magic number）</li>
+</ul>
+<hr />
+<h2 id="9">9. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类（Class）</td>
+<td>数据 + 方法的封装体，是对象的模板</td>
+</tr>
+<tr>
+<td>对象（Object）</td>
+<td>类的实例，拥有独立的内存空间</td>
+</tr>
+<tr>
+<td>封装（Encapsulation）</td>
+<td><code>private</code> 数据 + <code>public</code> 接口，控制访问权限</td>
+</tr>
+<tr>
+<td>构造函数</td>
+<td>对象创建时自动调用，负责初始化</td>
+</tr>
+<tr>
+<td>析构函数</td>
+<td>对象销毁时自动调用，负责释放资源</td>
+</tr>
+<tr>
+<td>初始化列表</td>
+<td>在构造函数中直接初始化成员，比函数体内赋值更高效</td>
+</tr>
+<tr>
+<td>三法则</td>
+<td>自定义析构/拷贝构造/拷贝赋值三者通常需同时定义</td>
+</tr>
+<tr>
+<td>继承</td>
+<td>子类复用父类的接口与实现（<code>public</code> 继承表示 is-a 关系）</td>
+</tr>
+<tr>
+<td>静态成员</td>
+<td>属于类本身，所有对象共享，存储在静态存储区</td>
+</tr>
+<tr>
+<td><code>this</code> 指针</td>
+<td>指向当前对象的指针，成员函数内部隐式可用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>继承解决了"代码复用"的问题，但它没有解决"同一接口、不同行为"的问题——这是<strong>多态</strong>的领域，详见《多态.md》。</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

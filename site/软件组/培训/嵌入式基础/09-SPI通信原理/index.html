@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>09 SPI通信原理 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#spi" class="nav-link">SPI 通信原理与实践</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——高速同步通信</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 物理层——四根信号线</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-spi-cpol-cpha" class="nav-link">3. SPI 的四种工作模式（CPOL &amp; CPHA）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-spi" class="nav-link">4. SPI 通信流程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-hal-spi" class="nav-link">5. HAL 库的 SPI 操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-gsrl-spi-bmi088-imu" class="nav-link">6. GSRL 中的 SPI 应用：BMI088 IMU</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-spi-uart" class="nav-link">7. SPI 对比 UART</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8" class="nav-link">8. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="spi">SPI 通信原理与实践</h1>
+<p>SPI（Serial Peripheral Interface，串行外设接口）是一种高速、全双工的同步串行通信协议。GSRL 中 <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/">IMU</a>（惯性测量单元）的加速度计和陀螺仪均通过 SPI 与 MCU 通信。</p>
+<blockquote>
+<p>上一篇：<a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">UART 通信原理与实践</a></p>
+</blockquote>
+<hr />
+<h2 id="1">1. 概念——高速同步通信</h2>
+<h3 id="11-uart">1.1 与 UART 的对比</h3>
+<p>UART 是异步的、全双工的、仅两根数据线。但它的速度受限于<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟</a>精度，极限通常在几 Mbps。</p>
+<p>SPI 则通过独立的时钟线同步收发双方，可以获得高得多的速率（几十 Mbps），代价是需要更多的连线。</p>
+<p><strong>为什么 SPI 需要 4 根线而 UART 只需 2 根？</strong> UART 省线的代价是双方必须精确匹配波特率——任何一个设备的时钟偏差都会导致采样错误，因此 UART 速度上限通常在几 Mbps。SPI 用一根独立的时钟线（SCLK）消除了这种不确定性：主设备告诉从设备"现在采样"，从设备不需要猜测。这让 SPI 可以达到 10~50 倍于 UART 的速度。同时，CS 信号线使主设备能直接选择从设备，无需在数据流中嵌入地址字节，进一步提高了有效吞吐。</p>
+<pre><code>UART (异步)               SPI (同步)
+
+MCU_A      MCU_B          MCU (Master)      Sensor (Slave)
+ TX ─────→ RX              SCLK ────────────→ SCLK
+ RX ←───── TX              MOSI ────────────→ MOSI
+                           MISO ←──────────── MISO
+                           CS   ────────────→ CS   (低有效)
+</code></pre>
+<h3 id="12">1.2 主从架构</h3>
+<p>SPI 是严格的<strong>主从（Master-Slave）架构</strong>：</p>
+<ul>
+<li><strong>Master</strong>（主设备）：产生时钟信号（SCLK），控制通信的发起与结束</li>
+<li><strong>Slave</strong>（从设备）：响应主设备的时钟，接收或发送数据</li>
+<li>一个 Master 可以连接多个 Slave，通过 CS（片选）信号选择与哪个 Slave 通信</li>
+</ul>
+<hr />
+<h2 id="2">2. 物理层——四根信号线</h2>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>方向</th>
+<th>全称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SCLK</strong></td>
+<td>Master → Slave</td>
+<td>Serial Clock</td>
+<td>时钟信号，由 Master 产生</td>
+</tr>
+<tr>
+<td><strong>MOSI</strong></td>
+<td>Master → Slave</td>
+<td>Master Out, Slave In</td>
+<td>主设备发送的数据</td>
+</tr>
+<tr>
+<td><strong>MISO</strong></td>
+<td>Slave → Master</td>
+<td>Master In, Slave Out</td>
+<td>从设备发送的数据</td>
+</tr>
+<tr>
+<td><strong>CS</strong> (或 SS)</td>
+<td>Master → Slave</td>
+<td>Chip Select / Slave Select</td>
+<td>低电平有效，选中从设备</td>
+</tr>
+</tbody>
+</table>
+<pre><code>典型连接拓扑（一主多从）:
+
+         ┌──────────┐
+         │  Master  │
+         │  (MCU)   │
+         └──┬──┬──┬─┘
+            │  │  │
+   SCLK ────┼──┼──┼──── 所有 Slave 共享
+   MOSI ────┼──┼──┼──── 所有 Slave 共享
+   MISO ────┼──┼──┼──── 所有 Slave 共享
+            │  │  │
+   CS1  ────┤  │  │    每个 Slave 独立 CS
+   CS2  ───┼──┤  │
+   CS3  ───┼──┼──┤
+
+         ┌──┴──┐┌──┴──┐┌──┴──┐
+         │Slave││Slave││Slave│
+         │  1  ││  2  ││  3  │
+         └─────┘└─────┘└─────┘
+</code></pre>
+<p><strong>CS 是关键</strong>：只有 CS 拉低的 Slave 才会响应总线上的 SCLK/MOSI，其余 Slave 的 MISO 引脚处于高阻态（不影响总线）。</p>
+<p><strong>为什么用 CS 引脚而不是像 I2C 那样在数据中发送地址？</strong> 这是硬件简单性与引脚数量的权衡。CS 方式的好处是：不需要在数据流中编码和解码地址，通信帧更短（没有地址字节开销），从设备也不需要地址匹配电路。缺点也很明显——每个从设备需要一根独立的 GPIO，连接 5 个从设备就需要 5 根 CS 线。但在典型嵌入式系统中，SPI 从设备数量通常很少（2~4 个），这个代价完全可接受。</p>
+<p><strong>为什么 MISO 和 MOSI 要分开？</strong> 两条独立的数据线实现了<strong>真正的全双工通信</strong>——主设备和从设备可以在同一个时钟周期内同时发送和接收数据。虽然 UART 也支持全双工（TX 和 RX 各一根），但 SPI 的全双工不需要收发双方匹配波特率，因为时钟由主设备统一提供。在读取 IMU 传感器时，这一特性意味着"发送读命令"和"接收数据"可以在同一次传输中完成——效率极高。</p>
+<hr />
+<h2 id="3-spi-cpol-cpha">3. SPI 的四种工作模式（CPOL &amp; CPHA）</h2>
+<p>SPI 通过两个参数定义时钟极性和数据采样时机：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>全称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPOL</strong></td>
+<td>Clock Polarity</td>
+<td>时钟空闲时的电平：0=低，1=高</td>
+</tr>
+<tr>
+<td><strong>CPHA</strong></td>
+<td>Clock Phase</td>
+<td>数据采样边沿：0=第一个边沿，1=第二个边沿</td>
+</tr>
+</tbody>
+</table>
+<pre><code>Mode 0 (CPOL=0, CPHA=0) —— 最常用
+SCLK:     ──┐   ┌───┐   ┌───
+            │   │   │   │
+            └───┘   └───┘
+MOSI/MISO: ──[D7][D6][D5]...  ← 在上升沿改变数据，下降沿采样
+              ↑
+          空闲为低
+
+Mode 3 (CPOL=1, CPHA=1)
+SCLK:     ┌───┐   ┌───┐   ┌──
+          │   │   │   │   │
+          ┘   └───┘   └───┘
+MOSI/MISO: ──[D7][D6][D5]...  ← 在上升沿采样（第二个边沿）
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>CPOL</th>
+<th>CPHA</th>
+<th>空闲电平</th>
+<th>采样边沿</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>低</td>
+<td>上升沿（第1个边沿）</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>低</td>
+<td>下降沿（第2个边沿）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>高</td>
+<td>下降沿（第1个边沿）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>高</td>
+<td>上升沿（第2个边沿）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>关键</strong>：Master 和 Slave 的 CPOL/CPHA 必须匹配，否则数据会在错误的时刻被采样。</p>
+</blockquote>
+<p><strong>为什么需要四种模式（CPOL/CPHA）？</strong> 不同芯片厂商设计 SPI 接口时有不同的时钟偏好——有些芯片的内部逻辑在时钟上升沿锁存数据，有些在下降沿锁存。CPOL/CPHA 的四种组合为 SPI 提供了<strong>兼容任意芯片的灵活性</strong>。如果没有这四种模式，遇到时钟极性不匹配的芯片就需要外加反相器电路来翻转时钟。这四种模式不是"可选配置"，而是 SPI 协议的核心设计——一次配置正确，即可连接任何 SPI 从设备。</p>
+<hr />
+<h2 id="4-spi">4. SPI 通信流程</h2>
+<p>一次完整的 SPI 传输：</p>
+<pre><code>① Master 拉低 CS
+② Master 在 SCLK 上产生时钟
+③ Master 和 Slave 同时通过移位寄存器交换数据（全双工）
+   - Master 的 MOSI 数据逐位移入 Slave
+   - Slave 的 MISO 数据逐位移入 Master
+④ 传输完成，Master 拉高 CS
+</code></pre>
+<pre><code>Master 移位寄存器                 Slave 移位寄存器
+┌──────────────────┐            ┌──────────────────┐
+│ D7 D6 D5 ... D0  │──MOSI──→  │ D7 D6 D5 ... D0  │
+│                  │←─MISO──   │                  │
+└──────────────────┘            └──────────────────┘
+      ↑ SCLK (由 Master 产生)
+      每来一个时钟脉冲，Master 和 Slave 的寄存器
+      都右移一位，同时最高位被发送出去
+</code></pre>
+<p><strong>重要特性</strong>：SPI 的发送和接收是<strong>同步进行的</strong>。即使你只想读数据，也必须发送同样数量的字节（通常是 0x00 或 0xFF 作为"空字节"），才能把 MISO 上的数据"时钟出来"。</p>
+<hr />
+<h2 id="5-hal-spi">5. HAL 库的 SPI 操作</h2>
+<h3 id="51-cubemx">5.1 CubeMX 配置</h3>
+<p>在 CubeMX 中配置 SPI 需要关注：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+<th>GSRL 典型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mode</td>
+<td>主/从模式</td>
+<td>Full-Duplex Master</td>
+</tr>
+<tr>
+<td>NSS</td>
+<td>硬件/软件片选</td>
+<td>Software（用 GPIO 模拟）</td>
+</tr>
+<tr>
+<td>Data Size</td>
+<td>数据帧大小</td>
+<td>8 Bits</td>
+</tr>
+<tr>
+<td>CPOL / CPHA</td>
+<td>时钟模式</td>
+<td>根据从设备数据手册</td>
+</tr>
+<tr>
+<td>Baud Rate Prescaler</td>
+<td>时钟分频</td>
+<td>影响 SCLK 频率</td>
+</tr>
+<tr>
+<td>First Bit</td>
+<td>先发 MSB 还是 LSB</td>
+<td>MSB First</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 传输模式</h3>
+<p>HAL 提供四种 SPI 传输 API：</p>
+<pre><code class="language-c">// 阻塞模式：发送 + 接收（分别调用）
+HAL_SPI_Transmit(&amp;hspi1, txData, len, timeout);
+HAL_SPI_Receive(&amp;hspi1, rxData, len, timeout);
+
+// 阻塞模式：全双工（同时收发，效率高）
+HAL_SPI_TransmitReceive(&amp;hspi1, txData, rxData, len, timeout);
+
+// 中断模式：全双工
+HAL_SPI_TransmitReceive_IT(&amp;hspi1, txData, rxData, len);
+
+// DMA 模式：全双工（GSRL 推荐，零 CPU 开销）
+HAL_SPI_TransmitReceive_DMA(&amp;hspi1, txData, rxData, len);
+</code></pre>
+<h3 id="53-gsrl-driver">5.3 GSRL Driver 封装</h3>
+<p><code>drv_spi.c</code> 对 HAL SPI API 做了统一封装，并实现了 HAL 回调：</p>
+<pre><code class="language-c">// 初始化 SPI 驱动
+void SPI_Init(SPI_HandleTypeDef *hspi, SPI_Call_Back rxCallbackFunction);
+
+// DMA 全双工传输
+HAL_StatusTypeDef SPI_TransmitReceive_DMA(SPI_HandleTypeDef *hspi,
+                                          uint8_t *pTxData, uint16_t exchangeDataLength);
+
+// HAL 传输完成回调 → 调用用户注册的回调
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+    SPI_Manage_Object_t *spi_obj = SPI_Get_Object(hspi);
+    if (spi_obj-&gt;rxCallbackFunction != NULL) {
+        spi_obj-&gt;rxCallbackFunction(spi_obj-&gt;rxBuffer, spi_obj-&gt;exchangeDataLength);
+    }
+}
+</code></pre>
+<hr />
+<h2 id="6-gsrl-spi-bmi088-imu">6. GSRL 中的 SPI 应用：BMI088 IMU</h2>
+<h3 id="61-bmi088-spi">6.1 BMI088 的 SPI 接口</h3>
+<p>BMI088 是一款 6 轴 IMU（3 轴加速度计 + 3 轴陀螺仪），其加速度计和陀螺仪是<strong>独立的两颗芯片</strong>，各自有独立的 SPI 接口和 CS 引脚：</p>
+<pre><code> STM32                      BMI088
+┌────────┐              ┌──────────────┐
+│        │──SCLK──┬─────│SCLK_ACC      │
+│  SPI1  │──MOSI──┤     │              │
+│        │──MISO──┼─────│MISO (共用)   │
+│        │        │     │              │
+│  GPIO  │──CS1───┤     │CS_ACC        │  ← 加速度计 CS
+│  GPIO  │──CS2───┘     │CS_GYRO       │  ← 陀螺仪 CS
+└────────┘              └──────────────┘
+</code></pre>
+<h3 id="62">6.2 逐寄存器读写</h3>
+<p>BMI088 使用典型的 SPI 寄存器读写协议：</p>
+<pre><code>读寄存器格式（发送 2 字节，接收 1 字节有用数据）:
+  Byte0: [0│R/W=1│A6 A5 A4 A3 A2 A1 A0]   ← 寄存器地址，bit7=1 表示读
+  Byte1: 任意值（用于把数据时钟出来）
+  收到:  Byte1 = 寄存器的值
+
+写寄存器格式（发送 2 字节）:
+  Byte0: [0│R/W=0│A6 A5 A4 A3 A2 A1 A0]   ← 寄存器地址，bit7=0 表示写
+  Byte1: 要写入的值
+</code></pre>
+<h3 id="63-gsrl-imu">6.3 GSRL 中的 IMU 对象</h3>
+<p><code>BMI088</code> 类（<code>dvc_imu.hpp</code>）封装了 SPI 通信细节：</p>
+<pre><code class="language-cpp">struct SPIConfig {
+    SPI_HandleTypeDef *hspi;      // SPI 句柄（如 &amp;hspi1）
+    GPIO_TypeDef *csGPIOGroup;    // CS 引脚 GPIO 端口
+    uint16_t csGPIOPin;           // CS 引脚编号
+};
+
+class BMI088 : public IMU
+{
+    SPIConfig m_accelSPIConfig;   // 加速度计 SPI 配置
+    SPIConfig m_gyroSPIConfig;    // 陀螺仪 SPI 配置
+
+    // 内部实现
+    void readSingleReg(const SPIConfig &amp;cfg, uint8_t reg, uint8_t &amp;rxData);
+    void readMultiReg(const SPIConfig &amp;cfg, uint8_t reg, uint8_t *pRxData, uint8_t len);
+};
+</code></pre>
+<p>读取寄存器的实际过程：</p>
+<pre><code class="language-c">void BMI088::readSingleReg(const SPIConfig &amp;cfg, uint8_t reg, uint8_t &amp;rxData)
+{
+    uint8_t txData[2] = {static_cast&lt;uint8_t&gt;(reg | 0x80), 0xFF};  // 读命令
+    uint8_t rxDataBuf[2];
+
+    HAL_GPIO_WritePin(cfg.csGPIOGroup, cfg.csGPIOPin, GPIO_PIN_RESET);  // 拉低 CS
+    HAL_SPI_TransmitReceive(cfg.hspi, txData, rxDataBuf, 2, 100);       // 全双工传输
+    HAL_GPIO_WritePin(cfg.csGPIOGroup, cfg.csGPIOPin, GPIO_PIN_SET);    // 拉高 CS
+
+    rxData = rxDataBuf[1];  // 第 2 个字节是有效的寄存器值
+}
+</code></pre>
+<hr />
+<h2 id="7-spi-uart">7. SPI 对比 UART</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>SPI</th>
+<th>UART</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>时钟</td>
+<td>独立时钟线（同步）</td>
+<td>无时钟（异步）</td>
+</tr>
+<tr>
+<td>连线数</td>
+<td>4 根（SCLK/MOSI/MISO/CS）</td>
+<td>2 根（TX/RX）</td>
+</tr>
+<tr>
+<td>拓扑</td>
+<td>一主多从</td>
+<td>一对一</td>
+</tr>
+<tr>
+<td>最大速率</td>
+<td>几十 Mbps</td>
+<td>几 Mbps</td>
+</tr>
+<tr>
+<td>全双工</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>从设备选择</td>
+<td>CS 信号</td>
+<td>地址协议（如 RS-485 地址位）</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>IMU、Flash、SD 卡</td>
+<td>调试、遥控器、GPS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步通信</td>
+<td>独立的 SCLK 时钟线，收发同步</td>
+</tr>
+<tr>
+<td>四根信号线</td>
+<td>SCLK + MOSI + MISO + CS</td>
+</tr>
+<tr>
+<td>全双工</td>
+<td>发送和接收同时进行</td>
+</tr>
+<tr>
+<td>CPOL/CPHA</td>
+<td>定义时钟极性和采样边沿，共 4 种模式</td>
+</tr>
+<tr>
+<td>CS 信号</td>
+<td>低电平选中从设备，一主多从的关键</td>
+</tr>
+<tr>
+<td>GSRL 应用</td>
+<td>SPI1/SPI2 连接 BMI088 加速度计+陀螺仪</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gsrl">与 GSRL 的关系</h3>
+<p>GSRL 的 BMI088 IMU 通过 SPI 通信，<code>drv_spi.c</code> 封装了 HAL SPI API，<code>dvc_imu.hpp</code> 中的 <code>BMI088</code> 类在 SPI 驱动之上实现了寄存器的读写、校准和姿态解算。</p>
+<blockquote>
+<p>下一篇：<a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">I2C 通信原理与实践</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

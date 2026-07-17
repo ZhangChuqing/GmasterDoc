@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>lambda表达式 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../std_array/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#lambda" class="nav-link">Lambda 表达式</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——就地定义的小函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 语法拆解</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-gsrl" class="nav-link">3. 工程代码分析（GSRL 中的实际使用）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-gsrl-lambda" class="nav-link">4. 动手写：在 GSRL 场景中使用 lambda</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-lambda" class="nav-link">5. 本质——lambda 到底是什么</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-lambda-vs" class="nav-link">6. 什么时候用 lambda vs 普通函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-gsrl" class="nav-link">8. 与 GSRL 的关系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lambda">Lambda 表达式</h1>
+<p>Lambda 表达式是 C++11 引入的匿名函数对象，让你可以在需要函数的地方就地定义一个短小的函数，避免为一次性逻辑额外写一个命名函数。</p>
+<hr />
+<h2 id="1">1. 概念——就地定义的小函数</h2>
+<h3 id="11-lambda">1.1 没有 lambda 时怎么做</h3>
+<p>假设你需要对一个数组中的每个元素做平方操作。传统写法需要单独定义一个函数：</p>
+<pre><code class="language-cpp">// 传统做法：定义一个命名函数
+int square(int x) {
+    return x * x;
+}
+
+// 在另一处调用
+std::transform(data.begin(), data.end(), data.begin(), square);
+//                                                       ^^^^^^
+//                                             函数名要跳转到别处才能看到实现
+</code></pre>
+<p>问题：<code>square</code> 的实现在别处，阅读代码时需要跳转。而且如果只在一个地方用一次，单独定义一个函数显得啰嗦。</p>
+<h3 id="12-lambda">1.2 lambda 的做法</h3>
+<pre><code class="language-cpp">std::transform(data.begin(), data.end(), data.begin(),
+    [](int x) { return x * x; }   // 就地定义，一眼看到实现
+);
+</code></pre>
+<h3 id="13">1.3 类比</h3>
+<ul>
+<li>传统函数 = 一篇独立的文章，有标题（函数名），读者需要翻目录查找</li>
+<li>Lambda = 正文中的脚注，就地解释，读完即走，不占用命名空间</li>
+</ul>
+<p><strong>但本质上，lambda 仍然是一个函数——有参数、有返回值、有一段可执行的代码。它的特殊之处在于可以直接"捕获"周围作用域的变量。</strong></p>
+<hr />
+<h2 id="2">2. 语法拆解</h2>
+<pre><code class="language-cpp">//  捕获列表    参数列表          返回类型（可选）  函数体
+//  ┌────┐   ┌─────────┐       ┌──────────┐   ┌───────────────┐
+    [&amp;x, y](int a, float b) -&gt; bool          { return a &gt; b &amp;&amp; x &gt; y; }
+//          ───────────────────────────────────────────────────────────
+//                            一个完整的 lambda
+</code></pre>
+<h3 id="21">2.1 参数列表和返回值</h3>
+<p>与普通函数一致，<code>-&gt; 返回类型</code> 在能推导时可以省略：</p>
+<pre><code class="language-cpp">auto add = [](int a, int b) { return a + b; };        // 返回 int，自动推导
+auto div = [](int a, int b) -&gt; float { return a / b; }; // 显式指定返回 float
+</code></pre>
+<h3 id="22-lambda">2.2 捕获列表——lambda 的核心能力</h3>
+<p>捕获列表决定了 lambda 体内可以使用哪些外部变量，以及以何种方式访问：</p>
+<pre><code class="language-cpp">int x = 10;
+int y = 20;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>捕获方式</th>
+<th>写法</th>
+<th>含义</th>
+<th>lambda 内能否修改外部变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不捕获</td>
+<td><code>[]</code></td>
+<td>不使用任何外部变量</td>
+<td>—</td>
+</tr>
+<tr>
+<td>按值捕获全部</td>
+<td><code>[=]</code></td>
+<td>外部变量在 lambda 内有一份拷贝</td>
+<td>否（改的是拷贝，不影响原变量）</td>
+</tr>
+<tr>
+<td>按引用捕获全部</td>
+<td><code>[&amp;]</code></td>
+<td>外部变量在 lambda 内是引用</td>
+<td>是</td>
+</tr>
+<tr>
+<td>按值捕获指定变量</td>
+<td><code>[x]</code></td>
+<td>只有 x 被拷贝进来</td>
+<td>否</td>
+</tr>
+<tr>
+<td>按引用捕获指定变量</td>
+<td><code>[&amp;x]</code></td>
+<td>只有 x 以引用方式进来</td>
+<td>是</td>
+</tr>
+<tr>
+<td>混合捕获</td>
+<td><code>[=, &amp;y]</code></td>
+<td>x 按值，y 按引用</td>
+<td>y 可以改</td>
+</tr>
+<tr>
+<td>捕获 this</td>
+<td><code>[this]</code></td>
+<td>在成员函数内使用当前对象的成员</td>
+<td>可以改 <code>this</code> 指向的成员</td>
+</tr>
+<tr>
+<td>捕获 this + 局部变量</td>
+<td><code>[this, &amp;x]</code></td>
+<td>对象成员 + x 的引用</td>
+<td>都可以改</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">int x = 10;
+
+auto byValue = [x]() { return x; };   // x 在这里被拷贝到 lambda 内部
+x = 20;
+byValue();  // 返回 10，不是 20——因为捕获发生在 lambda 定义时
+
+auto byRef = [&amp;x]() { return x; };    // 持有 x 的引用
+x = 20;
+byRef();    // 返回 20——读取的是 x 当前的值
+</code></pre>
+<pre><code class="language-bash">┌───────────────┐        ┌───────────────────┐
+│ 外部 int x=10 │        │ lambda byValue    │
+│ (栈上)        │  拷贝   │  ┌──────┐         │
+│               │──────→│  │ x:10 │ (独立副本)│
+│               │        │  └──────┘         │
+└───────────────┘        └───────────────────┘
+
+┌───────────────┐        ┌───────────────────┐
+│ 外部 int x=10 │        │ lambda byRef      │
+│ (栈上)        │  引用   │  ┌──────┐         │
+│               │←──────│  │ x ──→│ (指向外部x)│
+└───────────────┘        └──│───┘────────────┘
+                            │
+                            └── 始终指向外部 x 的地址
+</code></pre>
+<hr />
+<h2 id="3-gsrl">3. 工程代码分析（GSRL 中的实际使用）</h2>
+<p>GSRL 中的 lambda 主要用于<strong>行为树回调函数内部的辅助计算</strong>——将一段只在某个状态机阶段使用的逻辑封装为局部函数，提升可读性。</p>
+<h3 id="31-this">3.1 离地检测：捕获 <code>this</code> 访问成员</h3>
+<p><strong>源码位置：</strong> <code>Chariot/src/crt_chassis.cpp</code>，<code>Chassis::airborneController()</code></p>
+<pre><code class="language-cpp">void Chassis::airborneController()
+{
+    // 定义一个 lambda 用于判断单条腿是否离地
+    // [this] 捕获当前对象指针，lambda 内可以访问 m_imu 等成员
+    auto airborneDection = [this](LegState &amp;leg) {
+        fp32 fn;
+        fn = leg.virtualForce * arm_cos_f32(leg.theta)
+           + leg.virtualTorque * arm_sin_f32(leg.theta) / leg.l0
+           + (WHEEL_WEIGHT_KG * 9.8f);
+        // ... 利用 m_imu 的加速度信息修正 fn ...
+
+        fp32 airborneThreshold = (leg.l0 &lt; AIRBORNE_LEG_LENGTH_BOUNDARY_M)
+            ? AIRBORNE_DETECTION_THRESHOLD_SHORT_N
+            : AIRBORNE_DETECTION_THRESHOLD_LONG_N;
+
+        if (fn &lt; airborneThreshold) {
+            leg.isAirBorne = true;
+        }
+        // ...
+    };
+
+    // 对左右腿调用同一个 lambda
+    airborneDection(m_leftLeg);
+    airborneDection(m_rightLeg);
+}
+</code></pre>
+<pre><code class="language-bash">流程：
+  airborneDection = [this](LegState &amp;leg) { ... }
+        │
+        ├── 调用 airborneDection(m_leftLeg)  → 传入左腿引用，修改 m_leftLeg.isAirBorne
+        └── 调用 airborneDection(m_rightLeg) → 传入右腿引用，修改 m_rightLeg.isAirBorne
+</code></pre>
+<p><strong>关键点：</strong> <code>[this]</code> 捕获使得 lambda 内部可以直接访问 <code>m_imu</code>、<code>WHEEL_WEIGHT_KG</code> 等类成员，不需要通过参数传入。</p>
+<h3 id="32">3.2 姿态验证 + 退出跳跃：混合捕获</h3>
+<p><strong>源码位置：</strong> <code>Chariot/src/crt_chassis_behavior.cpp</code>，<code>jumpStateMachineCallback()</code></p>
+<pre><code class="language-cpp">BTStatus ChassisBehaviorTree::jumpStateMachineCallback(void *context)
+{
+    auto *self    = static_cast&lt;ChassisBehaviorTree *&gt;(context);
+    auto *chassis = self-&gt;m_chassis;
+    // ...
+
+    // 捕获 chassis 指针（按值），判断起跳姿态是否满足条件
+    auto isJumpPostureOK = [chassis]() -&gt; bool {
+        return fabsf(chassis-&gt;m_leftLeg.theta)  &lt; JUMP_POSTURE_THETA_MAX_RAD &amp;&amp;
+               fabsf(chassis-&gt;m_rightLeg.theta) &lt; JUMP_POSTURE_THETA_MAX_RAD &amp;&amp;
+               fabsf(chassis-&gt;m_eulerAngle.x)   &lt; JUMP_POSTURE_TILT_MAX_RAD  &amp;&amp;
+               fabsf(chassis-&gt;m_eulerAngle.y)   &lt; JUMP_POSTURE_TILT_MAX_RAD;
+    };
+
+    // 同时捕获 self 和 chassis，退出跳跃时重置状态
+    auto exitJump = [self, chassis](bool ignoreArm) {
+        self-&gt;m_jumpPhase        = JUMP_PHASE_IDLE;
+        self-&gt;m_jumpLaunchActive = false;
+        if (ignoreArm) {
+            self-&gt;m_jumpArmIgnored = true;
+        }
+        chassis-&gt;m_leftJumpLegLengthPID.pidClear();
+        chassis-&gt;m_rightJumpLegLengthPID.pidClear();
+    };
+
+    // 限制移动速度
+    auto clampChassisSpeed = [chassis]() {
+        chassis-&gt;m_targetPosition -= chassis-&gt;m_targetSpeed * chassis-&gt;m_loopDeltaTime;
+        chassis-&gt;m_targetSpeed = std::clamp(chassis-&gt;m_targetSpeed,
+                                            -JUMP_MAX_SPEED_MPS, JUMP_MAX_SPEED_MPS);
+        chassis-&gt;m_targetPosition += chassis-&gt;m_targetSpeed * chassis-&gt;m_loopDeltaTime;
+    };
+
+    // 在 switch-case 状态机中按需调用
+    switch (self-&gt;m_jumpPhase) {
+        case JUMP_PHASE_LAUNCH:
+            if (!isJumpPostureOK()) {           // ✅ 就地调用，语义清晰
+                exitJump(true);
+            }
+            break;
+        // ...
+    }
+}
+</code></pre>
+<p><strong>为什么用 lambda 而不是普通函数：</strong>
+- 这些逻辑只在 <code>jumpStateMachineCallback</code> 这一个函数内使用
+- 直接写 lambda 让读者在同一个屏幕内看到定义和调用，不需要跳转
+- <code>[chassis]</code> 按值捕获一个指针（8 字节拷贝），成本极低，且语义上表明只用 <code>chassis</code> 这一个外部变量</p>
+<h3 id="33">3.3 限制角度领先量：按引用捕获参数</h3>
+<p><strong>源码位置：</strong> <code>Chariot/src/crt_chassis_behavior.cpp</code>，<code>recoveryStateMachineCallback()</code></p>
+<pre><code class="language-cpp">// 限制 phi0 目标相对实际角度的领先量
+auto limitTargetPhi0Lead = [](fp32 &amp;targetPhi0, const fp32 &amp;actualPhi0) {
+    fp32 targetLead = GSRLMath::normalizeDeltaAngle(targetPhi0 - actualPhi0);
+    GSRLMath::constrain(targetLead, RECOVERY_PHI0_TARGET_LEAD_LIMIT);
+    targetPhi0 = GSRLMath::normalizeDeltaAngle(actualPhi0 + targetLead);
+};
+</code></pre>
+<p>这个 lambda 不捕获任何外部变量（<code>[]</code>），所有数据通过参数传入。<code>targetPhi0</code> 是非 const 引用，lambda 内可以修改调用者传入的变量。</p>
+<hr />
+<h2 id="4-gsrl-lambda">4. 动手写：在 GSRL 场景中使用 lambda</h2>
+<h3 id="41-stl">4.1 配合 STL 算法</h3>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;array&gt;
+
+// 场景：检查所有电机电流是否在安全范围内
+std::array&lt;float, 4&gt; motorCurrents = {2.5f, 3.1f, 1.8f, 12.0f};
+const float MAX_CURRENT = 10.0f;
+
+// 用 lambda 配合 std::any_of 检查是否有超标电机
+bool hasOvercurrent = std::any_of(
+    motorCurrents.begin(), motorCurrents.end(),
+    [MAX_CURRENT](float current) { return current &gt; MAX_CURRENT; }
+);
+// hasOvercurrent == true（第 4 个电机 12.0 &gt; 10.0）
+</code></pre>
+<h3 id="42">4.2 行为树条件节点的就地逻辑</h3>
+<pre><code class="language-cpp">// 传统写法：条件逻辑散落在回调函数中
+BTStatus myCondition(void *context) {
+    auto *chassis = static_cast&lt;Chassis *&gt;(context);
+    if (chassis-&gt;m_eulerAngle.x &gt; 30.0f || chassis-&gt;m_eulerAngle.y &gt; 30.0f) {
+        return BT_FAIL;
+    }
+    return BT_SUCCESS;
+}
+
+// lambda 写法：在 setCondition 处就地定义，逻辑与注册在同一位置
+myNode.setCondition(
+    [](void *ctx) -&gt; bool {
+        auto *chassis = static_cast&lt;Chassis *&gt;(ctx);
+        return fabsf(chassis-&gt;m_eulerAngle.x) &lt; 30.0f &amp;&amp;
+               fabsf(chassis-&gt;m_eulerAngle.y) &lt; 30.0f;
+    }
+);
+</code></pre>
+<h3 id="43">4.3 常见错误</h3>
+<pre><code class="language-cpp">void badExample()
+{
+    int counter = 0;
+
+    // 错误1：按值捕获后修改副本，外部不受影响
+    auto badIncrement = [counter]() { counter++; };  // ❌ 编译错误
+    // counter 是按值捕获的副本，默认不可修改（lambda 的 operator() 是 const）
+    // 即使加 mutable，改的也是副本，外部 counter 不变
+
+    // 正确：如果确实需要修改外部变量，用引用捕获
+    auto goodIncrement = [&amp;counter]() { counter++; }; // ✅
+
+    // 错误2：lambda 存活时间超过捕获的引用
+    std::function&lt;void()&gt; storedLambda;
+    {
+        int localVar = 42;
+        storedLambda = [&amp;localVar]() { return localVar; };
+    }  // localVar 在此销毁
+    // storedLambda();  // ❌ 悬垂引用！localVar 已经不存在了
+
+    // 正确：如果 lambda 需要存活到作用域之外，按值捕获或确保引用有效
+}
+</code></pre>
+<h3 id="44-mutable">4.4 mutable——允许修改按值捕获的副本</h3>
+<pre><code class="language-cpp">int x = 10;
+
+// 默认情况下，按值捕获的变量在 lambda 内是 const
+// auto f = [x]() { x++; };  // ❌ 编译错误
+
+// 加 mutable 关键字后可以修改副本（外部原变量不受影响）
+auto f = [x]() mutable { x++; return x; };
+f();  // 返回 11
+f();  // 返回 12——副本在每次调用间保持状态
+// 外部 x 仍然是 10
+</code></pre>
+<hr />
+<h2 id="5-lambda">5. 本质——lambda 到底是什么</h2>
+<pre><code class="language-cpp">auto add = [](int a, int b) { return a + b; };
+</code></pre>
+<p>编译器实际上将 lambda 翻译成一个匿名类：</p>
+<pre><code class="language-cpp">// 编译器生成的等价代码（简化版）
+class __lambda_add {
+public:
+    int operator()(int a, int b) const {
+        return a + b;
+    }
+};
+__lambda_add add;  // add 实际上是一个对象，不是一个函数指针
+</code></pre>
+<ul>
+<li><strong>lambda 是一个对象</strong>（functor），不是函数指针</li>
+<li><code>operator()</code> 被调用时执行 lambda 体内的代码</li>
+<li>捕获列表中的变量成为这个匿名类的成员变量</li>
+<li>每个 lambda 有独一无二的类型，用 <code>auto</code> 接收最方便</li>
+</ul>
+<pre><code class="language-cpp">// 如果捕获了变量：
+int x = 10;
+auto f = [x](int a) { return a + x; };
+
+// 编译器大致生成：
+class __lambda_f {
+    int __x;  // 捕获的变量变成成员
+public:
+    __lambda_f(int x) : __x(x) {}
+    int operator()(int a) const { return a + __x; }
+};
+</code></pre>
+<hr />
+<h2 id="6-lambda-vs">6. 什么时候用 lambda vs 普通函数</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐方式</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只用一次的辅助逻辑</td>
+<td>lambda</td>
+<td>就地定义，不需要命名和跳转</td>
+</tr>
+<tr>
+<td>多处复用的通用逻辑</td>
+<td>普通函数</td>
+<td>lambda 重复定义浪费代码，普通函数可复用</td>
+</tr>
+<tr>
+<td>传给 STL 算法的谓词</td>
+<td>lambda</td>
+<td>简洁，捕获外部变量方便</td>
+</tr>
+<tr>
+<td>行为树节点回调</td>
+<td>普通函数（当前 GSRL 做法）</td>
+<td>函数指针稳定，类型已知，注册简单</td>
+</tr>
+<tr>
+<td>回调内部的状态机辅助</td>
+<td>lambda</td>
+<td>只在该回调内部使用，封装性好</td>
+</tr>
+<tr>
+<td>异步/线程任务</td>
+<td>lambda</td>
+<td>可以方便地捕获上下文数据</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本质</td>
+<td>匿名函数对象（functor），有独一无二的类类型</td>
+</tr>
+<tr>
+<td>核心能力</td>
+<td>捕获外部变量（按值/按引用），在函数体内使用</td>
+</tr>
+<tr>
+<td><code>[=]</code></td>
+<td>按值捕获全部外部变量，lambda 内不可修改副本（除非加 <code>mutable</code>）</td>
+</tr>
+<tr>
+<td><code>[&amp;]</code></td>
+<td>按引用捕获全部外部变量，lambda 内可修改原变量</td>
+</tr>
+<tr>
+<td><code>[this]</code></td>
+<td>在成员函数中捕获当前对象，可直接使用成员变量和成员函数</td>
+</tr>
+<tr>
+<td><code>[x, &amp;y]</code></td>
+<td>混合捕获：x 按值，y 按引用</td>
+</tr>
+<tr>
+<td><code>-&gt; 返回类型</code></td>
+<td>可省略，编译器通常能自动推导</td>
+</tr>
+<tr>
+<td>GSRL 中的典型用法</td>
+<td>行为树回调内部的辅助函数（离地检测、姿态验证、速度限制）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-gsrl">8. 与 GSRL 的关系</h2>
+<p>在 GSRL 中，行为树节点的回调通过<strong>函数指针</strong>注册（参考 <code>培训/using别名.md</code> 的行为树部分），这是历史设计选择——函数指针类型固定，注册简单，且不引入模板开销。</p>
+<p>但在回调函数<strong>内部</strong>，lambda 被广泛用于封装局部辅助逻辑：</p>
+<ul>
+<li><code>airborneController()</code> 中 <code>[this]</code> 捕获的离地检测 lambda</li>
+<li>跳跃状态机中 <code>[chassis]</code> 捕获的姿态验证 lambda</li>
+<li>自起状态机中 <code>[]</code> 不捕获的角度限制 lambda</li>
+</ul>
+<p>这种"外层用函数指针注册，内层用 lambda 组织逻辑"的模式，兼顾了接口的简洁性和内部实现的可读性。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

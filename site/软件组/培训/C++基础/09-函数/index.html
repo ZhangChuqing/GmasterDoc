@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>09 函数 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">09 函数</a>
+</li>
+            
+<li>
+    <a href="../10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#functions" class="nav-link">函数（Functions）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 为什么需要函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 函数的基本结构</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 函数声明与定义</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 参数传递</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 返回值</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 递归</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 函数设计原则</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8" class="nav-link">8. 变量作用域与函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9" class="nav-link">9. 常见错误</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10" class="nav-link">10. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="functions">函数（Functions）</h1>
+<p>函数是将一段逻辑封装为可复用单元的核心机制。合理拆分函数能让代码结构清晰、易于测试和维护。</p>
+<hr />
+<h2 id="1">1. 为什么需要函数</h2>
+<p>没有函数，所有代码堆在 <code>main</code> 里：</p>
+<pre><code class="language-c">int main()
+{
+    // 100 行验证输入的代码
+    // 200 行计算逻辑
+    // 50 行输出结果
+    // ——难以阅读、难以修改、难以复用
+}
+</code></pre>
+<p>拆分为函数后：</p>
+<pre><code class="language-c">int main()
+{
+    int input = get_valid_input();
+    int result = calculate(input);
+    print_result(result);
+    // ——意图一目了然
+}
+</code></pre>
+<p>函数的核心价值：<strong>封装细节、命名意图、支持复用</strong>。</p>
+<hr />
+<h2 id="2">2. 函数的基本结构</h2>
+<pre><code class="language-c">返回类型  函数名(参数列表)
+{
+    // 函数体
+    return 返回值;  // 如果返回类型不是 void
+}
+</code></pre>
+<pre><code class="language-c">// 一个完整的函数
+int add(int a, int b)
+{
+    int sum = a + b;
+    return sum;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>组成部分</th>
+<th>示例中的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>返回类型</td>
+<td><code>int</code></td>
+<td>函数返回值的类型；不返回用 <code>void</code></td>
+</tr>
+<tr>
+<td>函数名</td>
+<td><code>add</code></td>
+<td>描述函数做什么（动词或动词短语）</td>
+</tr>
+<tr>
+<td>参数列表</td>
+<td><code>int a, int b</code></td>
+<td>调用者传入的数据</td>
+</tr>
+<tr>
+<td>函数体</td>
+<td><code>{ ... }</code></td>
+<td>具体执行逻辑</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td><code>return sum;</code></td>
+<td>将结果传回调用者</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 函数声明与定义</h2>
+<p>C 语言要求函数在<strong>使用前</strong>被编译器知晓。有两种方式：</p>
+<h3 id="_1">方式一：定义在前（先写函数体，再调用）</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+// 定义在前
+int add(int a, int b)
+{
+    return a + b;
+}
+
+int main()
+{
+    int result = add(3, 5);   // 可以调用
+    printf(&quot;%d\n&quot;, result);
+    return 0;
+}
+</code></pre>
+<h3 id="_2">方式二：声明在前，定义在后（推荐）</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+// 函数声明（原型）——只写签名，不写函数体
+int add(int a, int b);
+
+int main()
+{
+    int result = add(3, 5);   // OK，编译器已看到声明
+    printf(&quot;%d\n&quot;, result);
+    return 0;
+}
+
+// 函数定义——可以在后面，甚至可以在另一个 .c 文件中
+int add(int a, int b)
+{
+    return a + b;
+}
+</code></pre>
+<p>声明中的参数名可省略（<code>int add(int, int);</code>），但保留名称有助于理解。</p>
+<hr />
+<h2 id="4">4. 参数传递</h2>
+<h3 id="41-pass-by-value">4.1 传值（Pass by Value）</h3>
+<p>C 语言默认<strong>传值</strong>——函数收到参数的<strong>副本</strong>，修改副本不影响原变量：</p>
+<pre><code class="language-c">void increment(int x)
+{
+    x = x + 1;               // 只修改了局部副本
+    printf(&quot;函数内：%d\n&quot;, x);
+}
+
+int main()
+{
+    int n = 10;
+    increment(n);
+    printf(&quot;函数外：%d\n&quot;, n);   // 仍然是 10
+    return 0;
+}
+// 输出：
+// 函数内：11
+// 函数外：10
+</code></pre>
+<h3 id="42">4.2 传指针（模拟传引用）</h3>
+<p>要让函数修改外部变量，需传递该变量的<strong>地址</strong>：</p>
+<pre><code class="language-c">void increment(int* p)
+{
+    *p = *p + 1;             // 通过指针修改原值
+}
+
+int main()
+{
+    int n = 10;
+    increment(&amp;n);           // 传入 n 的地址
+    printf(&quot;%d\n&quot;, n);       // 11
+    return 0;
+}
+</code></pre>
+<p>传值 vs 传指针对比：</p>
+<table>
+<thead>
+<tr>
+<th>传递方式</th>
+<th>函数内修改</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传值 <code>void f(int x)</code></td>
+<td>不影响原变量</td>
+<td>只需要读取数据</td>
+</tr>
+<tr>
+<td>传指针 <code>void f(int* p)</code></td>
+<td>影响原变量</td>
+<td>需要修改数据；传递大体积数据避免拷贝</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3 数组作为参数</h3>
+<p>数组作为参数时<strong>退化为指针</strong>，传递的是首元素地址而非整个数组：</p>
+<pre><code class="language-c">void print_array(int arr[], int size)   // arr 实际上是一个指针
+{
+    for (int i = 0; i &lt; size; i++) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+}
+</code></pre>
+<p>因此必须<strong>额外传递数组的长度</strong>。在函数内部 <code>sizeof(arr)</code> 返回的是指针大小（通常 4 或 8 字节），而非数组实际大小。</p>
+<hr />
+<h2 id="5">5. 返回值</h2>
+<h3 id="51">5.1 基本用法</h3>
+<pre><code class="language-c">int max(int a, int b)
+{
+    if (a &gt; b) return a;
+    else       return b;
+}
+</code></pre>
+<p><code>return</code> 做了两件事：
+1. 将返回值传递给调用者
+2. 立即退出当前函数</p>
+<pre><code class="language-c">int divide(int a, int b, int* result)
+{
+    if (b == 0) {
+        return 0;              // 失败立即返回，后续代码不执行
+    }
+    *result = a / b;
+    return 1;                  // 成功
+}
+</code></pre>
+<h3 id="52-void">5.2 无返回值：<code>void</code></h3>
+<pre><code class="language-c">void greet(const char* name)
+{
+    printf(&quot;你好，%s！\n&quot;, name);
+    // 可以写 return; 但不必要；函数末尾自动返回
+}
+</code></pre>
+<hr />
+<h2 id="6">6. 递归</h2>
+<p>函数调用自身称为递归，适合处理具有自相似结构的问题。</p>
+<h3 id="61">6.1 阶乘示例</h3>
+<pre><code class="language-c">int factorial(int n)
+{
+    if (n &lt;= 1) {
+        return 1;                     // 基准条件（base case）
+    }
+    return n * factorial(n - 1);      // 递归条件
+}
+</code></pre>
+<p>执行 <code>factorial(4)</code> 的展开过程：</p>
+<pre><code>factorial(4) = 4 * factorial(3)
+             = 4 * 3 * factorial(2)
+             = 4 * 3 * 2 * factorial(1)
+             = 4 * 3 * 2 * 1
+             = 24
+</code></pre>
+<h3 id="62">6.2 递归的两个必备要素</h3>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>说明</th>
+<th>缺失的后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准条件（base case）</td>
+<td>停止递归的出口</td>
+<td>无限递归，最终栈溢出</td>
+</tr>
+<tr>
+<td>递归条件</td>
+<td>向基准条件推进</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63">6.3 递归的代价</h3>
+<p>每次函数调用都会消耗栈空间（存储局部变量、返回地址等）。递归层数过深会导致<strong>栈溢出（Stack Overflow）</strong>。对于简单的循环问题，迭代（<code>for</code>/<code>while</code>）通常比递归更高效。</p>
+<hr />
+<h2 id="7">7. 函数设计原则</h2>
+<table>
+<thead>
+<tr>
+<th>原则</th>
+<th>说明</th>
+<th>反面示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一职责</td>
+<td>一个函数只做一件事</td>
+<td><code>calculate_and_print_and_save()</code></td>
+</tr>
+<tr>
+<td>命名表意图</td>
+<td>函数名描述做什么，而非怎么做的</td>
+<td><code>procData()</code> → 应改为 <code>filter_valid_records()</code></td>
+</tr>
+<tr>
+<td>参数宜少</td>
+<td>超过 4 个参数考虑封装为结构体</td>
+<td><code>void draw(int, int, int, int, int, int, char*)</code></td>
+</tr>
+<tr>
+<td>无副作用</td>
+<td>能不修改外部状态就不修改</td>
+<td><code>get_count()</code> 内部却修改了全局变量</td>
+</tr>
+<tr>
+<td>长度适中</td>
+<td>一屏内（约 20-50 行）易于理解</td>
+<td>200 行的单一函数</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. 变量作用域与函数</h2>
+<pre><code class="language-c">int global = 100;             // 全局变量——所有函数可见
+
+void foo()
+{
+    static int call_count = 0;  // 静态局部变量——值在多次调用间保持
+    call_count++;
+    printf(&quot;foo 被调用了 %d 次\n&quot;, call_count);
+
+    int local = 10;             // 局部变量——每次调用重新创建
+}
+
+int main()
+{
+    foo();   // foo 被调用了 1 次
+    foo();   // foo 被调用了 2 次
+    foo();   // foo 被调用了 3 次
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>关于存储类的完整讨论，详见《存储类与作用域》。</p>
+</blockquote>
+<hr />
+<h2 id="9">9. 常见错误</h2>
+<table>
+<thead>
+<tr>
+<th>错误</th>
+<th>问题</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>忘记函数声明</td>
+<td>调用在定义之前却没有前置声明</td>
+<td>在文件顶部或头文件中添加函数原型</td>
+</tr>
+<tr>
+<td>返回局部变量地址</td>
+<td><code>return &amp;x;</code> 中 x 是局部变量，函数返回后其内存已失效</td>
+<td>返回值本身（<code>return x</code>），或用 <code>static</code>/动态分配</td>
+</tr>
+<tr>
+<td>数组参数丢失大小信息</td>
+<td><code>void f(int arr[])</code> 内部用 <code>sizeof(arr)</code></td>
+<td>额外传递 <code>size</code> 参数</td>
+</tr>
+<tr>
+<td>递归无基准条件</td>
+<td>无限递归导致栈溢出</td>
+<td>确保每次递归都向基准条件靠近</td>
+</tr>
+<tr>
+<td>修改传值参数</td>
+<td>期望 <code>f(x)</code> 后 x 被修改</td>
+<td>改用指针参数 <code>f(&amp;x)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10">10. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>函数声明</td>
+<td>调用前让编译器知晓函数签名（返回类型 + 名称 + 参数类型）</td>
+</tr>
+<tr>
+<td>默认传值</td>
+<td>函数内修改参数不影响原变量</td>
+</tr>
+<tr>
+<td>需要修改用指针</td>
+<td><code>void f(int* p)</code> 传入地址以修改外部变量</td>
+</tr>
+<tr>
+<td>数组参数退化</td>
+<td>数组作为参数时退化为指针，需额外传长度</td>
+</tr>
+<tr>
+<td><code>void</code> 无返回值</td>
+<td>用于纯副作用的函数</td>
+</tr>
+<tr>
+<td>递归需基准条件</td>
+<td>否则导致栈溢出</td>
+</tr>
+<tr>
+<td>返回局部变量地址是危险行为</td>
+<td>函数返回后该地址的内存已无效</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

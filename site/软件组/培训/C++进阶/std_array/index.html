@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/std_array/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>std::array - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">std::array</a>
+</li>
+            
+<li>
+    <a href="../using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../using%E5%88%AB%E5%90%8D/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#stdarray" class="nav-link">std::array</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——它解决什么问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 基本用法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-gsrl" class="nav-link">3. 工程代码分析（GSRL 中的实际使用）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-gsrl-stdarray" class="nav-link">4. 动手写：在 GSRL 场景中使用 std::array</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-stdarray-vs-c-vs-stdvector" class="nav-link">5. std::array vs C 数组 vs std::vector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-stdarray" class="nav-link">6. 本质——为什么 std::array 是零开销</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-gsrl" class="nav-link">8. 与 GSRL 的关系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="stdarray">std::array</h1>
+<p><code>std::array&lt;T, N&gt;</code> 是 C++11 引入的固定大小数组容器，它把 C 风格数组的安全性（边界检查、<code>size()</code> 方法）与零额外开销的静态分配结合在一起。</p>
+<hr />
+<h2 id="1">1. 概念——它解决什么问题</h2>
+<h3 id="11-c">1.1 C 风格数组的四个痛点</h3>
+<pre><code class="language-cpp">// 方式 A：C 风格数组
+float motorPositions[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>具体表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>不知道自己的大小</strong></td>
+<td><code>sizeof(arr) / sizeof(arr[0])</code> 容易写错，传给函数后退化为指针后完全失效</td>
+</tr>
+<tr>
+<td><strong>不能直接赋值</strong></td>
+<td><code>arr2 = arr1;</code> 编译失败，只能用 <code>memcpy</code></td>
+</tr>
+<tr>
+<td><strong>不能按值传递/返回</strong></td>
+<td>函数参数中退化为指针，丢失大小信息</td>
+</tr>
+<tr>
+<td><strong>没有边界检查</strong></td>
+<td><code>arr[10]</code> 越过数组末尾，静默地破坏相邻内存</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-stdarray">1.2 std::array 的解决方案</h3>
+<pre><code class="language-cpp">#include &lt;array&gt;
+
+// 方式 B：std::array
+std::array&lt;float, 4&gt; motorPositions = {0.0f, 0.0f, 0.0f, 0.0f};
+</code></pre>
+<pre><code class="language-bash">          C 风格数组                          std::array
+┌─────────────────────────┐        ┌─────────────────────────┐
+│ float[4]                │        │ std::array&lt;float, 4&gt;    │
+│  ├── [0] 0.0f           │        │  ├── _M_elems[0] 0.0f   │
+│  ├── [1] 0.0f           │        │  ├── _M_elems[1] 0.0f   │
+│  ├── [2] 0.0f           │        │  ├── _M_elems[2] 0.0f   │
+│  ├── [3] 0.0f           │        │  ├── _M_elems[3] 0.0f   │
+│  └── 没有 size()        │        │  └── size()  → 4        │
+│      不能赋值             │        │      可以直接赋值        │
+│      退化为指针           │        │      传递时不退化        │
+└─────────────────────────┘        └─────────────────────────┘
+
+内存布局完全相同——数据紧挨着放在栈上，没有任何额外开销。
+区别在于 std::array 在类型系统中携带了大小信息。
+</code></pre>
+<p><strong>关键理解：<code>std::array</code> 是零开销抽象（zero-overhead abstraction）——它的内存布局与 C 风格数组完全一致，所有的大小信息和成员函数都在编译期处理，不产生任何运行时开销。</strong></p>
+<hr />
+<h2 id="2">2. 基本用法</h2>
+<h3 id="21">2.1 声明与初始化</h3>
+<pre><code class="language-cpp">#include &lt;array&gt;
+
+// 三种初始化方式
+std::array&lt;int, 3&gt; a1 = {1, 2, 3};      // 列表初始化（C++11）
+std::array&lt;int, 3&gt; a2{1, 2, 3};         // 直接列表初始化
+std::array&lt;int, 3&gt; a3;                  // 默认初始化（元素值不确定，与 C 数组行为一致）
+a3.fill(0);                             // 全部填 0
+</code></pre>
+<h3 id="22">2.2 常用操作</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>获取大小</td>
+<td><code>arr.size()</code></td>
+<td>返回 <code>N</code>，编译期常量</td>
+</tr>
+<tr>
+<td>访问元素</td>
+<td><code>arr[i]</code></td>
+<td>不检查边界（与 C 数组行为一致）</td>
+</tr>
+<tr>
+<td>带检查的访问</td>
+<td><code>arr.at(i)</code></td>
+<td>越界时抛出 <code>std::out_of_range</code></td>
+</tr>
+<tr>
+<td>首元素</td>
+<td><code>arr.front()</code></td>
+<td>等价于 <code>arr[0]</code></td>
+</tr>
+<tr>
+<td>末元素</td>
+<td><code>arr.back()</code></td>
+<td>等价于 <code>arr[N-1]</code></td>
+</tr>
+<tr>
+<td>获取原始指针</td>
+<td><code>arr.data()</code></td>
+<td>返回 <code>T*</code>，传给需要 C 数组的 API</td>
+</tr>
+<tr>
+<td>全部填充</td>
+<td><code>arr.fill(value)</code></td>
+<td>所有元素设为 <code>value</code></td>
+</tr>
+<tr>
+<td>判空</td>
+<td><code>arr.empty()</code></td>
+<td>始终返回 <code>false</code>（<code>N &gt; 0</code> 时）或 <code>true</code>（<code>N == 0</code> 时），编译期确定</td>
+</tr>
+<tr>
+<td>赋值</td>
+<td><code>arr2 = arr1;</code></td>
+<td>✅ 支持！逐元素拷贝</td>
+</tr>
+<tr>
+<td>比较</td>
+<td><code>arr1 == arr2</code></td>
+<td>✅ 支持！逐元素比较</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 遍历</h3>
+<pre><code class="language-cpp">std::array&lt;float, 4&gt; currents = {2.5f, 3.1f, 1.8f, 4.2f};
+
+// 方式 A：基于范围的 for 循环（推荐）
+for (float c : currents) {
+    // 处理 c
+}
+
+// 方式 B：传统下标
+for (size_t i = 0; i &lt; currents.size(); i++) {
+    currents[i] *= 1.1f;
+}
+
+// 方式 C：迭代器
+for (auto it = currents.begin(); it != currents.end(); ++it) {
+    *it *= 1.1f;
+}
+</code></pre>
+<hr />
+<h2 id="3-gsrl">3. 工程代码分析（GSRL 中的实际使用）</h2>
+<h3 id="31-kalmanfilter">3.1 KalmanFilter：编译期维度的传感器映射</h3>
+<p><strong>源码位置：</strong> <code>GSRL/Algorithm/inc/alg_filter.hpp</code></p>
+<p><code>KalmanFilter</code> 是一个模板类，其观测维度 <code>MeasSize</code> 在编译期确定。<code>std::array</code> 的大小依赖模板参数，恰好匹配这种"编译期已知大小、运行时不变"的场景：</p>
+<pre><code class="language-cpp">template &lt;typename T, int StateSize, int MeasSize, int ControlSize&gt;
+class KalmanFilter : public Filter&lt;T&gt;
+{
+    // ...
+    // 测量与状态的映射关系，大小由模板参数 MeasSize 决定
+    std::array&lt;int, MeasSize&gt; m_measurementMap;   // 如 {1, 1, 4}
+    std::array&lt;T, MeasSize&gt;   m_measurementDegree; // 如 {1.0f, 1.0f, 1.0f}
+    std::array&lt;T, MeasSize&gt;   m_rDiagonalElements; // 如 {0.5f, 0.3f, 0.1f}
+};
+</code></pre>
+<pre><code class="language-bash">当 MeasSize = 3 时，这三个 array 的内存布局：
+
+  m_measurementMap:     [1] [1] [4]          ← 3 个 int，12 字节
+  m_measurementDegree:  [1.0][1.0][1.0]      ← 3 个 T，12 字节（T=float）
+  m_rDiagonalElements:  [0.5][0.3][0.1]      ← 3 个 T，12 字节
+
+全部在 KalmanFilter 对象内部，不涉及堆分配。
+</code></pre>
+<p><strong>为什么用 <code>std::array</code> 而不是 <code>std::vector</code>：</strong>
+- 观测维度 <code>MeasSize</code> 是模板参数，编译期即确定——不需要 <code>vector</code> 的动态扩容能力
+- <code>std::array</code> 的存储完全内嵌在 <code>KalmanFilter</code> 对象中，避免堆分配，符合嵌入式环境对实时性的要求
+- <code>std::array</code> 的类型携带大小信息，编译器可以更好地优化（如循环展开）</p>
+<h3 id="32">3.2 配置传感器参数的接口</h3>
+<pre><code class="language-cpp">// alg_filter.hpp 中的接口
+void setDynamicAdjustmentParams(
+    const std::array&lt;int, MeasSize&gt; &amp;measurementMap,
+    const std::array&lt;T, MeasSize&gt;   &amp;measurementDegree,
+    const std::array&lt;T, MeasSize&gt;   &amp;rDiagonalElements
+);
+</code></pre>
+<p>通过 <code>const &amp;</code> 传入，避免拷贝整个数组（但这里数组本身很小，按值传递也可以接受）。<code>std::array</code> 作为函数参数不会退化为指针，调用者传入的数组大小必须在编译期与 <code>MeasSize</code> 匹配，否则编译失败——这提供了 C 风格数组不具备的类型安全。</p>
+<hr />
+<h2 id="4-gsrl-stdarray">4. 动手写：在 GSRL 场景中使用 std::array</h2>
+<h3 id="41">4.1 电机电流监控</h3>
+<pre><code class="language-cpp">#include &lt;array&gt;
+#include &lt;algorithm&gt;
+
+class MotorMonitor
+{
+public:
+    static constexpr size_t MOTOR_COUNT = 4;
+    static constexpr float  MAX_CURRENT = 10.0f;
+
+    // 存储 4 个电机的电流读数
+    std::array&lt;float, MOTOR_COUNT&gt; currents;
+
+    MotorMonitor() {
+        currents.fill(0.0f);
+    }
+
+    // 检查是否有电机电流超标
+    bool hasOvercurrent() const {
+        return std::any_of(
+            currents.begin(), currents.end(),
+            [](float c) { return c &gt; MAX_CURRENT; }
+        );
+    }
+
+    // 获取最大电流值
+    float maxCurrent() const {
+        return *std::max_element(currents.begin(), currents.end());
+    }
+
+    // 重置全部读数
+    void reset() {
+        currents.fill(0.0f);
+    }
+};
+</code></pre>
+<h3 id="42-pid">4.2 PID 参数管理</h3>
+<pre><code class="language-cpp">#include &lt;array&gt;
+
+// 管理一组 PID 的参数——内环 + 外环共 2 组，每组 3 个参数
+class PIDManager
+{
+public:
+    struct PIDParams {
+        float Kp, Ki, Kd;
+    };
+
+    static constexpr size_t PID_COUNT = 2;
+
+    // 用 std::array 存储固定数量的 PID 参数组
+    std::array&lt;PIDParams, PID_COUNT&gt; params;
+
+    PIDManager() {
+        // 全部初始化为零
+        params.fill({0.0f, 0.0f, 0.0f});
+    }
+
+    // 批量设置参数
+    void setParams(const std::array&lt;PIDParams, PID_COUNT&gt; &amp;newParams) {
+        params = newParams;  // ✅ 直接赋值，逐元素拷贝
+    }
+};
+</code></pre>
+<h3 id="43">4.3 常见错误</h3>
+<pre><code class="language-cpp">// 错误1：初始化元素个数不匹配
+std::array&lt;int, 3&gt; arr1 = {1, 2};         // 第三个元素是 0（值初始化）
+std::array&lt;int, 3&gt; arr2 = {1, 2, 3, 4};  // ❌ 编译错误：太多了
+
+// 错误2：尝试用变量指定大小
+int n = 10;
+// std::array&lt;int, n&gt; arr;  // ❌ 编译错误：N 必须是编译期常量
+
+// 正确：用 constexpr 或字面量
+constexpr int N = 10;
+std::array&lt;int, N&gt; arr3;                  // ✅
+std::array&lt;int, 10&gt; arr4;                 // ✅
+
+// 错误3：与 vector 混淆
+std::array&lt;int, 5&gt; arr5;
+arr5.push_back(42);                       // ❌ 编译错误：array 没有 push_back
+// array 大小固定，不能动态添加元素
+
+// 错误4：忘记 array 的元素默认不初始化（与 C 数组一致）
+std::array&lt;int, 5&gt; arr6;                  // 元素值不确定！
+arr6.fill(0);                             // 如果手写 for 循环也比直接假设全零安全
+</code></pre>
+<hr />
+<h2 id="5-stdarray-vs-c-vs-stdvector">5. std::array vs C 数组 vs std::vector</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>T[N]</code>（C 数组）</th>
+<th><code>std::array&lt;T, N&gt;</code></th>
+<th><code>std::vector&lt;T&gt;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大小</td>
+<td>编译期固定</td>
+<td>编译期固定</td>
+<td>运行时可变</td>
+</tr>
+<tr>
+<td>存储位置</td>
+<td>栈 / 静态存储区（取决于声明位置）</td>
+<td>栈 / 静态存储区</td>
+<td>堆（内部数据）</td>
+</tr>
+<tr>
+<td><code>.size()</code></td>
+<td>❌</td>
+<td>✅（返回 N）</td>
+<td>✅（返回当前元素数）</td>
+</tr>
+<tr>
+<td>赋值 <code>a = b</code></td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>按值传递</td>
+<td>❌（退化为指针）</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>传给 C API</td>
+<td>直接传数组名</td>
+<td><code>arr.data()</code></td>
+<td><code>vec.data()</code></td>
+</tr>
+<tr>
+<td>边界检查</td>
+<td>❌</td>
+<td><code>.at()</code> 有检查</td>
+<td><code>.at()</code> 有检查</td>
+</tr>
+<tr>
+<td>额外内存开销</td>
+<td>无</td>
+<td>无</td>
+<td>3 个指针（约 24 字节）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-stdarray">6. 本质——为什么 std::array 是零开销</h2>
+<pre><code class="language-cpp">std::array&lt;int, 4&gt; arr = {1, 2, 3, 4};
+</code></pre>
+<p>编译器看到的内部结构（简化版）：</p>
+<pre><code class="language-cpp">template &lt;typename T, size_t N&gt;
+struct array {
+    T _M_elems[N];  // 唯一的数据成员——就是一个 C 风格数组
+
+    // 以下全是 inline 函数，编译期展开后消失：
+    constexpr size_t size()     const { return N; }
+    constexpr bool   empty()    const { return N == 0; }
+    T&amp; operator[](size_t i)           { return _M_elems[i]; }
+    T* data()                         { return _M_elems; }
+    // ...
+};
+</code></pre>
+<ul>
+<li><code>_M_elems</code> 是唯一的数据成员，所有方法都是 <code>inline</code> 且在编译期求值</li>
+<li><code>sizeof(std::array&lt;T, N&gt;) == sizeof(T) * N</code>——与 C 数组占用完全相同的空间</li>
+<li><code>arr.size()</code> 在编译期被替换为字面量 <code>N</code>，不产生任何指令</li>
+</ul>
+<hr />
+<h2 id="7">7. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是什么</td>
+<td>编译期定长数组的零开销包装，内存布局与 C 数组完全一致</td>
+</tr>
+<tr>
+<td>解决什么</td>
+<td>C 数组不能赋值、不知道大小、传参退化为指针——这三个痛点</td>
+</tr>
+<tr>
+<td>什么时候用</td>
+<td>数组大小在编译期已知、运行时不变</td>
+</tr>
+<tr>
+<td>什么时候不用</td>
+<td>数组大小需要在运行时确定 → 用 <code>std::vector</code></td>
+</tr>
+<tr>
+<td>性能</td>
+<td>与 C 数组完全相同，无额外内存或运行时开销</td>
+</tr>
+<tr>
+<td>与模板的关系</td>
+<td><code>N</code> 是模板参数，天然适合依赖模板参数的编译器维度数组（如 <code>KalmanFilter</code> 的 <code>MeasSize</code>）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-gsrl">8. 与 GSRL 的关系</h2>
+<p>在 GSRL 的嵌入式环境中，<code>std::array</code> 的静态分配特性与项目对实时性和内存可预测性的要求高度契合：</p>
+<ul>
+<li><code>KalmanFilter</code> 用 <code>std::array</code> 存储与观测维度相关的映射数组——大小由模板参数决定，数据内嵌在滤波器对象中，不触发堆分配</li>
+<li>电机控制、传感器滤波等场景中，数据维度通常在编译期确定（如 4 个电机、3 轴 IMU），<code>std::array</code> 是优于 <code>std::vector</code> 的选择</li>
+<li><code>std::array</code> 配合 STL 算法（<code>std::any_of</code>、<code>std::max_element</code> 等），可以减少手写循环，提升代码可读性</li>
+<li>与 C API 交互时，通过 <code>.data()</code> 获取原始指针，兼容性无损失</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

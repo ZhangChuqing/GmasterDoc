@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>08 UART通信原理 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#uart" class="nav-link">UART 通信原理与实践</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——异步串行通信</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-uart" class="nav-link">2. UART 的物理层</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-uart" class="nav-link">3. UART 的外设硬件</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-hal-uart" class="nav-link">4. HAL 库的 UART 操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-uart-gsrl" class="nav-link">5. UART 在 GSRL 中的实际应用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 常见问题与对策</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="uart">UART 通信原理与实践</h1>
+<p>UART（Universal Asynchronous Receiver/Transmitter，通用异步收发器）是最简单、最广泛使用的串行通信协议。从调试串口到遥控器接收，UART 在嵌入式系统中无处不在。</p>
+<blockquote>
+<p>上一篇：<a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/">舵机与电机控制</a></p>
+</blockquote>
+<hr />
+<h2 id="1">1. 概念——异步串行通信</h2>
+<h3 id="11-vs">1.1 同步 vs 异步</h3>
+<p>通信协议的第一层分类：是否需要独立的<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟</a>线。</p>
+<pre><code>同步通信（如 SPI）:
+  SCLK ──┐┌──┐┌──┐┌──┐┌──    ← 独立的时钟线，收发双方用同一时钟
+  MOSI ──┘└──┘└──┘└──┘└──    ← 数据线
+        上升沿采样
+
+异步通信（如 UART）:
+  TX ──┐     ┌───┐   ┌─      ← 只有数据线，没有时钟线
+       │     │   │   │
+       └─────┘   └───┘
+       收发双方各自独立计时，必须约定相同的波特率
+</code></pre>
+<h3 id="12-uart">1.2 UART 解决的问题</h3>
+<p>UART 将并行的字节数据转换为串行的比特流，通过一根 TX 线和一根 RX 线传输。异步意味着<strong>不用共享时钟</strong>——双方约定好传输速率（波特率）即可。</p>
+<pre><code>发送端:                            接收端:
+   ┌───┐                            ┌───┐
+   │ H │ 并行数据                    │ H │
+   │ e │ ────┐               ┌────  │ e │
+   │ l │     │   串行比特流   │      │ l │
+   │ l │     └───────────────┘      │ l │
+   │ o │  TX ───────────────── RX   │ o │
+   └───┘                            └───┘
+</code></pre>
+<hr />
+<h2 id="2-uart">2. UART 的物理层</h2>
+<h3 id="21">2.1 数据帧格式</h3>
+<p>一个 UART 数据帧包含以下部分：</p>
+<pre><code>空闲    起始位    数据位 (5~9 bit)    [校验位]  停止位   空闲
+────┐   ┌───┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌───┐ ┌───┐
+    │   │   │ │ │ │ │ │ │ │ │ │ │ │   │ │   │
+    └───┘   └─┘ └─┘ └─┘ └─┘ └─┘ └───┘ └───┘
+        └ D0  D1  D2  D3  D4  D5  D6  D7 ┘
+        先发 LSB（最低位），最后发 MSB（最高位）
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>组成部分</th>
+<th>长度</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>空闲</strong></td>
+<td>任意</td>
+<td>空闲时保持高电平</td>
+</tr>
+<tr>
+<td><strong>起始位</strong></td>
+<td>1 bit</td>
+<td>低电平，告知接收方"数据来了"</td>
+</tr>
+<tr>
+<td><strong>数据位</strong></td>
+<td>5~9 bit（通常 8）</td>
+<td>实际数据，LSB 先发</td>
+</tr>
+<tr>
+<td><strong>校验位</strong></td>
+<td>0~1 bit（通常无）</td>
+<td>奇偶校验，可选</td>
+</tr>
+<tr>
+<td><strong>停止位</strong></td>
+<td>1~2 bit（通常 1）</td>
+<td>高电平，表示一帧结束</td>
+</tr>
+</tbody>
+</table>
+<p><strong>为什么需要起始位？</strong> 接收方在没有数据传输时面对的是随机噪声电平。起始位的<strong>下降沿</strong>提供了明确的"数据开始"信号——接收方检测到下降沿后，开始在精确的时间点采样后续数据位。这个下降沿本质上是收发双方的<strong>同步信号</strong>：接收方以它为起点，按照约定的波特率推算每个数据位的最佳采样时刻。</p>
+<p><strong>为什么需要停止位？</strong> 停止位保证了两帧之间有一个<strong>最小间隔</strong>。如果没有停止位，两帧连续发送时，前一帧的最后一位和后一帧的起始位将无缝衔接，接收方无法区分帧边界。同时，停止位提供了<strong>上升沿</strong>让接收方验证自身时钟是否仍然同步——如果接收方在停止位时刻采到低电平，说明收发双方的波特率偏差过大。</p>
+<p><strong>为什么先发 LSB（低位）？</strong> 这源于早期 UART 芯片的硬件实现：移位寄存器自然向右移位，LSB 最先被移出。从通信角度看，对于低速调制解调器，先发送变化最快的低位比特也有利于信号同步。这一惯例被沿袭至今，成为所有 UART 设备的标准。</p>
+<h3 id="22-baud-rate">2.2 波特率（Baud Rate）</h3>
+<p>波特率即每秒传输的比特数（包括起始/停止/校验位）。收发双方必须约定相同的波特率。</p>
+<pre><code>常用波特率: 9600, 19200, 38400, 57600, 115200, 921600
+
+以 115200 bps 为例：
+每 bit 时间 = 1 / 115200 ≈ 8.68 μs
+传输 1 字节（8N1 = 起始 1 + 数据 8 + 停止 1 = 10 bit）
+耗时 = 10 × 8.68 μs ≈ 86.8 μs
+最大吞吐 = 115200 / 10 = 11520 字节/秒 ≈ 11.5 KB/s
+</code></pre>
+<h3 id="23">2.3 电平标准</h3>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>逻辑 1 (高)</th>
+<th>逻辑 0 (低)</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TTL/CMOS</strong> (MCU 直连)</td>
+<td>3.3V / 5V</td>
+<td>0V</td>
+<td>板级短距离通信</td>
+</tr>
+<tr>
+<td><strong>RS-232</strong></td>
+<td>-3V ~ -15V</td>
+<td>+3V ~ +15V</td>
+<td>PC 串口（DB9 接口）</td>
+</tr>
+<tr>
+<td><strong>RS-485</strong></td>
+<td>差分信号 (A &gt; B)</td>
+<td>差分信号 (A &lt; B)</td>
+<td>工业长距离（千米级）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意</strong>：STM32 引脚输出的是 TTL 电平，与 PC 的 RS-232 电平不兼容！需要使用 MAX232 等电平转换芯片，或直接使用 USB-TTL 转换器（如 CP2102、CH340）。</p>
+</blockquote>
+<hr />
+<h2 id="3-uart">3. UART 的外设硬件</h2>
+<h3 id="31-stm32-usart">3.1 STM32 的 USART 外设</h3>
+<p>STM32 的 USART（Universal Synchronous/Asynchronous Receiver/Transmitter）不仅支持异步通信，还支持同步模式（带时钟线）。在 GSRL 中我们只使用异步模式（UART）。</p>
+<pre><code>┌─────────────────────────────────────────────┐
+│               USART 外设内部                  │
+│                                              │
+│  TX 引脚 ←── 发送移位寄存器 ←── 发送数据寄存器  │
+│              (并→串转换)       (TDR)          │
+│                                              │
+│  RX 引脚 ──→ 接收移位寄存器 ──→ 接收数据寄存器  │
+│              (串→并转换)       (RDR)          │
+│                                              │
+│          波特率发生器 (BRR)                    │
+│          ┌─────────────────┐                 │
+│          │ 总线时钟 ÷ BRR  │ → 采样时钟       │
+│          └─────────────────┘                 │
+│                                              │
+│          过采样 (16× 或 8×)                   │
+│          每个 bit 采样 16 次，取中间 3 次判多数  │
+└─────────────────────────────────────────────┘
+</code></pre>
+<h3 id="32">3.2 过采样机制</h3>
+<p>UART 接收端并不知道发送端的精确时钟相位，因此需要<strong>过采样</strong>来找到每个比特的最佳采样点：</p>
+<pre><code>发送信号:  ──┐     ┌───────────┐     ┌──
+            │     │           │     │
+            └─────┘           └─────┘
+           起始位             数据位
+
+16× 采样:  0123456789ABCDEF  0123456789...
+                 ↑                ↑
+           检测到下降沿      在第 8,9,10 次
+           之后第 8,9,10     采样中取多数
+           次采样确认起始位
+</code></pre>
+<hr />
+<h2 id="4-hal-uart">4. HAL 库的 UART 操作</h2>
+<h3 id="41">4.1 三种传输模式</h3>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>API</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>阻塞</strong> (Blocking)</td>
+<td><code>HAL_UART_Transmit()</code> / <code>HAL_UART_Receive()</code></td>
+<td>等传输完才返回，卡住 CPU</td>
+</tr>
+<tr>
+<td><a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/"><strong>中断</strong></a> (Interrupt)</td>
+<td><code>HAL_UART_Transmit_IT()</code> / <code>HAL_UART_Receive_IT()</code></td>
+<td>每字节产生中断</td>
+</tr>
+<tr>
+<td><a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/"><strong>DMA</strong></a></td>
+<td><code>HAL_UART_Transmit_DMA()</code> / <code>HAL_UART_Receive_DMA()</code></td>
+<td>硬件自动搬运，CPU 零开销</td>
+</tr>
+</tbody>
+</table>
+<p>在 GSRL 中，UART 接收采用<strong>DMA + 空闲中断</strong>的组合（最优方案）。</p>
+<h3 id="42-dma-gsrl">4.2 DMA + 空闲中断：GSRL 的方案</h3>
+<p>传统方式每接收一个字节都要产生中断，大量浪费 CPU 时间。</p>
+<p><strong>为什么不用逐字节中断而用 DMA + IDLE？</strong> 以 115200 bps 为例，每字节 10 bit（起始 1 + 数据 8 + 停止 1），每秒产生 11520 次中断。每次中断需要保存/恢复寄存器、执行回调，实际开销远不止 1μs，通常要 5~8μs。这意味着 CPU 仅处理 UART 接收就要消耗 5%~8% 的算力——在 1kHz 控制循环的机器人系统中，这是不可接受的。DMA（直接存储器访问）则完全不同：<strong>传输期间 CPU 零开销</strong>，硬件自动将数据从 UART 寄存器搬运到内存。配合空闲中断（IDLE），一整帧数据只产生一次中断，而非每字节一次。</p>
+<p>GSRL 的做法：</p>
+<pre><code>① 启动 DMA 接收：
+   HAL_UARTEx_ReceiveToIdle_DMA(&amp;huart, buffer, maxLen);
+   配置 DMA 将收到的数据从 UART 数据寄存器搬运到 buffer
+   直到收到 maxLen 个字节或 UART 空闲中断发生
+
+② 一帧数据结束 → UART 空闲中断触发：
+   当 RX 线上超过 1 个字节时间没有新数据 → IDLE 中断
+
+③ 回调处理数据：
+   HAL_UARTEx_RxEventCallback(huart, actualLen)
+   → 用户回调处理 buffer 中的有效数据
+
+④ 重启 DMA 接收：
+   HAL_UARTEx_ReceiveToIdle_DMA(...)
+   准备接收下一帧
+</code></pre>
+<pre><code>时间轴：
+  RX:   [字节1][字节2][字节3] ...... [字节N]  ────空闲 &gt; 1字节时间────
+                                                    │
+                                              空闲中断触发
+                                             Size = N, 调用回调
+</code></pre>
+<h3 id="43-gsrl-driver">4.3 GSRL Driver 实现</h3>
+<p><code>drv_uart.c</code> 中的完整实现：</p>
+<pre><code class="language-c">void UART_Init(UART_HandleTypeDef *huart, UART_Call_Back rxCallbackFunction, 
+               uint16_t rxDataLimit)
+{
+    UART_Manage_Object_t *uart_obj = UART_Get_Object(huart);
+    uart_obj-&gt;rxCallbackFunction = rxCallbackFunction;
+    uart_obj-&gt;rxDataLimit = rxDataLimit;
+    // 启动 DMA + 空闲中断接收
+    HAL_UARTEx_ReceiveToIdle_DMA(huart, uart_obj-&gt;rxBuffer, rxDataLimit);
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+    UART_Manage_Object_t *uart_obj = UART_Get_Object(huart);
+    if (uart_obj-&gt;rxCallbackFunction != NULL) {
+        uart_obj-&gt;rxCallbackFunction(uart_obj-&gt;rxBuffer, Size);
+    }
+    // 重启接收
+    HAL_UARTEx_ReceiveToIdle_DMA(huart, uart_obj-&gt;rxBuffer, uart_obj-&gt;rxDataLimit);
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    // 错误恢复：重启 DMA 接收
+    UART_Manage_Object_t *uart_obj = UART_Get_Object(huart);
+    HAL_UARTEx_ReceiveToIdle_DMA(huart, uart_obj-&gt;rxBuffer, uart_obj-&gt;rxDataLimit);
+}
+</code></pre>
+<hr />
+<h2 id="5-uart-gsrl">5. UART 在 GSRL 中的实际应用</h2>
+<h3 id="51">5.1 遥控器数据接收</h3>
+<p>DR16 遥控接收机通过 UART 输出 18 字节的遥控数据帧（100Hz）。GSRL 中：</p>
+<pre><code class="language-cpp">// 用户任务中初始化
+UART_Init(&amp;huart3, dr16ITCallback, 36);
+
+// ISR 中回调
+void dr16ITCallback(uint8_t *Buffer, uint16_t Length) {
+    dr16.receiveRxDataFromISR(Buffer);
+}
+</code></pre>
+<h3 id="52">5.2 裁判系统通信</h3>
+<p>RoboMaster 裁判系统通过 UART 下发比赛状态数据，GSRL 中的 <code>dvc_referee</code> 设备对此进行封装。</p>
+<h3 id="53">5.3 调试串口</h3>
+<p><code>printf</code> 重定向到 UART，用于调试输出（通过 USB 虚拟串口或物理 UART 引脚）。</p>
+<hr />
+<h2 id="6">6. 常见问题与对策</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>对策</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收到乱码</td>
+<td>波特率不匹配</td>
+<td>检查收发双方波特率设置</td>
+</tr>
+<tr>
+<td>数据粘包/断帧</td>
+<td>空闲中断配置不当</td>
+<td>使用 IDLE 中断自动分帧</td>
+</tr>
+<tr>
+<td>DMA 接收中断停止</td>
+<td>错误中断后未重启</td>
+<td>在 <code>ErrorCallback</code> 中重启</td>
+</tr>
+<tr>
+<td>收发同时进行时丢数据</td>
+<td>全双工但驱动未处理并发</td>
+<td>使用独立 TX/RX DMA 通道</td>
+</tr>
+<tr>
+<td>长距离通信不稳定</td>
+<td>TTL 电平抗干扰差</td>
+<td>改用 RS-485（差分信号）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异步通信</td>
+<td>无时钟线，双方约定波特率</td>
+</tr>
+<tr>
+<td>数据帧</td>
+<td>起始位 + 数据位（5~9）+ 可选校验位 + 停止位</td>
+</tr>
+<tr>
+<td>波特率</td>
+<td>bits/s，常用 115200</td>
+</tr>
+<tr>
+<td>过采样</td>
+<td>16× 采样，每个 bit 取多次判多数</td>
+</tr>
+<tr>
+<td>DMA + IDLE</td>
+<td>最优接收方案，零 CPU 开销 + 自动分帧</td>
+</tr>
+<tr>
+<td>电平标准</td>
+<td>TTL (MCU) ≠ RS-232 (PC)，需转换</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gsrl">与 GSRL 的关系</h3>
+<p>GSRL 中 <code>drv_uart.c</code> 封装了 DMA + 空闲中断的 UART 接收模式，<code>dvc_remotecontrol</code> 和 <code>dvc_referee</code> 等设备类依赖此驱动接收数据。遥控器、裁判系统的数据均通过 UART 进入系统。</p>
+<blockquote>
+<p>下一篇：<a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI 通信原理与实践</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

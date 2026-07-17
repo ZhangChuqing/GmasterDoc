@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>08 数组与字符串 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../09-%E5%87%BD%E6%95%B0/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#arrays-strings" class="nav-link">数组与字符串（Arrays &amp; Strings）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 数组——同类型数据的集合</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 多维数组</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-0" class="nav-link">3. 字符串——以 \0 结尾的字符数组</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-stringh" class="nav-link">4. 常用字符串函数（&lt;string.h&gt;）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-ctypeh" class="nav-link">5. 字符处理函数（&lt;ctype.h&gt;）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 数组与字符串常见操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="arrays-strings">数组与字符串（Arrays &amp; Strings）</h1>
+<p>数组用于存储一组相同类型的元素，字符串是 C 语言中以 <code>\0</code> 结尾的字符数组。它们是批量数据处理的基础工具。</p>
+<hr />
+<h2 id="1">1. 数组——同类型数据的集合</h2>
+<h3 id="11">1.1 为什么需要数组</h3>
+<p>假设要存储 100 个学生的成绩，不用数组的结果是：</p>
+<pre><code class="language-c">int s0, s1, s2, s3, ..., s99;   // 声明 100 个独立变量——不现实
+</code></pre>
+<p>用数组只需一行：</p>
+<pre><code class="language-c">int scores[100];   // 100 个连续的 int 空间
+</code></pre>
+<h3 id="12">1.2 声明与初始化</h3>
+<pre><code class="language-c">int arr[5];                              // 未初始化（元素为垃圾值）
+int arr2[5] = {10, 20, 30, 40, 50};      // 全部指定
+int arr3[5] = {1, 2, 3};                 // 部分指定，剩余自动补 0 → {1,2,3,0,0}
+int arr4[]  = {1, 2, 3, 4};              // 自动推断大小为 4
+</code></pre>
+<p>数组在内存中是<strong>连续存放</strong>的：</p>
+<pre><code>arr2:  ┌────┬────┬────┬────┬────┐
+       │ 10 │ 20 │ 30 │ 40 │ 50 │
+       └────┴────┴────┴────┴────┘
+索引:    0    1    2    3    4
+地址:  低地址 → → → → → → → → 高地址
+</code></pre>
+<h3 id="13">1.3 访问元素</h3>
+<pre><code class="language-c">int arr[5] = {10, 20, 30, 40, 50};
+
+arr[0] = 100;          // 修改第 1 个元素
+int x = arr[2];        // 读取第 3 个元素 → 30
+printf(&quot;%d\n&quot;, arr[4]); // 输出最后一个元素 → 50
+</code></pre>
+<ul>
+<li>索引从 <strong>0</strong> 开始，到 <strong>n-1</strong> 结束（n 为元素个数）。</li>
+<li>索引超出范围（如 <code>arr[5]</code> 或 <code>arr[-1]</code>）是<strong>未定义行为</strong>，编译器不报错但运行时会出问题。</li>
+</ul>
+<h3 id="14">1.4 获取数组长度</h3>
+<pre><code class="language-c">int arr[] = {1, 2, 3, 4, 5};
+int length = sizeof(arr) / sizeof(arr[0]);  // 总字节数 / 单个元素字节数 = 元素个数
+printf(&quot;数组长度：%d\n&quot;, length);            // 5
+</code></pre>
+<blockquote>
+<p>⚠️ 这种方法<strong>仅在数组定义的同一作用域内有效</strong>。将数组传给函数后，<code>sizeof</code> 返回的是指针大小而非数组大小（详见"函数"篇）。</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 多维数组</h2>
+<pre><code class="language-c">int matrix[3][4] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+
+printf(&quot;%d\n&quot;, matrix[1][2]);   // 第 2 行第 3 列 → 7
+</code></pre>
+<p>内存布局（C 语言采用<strong>行优先</strong>存储）：</p>
+<pre><code>逻辑视图：             内存中的实际排列（按行存放）：
+┌─────────────┐        ┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
+│ 1   2   3   4│        │1 │2 │3 │4 │5 │6 │7 │8 │9 │10│11│12│
+│ 5   6   7   8│        └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘
+│ 9  10  11  12│        第0行      第1行      第2行
+└─────────────┘
+</code></pre>
+<pre><code class="language-c">// 遍历二维数组
+for (int i = 0; i &lt; 3; i++) {
+    for (int j = 0; j &lt; 4; j++) {
+        printf(&quot;%3d &quot;, matrix[i][j]);
+    }
+    printf(&quot;\n&quot;);
+}
+</code></pre>
+<hr />
+<h2 id="3-0">3. 字符串——以 <code>\0</code> 结尾的字符数组</h2>
+<p>C 语言没有独立的字符串类型。字符串本质上是末尾带有 <code>\0</code>（空字符，ASCII 值 0）的 <code>char</code> 数组。</p>
+<h3 id="31">3.1 声明与初始化</h3>
+<pre><code class="language-c">char str1[6] = {'H', 'e', 'l', 'l', 'o', '\0'};    // 手动逐字符
+char str2[6] = &quot;Hello&quot;;                              // 等价写法（编译器自动加 \0）
+char str3[]  = &quot;Hello&quot;;                              // 自动推断大小为 6（5 字符 + \0）
+</code></pre>
+<p>内存布局：</p>
+<pre><code>str3:  ┌───┬───┬───┬───┬───┬───┐
+       │ H │ e │ l │ l │ o │\0 │
+       └───┴───┴───┴───┴───┴───┘
+索引:    0   1   2   3   4   5
+</code></pre>
+<p><code>\0</code> 是字符串结束的标志。库函数（如 <code>printf</code>、<code>strlen</code>）靠它来确定字符串边界。<strong>如果缺少 <code>\0</code>，函数会一直向后读取直到碰巧遇到一个 0 字节，导致错误</strong>。</p>
+<h3 id="32-printf-scanf">3.2 使用 <code>printf</code> 和 <code>scanf</code></h3>
+<pre><code class="language-c">char name[50];
+printf(&quot;请输入姓名：&quot;);
+scanf(&quot;%49s&quot;, name);         // 限制最多读 49 字符，保留 1 位给 \0
+printf(&quot;你好，%s\n&quot;, name);
+</code></pre>
+<blockquote>
+<p>⚠️ <code>scanf("%s")</code> 遇到空格就会停止读取。如需读取含空格的整行，用 <code>fgets</code>：
+<code>c
+char line[100];
+fgets(line, sizeof(line), stdin);  // 安全读取一行</code></p>
+</blockquote>
+<hr />
+<h2 id="4-stringh">4. 常用字符串函数（<code>&lt;string.h&gt;</code>）</h2>
+<pre><code class="language-c">#include &lt;string.h&gt;
+
+char s1[50] = &quot;Hello&quot;;
+char s2[50] = &quot;World&quot;;
+char s3[50];
+</code></pre>
+<h3 id="41">4.1 获取长度</h3>
+<pre><code class="language-c">size_t len = strlen(s1);       // 5（不包含 \0）
+</code></pre>
+<h3 id="42">4.2 复制</h3>
+<pre><code class="language-c">strcpy(s3, s1);                // 将 s1 复制到 s3，包括 \0
+strncpy(s3, s1, 3);           // 最多复制 3 个字符，需手动补 \0
+s3[3] = '\0';
+</code></pre>
+<blockquote>
+<p>⚠️ <code>strcpy</code> 不检查目标缓冲区大小，如果源字符串更长会导致<strong>缓冲区溢出</strong>。优先使用 <code>strncpy</code> 或 <code>snprintf</code>。</p>
+</blockquote>
+<h3 id="43">4.3 拼接</h3>
+<pre><code class="language-c">strcat(s1, &quot; &quot;);               // s1 = &quot;Hello &quot;（确保 s1 有足够空间）
+strcat(s1, s2);                // s1 = &quot;Hello World&quot;
+</code></pre>
+<h3 id="44">4.4 比较</h3>
+<pre><code class="language-c">if (strcmp(s1, s2) == 0) { printf(&quot;相等\n&quot;); }
+if (strcmp(s1, s2) &lt; 0)  { printf(&quot;s1 &lt; s2\n&quot;); }
+if (strcmp(s1, s2) &gt; 0)  { printf(&quot;s1 &gt; s2\n&quot;); }
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>不能用 <code>==</code> 比较字符串</strong>。<code>s1 == s2</code> 比较的是两个数组的<strong>地址</strong>而非内容。必须用 <code>strcmp</code>。</p>
+</blockquote>
+<hr />
+<h2 id="5-ctypeh">5. 字符处理函数（<code>&lt;ctype.h&gt;</code>）</h2>
+<pre><code class="language-c">#include &lt;ctype.h&gt;
+
+char ch = 'A';
+isalpha(ch);    // 是否为字母 → 真
+isdigit(ch);    // 是否为数字 → 假
+isspace(ch);    // 是否为空白字符 → 假
+islower(ch);    // 是否为小写 → 假
+isupper(ch);    // 是否为大写 → 真
+toupper('a');   // 转大写 → 'A'
+tolower('Z');   // 转小写 → 'z'
+</code></pre>
+<hr />
+<h2 id="6">6. 数组与字符串常见操作</h2>
+<h3 id="61">6.1 反转数组</h3>
+<pre><code class="language-c">void reverse(int arr[], int n)
+{
+    for (int i = 0; i &lt; n / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
+    }
+}
+</code></pre>
+<h3 id="62">6.2 字符串转数字</h3>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+
+int    a = atoi(&quot;42&quot;);        // 字符串 → int
+double b = atof(&quot;3.14&quot;);      // 字符串 → double
+long   c = atol(&quot;1000&quot;);      // 字符串 → long
+</code></pre>
+<hr />
+<h2 id="7">7. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数组索引从 0 开始</td>
+<td><code>arr[0]</code> 是第一个元素，<code>arr[n-1]</code> 是最后一个</td>
+</tr>
+<tr>
+<td>不能越界访问</td>
+<td>编译器不检查，运行时可能崩溃或产生错误结果</td>
+</tr>
+<tr>
+<td><code>sizeof</code> 获取数组大小</td>
+<td>仅在数组定义的作用域内有效</td>
+</tr>
+<tr>
+<td>字符串以 <code>\0</code> 结尾</td>
+<td>分配空间时需额外留 1 字节</td>
+</tr>
+<tr>
+<td>用 <code>strcmp</code> 比较字符串</td>
+<td><code>==</code> 只比较地址</td>
+</tr>
+<tr>
+<td>优先用 <code>strncpy</code>/<code>fgets</code></td>
+<td>带长度限制的版本更安全</td>
+</tr>
+<tr>
+<td>二维数组行优先存储</td>
+<td>内层索引变化快，与外层循环对应</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>algorithm数学操作 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../using%E5%88%AB%E5%90%8D/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#algorithm" class="nav-link">&lt;algorithm&gt; 中的数学操作</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 各函数速览</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-gsrl" class="nav-link">2. 工程代码中的实际使用（GSRL 源码）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 动手写：基础用法示例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-vs" class="nav-link">4. 对比：手写 vs 标准库</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="algorithm"><code>&lt;algorithm&gt;</code> 中的数学操作</h1>
+<p>C++ 标准库 <code>&lt;algorithm&gt;</code> 提供了一些常用的数学工具函数，比如 <code>std::clamp</code>（限幅）、<code>std::min</code>/<code>std::max</code>、<code>std::abs</code>、<code>std::swap</code>。它们比手写版本更安全、更清晰、编译器优化也更好。</p>
+<hr />
+<h2 id="1">1. 各函数速览</h2>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>头文件</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>std::clamp(v, lo, hi)</code></td>
+<td><code>&lt;algorithm&gt;</code> (C++17)</td>
+<td>限幅：v &lt; lo 则返回 lo，v &gt; hi 则返回 hi</td>
+<td><code>clamp(1.5, 0, 1) → 1.0</code></td>
+</tr>
+<tr>
+<td><code>std::min(a, b)</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td>取较小值</td>
+<td><code>min(3, 5) → 3</code></td>
+</tr>
+<tr>
+<td><code>std::max(a, b)</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td>取较大值</td>
+<td><code>max(3, 5) → 5</code></td>
+</tr>
+<tr>
+<td><code>std::abs(x)</code></td>
+<td><code>&lt;cstdlib&gt;</code> / <code>&lt;cmath&gt;</code></td>
+<td>绝对值（整数/浮点）</td>
+<td><code>abs(-5) → 5</code></td>
+</tr>
+<tr>
+<td><code>std::swap(a, b)</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td>交换两个值</td>
+<td><code>swap(x, y)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-gsrl">2. 工程代码中的实际使用（GSRL 源码）</h2>
+<h3 id="21-stdclamp">2.1 <code>std::clamp</code> — 功率控制器中的衰减因子限幅</h3>
+<p><strong>出处：</strong> <code>Chariot/src/crt_chassis.cpp:555-590</code></p>
+<p>底盘的功率控制器需要计算一个衰减因子 <code>alpha</code>（范围 [0, 1]），用来限制电机功率。计算过程中有多个步骤需要把结果限制在有效范围：</p>
+<pre><code class="language-cpp">void Chassis::powerController()
+{
+    // ... 省略参数计算 ...
+
+    // A, B, C 是功率约束对应的二次方程系数：A*α² + B*α + C = 0
+    fp32 A = k2 * (Rl * Rl + Rr * Rr);
+    fp32 B = k0 * (Rl * omegaL + Rr * omegaR) +
+             2.0f * k2 * (Ml * Rl + Mr * Rr);
+    fp32 C = k0 * (Ml * omegaL + Mr * omegaR) +
+             k1 * (fabsf(omegaL) + fabsf(omegaR)) +
+             k2 * (Ml * Ml + Mr * Mr) + k3 - m_activePowerMaxW;
+
+    fp32 alpha = 0.0f;
+
+    if (fabsf(A) &lt; 1e-8f) {
+        // A ≈ 0：退化为线性方程 B*α + C = 0
+        if (fabsf(B) &gt; 1e-8f) {
+            alpha = std::clamp(-C / B, 0.0f, 1.0f);   // ✅ 解限幅在 [0, 1]
+        } else {
+            alpha = (C &lt;= 0.0f) ? 1.0f : 0.0f;
+        }
+    } else {
+        // 正常二次方程
+        fp32 delta = B * B - 4.0f * A * C;
+        if (delta &gt; 0.0f) {
+            // ... 选取 [0, 1] 范围内最大的根 ...
+        } else {
+            // 无实数解：取抛物线顶点并限幅
+            alpha = std::clamp(-B / (2.0f * A), 0.0f, 1.0f); // ✅ 顶点限幅
+        }
+    }
+
+    // 低通滤波平滑衰减因子，防止力矩突变
+    alpha = std::clamp(alpha, 0.01f, 1.0f);  // ✅ 下限 0.01 防止衰减因子为零
+    m_powerDecayFactor = alpha * POWER_DECAY_FILTER_ALPHA
+                       + m_powerDecayFactor * (1.0f - POWER_DECAY_FILTER_ALPHA);
+
+    // 应用衰减后的力矩
+    m_leftLeg.wheelTorque  += m_powerDecayFactor * Rl;
+    m_rightLeg.wheelTorque += m_powerDecayFactor * Rr;
+}
+</code></pre>
+<p><strong>伪代码——<code>std::clamp</code> 内部逻辑等价于：</strong></p>
+<pre><code class="language-bash">std::clamp(value, lo, hi) 等价于：
+  if value &lt; lo → return lo
+  if value &gt; hi → return hi
+  else         → return value
+</code></pre>
+<p><strong>对比：手写 vs <code>std::clamp</code></strong></p>
+<pre><code class="language-cpp">// ❌ 手写版本：三个分支，容易写错顺序
+if (alpha &lt; 0.0f) {
+    alpha = 0.0f;
+} else if (alpha &gt; 1.0f) {
+    alpha = 1.0f;
+}
+
+// ❌ 手写版本2：用三元运算符，一长串不好读
+alpha = (alpha &lt; 0.0f) ? 0.0f : (alpha &gt; 1.0f) ? 1.0f : alpha;
+
+// ✅ std::clamp：一行，意图清晰
+alpha = std::clamp(alpha, 0.0f, 1.0f);
+</code></pre>
+<h3 id="22-stdclamp">2.2 <code>std::clamp</code> — 腿长控制器防机械越界</h3>
+<p><strong>出处：</strong> <code>Chariot/src/crt_chassis.cpp:605-627</code></p>
+<pre><code class="language-cpp">void Chassis::legLengthController()
+{
+    // 左腿：目标长度必须限制在机械限位内
+    fp32 targetLeftLegLength = std::clamp(
+        m_targetLegLength - m_rollLengthCompensation,  // 计算值
+        MIN_LEG_LENGTH_M,                               // 机械最小腿长
+        MAX_LEG_LENGTH_M                                // 机械最大腿长
+    );
+    fp32 leftLengthError = m_leftLeg.l0 - targetLeftLegLength;
+    fp32 leftLengthControlOutput = m_leftLegLengthPID.controllerCalculate(
+        0.0f, &amp;leftLengthError);
+    m_leftLeg.virtualForce = leftLengthControlOutput;
+
+    // 右腿同理
+    fp32 targetRightLegLength = std::clamp(
+        m_targetLegLength + m_rollLengthCompensation,
+        MIN_LEG_LENGTH_M,
+        MAX_LEG_LENGTH_M
+    );
+    // ...
+}
+</code></pre>
+<pre><code class="language-bash">原因：
+  目标腿长 = 期望腿长 ± 侧倾补偿量
+
+  如果机器人侧倾严重，补偿量可能让目标腿长超出机械限位
+  → 电机强行驱动到不可达位置 → 堵转、过流
+
+  std::clamp 强制把目标锁在机械允许范围内
+</code></pre>
+<h3 id="23-stdclamp-lambda">2.3 <code>std::clamp</code> — 跳跃中的限速 lambda</h3>
+<p><strong>出处：</strong> <code>Chariot/src/crt_chassis_behavior.cpp:670-676</code></p>
+<p>跳跃状态机中，用 lambda 封装了一个限速辅助函数：</p>
+<pre><code class="language-cpp">BTStatus ChassisBehaviorTree::jumpStateMachineCallback(void *context)
+{
+    auto *self    = static_cast&lt;ChassisBehaviorTree *&gt;(context);
+    auto *chassis = self-&gt;m_chassis;
+
+    // 限速辅助 lambda：修正速度到安全范围
+    auto clampChassisSpeed = [chassis]() {
+        // 先撤销上一帧的速度累积（position += speed * dt）
+        chassis-&gt;m_targetPosition -= chassis-&gt;m_targetSpeed * chassis-&gt;m_loopDeltaTime;
+        // 限幅速度
+        chassis-&gt;m_targetSpeed = std::clamp(
+            chassis-&gt;m_targetSpeed,
+            -JUMP_MAX_SPEED_MPS,   // 最大后退速度
+            JUMP_MAX_SPEED_MPS     // 最大前进速度
+        );
+        // 重新累积
+        chassis-&gt;m_targetPosition += chassis-&gt;m_targetSpeed * chassis-&gt;m_loopDeltaTime;
+    };
+
+    // 在各个跳跃子阶段中反复调用
+    switch (self-&gt;m_jumpPhase) {
+        case JUMP_PHASE_CROUCH:    // 蹲下准备
+            clampChassisSpeed();
+            // ...
+        case JUMP_PHASE_LAUNCH:    // 起跳
+            clampChassisSpeed();
+            // ...
+        case JUMP_PHASE_RETRACT:   // 收腿
+            clampChassisSpeed();
+            // ...
+        case JUMP_PHASE_EXTEND_LAND: // 伸腿着地
+            clampChassisSpeed();
+            // ...
+    }
+}
+</code></pre>
+<h3 id="24-stdmin-stdmax">2.4 <code>std::min</code> / <code>std::max</code> — 行为树的角度约束</h3>
+<p><strong>出处：</strong> <code>Chariot/src/crt_chassis_behavior.cpp:430-445</code></p>
+<p>恢复站立时的角度限幅：</p>
+<pre><code class="language-cpp">// 快速推进 phi0 向目标角度，但不能超过目标
+self-&gt;m_targetPhi0Left += RECOVERY_STANDUP_SPEED * chassis-&gt;m_loopDeltaTime;
+self-&gt;m_targetPhi0Left  = std::min(self-&gt;m_targetPhi0Left, RECOVERY_STANDUP_PHI0);
+//                        ↑ 取较小值：如果超过了目标，就用目标值
+</code></pre>
+<p>爬楼梯时的角度下限：</p>
+<pre><code class="language-cpp">self-&gt;m_stairTargetPhi0Left -= CLIMBING_ASCEND_SPEED * chassis-&gt;m_loopDeltaTime;
+self-&gt;m_stairTargetPhi0Left  = std::max(self-&gt;m_stairTargetPhi0Left, CLIMBING_ASCEND_TARGET_PHI0);
+//                              ↑ 取较大值：如果跌破了目标，就用目标值
+</code></pre>
+<p><strong>结合 <code>std::clamp</code> 来理解这三者的关系：</strong></p>
+<pre><code class="language-bash">std::min(x, hi)   ≈  std::clamp(x, -∞, hi)    # 只限上界
+std::max(x, lo)   ≈  std::clamp(x, lo, +∞)    # 只限下界
+std::clamp(x, lo, hi)                          # 同时限上下界
+
+典型用法：
+  min → 增量累加时，防止超过上限
+  max → 增量递减时，防止跌破下限
+  clamp → 来自外部的值，直接锁死在区间内
+</code></pre>
+<h3 id="25-stdabs">2.5 <code>std::abs</code> — 卡尔曼滤波中的测量有效性判断</h3>
+<p><strong>出处：</strong> <code>GSRL/Algorithm/inc/alg_filter.hpp:633-637</code></p>
+<pre><code class="language-cpp">// KalmanFilter::performDynamicAdjustment()
+for (int i = 0; i &lt; MeasSize; ++i) {
+    if (std::abs(measurement(i)) &gt; EPSILON) {  // 绝对值 &gt; 微小阈值 → 有效测量
+        m_validMeasurementCount++;
+    }
+}
+</code></pre>
+<hr />
+<h2 id="3">3. 动手写：基础用法示例</h2>
+<h3 id="31-pid">3.1 示例：PID 输出限幅</h3>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+
+class SimplePID
+{
+public:
+    struct PIDParam {
+        fp32 Kp, Ki, Kd;
+        fp32 outputLimit;     // 输出限幅值
+        fp32 integralLimit;   // 积分限幅值
+    };
+
+    fp32 controllerCalculate(fp32 setPoint, const fp32 *feedBackData)
+    {
+        fp32 error = setPoint - *feedBackData;
+
+        // P 项
+        fp32 pOut = m_param.Kp * error;
+
+        // I 项（带积分限幅）
+        m_integral += error * m_dt;
+        m_integral  = std::clamp(m_integral, -m_param.integralLimit, m_param.integralLimit);
+        fp32 iOut   = m_param.Ki * m_integral;
+
+        // D 项
+        fp32 dErr   = (error - m_lastError) / m_dt;
+        m_lastError = error;
+        fp32 dOut   = m_param.Kd * dErr;
+
+        // 总输出限幅
+        fp32 output = pOut + iOut + dOut;
+        return std::clamp(output, -m_param.outputLimit, m_param.outputLimit);
+        //                    ↑ 一句话搞定上下限检查
+    }
+
+private:
+    PIDParam m_param;
+    fp32 m_integral = 0.0f;
+    fp32 m_lastError = 0.0f;
+    fp32 m_dt;
+};
+</code></pre>
+<h3 id="32">3.2 示例：传感器数据边界保护</h3>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+
+// 处理激光测距数据
+fp32 processRangeData(fp32 rawDistance)
+{
+    // 传感器有效范围 [0.05m, 12.0m]
+    constexpr fp32 MIN_RANGE = 0.05f;
+    constexpr fp32 MAX_RANGE = 12.0f;
+
+    // 限幅到有效范围
+    return std::clamp(rawDistance, MIN_RANGE, MAX_RANGE);
+}
+
+// 温度保护
+fp32 applyTemperatureLimit(fp32 targetCurrent_A, fp32 currentTemp_C)
+{
+    constexpr fp32 MAX_TEMP      = 80.0f;
+    constexpr fp32 DERATE_START  = 60.0f;
+    constexpr fp32 MAX_CURRENT_A = 20.0f;
+
+    // 温度超过降额起始点：线性降额
+    if (currentTemp_C &gt; DERATE_START) {
+        fp32 factor = std::clamp(
+            (MAX_TEMP - currentTemp_C) / (MAX_TEMP - DERATE_START),
+            0.0f,   // 最高温度时因子为 0
+            1.0f    // 降额起始时因子为 1
+        );
+        targetCurrent_A *= factor;
+    }
+
+    // 最终电流也要限幅
+    return std::clamp(targetCurrent_A, 0.0f, MAX_CURRENT_A);
+}
+</code></pre>
+<h3 id="33-stdswap">3.3 示例：<code>std::swap</code> 互换</h3>
+<pre><code class="language-cpp">#include &lt;utility&gt;  // std::swap
+
+// 两个滤波器交替工作（乒乓缓冲）
+class DualKalmanFilter
+{
+    KalmanFilter2D m_filterA;
+    KalmanFilter2D m_filterB;
+    KalmanFilter2D *m_active;   // 指向当前使用的滤波器
+    KalmanFilter2D *m_backup;   // 指向备用的滤波器
+
+public:
+    void swapFilters()
+    {
+        std::swap(m_active, m_backup);  // 交换两个指针，一行搞定
+        // 等价于：
+        // KalmanFilter2D *tmp = m_active;
+        // m_active = m_backup;
+        // m_backup = tmp;
+    }
+};
+
+// 或者直接交换两个值
+void toggleMode(int &amp;modeA, int &amp;modeB)
+{
+    std::swap(modeA, modeB);  // modeA 和 modeB 的值互换
+}
+</code></pre>
+<h3 id="34-stdabs-vs-fabsf">3.4 示例：<code>std::abs</code> 比较 vs <code>fabsf</code></h3>
+<pre><code class="language-cpp">#include &lt;cstdlib&gt;   // std::abs (整数)
+#include &lt;cmath&gt;     // fabsf (C 风格浮点绝对值)
+
+// 卡尔曼滤波中判断测量值是否有效
+bool isMeasurementValid(fp32 measurement)
+{
+    constexpr fp32 EPSILON = 1e-6f;
+
+    // ✅ C++ 风格：std::abs 对浮点也能用（会调用重载版本）
+    return std::abs(measurement) &gt; EPSILON;
+
+    // 等价于 C 风格：
+    // return fabsf(measurement) &gt; EPSILON;
+}
+
+// std::abs 的重载机制
+int    absInt    = std::abs(-5);        // → 5 (int)
+double absDouble = std::abs(-3.14);     // → 3.14 (double)
+float  absFloat  = std::abs(-2.71f);    // → 2.71f (float)
+// 一个函数名，编译器根据参数类型自动选版本
+</code></pre>
+<hr />
+<h2 id="4-vs">4. 对比：手写 vs 标准库</h2>
+<h3 id="41-stdclamp-vs">4.1 <code>std::clamp</code> vs 手写限幅</h3>
+<pre><code class="language-cpp">fp32 value = getSomeValue();
+
+// ❌ 手写版本1：容易把 &gt; 和 &lt; 写反
+if (value &gt; MAX) {
+    value = MAX;
+}
+if (value &lt; MIN) {
+    value = MIN;
+}
+
+// ❌ 手写版本2：嵌套三元运算符，可读性差
+value = (value &lt; MIN) ? MIN : (value &gt; MAX) ? MAX : value;
+
+// ✅ 标准库：一行，意图明确
+value = std::clamp(value, MIN, MAX);
+</code></pre>
+<h3 id="42-stdminstdmax-vs">4.2 <code>std::min</code>/<code>std::max</code> vs 三元运算符</h3>
+<pre><code class="language-cpp">// ❌ 三元运算符：变量名出现两次，重复
+int smaller = (a &lt; b) ? a : b;
+int larger  = (a &gt; b) ? a : b;
+
+// ✅ 标准库：简洁
+int smaller = std::min(a, b);
+int larger  = std::max(a, b);
+
+// 更重要的是：初始化列表版本
+int best = std::max({a, b, c, d});  // 四个值中取最大 —— 手写要嵌套三元
+</code></pre>
+<h3 id="43-stdabs-vs-fabsffabs">4.3 <code>std::abs</code> vs <code>fabsf</code>/<code>fabs</code></h3>
+<pre><code class="language-cpp">// C 风格：不同类型不同函数名，容易用错
+int    v1 = abs(-5);           // int 绝对值
+float  v2 = fabsf(-3.14f);    // float 绝对值  → 容易忘写 f
+double v3 = fabs(-3.14);      // double 绝对值 → 容易和 abs 混淆
+
+// C++ 风格：统一用 std::abs，自动重载
+int    v1 = std::abs(-5);      // ✅
+float  v2 = std::abs(-3.14f);  // ✅
+double v3 = std::abs(-3.14);   // ✅
+</code></pre>
+<hr />
+<h2 id="5">5. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要做什么</th>
+<th>用什么</th>
+<th>头文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>把值限制在 [lo, hi]</td>
+<td><code>std::clamp(v, lo, hi)</code></td>
+<td><code>&lt;algorithm&gt;</code> (C++17)</td>
+</tr>
+<tr>
+<td>取两个值中较小的</td>
+<td><code>std::min(a, b)</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+</tr>
+<tr>
+<td>取两个值中较大的</td>
+<td><code>std::max(a, b)</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+</tr>
+<tr>
+<td>交换两个值</td>
+<td><code>std::swap(a, b)</code></td>
+<td><code>&lt;utility&gt;</code></td>
+</tr>
+<tr>
+<td>取绝对值</td>
+<td><code>std::abs(x)</code></td>
+<td><code>&lt;cstdlib&gt;</code> 或 <code>&lt;cmath&gt;</code></td>
+</tr>
+<tr>
+<td>多个值取最值</td>
+<td><code>std::min({a,b,c})</code> / <code>std::max({a,b,c})</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心原则：能用标准库的，就不要手写。标准库版本更安全（类型检查）、更清晰（意图明确）、优化更好（constexpr + 编译器内建）。</strong></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>04 运算符 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#operators" class="nav-link">运算符（Operators）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 算术运算符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 关系运算符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 逻辑运算符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 位运算符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 赋值运算符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 自增与自减</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 条件运算符（三元运算符）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-sizeof" class="nav-link">8. sizeof 运算符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9" class="nav-link">9. 运算符优先级</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10" class="nav-link">10. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="operators">运算符（Operators）</h1>
+<p>运算符是对数据进行计算和比较的符号。C 语言提供了丰富的运算符，理解它们的优先级和结合性是写出正确表达式的关键。</p>
+<hr />
+<h2 id="1">1. 算术运算符</h2>
+<pre><code class="language-c">int a = 10, b = 3;
+
+int sum    = a + b;    // 加 → 13
+int diff   = a - b;    // 减 → 7
+int prod   = a * b;    // 乘 → 30
+int quot   = a / b;    // 除 → 3（整数除法，截断小数）
+int remains = a % b;   // 取模（求余数）→ 1
+</code></pre>
+<h3 id="vs">整数除法 vs 浮点除法</h3>
+<pre><code class="language-c">int   x = 10 / 3;    // x = 3（整数除法）
+float y = 10 / 3;    // y = 3.0（先做整数除法 10/3=3，再转为 3.0）
+
+// 正确获取小数结果的方式：
+float z1 = 10.0f / 3.0f;           // 直接用浮点数字面量
+float z2 = (float)10 / 3;           // 将整数显式转换为浮点类型
+float z3 = 10.0f / 3;               // 混合类型时自动提升
+</code></pre>
+<h3 id="_1">取模运算的特殊规则</h3>
+<ul>
+<li>操作数必须都是整数，不能对 <code>float</code> 或 <code>double</code> 取模。</li>
+<li>结果的符号与被除数一致：</li>
+</ul>
+<pre><code class="language-c">int r1 =  10 % 3;   // 1
+int r2 = -10 % 3;   // -1（被除数为负，结果也为负）
+int r3 =  10 % -3;  // 1（被除数为正，结果为正）
+</code></pre>
+<hr />
+<h2 id="2">2. 关系运算符</h2>
+<p>关系运算符用于比较两个值，结果为 <code>1</code>（真）或 <code>0</code>（假）。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>示例（<code>a = 10, b = 3</code>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>等于</td>
+<td><code>a == b</code> → 0</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>不等于</td>
+<td><code>a != b</code> → 1</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>大于</td>
+<td><code>a &gt; b</code> → 1</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>小于</td>
+<td><code>a &lt; b</code> → 0</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+<td><code>a &gt;= 10</code> → 1</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+<td><code>b &lt;= 2</code> → 0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>常见陷阱</strong>：<code>=</code> 是赋值，<code>==</code> 是比较。<code>if (x = 5)</code> 永远为真——因为它把 5 赋给了 x，而 5 是非零值。正确写法是 <code>if (x == 5)</code>。</p>
+</blockquote>
+<hr />
+<h2 id="3">3. 逻辑运算符</h2>
+<p>逻辑运算符连接多个条件，结果依然是 <code>1</code>（真）或 <code>0</code>（假）。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>逻辑与（AND）</td>
+<td><code>a &gt; 0 &amp;&amp; a &lt; 100</code>（a 在 0 到 100 之间）</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>逻辑或（OR）</td>
+<td><code>x &lt; 0 || x &gt; 100</code>（x 在范围外）</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>逻辑非（NOT）</td>
+<td><code>!flag</code>（flag 为假时为真）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="short-circuit-evaluation">短路求值（Short-Circuit Evaluation）</h3>
+<pre><code class="language-c">// &amp;&amp; 短路：左侧为假时，右侧不会执行
+if (p != NULL &amp;&amp; *p == 42) {  // 安全：p 为空时不会解引用
+    // ...
+}
+
+// || 短路：左侧为真时，右侧不会执行
+if (index &lt; 0 || index &gt;= size) {  // 任一条件满足即判定越界
+    // ...
+}
+</code></pre>
+<p>短路特性既提升效率，也常用于写"守卫条件"——先检查指针非空，再访问其内容。</p>
+<h3 id="_2">逻辑运算真值表</h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A &amp;&amp; B</th>
+<th>A || B</th>
+<th>!A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>非0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>非0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>非0</td>
+<td>非0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 位运算符</h2>
+<p>位运算符直接操作二进制位，常用于底层编程、标志位管理和性能优化。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>示例（<code>a=5(0101), b=3(0011)</code>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>按位与</td>
+<td><code>a &amp; b</code> → 1（0101 &amp; 0011 = 0001）</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>按位或</td>
+<td><code>a \| b</code> → 7（0101 | 0011 = 0111）</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>按位异或</td>
+<td><code>a ^ b</code> → 6（0101 ^ 0011 = 0110）</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>按位取反</td>
+<td><code>~a</code> → -6（~00000101 = 11111010）</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>左移</td>
+<td><code>a &lt;&lt; 1</code> → 10（0101 → 1010，乘 2）</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>右移</td>
+<td><code>a &gt;&gt; 1</code> → 2（0101 → 0010，除 2）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">典型应用</h3>
+<pre><code class="language-c">// 1. 标志位操作（用一个整数的不同位表示多个开关）
+#define FLAG_A  0x01    // 0001
+#define FLAG_B  0x02    // 0010
+#define FLAG_C  0x04    // 0100
+
+int flags = 0;
+flags |= FLAG_A;         // 打开 FLAG_A
+flags &amp;= ~FLAG_B;        // 关闭 FLAG_B
+if (flags &amp; FLAG_C) {    // 检测 FLAG_C 是否打开
+    // ...
+}
+
+// 2. 高效率乘除 2 的幂
+int x = 10;
+int y = x &lt;&lt; 3;   // 等价于 x * 8（前提是不溢出）
+int z = x &gt;&gt; 2;   // 等价于 x / 4
+</code></pre>
+<blockquote>
+<p>⚠️ 不要混淆 <code>&amp;</code>（按位与）和 <code>&amp;&amp;</code>（逻辑与）、<code>|</code>（按位或）和 <code>||</code>（逻辑或）。前者操作每一位，后者操作布尔值并有短路特性。</p>
+</blockquote>
+<hr />
+<h2 id="5">5. 赋值运算符</h2>
+<pre><code class="language-c">int x = 10;
+
+x += 5;    // x = x + 5  → 15
+x -= 3;    // x = x - 3  → 12
+x *= 2;    // x = x * 2  → 24
+x /= 4;    // x = x / 4  → 6
+x %= 4;    // x = x % 4  → 2
+
+// 位运算的复合赋值
+x &lt;&lt;= 2;   // x = x &lt;&lt; 2
+x &amp;= 0x0F; // x = x &amp; 0x0F
+</code></pre>
+<hr />
+<h2 id="6">6. 自增与自减</h2>
+<pre><code class="language-c">int a = 5;
+int b = ++a;    // 前置自增：a 先加 1，再赋值给 b → a=6, b=6
+int c = a++;    // 后置自增：先赋值 a 给 c，a 再加 1 → c=6, a=7
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>含义</th>
+<th>执行顺序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>++x</code></td>
+<td>前置自增</td>
+<td>先加后用</td>
+</tr>
+<tr>
+<td><code>x++</code></td>
+<td>后置自增</td>
+<td>先用后加</td>
+</tr>
+<tr>
+<td><code>--x</code></td>
+<td>前置自减</td>
+<td>先减后用</td>
+</tr>
+<tr>
+<td><code>x--</code></td>
+<td>后置自减</td>
+<td>先用后减</td>
+</tr>
+</tbody>
+</table>
+<p><strong>建议</strong>：在复杂表达式中避免使用自增/自减（如 <code>arr[i++] = ++j</code>），拆成独立语句更清晰。</p>
+<hr />
+<h2 id="7">7. 条件运算符（三元运算符）</h2>
+<pre><code class="language-c">// 语法：条件 ? 为真时的值 : 为假时的值
+int max = (a &gt; b) ? a : b;
+</code></pre>
+<p>等价于：</p>
+<pre><code class="language-c">int max;
+if (a &gt; b) {
+    max = a;
+} else {
+    max = b;
+}
+</code></pre>
+<p>三元运算符适合简单的二选一赋值。嵌套使用会严重降低可读性，应避免。</p>
+<hr />
+<h2 id="8-sizeof">8. <code>sizeof</code> 运算符</h2>
+<pre><code class="language-c">printf(&quot;%zu\n&quot;, sizeof(int));      // 类型的大小
+printf(&quot;%zu\n&quot;, sizeof(x));        // 变量的大小（可省略括号）
+printf(&quot;%zu\n&quot;, sizeof(arr));      // 数组的总大小（元素数 × 每个元素大小）
+</code></pre>
+<hr />
+<h2 id="9">9. 运算符优先级</h2>
+<p>当多个运算符同时出现时，优先级决定"谁先算"。优先级相同时，结合性决定方向。</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>结合性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1（最高）</td>
+<td><code>()</code> <code>[]</code> <code>-&gt;</code> <code>.</code> <code>++</code>（后置） <code>--</code>（后置）</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>!</code> <code>~</code> <code>++</code>（前置） <code>--</code>（前置） <code>+</code>（正） <code>-</code>（负） <code>*</code>（解引用） <code>&amp;</code>（取地址） <code>sizeof</code></td>
+<td><strong>右到左</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>*</code> <code>/</code> <code>%</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>+</code> <code>-</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>&lt;&lt;</code> <code>&gt;&gt;</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>==</code> <code>!=</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>&amp;</code>（按位与）</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>^</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>\|</code>（按位或）</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>&amp;&amp;</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>\|\|</code></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>?:</code></td>
+<td><strong>右到左</strong></td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>=</code> <code>+=</code> <code>-=</code> 等赋值符</td>
+<td><strong>右到左</strong></td>
+</tr>
+<tr>
+<td>15（最低）</td>
+<td><code>,</code>（逗号）</td>
+<td>左到右</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>口诀</strong>：不确定优先级时，加括号。<code>(a &amp; mask) == mask</code> 比 <code>a &amp; mask == mask</code> 更安全、更清晰。</p>
+</blockquote>
+<hr />
+<h2 id="10">10. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整数除法截断</td>
+<td>需要小数结果时先将操作数转为浮点类型</td>
+</tr>
+<tr>
+<td><code>==</code> 不是 <code>=</code></td>
+<td>比较用 <code>==</code>，赋值用 <code>=</code></td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code> 和 <code>\|\|</code> 短路</td>
+<td>左侧结果能决定整体时右侧不执行</td>
+</tr>
+<tr>
+<td><code>&amp;</code> 和 <code>\|</code> 操作位</td>
+<td>用于标志位和底层操作，不要与逻辑运算符混淆</td>
+</tr>
+<tr>
+<td>优先级不确定时加括号</td>
+<td>括号优先级最高，且让意图一目了然</td>
+</tr>
+<tr>
+<td>避免复杂表达式中的 <code>++</code>/<code>--</code></td>
+<td>拆分语句可读性更好</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

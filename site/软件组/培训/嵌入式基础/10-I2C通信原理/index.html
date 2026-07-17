@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>10 I2C通信原理 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#i2c" class="nav-link">I2C 通信原理与实践</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——两线制的多设备总线</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 物理层——开漏 + 上拉</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 通信流程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-hal-i2c" class="nav-link">4. HAL 库的 I2C 操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-i2c" class="nav-link">5. I2C 常见问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-i2c-gsrl" class="nav-link">6. I2C 在 GSRL 中的应用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 协议对比总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8" class="nav-link">8. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="i2c">I2C 通信原理与实践</h1>
+<p>I2C（Inter-Integrated Circuit，集成电路间总线）是一种<strong>两线制</strong>的多主多从同步串行总线。相比于 <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI</a> 的四线制，I2C 用更少的引脚连接更多的设备——在机器人主控板上，当引脚资源紧张时，I2C 是连接传感器的首选。</p>
+<blockquote>
+<p>上一篇：<a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI 通信原理与实践</a></p>
+</blockquote>
+<hr />
+<h2 id="1">1. 概念——两线制的多设备总线</h2>
+<h3 id="11">1.1 与其他协议的对比</h3>
+<table>
+<thead>
+<tr>
+<th>协议</th>
+<th>线数</th>
+<th>最大设备数</th>
+<th>速度</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I2C</strong></td>
+<td>2 (SCL + SDA)</td>
+<td>127 (7-bit 地址)</td>
+<td>100k~3.4Mbps</td>
+<td>传感器、EEPROM、OLED</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>4+ (含 CS)</td>
+<td>理论无限（实际受 CS 引脚数限制）</td>
+<td>几十 Mbps</td>
+<td>IMU、Flash、高速 ADC</td>
+</tr>
+<tr>
+<td>UART</td>
+<td>2 (TX + RX)</td>
+<td>1 对 1</td>
+<td>几 Mbps</td>
+<td>调试、遥控器、GPS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-i2c">1.2 I2C 的特点</h3>
+<ul>
+<li><strong>两线制</strong>：SCL（<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟</a>）+ SDA（数据）</li>
+<li><strong>多主多从</strong>：理论上多个主设备可以共存（实践中通常只有一个 MCU 做主设备）</li>
+<li><strong>7-bit 地址</strong>：每个从设备有唯一的地址，通信时先发地址选择目标</li>
+<li><strong>半双工</strong>：同一时刻只能一个方向传输（因为只有一根数据线）</li>
+<li><strong>开漏输出</strong>：需要外部<a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/">上拉电阻</a>（通常 4.7kΩ）</li>
+</ul>
+<p><strong>为什么 I2C 只用 2 根线（对比 SPI 的 4 根）？</strong> 在 PCB 空间紧张的主控板上，引脚数量是稀缺资源。I2C 只需 2 个引脚就能连接<strong>最多 127 个设备</strong>；而 SPI 连接 N 个设备需要 N+3 个引脚（SCLK + MOSI + MISO + N×CS）。当机器人主控板需要同时连接磁力计、OLED、温度传感器等多个外设时，I2C 的引脚节省优势非常明显。代价是速度——I2C 的最快模式（3.4Mbps）仍远低于 SPI 的数十 Mbps，但对于传感器这种低速设备完全够用。</p>
+<p><strong>为什么选用 7-bit 地址？</strong> 1982 年 Philips 发明 I2C 时，总线上的设备数量极少，127 个地址看起来无穷无尽。近四十年后的今天，7-bit 地址确实在某些场景下捉襟见肘——因此 I2C 后来扩展了 10-bit 地址模式。但在实际工程中，10-bit 地址极少使用，原因是：绝大多数 I2C 总线上只有不到 10 个设备，127 个地址绰绰有余；且 10-bit 地址增加了协议复杂度，并非所有从设备都支持。</p>
+<hr />
+<h2 id="2">2. 物理层——开漏 + 上拉</h2>
+<h3 id="21">2.1 为什么用开漏</h3>
+<p>I2C 总线上的所有设备共享 SDA 和 SCL 线。如果任何一个设备输出高电平，另一个输出低电平，就会发生<strong>短路</strong>。</p>
+<p>开漏输出解决了这个问题：设备只能<strong>把总线拉到低电平</strong>（主动），不能拉到高电平。高电平由<strong>外部上拉电阻</strong>提供（被动）。</p>
+<pre><code>I2C 总线结构:
+
+    VDD ──┬────────────┬──────────────────
+          │            │
+       [4.7kΩ]      [4.7kΩ]         ← 上拉电阻
+          │            │
+          ├────────────┼──── SDA (数据线)
+          │            │
+          ├────────────┼──── SCL (时钟线)
+          │            │
+    ┌─────┴─────┐ ┌───┴───────┐
+    │   MCU     │ │  传感器    │  ← 所有设备都是开漏输出
+    │   (主)    │ │  (从)      │
+    └───────────┘ └───────────┘
+
+开漏的逻辑:
+- 任一设备拉低 → 总线 = 低电平（线与特性，Wired-AND）
+- 所有设备释放 → 上拉电阻将总线拉到 VDD = 高电平
+</code></pre>
+<h3 id="22-wired-and">2.2 线与（Wired-AND）特性</h3>
+<p>多个开漏输出接在同一根线上，只要有一个设备输出低电平，整条线就被拉低。这个特性被 I2C 用于：</p>
+<ul>
+<li><strong>仲裁</strong>：多个主设备同时发送时，自动检测冲突</li>
+<li><strong>时钟拉伸</strong>：从设备可以把 SCL 拉低，让主设备等待（"我还没准备好"）</li>
+</ul>
+<p><strong>为什么必须用开漏而不是推挽输出？</strong> 开漏输出除了实现线与（Wired-AND）之外，还支撑了 I2C 的两个关键特性：（1）<strong>时钟拉伸（Clock Stretching）</strong>——当从设备处理数据速度跟不上主设备时，它可以主动将 SCL 拉低，主设备检测到 SCL 为低就会等待。推挽输出做不到这一点，因为从设备无法强制改变主设备驱动的信号。（2）<strong>多主仲裁</strong>——两个主设备同时发送时，它们各自监控 SDA 的电平。如果主设备 A 发出了高电平却读到低电平，就知道另一个主设备 B 同时拉低了总线，A 会主动退出。这种"非破坏性仲裁"只有在开漏结构下才能实现。</p>
+<hr />
+<h2 id="3">3. 通信流程</h2>
+<h3 id="31">3.1 起始条件与停止条件</h3>
+<p>I2C 用 SDA 在 SCL 高电平期间的边沿变化来定义开始和结束：</p>
+<pre><code>空闲状态:   SCL = 高, SDA = 高
+
+起始条件 (START):     停止条件 (STOP):
+SDA  ────┐            SDA  ────────┐
+          │                         │
+          └──────                   └──────
+SCL  ────────────     SCL  ────────────────
+
+SDA 在 SCL 高时从高→低    SDA 在 SCL 高时从低→高
+</code></pre>
+<h3 id="32">3.2 数据位传输</h3>
+<p>数据在 SCL 低电平时变化，在 SCL 高电平时采样：</p>
+<pre><code>SCL:  ──┐   ┌───┐   ┌───┐   ┌──
+        │   │   │   │   │   │
+        └───┘   └───┘   └───┘
+SDA:  ────┬───────┬───────────
+          │       │
+    SDA 稳定    SDA 变化
+    (采样点)    (允许改变)
+</code></pre>
+<h3 id="33-acknack">3.3 ACK/NACK 应答机制</h3>
+<p>每传输 8 bits（1 字节）后，接收方必须在第 9 个时钟周期<strong>拉低 SDA</strong> 作为应答（ACK）：</p>
+<pre><code>SCL:  ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐   ┌─┐
+      └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘   └─┘
+      D7  D6  D5  D4  D3  D2  D1  D0  ACK
+                                        │
+SDA:  ──────────────────────────────────┘
+                        接收方拉低 = ACK
+                        接收方不拉低 = NACK
+</code></pre>
+<ul>
+<li><strong>ACK (0)</strong>：收到数据，继续</li>
+<li><strong>NACK (1)</strong>：不想继续接收（或地址不匹配）</li>
+</ul>
+<p><strong>为什么每字节都要应答？</strong> I2C 的硬件层没有 CRC 校验——不像 CAN 那样有 15-bit CRC 自动检错。ACK 是 I2C 唯一的逐字节确认机制：发送方知道接收方确实收到了这一字节，才能继续发送下一字节。如果从设备收到不认识的命令，它可以回复 NACK 来告诉主设备"我拒绝"。在读操作中，主设备在最后一个字节回复 NACK 来告知从设备"不用再发了"，然后发送 STOP 条件结束传输。没有 ACK/NACK，I2C 通信就像对着黑暗喊话——你不知道对方是否在听。</p>
+<h3 id="34">3.4 完整通信帧</h3>
+<p><strong>主设备写数据到从设备</strong>：</p>
+<pre><code>┌──┐ ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬───┐ ┌──────┬───┐ ┌──┐
+│ST│ │A6 A5 │A4 A3 │A2 A1 │A0 R/W│  ACK │ D7.. │  ACK │ D7.. │ACK│ │ D7.. │ACK│ │SP│
+│RT│ │      │      │      │  =0  │      │  D0  │      │  D0  │   │ │  D0  │   │ │  │
+└──┘ └──────┴──────┴──────┴──────┴──────┘ └──────┴──────┘ └──────┴───┘ └──────┴───┘ └──┘
+      ←── 地址帧 (7-bit 地址 + R/W) ──→  ←─ 数据帧 ─→  ←─ 数据帧 ─→ ... ← 数据帧 →
+      ↑                                ↑                             ↑
+      Master 发送，Slave 应答          Master 发送，Slave 应答         STOP
+</code></pre>
+<p><strong>主设备从从设备读数据</strong>：</p>
+<pre><code>┌──┐ ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬───┐ ┌──────┬───┐ ┌──────┬───┐ ┌──┐
+│ST│ │A6 A5 │A4 A3 │A2 A1 │A0 R/W│  ACK │ D7.. │  ACK │ D7.. │ACK│ │ D7.. │NAK│ │SP│
+│RT│ │      │      │      │  =1  │      │  D0  │      │  D0  │   │ │  D0  │   │ │  │
+└──┘ └──────┴──────┴──────┴──────┴──────┘ └──────┴──────┘ └──────┴───┘ └──────┴───┘ └──┘
+      ←── 地址帧 (7-bit 地址 + R/W) ──→  ←  Slave→Master ─→  ← 数据帧 → ← 最后一帧 →
+      ↑                                  ↑                  ↑          ↑
+      Master 发送                       Slave 发送          Master ACK  NACK+STOP
+</code></pre>
+<hr />
+<h2 id="4-hal-i2c">4. HAL 库的 I2C 操作</h2>
+<h3 id="41-api">4.1 基本 API</h3>
+<pre><code class="language-c">// 写数据到指定地址的从设备
+HAL_I2C_Master_Transmit(&amp;hi2c1, slaveAddr &lt;&lt; 1, txData, len, timeout);
+
+// 从指定地址的从设备读数据
+HAL_I2C_Master_Receive(&amp;hi2c1, slaveAddr &lt;&lt; 1, rxData, len, timeout);
+
+// 先写后读（典型传感器模式：写入寄存器地址，再读数据）
+HAL_I2C_Mem_Write(&amp;hi2c1, slaveAddr &lt;&lt; 1, regAddr, I2C_MEMADD_SIZE_8BIT, txData, len, timeout);
+HAL_I2C_Mem_Read(&amp;hi2c1, slaveAddr &lt;&lt; 1, regAddr, I2C_MEMADD_SIZE_8BIT, rxData, len, timeout);
+
+// DMA 模式（GSRL 使用）
+HAL_I2C_Master_Transmit_DMA(&amp;hi2c1, slaveAddr &lt;&lt; 1, txData, len);
+HAL_I2C_Master_Receive_DMA(&amp;hi2c1, slaveAddr &lt;&lt; 1, rxData, len);
+</code></pre>
+<blockquote>
+<p><strong>注意</strong>：<code>slaveAddr &lt;&lt; 1</code> 是因为 HAL 期望的是 8-bit 地址（7-bit 地址左移一位，最低位由 HAL 自动填充 R/W）。</p>
+</blockquote>
+<h3 id="42">4.2 典型传感器读取流程</h3>
+<p>以常见的 I2C 传感器为例，读取寄存器的通用模式：</p>
+<pre><code class="language-c">// 读取 WHO_AM_I 寄存器（设备 ID）验证传感器是否正确连接
+uint8_t regAddr = 0x0F;    // WHO_AM_I 寄存器地址
+uint8_t whoAmI = 0;
+
+HAL_I2C_Mem_Read(&amp;hi2c1, (0x68 &lt;&lt; 1), regAddr,
+                 I2C_MEMADD_SIZE_8BIT, &amp;whoAmI, 1, 100);
+
+if (whoAmI == 0x68) {
+    // 传感器连接正常
+} else {
+    // 通信异常
+}
+</code></pre>
+<hr />
+<h2 id="5-i2c">5. I2C 常见问题</h2>
+<h3 id="51">5.1 总线死锁</h3>
+<p><strong>现象</strong>：SDA 一直被拉低，所有通信停止。</p>
+<p><strong>原因</strong>：主设备正在读数据时被复位，从设备还在等主设备的第 9 个时钟（ACK），一直拉着 SDA 不放。</p>
+<p><strong>解决</strong>：</p>
+<pre><code class="language-c">// 软件解锁：手动产生 9 个 SCL 脉冲，让从设备释放 SDA
+void I2C_Bus_Unlock(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    // 将 SCL/SDA 配置为开漏输出
+    // 手动翻转 SCL 9 次
+    for (int i = 0; i &lt; 9; i++) {
+        HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, GPIO_PIN_RESET);
+        delay_us(5);
+        HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, GPIO_PIN_SET);
+        delay_us(5);
+    }
+    // 发送 STOP 条件
+    // 恢复为 I2C 复用功能
+}
+</code></pre>
+<h3 id="52">5.2 上拉电阻选择</h3>
+<table>
+<thead>
+<tr>
+<th>总线速率</th>
+<th>推荐上拉电阻</th>
+<th>总线电容限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100kHz (标准模式)</td>
+<td>4.7kΩ</td>
+<td>&lt; 400pF</td>
+</tr>
+<tr>
+<td>400kHz (快速模式)</td>
+<td>2.2kΩ</td>
+<td>&lt; 200pF</td>
+</tr>
+<tr>
+<td>1MHz (快速+)</td>
+<td>1kΩ</td>
+<td>&lt; 100pF</td>
+</tr>
+</tbody>
+</table>
+<p>上拉电阻太小 → 功耗大（下拉时需要更大电流才能拉到低电平）
+上拉电阻太大 → 上升沿缓慢 → 高速通信不可靠</p>
+<h3 id="53">5.3 地址冲突</h3>
+<p>同一条 I2C 总线上不能有两个相同地址的设备。如果传感器的地址固定，可能需要用 I2C 多路复用器（Multiplexer）或使用不同的 I2C 外设（如 I2C1 + I2C2）分别连接。</p>
+<hr />
+<h2 id="6-i2c-gsrl">6. I2C 在 GSRL 中的应用</h2>
+<p>GSRL 中使用 I2C 的场景：</p>
+<ul>
+<li><strong>IST8310 磁力计</strong>（通过 I2C 读取 3 轴磁场数据）</li>
+<li><strong>OLED 显示屏</strong>（调试用）</li>
+<li><strong>板上温度传感器</strong></li>
+</ul>
+<p>在 CubeMX 配置中，<code>CubeMX_BSP/Inc/i2c.h</code> 和 <code>CubeMX_BSP/Src/i2c.c</code> 包含了 I2C1、I2C2、I2C3 的初始化代码：</p>
+<pre><code class="language-c">// CubeMX 生成的 I2C 初始化
+void MX_I2C1_Init(void)
+{
+    hi2c1.Instance = I2C1;
+    hi2c1.Init.ClockSpeed = 400000;    // 400kHz 快速模式
+    hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+    HAL_I2C_Init(&amp;hi2c1);
+}
+</code></pre>
+<p>GSRL 的 I2C 外设在 <code>stm32f4xx_it.c</code> 中通过 DMA <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">中断</a>管理：</p>
+<pre><code class="language-c">void DMA1_Stream7_IRQHandler(void)
+{
+    HAL_DMA_IRQHandler(&amp;hdma_i2c2_tx);  // I2C2 TX DMA 中断
+}
+</code></pre>
+<hr />
+<h2 id="7">7. 协议对比总结</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>I2C</th>
+<th>SPI</th>
+<th>UART</th>
+<th><a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线数</td>
+<td>2</td>
+<td>4+</td>
+<td>2</td>
+<td>2 (差分)</td>
+</tr>
+<tr>
+<td>拓扑</td>
+<td>多主多从</td>
+<td>一主多从</td>
+<td>点对点</td>
+<td>多主广播</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>100k~3.4Mbps</td>
+<td>~50Mbps</td>
+<td>~6Mbps</td>
+<td>1Mbps</td>
+</tr>
+<tr>
+<td>双工</td>
+<td>半双工</td>
+<td>全双工</td>
+<td>全双工</td>
+<td>半双工</td>
+</tr>
+<tr>
+<td>设备寻址</td>
+<td>7-bit 地址</td>
+<td>CS 引脚</td>
+<td>无（点对点）</td>
+<td>11/29-bit ID</td>
+</tr>
+<tr>
+<td>错误检测</td>
+<td>无（仅有 ACK）</td>
+<td>无</td>
+<td>可选校验位</td>
+<td>CRC15 + 多种帧错误检测</td>
+</tr>
+<tr>
+<td>抗干扰</td>
+<td>差</td>
+<td>差</td>
+<td>差</td>
+<td>好（差分信号）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>两线制</td>
+<td>SCL (时钟) + SDA (数据)</td>
+</tr>
+<tr>
+<td>开漏 + 上拉</td>
+<td>允许线与，实现多主仲裁和时钟拉伸</td>
+</tr>
+<tr>
+<td>7-bit 地址</td>
+<td>最多 127 个从设备（含保留地址）</td>
+</tr>
+<tr>
+<td>ACK/NACK</td>
+<td>每字节后接收方应答，实现流控</td>
+</tr>
+<tr>
+<td>起始/停止</td>
+<td>SDA 在 SCL 高时的边沿变化</td>
+</tr>
+<tr>
+<td>总线死锁</td>
+<td>从设备未释放 SDA，需手动发送时钟脉冲解锁</td>
+</tr>
+<tr>
+<td>GSRL 应用</td>
+<td>磁力计 (IST8310)、OLED 等低速传感器</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gsrl">与 GSRL 的关系</h3>
+<p>GSRL 的 I2C 外设主要用于连接磁力计等外设。虽然在当前工程中 I2C 的使用不如 CAN 和 SPI 频繁，但理解 I2C 的物理层（开漏、上拉、线与）有助于理解其他开漏总线（如 I2C 衍生协议 SMBus、PMBus）的工作方式。</p>
+<blockquote>
+<p>下一篇：<a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN 通信原理与实践</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>06 定时器与PWM - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#pwm" class="nav-link">定时器与 PWM</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——定时器是什么</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 定时器的三大工作模式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-hal-pwm" class="nav-link">3. HAL 库的 PWM 配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-pwm" class="nav-link">4. PWM 在机器人中的典型应用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-pwm" class="nav-link">5. 互补 PWM 与死区</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="pwm">定时器与 PWM</h1>
+<p>定时器是 MCU 中最灵活的外设之一——它既可以测量时间，也可以产生精确的波形（PWM）。在机器人控制中，PWM 直接驱动<a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/">舵机</a>，也是理解<a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/">电机</a>控制的基础。</p>
+<blockquote>
+<p>上一篇：<a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">回调机制与 HAL 中断处理</a></p>
+</blockquote>
+<hr />
+<h2 id="1">1. 概念——定时器是什么</h2>
+<h3 id="11">1.1 定时器的本质：计数器</h3>
+<p>定时器的核心是一个<strong>自动递增（或递减）的计数器</strong>。这个计数器每收到一个<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟</a>脉冲就加 1。当时钟频率固定时，计数值就精确地代表了时间。</p>
+<pre><code>时钟 (84MHz)  ──→  ┌──────────┐  ──→  计数值 (CNT)
+                   │  计数器   │       0 → 1 → 2 → 3 → ... → ARR → 0 → ...
+                   └──────────┘
+                        │
+                   预分频器 (PSC)
+                   ÷(PSC+1)
+
+实际计数频率 = 时钟频率 / (PSC + 1)
+</code></pre>
+<h3 id="12">1.2 关键参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>寄存器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>预分频器</strong> (Prescaler)</td>
+<td>PSC</td>
+<td>对时钟进行分频，决定计数频率</td>
+</tr>
+<tr>
+<td><strong>自动重装载值</strong> (Auto-Reload)</td>
+<td>ARR</td>
+<td>计数的上限值，到达后归零（或减到零后重置）</td>
+</tr>
+<tr>
+<td><strong>计数值</strong> (Counter)</td>
+<td>CNT</td>
+<td>当前的计数值（运行时不断变化）</td>
+</tr>
+<tr>
+<td><strong>比较值</strong> (Compare)</td>
+<td>CCRx</td>
+<td>与 CNT 比较，相等时翻转输出（用于 PWM）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">1.3 定时周期计算</h3>
+<pre><code>定时器时钟 = 总线时钟 / (PSC + 1)
+溢出时间   = (ARR + 1) / 定时器时钟
+
+举例：
+总线时钟 = 84MHz (APB1 Timer Clock)
+PSC = 8399     → 计数频率 = 84MHz / 8400 = 10kHz
+ARR = 9999     → 溢出时间 = 10000 / 10kHz = 1 秒
+
+即：该定时器每 1 秒溢出一次（产生一次更新中断）
+</code></pre>
+<p><strong>为什么需要 PSC + ARR 两级分频，而不是一个参数搞定？</strong> 两级设计提供了"分辨率"和"周期"的独立调节能力。PSC 决定了计数器的"粒度"（每个计数值代表多长时间），ARR 决定了"总长度"（一个周期有多少个计数值）。以实际需求为例：50Hz 舵机 PWM 要求 1μs 的精细分辨率（因为 1ms~2ms 的脉宽范围只有 1000μs 的调整空间），PSC=83 即可将 84MHz 时钟降到 1MHz（1μs/步），然后 ARR=19999 给出 20ms 周期。而 20kHz 电机 PWM 不需要 μs 级分辨率，但需要高 PWM 分辨率来平滑调节（ARR=8399 提供 8400 级占空比步长），此时 PSC=0（不分频）。如果只有一个参数，要么分辨率不够细（舵机抖动），要么周期不对（频率偏移），无法同时满足两个需求。</p>
+<hr />
+<h2 id="2">2. 定时器的三大工作模式</h2>
+<h3 id="21">2.1 基本定时——产生周期性中断</h3>
+<p>最简单的用法：定时器溢出时触发<a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">中断</a>，在中断中执行周期性任务。</p>
+<pre><code class="language-c">// CubeMX 配置：
+// TIM7 作为系统时基，PSC=83, ARR=999  →  1ms 中断一次
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim-&gt;Instance == TIM7) {
+        HAL_IncTick();  // 系统 tick 计数 +1
+    }
+}
+
+// FreeRTOS 的延时依赖这个 tick (HAL_GetTick())
+vTaskDelay(100);  // 延时 100ms，基于 TIM7 的 1ms tick
+</code></pre>
+<h3 id="22">2.2 输入捕获——测量外部信号的频率/脉宽</h3>
+<p>定时器在外部引脚发生边沿变化时，"捕获"当前的计数值。两次捕获之差 × 计数周期 = 脉冲宽度。</p>
+<pre><code>输入信号: ──┐     ┌──────────────────────┐     ┌──
+            │     │                      │     │
+            └─────┘                      └─────┘
+            ↑                             ↑
+       捕获计数值 C1                  捕获计数值 C2
+
+脉宽 = (C2 - C1) × (1 / 计数频率)
+</code></pre>
+<p>典型用途：测量遥控接收机的 PWM 信号脉宽（1ms~2ms 对应 -100%~+100% 油门）。</p>
+<h3 id="23-pwm">2.3 输出比较 / PWM 生成</h3>
+<p>定时器的核心控制输出模式。工作原理：</p>
+<pre><code>    CNT ↑
+    ARR ┤         ┌─────┐         ┌─────
+        │        ╱       ╲       ╱
+    CCR ┤───────╱─────────╲─────╱────────
+        │      ╱           ╲   ╱
+      0 ┤─────╱─────────────╲─╱──────────→ 时间
+        │
+    输出 ┤     ┌──────────┐   ┌──────────
+        │     │          │   │
+        └─────┘          └───┘
+        ←─高电平─→←低电平→
+</code></pre>
+<ul>
+<li><strong>CNT &lt; CCR</strong>：输出高电平（或低电平，取决于 PWM 模式）</li>
+<li><strong>CNT ≥ CCR</strong>：输出反相</li>
+<li><strong>ARR</strong>：PWM 周期</li>
+<li><strong>CCR / ARR</strong>：占空比（Duty Cycle）</li>
+</ul>
+<p>PWM 占空比从 0% 到 100%，可以用来控制舵机角度、电机转速、LED 亮度等。</p>
+<p><strong>为什么用 PWM 而不是真正的模拟电压？</strong> 这是数字系统的一个核心设计哲学：MCU 是纯数字器件，要产生真正的模拟电压需要数模转换器（DAC），而 DAC 在硅片上占用面积大、成本高，大多数通用 MCU 只有 1~2 个 DAC 通道。PWM 则只需要一个定时器和一个 GPIO 引脚——任何带定时器的引脚都能输出 PWM，一个 MCU 动辄有几十路 PWM。更重要的是，电机驱动板上的 MOS 管在完全导通或完全关断时效率最高（接近零损耗），如果用线性电压驱动 MOS 管处于"半开"状态，大量功率会以热量形式耗散在 MOS 管上，轻则效率骤降，重则烧毁驱动板。PWM 让 MOS 管始终在"全开"和"全关"之间切换，通过调节开/关的时间比例来等效出不同的平均电压，既高效又精准。</p>
+<hr />
+<h2 id="3-hal-pwm">3. HAL 库的 PWM 配置</h2>
+<h3 id="31-cubemx">3.1 CubeMX 配置</h3>
+<ol>
+<li>选择一个定时器的某个通道（如 TIM1_CH1）</li>
+<li>设置 <code>Clock Source</code> 为 <code>Internal Clock</code></li>
+<li><code>Channel1</code> 选择 <code>PWM Generation CH1</code></li>
+<li>设置 Prescaler 和 Counter Period（即 ARR）</li>
+<li>在 GPIO 页面确认对应引脚被自动配置</li>
+</ol>
+<h3 id="32-hal">3.2 HAL 代码操作</h3>
+<pre><code class="language-c">// 启动 PWM 输出（CubeMX 生成的初始化之后手动调用）
+HAL_TIM_PWM_Start(&amp;htim1, TIM_CHANNEL_1);
+
+// 设置占空比
+// CCR 的取值范围是 0 ~ ARR（对应 0% ~ 100%）
+__HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, 500);  // 如果 ARR=999，即 50% 占空比
+
+// 停止 PWM
+HAL_TIM_PWM_Stop(&amp;htim1, TIM_CHANNEL_1);
+</code></pre>
+<hr />
+<h2 id="4-pwm">4. PWM 在机器人中的典型应用</h2>
+<h3 id="41">4.1 驱动舵机</h3>
+<p>舵机通过 PWM 的<strong>脉宽</strong>（而非占空比）来控制角度：</p>
+<pre><code>脉宽        角度（典型值）
+─────────────────────────
+0.5ms       0°
+1.0ms       45°
+1.5ms       90°  (中位)
+2.0ms       135°
+2.5ms       180°
+</code></pre>
+<p>对应的 PWM 配置示例（周期 20ms，即 50Hz）：</p>
+<pre><code class="language-c">// TIM 配置：PSC=167, ARR=19999 → 计数频率=1MHz，周期=20ms
+// 脉宽映射：1ms = 1000 计数值，2ms = 2000 计数值
+__HAL_TIM_SET_COMPARE(&amp;htim, channel, 1500);  // 1.5ms → 90° 中位
+</code></pre>
+<p><strong>为什么舵机一定要 50Hz（20ms 周期）？</strong> 这源于航模时代的 RC 伺服协议标准——历史上所有标准舵机都按照 50Hz 脉宽调制信号设计，如果你输出 100Hz 或 200Hz 的 PWM，部分舵机完全不响应（内部解码电路只认 20ms 帧间隔）。此外，20ms 的周期给了舵机内部 PID 控制环路足够的反应时间：舵机收到脉宽指令后，内部的电机需要驱动齿轮组转动到目标位置，然后电位器反馈实际角度——这个闭环过程需要几毫秒。如果周期太短（如 5ms），舵机还没来得及转到位就被下一个指令覆盖，导致抖动甚至失控。只有在使用专门标注"高频舵机"时才可以缩短周期（如 2.5ms，即 400Hz），普通的 SG90/MG996R 等舵机请坚持 50Hz。</p>
+<h3 id="42">4.2 驱动直流电机（通过电调）</h3>
+<p>无刷电机通常通过<strong>电调（ESC）</strong>驱动，电调接收标准的 PWM 信号（1ms~2ms 脉宽），将其转换为电机三相驱动信号。</p>
+<h3 id="43-led">4.3 控制 LED 亮度</h3>
+<p>通过调整 PWM 占空比实现"模拟调光"——人的眼睛会自然平均快速闪烁的光：</p>
+<pre><code class="language-c">// 呼吸灯效果
+for (int duty = 0; duty &lt;= ARR; duty++) {
+    __HAL_TIM_SET_COMPARE(&amp;htim, channel, duty);
+    HAL_Delay(2);
+}
+</code></pre>
+<hr />
+<h2 id="5-pwm">5. 互补 PWM 与死区</h2>
+<p>在驱动<strong>电机半桥/H桥</strong>时，需要两路互补的 PWM（上下管交替导通），且必须在切换时插入<strong>死区（Dead Time）</strong>——上下管同时导通会导致电源短路（"直通"）。</p>
+<pre><code>      ┌──┐  ┌──┐  ┌──┐  ┌──
+上管   │  │  │  │  │  │  │
+      ┘  └──┘  └──┘  └──┘
+           ┌──┐  ┌──┐  ┌──┐
+下管       │  │  │  │  │  │
+      ─────┘  └──┘  └──┘  └──
+         ←死区→              ← 上下管都关断，避免直通
+</code></pre>
+<p>STM32 高级定时器（TIM1、TIM8）内置死区发生器，只需配置 <code>BreakAndDeadTime</code> 参数即可：</p>
+<pre><code class="language-c">sBreakDeadTimeConfig.DeadTime = 42;  // 死区时间（单位与时钟频率有关）
+HAL_TIMEx_ConfigBreakDeadTime(&amp;htim1, &amp;sBreakDeadTimeConfig);
+</code></pre>
+<p><strong>为什么死区是"必须"的，而不是"可选"？</strong> MOS 管（场效应管）从接收到关断信号到真正完全关闭，存在一个物理延迟（关断时间），通常在几十纳秒到几微秒之间，取决于 MOS 管型号和驱动电路。在互补 PWM 的半桥拓扑中，上管和下管串联在电源正极和地之间。如果上管还没完全关断，下管就导通了，电流会从上管直通下管形成短路——MOS 管内阻极低（毫欧级），24V 电源通过两个导通的内阻短路，电流瞬间可达几十甚至上百安培。结果只有一个：MOS 管（甚至整个驱动板）瞬间烧毁。死区时间就是为这个物理延迟留出的"安全间隙"——在这段短暂的窗口内，上下管同时关断，确保一个彻底关闭后另一个才打开。典型死区值：低速开关 MOS 管约 1~2μs，高速 GaN MOS 管可小至 100ns。死区太短 → 直通风险，死区太长 → 电流波形畸变、电机转矩脉动增大，需要根据实际 MOS 管参数折中选取。</p>
+<p>GSRL 中 <code>CubeMX_BSP/Inc/tim.h</code> 和 <code>CubeMX_BSP/Src/tim.c</code> 包含了定时器的初始化代码。在实际工程中，TIM1、TIM8 等高级定时器常用于电机 PWM 控制。</p>
+<hr />
+<h2 id="6">6. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定时器本质</td>
+<td>计数器 + 预分频 + 自动重装载</td>
+</tr>
+<tr>
+<td>三大模式</td>
+<td>基本定时、输入捕获、输出比较（PWM）</td>
+</tr>
+<tr>
+<td>PWM 参数</td>
+<td>周期 = ARR/计数频率，占空比 = CCR/ARR</td>
+</tr>
+<tr>
+<td>舵机控制</td>
+<td>脉宽 0.5~2.5ms，周期 20ms</td>
+</tr>
+<tr>
+<td>死区</td>
+<td>互补 PWM 必选，防止上下管直通</td>
+</tr>
+<tr>
+<td>HAL API</td>
+<td><code>PWM_Start</code> / <code>SET_COMPARE</code> / <code>PWM_Stop</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>下一篇：<a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/">舵机与电机控制</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

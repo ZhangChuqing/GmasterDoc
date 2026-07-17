@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>using别名 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">using别名</a>
+</li>
+            
+<li>
+    <a href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../std_array/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#using" class="nav-link">using 别名</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-typedef" class="nav-link">1. typedef 基础写法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-gsrl" class="nav-link">2. 工程代码（GSRL 源码）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 动手写</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="using">using 别名</h1>
+<p><code>using</code> 关键字用于给类型定义别名。语法为：</p>
+<pre><code class="language-cpp">using 新名字 = 原类型;
+</code></pre>
+<hr />
+<h2 id="1-typedef">1. typedef 基础写法</h2>
+<p>在 <code>using</code> 出现之前，C 语言用 <code>typedef</code> 定义类型别名。先回顾 <code>typedef</code> 的写法，才能理解 <code>using</code> 好在哪。</p>
+<h3 id="11">1.1 普通类型</h3>
+<pre><code class="language-cpp">// typedef 的语法：typedef 原类型 新名字;
+typedef float fp32;         // fp32 等价于 float
+typedef unsigned char u8;   // u8   等价于 unsigned char
+
+fp32 angle = 3.14f;         // 等价于 float angle = 3.14f;
+</code></pre>
+<pre><code class="language-cpp">// using 写同样的事：新名字在 = 左边，原类型在右边
+using fp32 = float;
+using u8   = unsigned char;
+</code></pre>
+<h3 id="12">1.2 函数指针类型</h3>
+<p><code>typedef</code> 定义函数指针的语法较难读，因为新名字被夹在返回类型和参数列表之间：</p>
+<pre><code class="language-cpp">// typedef 函数指针语法拆解：
+//
+//   typedef  返回类型  (*新名字)(参数列表);
+//            ↑        ↑       ↑
+//            返回int  是指针  参数(float,float,int)
+//
+typedef int (*ComputeFunc)(float a, float b, int mode);
+//          ↑  * 表示这是一个指针类型，指向函数
+// 解读：ComputeFunc 是一个指针类型，
+//       指向 &quot;参数为(float,float,int)、返回int&quot; 的函数
+</code></pre>
+<p><code>typedef</code> 的问题在于：阅读顺序不是从左到右的，需要先找到被夹在中间的"新名字"，再反向解读两边的类型信息。函数签名越复杂，这种"夹心"写法就越难读。</p>
+<pre><code class="language-cpp">// using 写同一件事：新名字在最左边，然后 =，然后类型，从左到右自然阅读
+using ComputeFunc = int (*)(float a, float b, int mode);
+//                  ↑返回  ↑指针  ↑参数
+</code></pre>
+<h3 id="13-template">1.3 模板别名（复习 template）</h3>
+<p><code>template</code> 是 C++ 的泛型机制。在模板定义中使用占位符（如 <code>T</code>），编译器在调用时根据实际类型生成具体代码：</p>
+<pre><code class="language-cpp">// 模板函数：T 是占位符
+template &lt;typename T&gt;
+T myMax(T a, T b) { return a &gt; b ? a : b; }
+
+myMax(3, 5);      // 编译器生成 int    myMax(int, int)
+myMax(3.0, 5.0);  // 编译器生成 double myMax(double, double)
+</code></pre>
+<p><code>using</code> 支持模板别名——给模板类绑定部分参数后起名。<code>typedef</code> 做不到这一点：</p>
+<pre><code class="language-cpp">// ✅ using：模板参数 T 可以保留
+template &lt;typename T&gt;
+using Vec3 = Eigen::Matrix&lt;T, 3, 1&gt;;   // 三维列向量
+
+Vec3&lt;float&gt;  vf;  // Eigen::Matrix&lt;float,  3, 1&gt;
+Vec3&lt;double&gt; vd;  // Eigen::Matrix&lt;double, 3, 1&gt;
+
+// ❌ typedef：不支持模板参数，无法表达 &quot;T 待定&quot; 的别名
+</code></pre>
+<hr />
+<h2 id="2-gsrl">2. 工程代码（GSRL 源码）</h2>
+<h3 id="21">2.1 行为树：函数指针别名</h3>
+<p><strong>源码位置：</strong> <code>GSRL/Algorithm/inc/alg_behavior_tree.hpp</code></p>
+<p>行为树中的 <code>BTAction</code> 和 <code>BTCondition</code> 继承自 <code>BTNode</code>。它们不自己实现业务逻辑，而是通过函数指针让用户注册回调。</p>
+<p><strong>结构关系（伪代码）：</strong></p>
+<pre><code class="language-bash">BTNode（基类，定义虚函数 tick()）
+  ├── BTAction : public BTNode
+  │     定义  using ActionFunc = BTStatus (*)(void *context)
+  │     存储  ActionFunc m_action     # 用户注册的函数指针
+  │     重写  tick() → 调用 m_action(m_context)
+  │
+  └── BTCondition : public BTNode
+        定义  using ConditionFunc = bool (*)(void *context)
+        存储  ConditionFunc m_condition
+        重写  tick() → 调用 m_condition(m_context) → 返回 成功/失败
+</code></pre>
+<p><strong>源码片段（<code>alg_behavior_tree.hpp</code>）：</strong></p>
+<pre><code class="language-cpp">class BTAction : public BTNode
+{
+public:
+    using ActionFunc = BTStatus (*)(void *context);  // 函数指针别名
+
+private:
+    ActionFunc m_action;  // 指向用户注册的回调函数
+    void *m_context;      // 传给回调的上下文（通常是类实例指针）
+
+public:
+    BTAction(ActionFunc action, void *context = nullptr);
+    BTStatus tick() override;  // 内部调用 m_action(m_context)
+};
+
+class BTCondition : public BTNode
+{
+public:
+    using ConditionFunc = bool (*)(void *context);  // 函数指针别名
+
+private:
+    ConditionFunc m_condition;
+    void *m_context;
+
+public:
+    BTCondition(ConditionFunc condition, void *context = nullptr);
+    BTStatus tick() override;  // 内部调用 m_condition(m_context)
+};
+</code></pre>
+<p><strong>实际调用位置：</strong> <code>Chariot/inc/crt_chassis_behavior.hpp</code> 和 <code>Chariot/src/crt_chassis_behavior.cpp</code></p>
+<p><code>ChassisBehaviorTree</code> 类用 <code>BTAction</code> 和 <code>BTCondition</code> 作为成员，注册 3 个条件节点 + 10 个动作节点：</p>
+<pre><code class="language-cpp">// 声明（crt_chassis_behavior.hpp）
+class ChassisBehaviorTree
+{
+    // 条件节点（使用 BTCondition）
+    BTCondition m_fallDetection;          // 倒地检测
+    BTCondition m_stairClimbingCondition; // 上台阶信号检测
+    BTCondition m_jumpCondition;          // 跳跃信号检测
+
+    // 动作节点（使用 BTAction）
+    BTAction m_recoveryStateMachine; // 自起状态机
+    BTAction m_stairClimbingAction;  // 上台阶执行
+    BTAction m_jumpStateMachine;     // 跳跃状态机
+    BTAction m_remoteTargetSetting;  // 遥控目标设定
+    BTAction m_balanceLQR;           // LQR 平衡控制
+    BTAction m_turnControl;          // 转向控制
+    BTAction m_powerControl;         // 功率控制
+    BTAction m_antiSplitCompensation;// 防劈叉补偿
+    BTAction m_legLengthControl;     // 腿长控制
+    BTAction m_rollControl;          // Roll 控制
+
+    // 组合节点 ...
+};
+
+// 构造时传入回调函数（crt_chassis_behavior.cpp）
+ChassisBehaviorTree::ChassisBehaviorTree()
+    : m_fallDetection(fallDetectionCallback, this)       // 注册回调
+    , m_stairClimbingCondition(stairClimbingConditionCallback, this)
+    , m_recoveryStateMachine(recoveryStateMachineCallback, this)
+    , m_balanceLQR(balanceLQRCallback, this)
+    // ... 其余节点同理
+{}
+</code></pre>
+<pre><code class="language-bash">流程：
+  ChassisBehaviorTree 构造 → 给每个 BTAction/BTCondition 传入回调函数指针
+  → 行为树 tick() 遍历节点 → 节点调用存储的函数指针 → 执行实际业务逻辑
+</code></pre>
+<h3 id="22-kalmanfilter-rlsfilter">2.2 模板类型别名：KalmanFilter 和 RLSFilter</h3>
+<p><strong>源码位置：</strong> <code>GSRL/Algorithm/inc/alg_filter.hpp</code> 和 <code>GSRL/Algorithm/src/alg_filter.cpp</code></p>
+<p><code>KalmanFilter</code> 是模板类（继承自 <code>Filter&lt;T&gt;</code>），内部使用 Eigen 矩阵库。矩阵类型由模板参数决定，原始名称很长（如 <code>Eigen::Matrix&lt;T, StateSize, StateSize&gt;</code>）。在类内用 <code>using</code> 起短名，之后整个类内部使用短名即可：</p>
+<pre><code class="language-cpp">template &lt;typename T, int StateSize, int MeasSize, int ControlSize&gt;
+class KalmanFilter : public Filter&lt;T&gt;
+{
+public:
+    // 用 using 将带模板参数的 Eigen 类型简化
+    using StateVector   = Eigen::Vector&lt;T, StateSize&gt;;              // 状态向量
+    using MeasVector    = Eigen::Vector&lt;T, MeasSize&gt;;               // 测量向量
+    using StateMatrix   = Eigen::Matrix&lt;T, StateSize, StateSize&gt;;   // 状态矩阵
+    using ObsMatrix     = Eigen::Matrix&lt;T, MeasSize, StateSize&gt;;    // 观测矩阵
+    using GainMatrix    = Eigen::Matrix&lt;T, StateSize, MeasSize&gt;;    // 增益矩阵
+    using ControlMatrix = Eigen::Matrix&lt;T, StateSize, ControlSize&gt;; // 控制矩阵
+
+private:
+    StateVector   m_state;        // 直接用短名
+    StateMatrix   m_covariance;
+    StateMatrix   m_transition;
+    // ...
+};
+</code></pre>
+<p><strong>类外使用时，通过 <code>类名::别名</code> 拿到正确的类型：</strong></p>
+<pre><code class="language-cpp">KalmanFilter&lt;fp32, 3, 1, 0&gt; kf;                              // 三维状态、一维观测
+KalmanFilter&lt;fp32, 3, 1, 0&gt;::StateVector state;              // 等价于 Eigen::Vector&lt;fp32, 3&gt;
+</code></pre>
+<p>有时不仅类内定义别名，类外还会把常用的模板实例化组合固化：</p>
+<pre><code class="language-cpp">// alg_filter.cpp — 固定模板参数，命名常用维度的滤波器
+using KalmanFilter1D = KalmanFilter&lt;fp32, 1, 1, 0&gt;;  // 一维
+using KalmanFilter2D = KalmanFilter&lt;fp32, 2, 1, 0&gt;;  // 二维位置-速度
+using KalmanFilter3D = KalmanFilter&lt;fp32, 3, 1, 0&gt;;  // 三维位置-速度-加速度
+
+// alg_filter.hpp — RLS 滤波器同理
+using RLSFilter2D = RLSFilter&lt;fp32, 2&gt;;
+using RLSFilter3D = RLSFilter&lt;fp32, 3&gt;;
+using RLSFilter4D = RLSFilter&lt;fp32, 4&gt;;
+</code></pre>
+<pre><code class="language-bash">两层 using 的关系：
+
+alg_filter.hpp 类内：
+  KalmanFilter 模板类
+    ├── using StateVector = Eigen::Vector&lt;T, StateSize&gt;   ← 简化类内使用的类型名
+    └── ...
+
+alg_filter.cpp 类外：
+  using KalmanFilter2D = KalmanFilter&lt;fp32, 2, 1, 0&gt;     ← 固化模板参数
+  → 用户只需写 KalmanFilter2D，不用每次写完整的模板参数
+</code></pre>
+<h3 id="23">2.3 引入其他类的类型</h3>
+<p><strong>源码位置：</strong> <code>GSRL/Algorithm/inc/alg_pid.hpp</code> 和 <code>Chariot/inc/crt_chassis.hpp</code></p>
+<p>当类 A 需要使用类 B 中定义的类型时，用 <code>using</code> 引入，可以缩短访问路径，也让外部用户通过类 A 的接口直接找到类型定义。</p>
+<p><strong>复习：子类与父类</strong>（参考 <code>培训/面向对象编程.md</code>）</p>
+<pre><code class="language-bash">class Parent {
+public:
+    int value;
+    void foo();
+};
+
+class Child : public Parent {
+    // Child 继承了 Parent 的 value 和 foo()
+    // 外部可以通过 Child 实例访问 Parent 的 public 成员
+};
+</code></pre>
+<p><strong>例1 — CascadePID：</strong> 继承自 <code>Controller</code>，内部使用 <code>SimplePID</code>。通过 <code>using</code> 把 <code>SimplePID</code> 的类型暴露到自己的接口中：</p>
+<pre><code class="language-cpp">class SimplePID {
+public:
+    struct PIDParam { fp32 Kp, Ki, Kd, outputLimit, integralLimit; };
+    struct PIDData  { fp32 integral, lastError; };
+};
+
+class CascadePID : public Controller   // CascadePID 是 Controller 的子类
+{
+public:
+    using PIDParam = SimplePID::PIDParam;  // 用户写 CascadePID::PIDParam 即可
+    using PIDData  = SimplePID::PIDData;
+
+private:
+    SimplePID m_outerLoop;  // 外环（成员变量，不是继承来的）
+    SimplePID m_innerLoop;  // 内环
+
+public:
+    CascadePID(PIDParam &amp;outerParam, PIDParam &amp;innerParam);
+};
+</code></pre>
+<p><strong>例2 — Chassis：</strong> 引入数学库的类型，在类内起短名：</p>
+<pre><code class="language-cpp">class Chassis
+{
+public:
+    using Vector3f  = GSRLMath::Vector3f;   // 不必每次写 GSRLMath::Vector3f
+    using Matrix33f = GSRLMath::Matrix33f;
+};
+</code></pre>
+<h3 id="24">2.4 等价替换：避免代码重复</h3>
+<p><strong>源码位置：</strong> <code>GSRL/Device/inc/dvc_motor.hpp</code></p>
+<p>当两个电机的通信协议和控制逻辑完全相同时，不需要把 A 的代码复制一份给 B。直接用 <code>using</code> 让 B 成为 A 的别名即可：</p>
+<pre><code class="language-cpp">// M2006 电机与 M3508 电机协议相同，直接复用
+using MotorM2006 = MotorM3508;
+
+// DM2325 电机与 DM4310 电机协议相同，直接复用
+using MotorDM2325 = MotorDM4310;
+</code></pre>
+<pre><code class="language-bash">对比：没有 using 的情况
+
+做法A（重复代码）：
+  class MotorM3508 { ... 全部实现 ... };
+  class MotorM2006 { ... 复制粘贴一遍完全相同的代码 ... };
+  → 占用双倍 ROM 空间，两处需要同步维护
+
+做法B（using 别名）：
+  class MotorM3508 { ... 全部实现 ... };
+  using MotorM2006 = MotorM3508;  // M2006 就是 M3508，不产生新代码
+  → 零额外 ROM 占用，一处维护
+</code></pre>
+<hr />
+<h2 id="3">3. 动手写</h2>
+<h3 id="31">3.1 普通类型别名</h3>
+<pre><code class="language-cpp">#include &lt;cstdint&gt;
+
+// 简化常用类型，提高可读性
+using fp32 = float;
+using fp64 = double;
+using u8   = uint8_t;
+using u16  = uint16_t;
+using u32  = uint32_t;
+
+// 使用
+fp32 voltage   = 24.0f;    // 等价于 float voltage
+u8   motorId   = 1;        // 等价于 uint8_t motorId
+u32  timestamp = 1000000;  // 等价于 uint32_t timestamp
+</code></pre>
+<h3 id="32">3.2 函数指针：状态机跳转表</h3>
+<pre><code class="language-cpp">#include &lt;cstdint&gt;
+
+// 状态枚举
+enum class RobotState : uint8_t {
+    IDLE,
+    MOVING,
+    JUMPING,
+    STATE_COUNT   // 状态总数
+};
+
+class Robot;
+
+// ✅ 用 using 定义状态处理函数的指针类型
+//    解读：StateHandler 是 &quot;指向 void 函数(Robot*) 的指针&quot; 的别名
+using StateHandler = void (*)(Robot *robot);
+
+class Robot
+{
+public:
+    // 跳转表：每种状态对应一个处理函数
+    StateHandler stateTable[static_cast&lt;uint8_t&gt;(RobotState::STATE_COUNT)];
+    RobotState currentState;
+
+    void init()
+    {
+        // 注册各状态的处理函数
+        stateTable[static_cast&lt;uint8_t&gt;(RobotState::IDLE)]    = handleIdle;
+        stateTable[static_cast&lt;uint8_t&gt;(RobotState::MOVING)]  = handleMoving;
+        stateTable[static_cast&lt;uint8_t&gt;(RobotState::JUMPING)] = handleJumping;
+        currentState = RobotState::IDLE;
+    }
+
+    void update()
+    {
+        uint8_t idx = static_cast&lt;uint8_t&gt;(currentState);
+        if (stateTable[idx] != nullptr) {
+            stateTable[idx](this);  // 查表调用对应函数
+        }
+    }
+
+private:
+    static void handleIdle(Robot *robot)    { /* 空闲 */ }
+    static void handleMoving(Robot *robot)  { /* 移动 */ }
+    static void handleJumping(Robot *robot) { /* 跳跃 */ }
+};
+</code></pre>
+<p><strong>同样功能用 <code>typedef</code> 对比：</strong></p>
+<pre><code class="language-cpp">// ❌ typedef：新名字夹在中间
+typedef void (*StateHandler)(Robot *robot);
+//      返回 ↑指针  ↑名字      ↑参数
+
+// ✅ using：新名字在左边，= 后面是类型
+using StateHandler = void (*)(Robot *robot);
+</code></pre>
+<h3 id="33">3.3 模板别名</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+
+// ✅ using：一行定义模板别名
+template &lt;typename T&gt;
+using Vec = std::vector&lt;T&gt;;
+
+Vec&lt;int&gt;    vi;               // 等价于 std::vector&lt;int&gt;
+Vec&lt;float&gt;  vf;               // 等价于 std::vector&lt;float&gt;
+
+// ❌ typedef：不支持模板别名。
+//    变通方法是用 struct 包一层（每次使用都要写 ::type）：
+template &lt;typename T&gt;
+struct VecWrapper {
+    typedef std::vector&lt;T&gt; type;   // 类型藏在 struct 里
+};
+VecWrapper&lt;int&gt;::type vi;          // 使用时要写 ::type，不直观
+</code></pre>
+<hr />
+<h2 id="4">4. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>typedef</th>
+<th>using</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础类型</td>
+<td><code>typedef float fp32;</code></td>
+<td><code>using fp32 = float;</code></td>
+</tr>
+<tr>
+<td>函数指针</td>
+<td><code>typedef void (*Func)(int);</code></td>
+<td><code>using Func = void (*)(int);</code></td>
+</tr>
+<tr>
+<td>模板别名</td>
+<td>❌ 不支持</td>
+<td><code>template&lt;typename T&gt; using Vec = std::vector&lt;T&gt;;</code></td>
+</tr>
+<tr>
+<td>引入类成员类型</td>
+<td>能写但不推荐</td>
+<td><code>using PIDParam = SimplePID::PIDParam;</code></td>
+</tr>
+<tr>
+<td>等价替换（复用类）</td>
+<td>不支持（只能复制代码）</td>
+<td><code>using MotorM2006 = MotorM3508;</code></td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

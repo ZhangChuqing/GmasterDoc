@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>05 回调机制与HAL中断处理 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#hal" class="nav-link">回调机制与 HAL 中断处理</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——回调解决了什么问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-hal" class="nav-link">2. HAL 的中断处理链路</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-gsrl-driver" class="nav-link">3. GSRL Driver 层的回调管理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-vs" class="nav-link">4. 中断上半部 vs 下半部</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 常见陷阱</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="hal">回调机制与 HAL 中断处理</h1>
+<p>HAL 库的精髓在于"回调"。理解 HAL 如何将硬件<a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">中断</a>转化为用户可控的回调函数，是编写健壮嵌入式代码的关键。本章剖析 HAL 的中断处理链，并展示 GSRL 如何在这一机制之上构建 Driver 层。</p>
+<blockquote>
+<p>上一篇：<a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">中断与 NVIC</a></p>
+</blockquote>
+<hr />
+<h2 id="1">1. 概念——回调解决了什么问题</h2>
+<h3 id="11">1.1 问题的提出</h3>
+<p>每个外设中断都需要一个 ISR（中断服务函数），而 ISR 的名字和数量由启动文件中的中断向量表固定。例如 <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN</a>1 接收中断的 ISR 必须叫 <code>CAN1_RX0_IRQHandler</code>。</p>
+<p>如果让你直接在 <code>CAN1_RX0_IRQHandler</code> 里写数据处理逻辑：</p>
+<pre><code class="language-c">// ❌ 问题1：直接耦合
+void CAN1_RX0_IRQHandler(void)
+{
+    // CAN1 收电机反馈 → 解析 → 更新电机状态
+    // CAN1 收裁判系统 → 解析 → 更新裁判数据
+    // 两种完全不同的逻辑混在一个 ISR 里
+}
+
+// ❌ 问题2：不可复用
+// 另一个工程也用 CAN1，但外设完全不同，ISR 代码得重写
+</code></pre>
+<p>HAL 库的解决方案：</p>
+<pre><code>CAN1_RX0_IRQHandler          (固定入口，CubeMX 生成)
+    │
+    ▼
+HAL_CAN_IRQHandler           (HAL 库统一分发，判中断源)
+    │
+    ▼
+HAL_CAN_RxFifo0MsgPendingCallback (用户实现的回调，可自由定义)
+</code></pre>
+<p>ISR 只做<strong>通用的中断清理</strong>（清标志位、读寄存器），具体的业务逻辑交给<strong>回调函数</strong>。这样用户只需要实现回调，无需关心 ISR 入口和中断标志。</p>
+<p><strong>为什么要把 ISR 和用户回调分开？</strong> 这种分层设计有两个关键好处：第一，<strong>容错隔离</strong>——ISR 中的寄存器清理是硬件正确运行的前提（不清理标志位会导致中断反复触发），这部分逻辑不能出错。如果用户直接在 ISR 中写业务代码，一旦用户代码访问野指针或除零触发 HardFault，整个中断处理链就断了，系统难以恢复。分层后，HAL 的 ISR 先把硬件"伺候好"（清标志、读数据），再调用用户回调——即使回调崩溃，至少中断系统还能正常运行。第二，<strong>多路复用</strong>——同一个 CAN 中断可能对应多个用户（电机模块订阅、裁判系统模块订阅），分层后可以在中间层维护一个回调列表，一个中断触发，通知所有订阅者。</p>
+<h3 id="12">1.2 回调的本质</h3>
+<p>回调（Callback）即<strong>"事件发生时，由框架调用你的函数"</strong>。你注册一个函数指针，框架在合适的时机调用它。</p>
+<pre><code class="language-c">// 伪代码：回调的本质
+typedef void (*CallbackFunc)(void *data);   // 回调函数类型
+
+struct Driver {
+    CallbackFunc userCallback;              // 存储用户提供的函数指针
+};
+
+// 用户注册回调
+driver.userCallback = myHandler;
+
+// 框架在事件发生时调用
+void onEvent(struct Driver *drv) {
+    if (drv-&gt;userCallback != NULL) {
+        drv-&gt;userCallback(eventData);       // 回调用户函数
+    }
+}
+</code></pre>
+<hr />
+<h2 id="2-hal">2. HAL 的中断处理链路</h2>
+<h3 id="21">2.1 完整链路图</h3>
+<p>以 CAN 接收中断为例，完整的调用链路如下：</p>
+<pre><code>┌─────────────────────────────────────────────────────┐
+│                   硬件层                              │
+│  CAN 控制器 RX FIFO 非空 → 产生中断信号               │
+└────────────────────────┬────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────┐
+│          中断向量表 → CAN1_RX0_IRQHandler            │
+│          (startup_stm32f407xx.s / stm32f4xx_it.c)    │
+│                                                     │
+│  void CAN1_RX0_IRQHandler(void)                     │
+│  {                                                  │
+│      HAL_CAN_IRQHandler(&amp;hcan1);  ← 传入句柄         │
+│  }                                                  │
+└────────────────────────┬────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────┐
+│             HAL_CAN_IRQHandler (HAL 库)              │
+│                                                     │
+│  ① 检查中断状态寄存器，确认是哪个事件                  │
+│  ② 读取数据：HAL_CAN_GetRxMessage()                  │
+│  ③ 清除中断标志                                      │
+│  ④ 调用回调函数                                      │
+│                                                     │
+│  if (__HAL_CAN_GET_FLAG(hcan, CAN_FLAG_RF0M))       │
+│  {                                                  │
+│      __HAL_CAN_CLEAR_FLAG(hcan, CAN_FLAG_RF0M);     │
+│      HAL_CAN_GetRxMessage(hcan, ..., &amp;header, data);│
+│  #if USE_HAL_CAN_REGISTER_CALLBACKS                  │
+│      hcan-&gt;RxFifo0MsgPendingCallback(hcan);         │
+│  #else                                               │
+│      HAL_CAN_RxFifo0MsgPendingCallback(hcan);       │
+│  #endif                                              │
+│  }                                                  │
+└────────────────────────┬────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────┐
+│     HAL_CAN_RxFifo0MsgPendingCallback (GSRL 实现)    │
+│     (文件: GSRL/Driver/src/drv_can.c)               │
+│                                                     │
+│  void HAL_CAN_RxFifo0MsgPendingCallback(...)         │
+│  {                                                  │
+│      ① 从 HAL 句柄读取数据                           │
+│      ② 入 FreeRTOS 队列                              │
+│      ③ 调用用户注册的回调函数（如果有）                │
+│  }                                                  │
+└────────────────────────┬────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────┐
+│        用户回调 (如 tsk_test.cpp 中的 can1RxCallback)│
+│                                                     │
+│  void can1RxCallback(can_rx_message_t *pRxMsg)      │
+│  {                                                  │
+│      motor.decodeCanRxMessageFromISR(pRxMsg);       │
+│      // 解析电机反馈数据                              │
+│  }                                                  │
+└─────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="22-hal">2.2 HAL 回调的类型</h3>
+<p>HAL 为每个外设定义了一套 <code>__weak</code> 回调函数：</p>
+<table>
+<thead>
+<tr>
+<th>外设</th>
+<th>常见回调</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CAN</strong></td>
+<td><code>HAL_CAN_RxFifo0MsgPendingCallback</code></td>
+<td>CAN 收到数据</td>
+</tr>
+<tr>
+<td><strong><a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">UART</a></strong></td>
+<td><code>HAL_UARTEx_RxEventCallback</code></td>
+<td>UART 空闲中断（一帧收完）</td>
+</tr>
+<tr>
+<td><strong>UART</strong></td>
+<td><code>HAL_UART_ErrorCallback</code></td>
+<td>UART 通信错误</td>
+</tr>
+<tr>
+<td><strong><a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI</a></strong></td>
+<td><code>HAL_SPI_TxRxCpltCallback</code></td>
+<td>SPI 收发完成</td>
+</tr>
+<tr>
+<td><strong>SPI</strong></td>
+<td><code>HAL_SPI_ErrorCallback</code></td>
+<td>SPI 通信错误</td>
+</tr>
+<tr>
+<td><strong>TIM</strong></td>
+<td><code>HAL_TIM_PeriodElapsedCallback</code></td>
+<td>定时器溢出</td>
+</tr>
+<tr>
+<td><strong>GPIO</strong></td>
+<td><code>HAL_GPIO_EXTI_Callback</code></td>
+<td>外部中断触发</td>
+</tr>
+</tbody>
+</table>
+<p><code>__weak</code> 意味着 HAL 库提供了默认的空实现，用户可以在自己的代码中重写：</p>
+<pre><code class="language-c">// HAL 库中的弱定义（什么都不做）
+__weak void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+    /* NOTE: This function should not be modified, and can be implemented
+             in the user file */
+}
+
+// 用户在 drv_can.c 中重写（强定义覆盖弱定义）
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+    // 实际的数据处理逻辑
+}
+</code></pre>
+<p><strong>为什么用弱定义（<code>__weak</code>）？</strong> 这是嵌入式软件开发中一个关键的工程模式——实现"生成代码与用户代码的分离"。HAL 库的源码和 CubeMX 生成的代码都不需要被用户修改，所有回调默认指向空实现，编译链接完全正常。当用户需要某个回调时，只需在自己的文件中定义一个同名函数，链接器就会自动用"强定义"覆盖默认的"弱定义"。这意味着：HAL 库升级时，用户只需替换库文件，自己的回调代码毫发无伤；CubeMX 重新生成代码时，也不会覆盖用户的回调实现（因为回调写在独立的用户文件中）。这种"弱-强覆盖"机制让固件工程师可以在不修改第三方代码的前提下定制行为，是 STM32 开发生态中最优雅的设计之一。</p>
+<hr />
+<h2 id="3-gsrl-driver">3. GSRL Driver 层的回调管理</h2>
+<h3 id="31">3.1 问题：一个外设，多种用途</h3>
+<p>同一个 CAN 总线上可能挂着电机、裁判系统、超级电容等多种设备。HAL 层的回调只有一个入口，如何区分数据去向？</p>
+<p>GSRL 的解决方案：<strong>在 Driver 层实现 HAL 回调，内部维护用户注册的回调函数指针</strong>。</p>
+<p>以 CAN 驱动为例（<code>drv_can.c</code>）：</p>
+<pre><code class="language-c">// CAN 管理对象
+typedef struct {
+    CAN_HandleTypeDef *hcan;                        // HAL 句柄
+    CAN_Call_Back rxCallbackFunction;               // 用户注册的回调
+} CAN_Manage_Object_t;
+
+// 初始化时注册回调
+void CAN_Init(CAN_HandleTypeDef *hcan, CAN_Call_Back rxCallbackFunction)
+{
+    CAN_Manage_Object_t *can_obj = CAN_Get_Object(hcan);
+    can_obj-&gt;hcan = hcan;
+    can_obj-&gt;rxCallbackFunction = rxCallbackFunction;  // 保存用户回调
+    // ...
+}
+
+// HAL 回调中：先入队列，再调用用户回调
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+    can_rx_message_t s_rx_msg;
+    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &amp;s_rx_msg.header, s_rx_msg.data);
+
+    // 1. 放入 FreeRTOS 队列（给任务线程使用）
+    xQueueSendToBackFromISR(canRxQueueHandle, &amp;s_rx_msg, &amp;woken);
+
+    // 2. 调用用户注册的回调（给 ISR 直接处理）
+    CAN_Manage_Object_t *can_obj = CAN_Get_Object(hcan);
+    if (can_obj-&gt;rxCallbackFunction != NULL) {
+        can_obj-&gt;rxCallbackFunction(&amp;s_rx_msg);
+    }
+}
+</code></pre>
+<h3 id="32-uart">3.2 UART 驱动的回调</h3>
+<p>UART 也采用同样的模式（<code>drv_uart.c</code>）：</p>
+<pre><code class="language-c">typedef struct {
+    UART_HandleTypeDef *huart;
+    UART_Call_Back rxCallbackFunction;   // 用户回调
+    uint8_t rxBuffer[UART_BUFFER_SIZE];  // DMA 接收缓冲区
+    uint16_t rxDataLimit;               // 最大接收长度
+} UART_Manage_Object_t;
+
+// 初始化：启动 DMA 接收，注册回调
+void UART_Init(UART_HandleTypeDef *huart, UART_Call_Back rxCallbackFunction,
+               uint16_t rxDataLimit)
+{
+    UART_Manage_Object_t *uart_obj = UART_Get_Object(huart);
+    uart_obj-&gt;rxCallbackFunction = rxCallbackFunction;
+    HAL_UARTEx_ReceiveToIdle_DMA(huart, uart_obj-&gt;rxBuffer, rxDataLimit);
+}
+
+// HAL 空闲中断回调
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+    UART_Manage_Object_t *uart_obj = UART_Get_Object(huart);
+    if (uart_obj-&gt;rxCallbackFunction != NULL) {
+        uart_obj-&gt;rxCallbackFunction(uart_obj-&gt;rxBuffer, Size);
+    }
+    // 重启 DMA 接收，准备下一帧
+    HAL_UARTEx_ReceiveToIdle_DMA(huart, uart_obj-&gt;rxBuffer, uart_obj-&gt;rxDataLimit);
+}
+</code></pre>
+<p><strong>为什么必须用 DMA + IDLE 中断接收 UART 数据？</strong> UART 数据帧的长度通常是可变的（遥控器数据 18 字节、裁判系统数据可能 128 字节），如果没有 IDLE 中断，接收方无法判断一帧数据什么时候结束——只能在每个字节到达时盲目地往缓冲区里塞。而如果每个字节都触发一次中断（字节中断模式），在 115200 bps 波特率下，每秒会有约 11520 个字节 → 11520 次中断 → 每次中断至少几十个 CPU 周期，合计约 8.6% 的 CPU 时间全部浪费在 UART 接收上。DMA 解决了"谁来搬数据"的问题：硬件自动将每个收到的字节写入内存，CPU 完全不参与。IDLE 中断解决了"什么时候一帧结束"的问题：当总线空闲超过一个字节时间，硬件自动产生 IDLE 中断，此时 DMA 已将所有收到的字节搬完，回调只需取走完整的一帧。DMA + IDLE 的组合让 CPU 从"逐字节接客"变成"收完一帧叫我"，效率提升数百倍。</p>
+<h3 id="33">3.3 用户侧的使用方式</h3>
+<p>在任务中分别初始化不同外设的驱动，注册各自的回调：</p>
+<pre><code class="language-cpp">// tsk_test.cpp
+extern &quot;C&quot; void test_task(void *argument)
+{
+    CAN_Init(&amp;hcan1, can1RxCallback);        // CAN1: 处理电机反馈
+    UART_Init(&amp;huart3, dr16ITCallback, 36);  // UART3: 处理遥控器数据
+    // ...
+}
+
+// CAN 接收回调
+extern &quot;C&quot; void can1RxCallback(can_rx_message_t *pRxMsg)
+{
+    motor.decodeCanRxMessageFromISR(pRxMsg);
+}
+
+// UART 接收回调
+extern &quot;C&quot; void dr16ITCallback(uint8_t *Buffer, uint16_t Length)
+{
+    dr16.receiveRxDataFromISR(Buffer);
+}
+</code></pre>
+<hr />
+<h2 id="4-vs">4. 中断上半部 vs 下半部</h2>
+<h3 id="41">4.1 模式对比</h3>
+<p>在嵌入式系统中，"中断处理"通常分为两半：</p>
+<pre><code>┌──────────────────────────────────────────────┐
+│          上半部 (Top Half / ISR 中)           │
+│  - 读取硬件寄存器数据                          │
+│  - 清除中断标志                                │
+│  - 将数据放入缓冲区/队列                        │
+│  - 执行时间：微秒级                            │
+│  - 不允许阻塞/耗时操作                         │
+├──────────────────────────────────────────────┤
+│          下半部 (Bottom Half / 任务中)         │
+│  - 解析协议                                    │
+│  - PID 计算                                   │
+│  - 状态机更新                                  │
+│  - 发送响应数据                                │
+│  - 执行时间：毫秒级                            │
+│  - 可以被高优先级任务打断                       │
+└──────────────────────────────────────────────┘
+</code></pre>
+<h3 id="42-gsrl">4.2 GSRL 中的体现</h3>
+<p>GSRL 的 CAN 驱动同时支持两种路径：</p>
+<pre><code>                     CAN 中断触发
+                          │
+            ┌─────────────┴─────────────┐
+            ▼                           ▼
+    ┌───────────────┐          ┌───────────────────┐
+    │ 用户回调 (ISR) │          │ FreeRTOS 队列      │
+    │ 直接解析数据   │          │ 延迟到任务中解析    │
+    │ (轻量操作)     │          │ (重量操作)         │
+    └───────────────┘          └──────────┬────────┘
+            │                             │
+            │                             ▼
+            │                    ┌───────────────────┐
+            │                    │ 任务线程中调用     │
+            │                    │ decodeCanRxMessage │
+            │                    │ FromQueue()       │
+            └──────────┬────────┘───────────────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Motor 对象      │
+              │ 更新电机状态     │
+              └─────────────────┘
+</code></pre>
+<p><strong>如何选择用回调还是队列？</strong> 这是一个执行时间和操作复杂度的权衡。ISR 回调适合 1~2 微秒级的极轻量操作——例如把 CAN 数据帧中的某几个字节提取出来赋值给一个标志位。FreeRTOS 队列适合涉及状态机、协议解析或多级计算的复杂操作。举一个具体例子：电机通过 CAN 发回位置反馈（8 字节原始数据），在 ISR 回调中只做"提取 8 字节 raw data 放到一个结构体"（约 2μs），然后通过队列发给 Motor 任务；Motor 任务收到后执行完整的协议解析、零点偏移补偿、单位换算，最终更新电机对象的状态（约 50μs）。如果这 50μs 的操作放在 ISR 回调中，不仅阻塞所有低优先级中断，还会累积出可观的 CPU 占用。</p>
+<p>在 Motor 类中对应两个方法：</p>
+<pre><code class="language-cpp">// ISR 中直接调用（上半部）
+bool decodeCanRxMessageFromISR(const can_rx_message_t *rxMessage);
+
+// 任务中从队列取出后调用（下半部）
+bool decodeCanRxMessageFromQueue(const can_rx_message_t *rxMessage, uint8_t Size);
+</code></pre>
+<hr />
+<h2 id="5">5. 常见陷阱</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>后果</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISR 中调用阻塞函数</td>
+<td>系统死锁或优先级反转</td>
+<td>ISR 只能用 <code>FromISR</code> 后缀的 <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/">FreeRTOS</a> API</td>
+</tr>
+<tr>
+<td>ISR 中执行耗时计算</td>
+<td>低优先级中断永远得不到响应</td>
+<td>把复杂逻辑移到任务中</td>
+</tr>
+<tr>
+<td>忘记清除中断标志</td>
+<td>中断反复触发，CPU 被 ISR 占满</td>
+<td>HAL 已处理，直接操作寄存器时要注意</td>
+</tr>
+<tr>
+<td>回调函数未注册</td>
+<td>收到数据但无人处理</td>
+<td>初始化时确保注册了有效的回调函数</td>
+</tr>
+<tr>
+<td>在回调中忘记重启 DMA 接收</td>
+<td>只接收了一帧就停止</td>
+<td>UART 空闲回调末尾必须重调用 <code>ReceiveToIdle_DMA</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回调机制</td>
+<td>ISR（固定入口）→ HAL 分发 → 用户回调（弱定义覆盖）</td>
+</tr>
+<tr>
+<td>GSRL Driver 层</td>
+<td>实现 HAL 回调，维护用户注册的回调函数指针</td>
+</tr>
+<tr>
+<td>两种回调路径</td>
+<td>ISR 中直接回调（轻量）+ FreeRTOS 队列（重量级延迟处理）</td>
+</tr>
+<tr>
+<td>上半部/下半部</td>
+<td>ISR 只做数据搬运，任务线程做协议解析和业务逻辑</td>
+</tr>
+<tr>
+<td>UART 空闲中断</td>
+<td>一帧数据接收完成后触发，处理后需重启 DMA 接收</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gsrl">与 GSRL 的关系</h3>
+<p>GSRL 的 Driver 层（<code>drv_can.c</code>、<code>drv_uart.c</code>、<code>drv_spi.c</code>）正是围绕 HAL 回调机制设计的。它重写了 HAL 的 <code>__weak</code> 回调函数，在回调内部管理 FreeRTOS 队列和用户注册的回调链，屏蔽了裸 HAL 的使用复杂度。</p>
+<blockquote>
+<p>下一篇：<a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/">定时器与 PWM</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

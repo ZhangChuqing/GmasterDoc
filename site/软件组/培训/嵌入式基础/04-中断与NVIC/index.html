@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>04 中断与NVIC - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#nvic" class="nav-link">中断与 NVIC</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——为什么要中断</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-nvic" class="nav-link">2. NVIC——中断的总调度</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 中断向量表——中断的"电话本"</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 中断的完整执行路径</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 常见中断类型及用途</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 中断优先级配置建议</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="nvic">中断与 NVIC</h1>
+<p>中断是嵌入式系统的灵魂——它让 MCU 能够"同时"处理多项任务，对外部事件做出即时响应。本章从 CPU 的中断机制讲起，深入 NVIC（嵌套向量中断控制器）的工作原理。</p>
+<blockquote>
+<p>上一篇：<a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/">GPIO 与高低电平</a></p>
+</blockquote>
+<hr />
+<h2 id="1">1. 概念——为什么要中断</h2>
+<h3 id="11-vs">1.1 轮询 vs 中断</h3>
+<p>设想你要等一个快递。有两种方式：</p>
+<ul>
+<li><strong>轮询（Polling）</strong>：每隔 5 分钟去门口看一次。大部分时间白白浪费在"看"这个动作上，而且快递可能在你两次查看之间到达，延迟最长达 5 分钟。</li>
+<li><strong>中断（Interrupt）</strong>：门铃响了再去开门。平时你可以做别的事，快递到了立刻响应。</li>
+</ul>
+<pre><code>轮询模式:
+┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐
+│ 做正事│ →  │查标志│ →  │ 做正事│ →  │查标志│ → ...
+└──────┘    └──────┘    └──────┘    └──────┘
+   ↑ 浪费时间查标志，事件响应有延迟
+
+中断模式:
+┌────────────────────────────────────────┐
+│            做正事 (主程序)              │
+│    ← 被中断打断 ┐                       │
+│                │                       │
+│          ┌─────┴─────┐                 │
+│          │ 中断服务   │ → 处理完毕返回   │
+│          │ 函数 ISR  │                 │
+│          └───────────┘                 │
+└────────────────────────────────────────┘
+   ↑ 无需轮询，事件发生时自动响应
+</code></pre>
+<p><strong>为什么中断远比轮询高效？</strong> 从 CPU 利用率的角度看，轮询的本质是 CPU 反复检查一个几乎不会变化的状态标志——这相当于让一个年薪百万的工程师天天去前台看快递到了没有。在机器人系统中，CAN 消息可能每秒到达 100 次，但轮询线程却可能每秒检查 1000 次标志位，这意味着 90% 的检查都是徒劳的，白白消耗 CPU 时间。更糟糕的是，轮询的检查间隔决定了最坏响应延迟：如果每 1ms 检查一次，事件可能刚好在检查后才发生，导致约 1ms 的额外延迟。中断则彻底消除了这种浪费——CPU 只在事件真正发生时被唤醒，其余时间全部用于执行有意义的计算任务。</p>
+<h3 id="12-mcu">1.2 在 MCU 中的技术本质</h3>
+<p>从 CPU 的角度看，中断是硬件层面的"插队"机制：</p>
+<ol>
+<li>外设（如 <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN</a> 控制器）收到数据 → 产生一个<strong>中断请求信号</strong></li>
+<li>CPU 完成当前指令的执行</li>
+<li>CPU 检查中断优先级，决定是否响应</li>
+<li>若响应：保存当前上下文 → 跳转到<strong>中断向量表</strong>中的 ISR → 执行 ISR → 恢复上下文 → 继续原程序</li>
+</ol>
+<hr />
+<h2 id="2-nvic">2. NVIC——中断的总调度</h2>
+<h3 id="21-cortex-m">2.1 Cortex-M 的中断体系</h3>
+<p>ARM Cortex-M 处理器有两类中断：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>来源</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>系统异常</strong></td>
+<td>CPU 内部</td>
+<td>Reset、NMI、HardFault、SysTick</td>
+</tr>
+<tr>
+<td><strong>外设中断</strong></td>
+<td>片上外设</td>
+<td>CAN_RX、<a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">USART</a>、TIM、EXTI</td>
+</tr>
+</tbody>
+</table>
+<p>NVIC（Nested Vectored Interrupt Controller）是 Cortex-M 内核的一部分，负责管理所有外设中断：</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│                  Cortex-M4 内核                  │
+│  ┌───────────────────────────────────────────┐  │
+│  │              NVIC                         │  │
+│  │  ┌────┐ ┌────┐ ┌────┐      ┌────┐       │  │
+│  │  │IRQ0│ │IRQ1│ │IRQ2│ ...  │IRQn│       │  │
+│  │  └──┬─┘ └──┬─┘ └──┬─┘      └──┬─┘       │  │
+│  │     │      │      │           │          │  │
+│  │     └──────┴──────┴───────────┘          │  │
+│  │                  │                        │  │
+│  │          优先级仲裁 + 嵌套管理              │  │
+│  └──────────────────┬────────────────────────┘  │
+│                     │                            │
+│                     ▼                            │
+│                  CPU 核心                         │
+└─────────────────────────────────────────────────┘
+        ▲          ▲          ▲
+        │          │          │
+   ┌────┴────┐┌───┴───┐┌────┴────┐
+   │ CAN RX  ││ UART  ││ TIM IRQ│   ← 外设中断信号
+   └─────────┘└───────┘└─────────┘
+</code></pre>
+<h3 id="22">2.2 优先级机制</h3>
+<p>NVIC 支持中断嵌套：高优先级的中断可以打断低优先级的中断。</p>
+<pre><code>时间轴 ──────────────────────────────────────────→
+
+低优先级 ISR:  ┌──────────────┐         ┌────────┐
+               │  正在执行...  │         │ 继续...│
+               └──────┬───────┘         └────────┘
+                      │
+高优先级 ISR:         ┌──────┐
+                      │ 抢断 │
+                      └──────┘
+</code></pre>
+<p><strong>为什么需要嵌套中断？</strong> 考虑一个真实场景：MCU 正在处理 UART 接收中断（优先级 7），此时电机驱动板检测到过流故障，触发了优先级为 3 的 CAN 中断。如果不支持嵌套，CAN 中断必须等 UART ISR 全部执行完毕才能响应——这可能需要数百微秒。对于过流故障来说，几百微秒的延迟足以烧毁 MOS 管。嵌套中断确保：高优先级的事件总能立即抢占 CPU，无论当前正在处理什么低优先级任务。</p>
+<p>STM32 使用 <strong>4-bit 优先级</strong>（Cortex-M4），有两大配置：</p>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+<th>STM32F4 默认配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>抢占优先级</strong> (Preemption Priority)</td>
+<td>决定谁能打断谁</td>
+<td>4 bit 全部给抢占优先级（0~15）</td>
+</tr>
+<tr>
+<td><strong>子优先级</strong> (Subpriority)</td>
+<td>抢占优先级相同时，决定响应顺序</td>
+<td>0 bit</td>
+</tr>
+</tbody>
+</table>
+<p>优先级数值越小，优先级越高。</p>
+<p>在 CubeMX 的 NVIC 配置页面可以调整每个中断的优先级。生成的代码反映在 <code>stm32f4xx_hal_msp.c</code> 中：</p>
+<pre><code class="language-c">HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 5, 0);   // 抢占优先级 5
+HAL_NVIC_SetPriority(USART1_IRQn, 6, 0);     // 抢占优先级 6
+HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);           // 使能中断
+</code></pre>
+<hr />
+<h2 id="3">3. 中断向量表——中断的"电话本"</h2>
+<h3 id="31">3.1 什么是中断向量表</h3>
+<p>中断向量表是 Flash 起始位置的一张跳转表，每个表项存着一个函数的入口地址。当特定中断发生时，CPU 硬件会自动从表中取出对应地址并跳转。</p>
+<pre><code>内存地址              内容
+─────────────────────────────────
+0x0000_0000         初始栈指针 (SP)
+0x0000_0004         Reset_Handler      ← 上电/复位入口
+0x0000_0008         NMI_Handler        ← 不可屏蔽中断
+0x0000_000C         HardFault_Handler  ← 硬件错误
+0x0000_0010         MemManage_Handler
+0x0000_0014         BusFault_Handler
+0x0000_0018         UsageFault_Handler
+...                 ...
+0x0000_0058         SysTick_Handler    ← 系统滴答[定时器](./06-定时器与PWM.md)
+...                 ...
+0x0000_00C4         CAN1_RX0_IRQHandler  ← CAN1 接收中断
+...                 ...
+</code></pre>
+<h3 id="32">3.2 启动文件中的定义</h3>
+<p>在 <code>startup_stm32f407xx.s</code>（汇编启动文件）中：</p>
+<pre><code class="language-asm">g_pfnVectors:
+    .word  _estack              /* 栈顶 */
+    .word  Reset_Handler        /* 复位 */
+    .word  NMI_Handler
+    .word  HardFault_Handler
+    /* ... */
+    .word  CAN1_RX0_IRQHandler  /* CAN1 接收中断 */
+    /* ... */
+
+/* 默认弱定义：如果用户没有提供 ISR，使用死循环 */
+.weak  CAN1_RX0_IRQHandler
+.thumb_set CAN1_RX0_IRQHandler, Default_Handler
+</code></pre>
+<p><code>.weak</code> 表示"弱定义"——如果用户在别处实现了同名函数，就使用用户的版本；否则使用默认版本（死循环）。</p>
+<hr />
+<h2 id="4">4. 中断的完整执行路径</h2>
+<p>以一个 CAN 数据帧到达为例，追踪中断的完整路径：</p>
+<pre><code>第1步：硬件触发
+    CAN 控制器收到一帧数据
+    → CAN1 的 RX FIFO 0 非空
+    → 产生 CAN1_RX0 中断请求
+
+第2步：NVIC 裁决
+    NVIC 比较 CAN1_RX0 的优先级（5）和当前运行的中断优先级
+    如果优先级更高 → 触发 CPU 中断
+
+第3步：CPU 响应
+    ① 硬件自动压栈：保存 R0-R3, R12, LR, PC, xPSR
+    ② 从中断向量表取出 CAN1_RX0_IRQHandler 的地址
+    ③ 跳转到 CAN1_RX0_IRQHandler
+
+第4步：ISR 执行（stm32f4xx_it.c）
+    void CAN1_RX0_IRQHandler(void)
+    {
+        HAL_CAN_IRQHandler(&amp;hcan1);  // HAL 库的中断分发函数
+    }
+
+第5步：HAL 中断分发（stm32f4xx_hal_can.c）
+    void HAL_CAN_IRQHandler(CAN_HandleTypeDef *hcan)
+    {
+        // 检查中断标志位，确认是哪个事件
+        if (__HAL_CAN_GET_FLAG(hcan, CAN_FLAG_RF0M)) {
+            // 清除中断标志
+            __HAL_CAN_CLEAR_FLAG(hcan, CAN_FLAG_RF0M);
+            // 读取数据
+            HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &amp;header, data);
+            // 调用用户回调
+            HAL_CAN_RxFifo0MsgPendingCallback(hcan);
+        }
+    }
+
+第6步：用户[回调](./05-回调机制与HAL中断处理.md)（drv_can.c / 用户代码）
+    void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+    {
+        // 用户自定义的数据处理逻辑
+        // 放入 FreeRTOS 队列 / 直接处理
+    }
+
+第7步：返回
+    ISR 执行完毕 → 硬件自动出栈恢复上下文 → 继续执行被中断的代码
+</code></pre>
+<h3 id="41-isr">4.1 关键原则：ISR 要快</h3>
+<p>中断服务函数（ISR）中<strong>不能做耗时操作</strong>，原则是：</p>
+<ul>
+<li><strong>只做必要的事</strong>：读数据、清标志、发信号</li>
+<li><strong>把重活交给任务</strong>：通过 <a href="../01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/">FreeRTOS</a> 队列/信号量通知任务线程去处理</li>
+</ul>
+<pre><code class="language-c">// ❌ 错误：在 ISR 中做耗时计算
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+    // 解析协议、PID 计算、发送应答... 全部在 ISR 中！
+}
+
+// ✅ 正确：ISR 只入队，任务线程做重活
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+    can_rx_message_t msg;
+    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &amp;msg.header, msg.data);
+    xQueueSendToBackFromISR(canRxQueueHandle, &amp;msg, &amp;xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);  // 必要时触发任务切换
+}
+</code></pre>
+<p><strong>为什么 ISR 必须短？</strong> ISR 执行期间，所有同优先级和更低优先级的中断被全部阻塞，FreeRTOS 的任务调度器也被冻结——这意味着整个系统的所有任务线程都停止运行。举例：如果 CAN 接收 ISR 耗时 100μs，而 CAN 消息以 1kHz 频率到达，仅 CAN 中断就占用了 100μs × 1000 = 100ms/秒，即 10% 的 CPU 时间。如果某个 ISR 写成了 1ms，而它恰好以 1kHz 频率触发，CPU 就被 100% 占满，其他所有任务（包括 FreeRTOS 空闲任务和看门狗喂狗）都无法执行。这就是为什么 ISR 只做"数据搬运"，重活交给任务线程。</p>
+<hr />
+<h2 id="5">5. 常见中断类型及用途</h2>
+<table>
+<thead>
+<tr>
+<th>中断源</th>
+<th>在 GSRL 中的用途</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CAN_RX</strong></td>
+<td>接收电机反馈、裁判系统数据</td>
+<td>CAN 总线收到匹配 ID 的帧</td>
+</tr>
+<tr>
+<td><strong>USART_IDLE</strong></td>
+<td>接收遥控器、裁判系统串口数据</td>
+<td>串口空闲（一帧数据接收完毕）</td>
+</tr>
+<tr>
+<td><strong>EXTI</strong> (外部中断)</td>
+<td>IMU 数据就绪通知</td>
+<td>BMI088 的 INT1 引脚上升/下降沿</td>
+</tr>
+<tr>
+<td><strong>TIM</strong> (定时器中断)</td>
+<td>系统时间基准（SysTick 替代）、PWM 控制</td>
+<td>定时器计数值达到预设值</td>
+</tr>
+<tr>
+<td><strong>DMA</strong></td>
+<td><a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI</a>/UART 传输完成通知</td>
+<td>DMA 传输完成（DMA 回调处理见<a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">回调机制</a>）</td>
+</tr>
+</tbody>
+</table>
+<p>在 GSRL 的 <code>stm32f4xx_it.c</code> 中可以看到所有这些 ISR 的实现：</p>
+<pre><code class="language-c">void CAN1_RX0_IRQHandler(void)  { HAL_CAN_IRQHandler(&amp;hcan1);  }
+void USART1_IRQHandler(void)    { HAL_UART_IRQHandler(&amp;huart1); }
+void DMA2_Stream2_IRQHandler(void) { HAL_DMA_IRQHandler(&amp;hdma_spi1_rx); }
+void EXTI4_IRQHandler(void)     { HAL_GPIO_EXTI_IRQHandler(INT1_ACCEL_Pin); }
+</code></pre>
+<hr />
+<h2 id="6">6. 中断优先级配置建议</h2>
+<p>在机器人控制系统中，中断优先级的分配需要权衡实时性要求：</p>
+<table>
+<thead>
+<tr>
+<th>中断</th>
+<th>建议优先级</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAN 接收</td>
+<td>较高（3~5）</td>
+<td>电机反馈数据不能丢失</td>
+</tr>
+<tr>
+<td>IMU 外部中断</td>
+<td>较高（3~5）</td>
+<td>姿态数据有严格的时效性</td>
+</tr>
+<tr>
+<td>USART 空闲中断</td>
+<td>中等（5~7）</td>
+<td>遥控器数据可以承受轻微延迟</td>
+</tr>
+<tr>
+<td>DMA 完成中断</td>
+<td>中等（5~7）</td>
+<td>传输完成通知，及时处理即可</td>
+</tr>
+<tr>
+<td>定时器</td>
+<td>根据用途</td>
+<td>系统时钟（SysTick）通常用最低优先级</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意</strong>：在 FreeRTOS 环境下，中断优先级不能高于 <code>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</code>（通常设为 5），否则 ISR 中不能调用 FreeRTOS 的 API（如 <code>xQueueSendFromISR</code>）。</p>
+<p><strong>为什么有这个限制？</strong> FreeRTOS 通过临界区（critical section）来保护内核数据结构（如任务就绪列表、队列）。临界区的实现方式是暂时屏蔽优先级低于某个阈值的中断。如果某个 ISR 的优先级高于这个阈值，它就能在临界区内"插队"执行——此时如果该 ISR 调用 FreeRTOS API（如 <code>xQueueSendFromISR</code>），就会在临界区中修改内核数据，导致竞态条件，轻则数据错乱，重则系统崩溃。因此，任何需要调用 FreeRTOS API 的 ISR，其优先级必须 ≤ <code>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</code>（数值上 ≥ 5），确保它会被临界区正确屏蔽。</p>
+</blockquote>
+<p><strong>为什么 SysTick 必须使用最低优先级？</strong> SysTick 是 FreeRTOS 的"心跳"——每次 SysTick 中断都会触发任务调度器检查是否有更高优先级任务就绪。如果 SysTick 的优先级高于某个硬件中断（如 CAN 接收），那么 SysTick 可能在 CAN ISR 执行期间抢占进来并尝试切换任务。但在 ISR 上下文中进行任务切换是危险的，可能导致不可预期的行为。将 SysTick 设为最低优先级，确保它永远不会打断任何硬件中断，只在所有 ISR 都处理完毕后才执行任务调度。</p>
+<hr />
+<h2 id="7">7. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中断</td>
+<td>硬件事件触发 CPU 暂停当前任务，执行 ISR 的机制</td>
+</tr>
+<tr>
+<td>NVIC</td>
+<td>Cortex-M 的中断控制器，管理优先级和嵌套</td>
+</tr>
+<tr>
+<td>中断向量表</td>
+<td>中断号 → ISR 函数地址的映射表</td>
+</tr>
+<tr>
+<td>ISR 执行路径</td>
+<td>硬件触发 → NVIC 裁决 → 查向量表 → ISR → HAL 分发 → 回调</td>
+</tr>
+<tr>
+<td>ISR 原则</td>
+<td>快速执行，复杂逻辑通过队列/信号量交给任务</td>
+</tr>
+<tr>
+<td>优先级</td>
+<td>数值越小优先级越高，FreeRTOS API 有最高优先级限制</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>下一篇：<a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">回调机制与 HAL 中断处理</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

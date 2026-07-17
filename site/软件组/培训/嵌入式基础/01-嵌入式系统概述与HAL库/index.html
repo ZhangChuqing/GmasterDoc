@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>01 嵌入式系统概述与HAL库 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/" class="dropdown-item">多态</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E8%BF%9B%E9%98%B6/%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#hal" class="nav-link">嵌入式系统概述与 HAL 库</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 什么是嵌入式系统</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-mcu" class="nav-link">2. MCU 的运作方式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-hal" class="nav-link">3. HAL 库是什么</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-cubemx" class="nav-link">4. CubeMX 的角色</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-freertos" class="nav-link">5. FreeRTOS 概述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="hal">嵌入式系统概述与 HAL 库</h1>
+<p>介绍嵌入式系统的基本概念、MCU 的运作方式，以及 STM32 HAL 库在开发体系中的位置与设计思想。</p>
+<hr />
+<h2 id="1">1. 什么是嵌入式系统</h2>
+<blockquote>
+<p><strong>快速导航</strong>：本文提到的概念均有专题讲解——<a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/">GPIO</a>、<a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">UART</a>、<a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI</a>、<a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">I2C</a>、<a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN</a>、<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟树</a>、<a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">回调机制</a>。</p>
+</blockquote>
+<h3 id="11-vs-pc">1.1 类比：单片机 vs PC</h3>
+<p>一台 PC 上运行着操作系统（Windows / Linux），可以同时打开浏览器、写代码、听音乐——它是一个<strong>通用计算平台</strong>。</p>
+<p>嵌入式系统则不同：它只做一件事，但要做到极致——实时、可靠、低功耗。你的微波炉、无人机飞控、汽车 ECU 都是嵌入式系统。</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│                    PC (通用计算)                       │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐              │
+│  │ 浏览器   │  │ VS Code │  │ 播放器   │  ← 多任务    │
+│  └─────────┘  └─────────┘  └─────────┘              │
+│  ┌──────────────────────────────────────┐            │
+│  │       Windows / Linux 操作系统        │            │
+│  └──────────────────────────────────────┘            │
+│  ┌──────────────────────────────────────┐            │
+│  │    Intel/AMD CPU + 内存 + 硬盘        │            │
+│  └──────────────────────────────────────┘            │
+└──────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────┐
+│                嵌入式系统 (专用)                       │
+│  ┌──────────────────────────────────────┐            │
+│  │        FreeRTOS (轻量实时操作系统)     │  ← 可选    │
+│  └──────────────────────────────────────┘            │
+│  ┌──────────────────────────────────────┐            │
+│  │  STM32F407 (ARM Cortex-M4, 168MHz)   │            │
+│  │  192KB RAM, 512KB Flash              │            │
+│  └──────────────────────────────────────┘            │
+│  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐               │
+│  │ GPIO │ │ UART │ │ CAN  │ │ SPI  │  ← 外设直连     │
+│  └──────┘ └──────┘ └──────┘ └──────┘               │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="12">1.2 本质</h3>
+<p>嵌入式系统的核心是一块<strong>微控制器（MCU, Microcontroller Unit）</strong>。MCU 将 CPU、内存（RAM/Flash）、外设（<a href="../03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/">GPIO</a>、<a href="../08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">UART</a>、<a href="../09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI</a> 等）集成在同一块芯片上，形成一个自给自足的计算单元。</p>
+<p>GSRL 项目所用的 STM32F407 基于 <strong>ARM Cortex-M4</strong> 内核，主频 168MHz，属于中高性能 MCU。GSRL_H7 所用的 STM32H7 系列则基于 <strong>Cortex-M7</strong>，主频可达 480MHz。</p>
+<hr />
+<h2 id="2-mcu">2. MCU 的运作方式</h2>
+<h3 id="21">2.1 三大核心组成</h3>
+<pre><code>┌─────────────────────────────────────────┐
+│                 STM32 MCU               │
+│  ┌───────────┐  ┌─────────────────────┐ │
+│  │ Cortex-M4 │  │     Flash (512KB)   │ │
+│  │   内核     │  │     程序存储         │ │
+│  └─────┬─────┘  └─────────────────────┘ │
+│        │                                │
+│  ┌─────┴─────────────────────────────┐  │
+│  │         总线矩阵 (Bus Matrix)       │  │
+│  └─────┬─────────────────────────────┘  │
+│        │                                │
+│  ┌─────┴─────┐ ┌──────────┐ ┌───────┐  │
+│  │ RAM 192KB │ │  GPIO×N  │ │ UART  │  │
+│  │  数据存储  │ │ 引脚控制  │ │ 串口  │  │
+│  └───────────┘ └──────────┘ └───────┘  │
+│  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐  │
+│  │ SPI  │ │ I2C  │ │ CAN  │ │ TIM  │  │
+│  │ ...  │ │ ...  │ │ ...  │ │ ...  │  │
+│  └──────┘ └──────┘ └──────┘ └──────┘  │
+└─────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>内核（Core）</strong>：执行指令，处理运算。Cortex-M4 支持 DSP 指令和单精度浮点（FPU），这对机器人控制中的 PID 计算、姿态解算至关重要。</li>
+<li><strong>内存</strong>：Flash 存程序，RAM 存运行时数据。嵌入式系统内存极度受限（192KB RAM），需要精打细算。</li>
+<li><strong>外设（Peripheral）</strong>：MCU 与外部世界交互的桥梁。GPIO 控制引脚电平，UART/SPI/<a href="../10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">I2C</a>/<a href="../11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN</a> 负责通信，TIM 产生 PWM 驱动电机。</li>
+</ul>
+<h3 id="22">2.2 启动流程</h3>
+<pre><code>上电 → 复位向量 → SystemInit() → main()
+                    │
+                    ├─ 初始化时钟树（配置 HSE/PLL，产生 168MHz 系统时钟）
+                    ├─ HAL_Init()
+                    ├─ SystemClock_Config()
+                    ├─ MX_XXX_Init()  ← 逐个初始化外设
+                    ├─ osKernelInitialize()
+                    ├─ MX_FREERTOS_Init()
+                    └─ osKernelStart()  ← 调度器接管，不再返回
+</code></pre>
+<p>对应工程中的 <code>CubeMX_BSP/Src/main.c</code>:</p>
+<pre><code class="language-c">int main(void)
+{
+    HAL_Init();                      // 初始化 HAL 库
+    SystemClock_Config();            // 配置系统时钟 168MHz
+    MX_GPIO_Init();                  // 初始化 GPIO
+    MX_DMA_Init();
+    MX_CAN1_Init();                  // 初始化 CAN1
+    MX_SPI1_Init();                  // 初始化 SPI1
+    // ... 其他外设初始化
+    osKernelInitialize();            // FreeRTOS 内核初始化
+    MX_FREERTOS_Init();              // 创建任务
+    osKernelStart();                 // 启动调度器
+    while (1) {}                     // 永远不会执行到这里
+}
+</code></pre>
+<h3 id="23">2.3 代码如何变成运行的程序</h3>
+<pre><code>源文件 (.c/.cpp)  →  交叉编译  →  .elf  →  Flash 烧录
+     │                    │
+     │           arm-none-eabi-gcc
+     │           生成 ARM 机器码
+     │
+     └── 注意：不是用 PC 上的 gcc，而是交叉编译器
+         因为目标 CPU 是 ARM 架构，不是 x86
+</code></pre>
+<hr />
+<h2 id="3-hal">3. HAL 库是什么</h2>
+<h3 id="31">3.1 问题的提出</h3>
+<p>直接操作 STM32 的寄存器可以控制外设，例如让 PA5 引脚输出高电平：</p>
+<pre><code class="language-c">// 寄存器方式——直接操作地址
+*(volatile uint32_t *)0x40020014 |= (1 &lt;&lt; 5);  // GPIOA BSRR 寄存器
+</code></pre>
+<p>这种方式的问题：
+- <strong>不可读</strong>：<code>0x40020014</code> 是什么？不查手册完全不知道。
+- <strong>不可移植</strong>：STM32F4 和 STM32H7 的寄存器地址不同，同样的功能需要写两份代码。
+- <strong>容易出错</strong>：位操作稍有不慎就会影响其他引脚。</p>
+<h3 id="32-hal">3.2 HAL 的解决方案</h3>
+<p>HAL（Hardware Abstraction Layer，硬件抽象层）是 ST 官方提供的一套函数库，为所有 STM32 外设提供统一的 API：</p>
+<pre><code class="language-c">// HAL 方式——语义清晰
+HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);  // PA5 输出高电平
+
+// 同样的 API 在 STM32F4、STM32H7 上都可用（重新编译即可）
+</code></pre>
+<h3 id="33-hal">3.3 HAL 库的层次化设计</h3>
+<pre><code>┌───────────────────────────────────────────┐
+│           用户应用程序 (Task/)             │  ← 你的业务逻辑
+├───────────────────────────────────────────┤
+│         GSRL 设备层 (Device/)             │  ← 电机、IMU、遥控器对象
+├───────────────────────────────────────────┤
+│         GSRL 驱动层 (Driver/)             │  ← CAN/UART/SPI 封装
+├───────────────────────────────────────────┤
+│     STM32CubeMX 生成代码 (CubeMX_BSP/)    │  ← HAL 初始化代码
+├───────────────────────────────────────────┤
+│          HAL 库 (stm32f4xx_hal_*.c)       │  ← ST 官方 HAL API
+├───────────────────────────────────────────┤
+│        CMSIS (Cortex 微控制器软件接口标准)   │  ← ARM 统一标准
+├───────────────────────────────────────────┤
+│              硬件寄存器                     │  ← 芯片物理层
+└───────────────────────────────────────────┘
+</code></pre>
+<h3 id="34-hal">3.4 HAL 的核心设计模式</h3>
+<p>HAL 库围绕两个核心概念组织 API：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>句柄（Handle）</strong></td>
+<td>代表一个外设实例的结构体，包含配置和状态</td>
+<td><code>CAN_HandleTypeDef hcan1</code></td>
+</tr>
+<tr>
+<td><strong><a href="../05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">回调（Callback）</a></strong></td>
+<td>外设事件发生时 HAL 自动调用的函数</td>
+<td><code>HAL_CAN_RxFifo0MsgPendingCallback()</code></td>
+</tr>
+</tbody>
+</table>
+<p>初始化外设的典型模式：</p>
+<pre><code class="language-c">// 1. 声明句柄（通常在 CubeMX 生成的代码中）
+CAN_HandleTypeDef hcan1;
+
+// 2. CubeMX 生成初始化函数，配置句柄的参数
+void MX_CAN1_Init(void)
+{
+    hcan1.Instance = CAN1;
+    hcan1.Init.Prescaler = 7;
+    hcan1.Init.Mode = CAN_MODE_NORMAL;
+    // ... 更多配置
+    HAL_CAN_Init(&amp;hcan1);  // 调用 HAL API 完成初始化
+}
+
+// 3. 用户代码中使用句柄操作外设
+HAL_CAN_AddTxMessage(&amp;hcan1, &amp;txHeader, txData, &amp;mailbox);
+</code></pre>
+<hr />
+<h2 id="4-cubemx">4. CubeMX 的角色</h2>
+<p>STM32CubeMX 是一个图形化配置工具，通过它你可以：</p>
+<ul>
+<li><strong>选引脚</strong>：指定 PA9 做 USART1_TX，PA10 做 USART1_RX</li>
+<li><strong>配<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟</a></strong>：设定 HSE → PLL → 168MHz 的时钟路径</li>
+<li><strong>配外设</strong>：设定 CAN 的波特率、UART 的波特率、SPI 的模式</li>
+<li><strong>配 FreeRTOS</strong>：创建任务、队列、信号量</li>
+</ul>
+<p>CubeMX 最终生成一整套初始化代码，放在 <code>CubeMX_BSP/</code> 目录下。<strong>这些代码不应手动修改</strong>，因为重新生成会覆盖你的改动。所有用户自定义代码应写在 <code>/* USER CODE BEGIN */</code> 和 <code>/* USER CODE END */</code> 之间。</p>
+<hr />
+<h2 id="5-freertos">5. FreeRTOS 概述</h2>
+<p>GSRL 使用 FreeRTOS 作为实时操作系统。相对于裸机编程（Bare Metal），FreeRTOS 提供了：</p>
+<ul>
+<li><strong>任务调度</strong>：多个任务按优先级轮流执行，看起来像"同时运行"</li>
+<li><strong>任务间通信</strong>：队列、信号量、互斥锁</li>
+<li><strong>软件定时器</strong>：不占用硬件定时器资源</li>
+</ul>
+<pre><code>裸机（Bare Metal）:
+┌──────────────────────────────────┐
+│  while(1) {                      │
+│      读取传感器();                │
+│      控制电机();                  │
+│      发送数据();                  │  ← 顺序执行，一个慢了全卡住
+│  }                               │
+└──────────────────────────────────┘
+
+FreeRTOS:
+┌──────────┐ ┌──────────┐ ┌──────────┐
+│ 传感器任务 │ │ 控制任务  │ │ 通信任务  │  ← 调度器切换
+│ (10ms)   │ │ (1ms)    │ │ (100ms)  │
+└──────────┘ └──────────┘ └──────────┘
+       ↓            ↓            ↓
+┌──────────────────────────────────────┐
+│         FreeRTOS 调度器               │
+│         按优先级+时间片切换            │
+└──────────────────────────────────────┘
+</code></pre>
+<p>GSRL 中的任务定义在 <code>CubeMX_BSP/Src/freertos.c</code> 中：</p>
+<pre><code class="language-c">osThreadId_t testHandle;
+const osThreadAttr_t test_attributes = {
+    .name = &quot;test&quot;,
+    .stack_size = 128 * 4,           // 栈大小 512 字节
+    .priority = (osPriority_t) osPriorityNormal,  // 优先级
+};
+
+// 在 MX_FREERTOS_Init() 中创建：
+testHandle = osThreadNew(test_task, NULL, &amp;test_attributes);
+</code></pre>
+<hr />
+<h2 id="6">6. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCU</td>
+<td>CPU + 内存 + 外设 集成在单芯片上</td>
+</tr>
+<tr>
+<td>STM32F407</td>
+<td>Cortex-M4 内核，168MHz，192KB RAM</td>
+</tr>
+<tr>
+<td>HAL 库</td>
+<td>ST 提供的硬件抽象层，屏蔽寄存器细节</td>
+</tr>
+<tr>
+<td>句柄</td>
+<td>代表外设实例的结构体，HAL API 的核心参数</td>
+</tr>
+<tr>
+<td>CubeMX</td>
+<td>图形化配置工具，生成初始化代码</td>
+</tr>
+<tr>
+<td>FreeRTOS</td>
+<td>轻量实时操作系统，负责任务调度</td>
+</tr>
+<tr>
+<td>启动流程</td>
+<td>上电 → 时钟初始化 → 外设初始化 → FreeRTOS 接管</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gsrl">与 GSRL 的关系</h3>
+<p>GSRL 正是基于 HAL 库分层构建的：Driver 层封装 HAL API，Device 层使用 Driver 层的接口控制具体设备，Algorithm 层提供数学和控制算法。理解 HAL 库的句柄与回调机制，是理解整个 GSRL 代码运转方式的基础。</p>
+<blockquote>
+<p>下一篇：<a href="../02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟树与总线架构</a></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

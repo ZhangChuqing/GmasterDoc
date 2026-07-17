@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/C%2B%2B%E8%BF%9B%E9%98%B6/%E5%A4%9A%E6%80%81/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>多态 - Gmaster Documentation</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Gmaster Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">软件组</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">软件组首页</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">培训</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../" class="dropdown-item">培训首页</a>
+</li>
+            
+<li>
+    <a href="../../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="dropdown-item">自学清单</a>
+</li>
+            
+<li>
+    <a href="../../Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="dropdown-item">Lesson1 开发环境配置</a>
+</li>
+            
+<li>
+    <a href="../../Github%20Education%E8%AE%A4%E8%AF%81/" class="dropdown-item">Github Education认证</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/" class="dropdown-item">C++基础首页</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/01-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="dropdown-item">01 程序结构与基本语法</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="dropdown-item">02 数据类型</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/03-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/" class="dropdown-item">03 变量与常量</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/04-%E8%BF%90%E7%AE%97%E7%AC%A6/" class="dropdown-item">04 运算符</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/05-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="dropdown-item">05 输入输出</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/06-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="dropdown-item">06 判断语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/07-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="dropdown-item">07 循环语句</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/08-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="dropdown-item">08 数组与字符串</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/09-%E5%87%BD%E6%95%B0/" class="dropdown-item">09 函数</a>
+</li>
+            
+<li>
+    <a href="../../C%2B%2B%E5%9F%BA%E7%A1%80/10-%E5%AD%98%E5%82%A8%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="dropdown-item">10 存储类与作用域</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++进阶</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">C++进阶首页</a>
+</li>
+            
+<li>
+    <a href="../%E6%8C%87%E9%92%88/" class="dropdown-item">指针</a>
+</li>
+            
+<li>
+    <a href="../%E5%86%85%E5%AD%98/" class="dropdown-item">内存</a>
+</li>
+            
+<li>
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="dropdown-item">面向对象编程</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">多态</a>
+</li>
+            
+<li>
+    <a href="../%E6%A8%A1%E6%9D%BFtemplate/" class="dropdown-item">模板template</a>
+</li>
+            
+<li>
+    <a href="../%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="dropdown-item">移动语义</a>
+</li>
+            
+<li>
+    <a href="../lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="dropdown-item">lambda表达式</a>
+</li>
+            
+<li>
+    <a href="../std_array/" class="dropdown-item">std::array</a>
+</li>
+            
+<li>
+    <a href="../using%E5%88%AB%E5%90%8D/" class="dropdown-item">using别名</a>
+</li>
+            
+<li>
+    <a href="../algorithm%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C/" class="dropdown-item">algorithm数学操作</a>
+</li>
+            
+<li>
+    <a href="../%E8%A1%8C%E4%B8%BA%E6%A0%91/" class="dropdown-item">行为树</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">嵌入式基础</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="dropdown-item">嵌入式基础首页</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/" class="dropdown-item">01 嵌入式系统概述与HAL库</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/" class="dropdown-item">02 时钟树与总线架构</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/" class="dropdown-item">03 GPIO与高低电平</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/" class="dropdown-item">04 中断与NVIC</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/" class="dropdown-item">05 回调机制与HAL中断处理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/" class="dropdown-item">06 定时器与PWM</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/" class="dropdown-item">07 舵机与电机</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">08 UART通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">09 SPI通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">10 I2C通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" class="dropdown-item">11 CAN通信原理</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/" class="dropdown-item">12 IMU姿态传感器</a>
+</li>
+            
+<li>
+    <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="dropdown-item">13 GSRL工程结构与运行机制</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/" class="dropdown-item">开发首页</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Git/" class="dropdown-item">Git</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/ssh/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="dropdown-item">烧录器</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/livewatch/" class="dropdown-item">LiveWatch</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/UART%E7%BA%BF%E5%BA%8F/" class="dropdown-item">UART线序</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/CAN%E8%B4%9F%E8%BD%BD%E8%AE%A1%E7%AE%97%E5%99%A8/" class="dropdown-item">CAN负载计算</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/PID/" class="dropdown-item">PID</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/Vofa/" class="dropdown-item">Vofa调试</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E7%94%B5%E6%9C%BA%E6%89%8B%E5%86%8C/" class="dropdown-item">电机手册</a>
+</li>
+            
+<li>
+    <a href="../../../%E5%BC%80%E5%8F%91/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" class="dropdown-item">通信协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Checklist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../checklist/" class="dropdown-item">Checklist首页</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%94%B5%E6%9C%BA/" class="dropdown-item">电机</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E7%83%A7%E5%BD%95/" class="dropdown-item">烧录</a>
+</li>
+            
+<li>
+    <a href="../../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="dropdown-item">串口读取数据</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="nav-link">硬件组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="nav-link">机械组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="nav-link">视觉组</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E6%A8%A1%E6%9D%BFtemplate/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#polymorphism" class="nav-link">多态（Polymorphism）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 概念——为什么需要多态</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-virtual-function" class="nav-link">2. 虚函数（Virtual Function）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-vtable" class="nav-link">3. 多态的本质——虚函数表（vtable）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 重载、隐藏与重写——三个易混淆的概念</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 纯虚函数与抽象类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-static_cast-dynamic_cast" class="nav-link">6. 类型转换：static_cast 与 dynamic_cast</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 虚析构函数——容易被忽视的关键点</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-gsrl" class="nav-link">8. 与 GSRL 的关系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9" class="nav-link">9. 总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="polymorphism">多态（Polymorphism）</h1>
+<p>多态是面向对象的核心机制，它允许"同一个接口，根据对象的实际类型表现不同的行为"。在 C++ 中，多态依赖<strong>虚函数（virtual function）</strong>实现。</p>
+<hr />
+<h2 id="1">1. 概念——为什么需要多态</h2>
+<h3 id="11">1.1 静态绑定的局限</h3>
+<p>在继承体系中，如果没有虚函数，通过父类指针调用函数时，永远调用父类的版本：</p>
+<pre><code class="language-cpp">class Filter {
+public:
+    float update(float input) { return input; }  // 非虚函数——默认行为：直通
+};
+
+class KalmanFilter : public Filter {
+public:
+    float update(float input) { /* 卡尔曼滤波逻辑 */ return m_state; }
+private:
+    float m_state = 0.0f;
+};
+
+class MovingAverage : public Filter {
+public:
+    float update(float input) { /* 滑动平均逻辑 */ return m_avg; }
+private:
+    float m_avg = 0.0f;
+};
+
+// 使用场景：用一个数组存放不同类型的滤波器
+Filter* filters[2];
+filters[0] = new KalmanFilter();
+filters[1] = new MovingAverage();
+
+filters[0]-&gt;update(10.0f);  // 调用 Filter::update，而非 KalmanFilter::update！
+filters[1]-&gt;update(10.0f);  // 同样调用 Filter::update
+</code></pre>
+<p><strong>原因：</strong> 编译器在编译期根据<strong>指针的静态类型</strong>（<code>Filter*</code>）决定了调用哪个函数，这就是<strong>静态绑定</strong>（Static Binding）。它完全不关心指针实际指向的对象是什么类型。</p>
+<h3 id="12">1.2 多态的解决方案</h3>
+<p>加上 <code>virtual</code> 关键字后，函数调用在<strong>运行期</strong>根据<strong>对象的真实类型</strong>决定：</p>
+<pre><code class="language-cpp">class Filter {
+public:
+    virtual float update(float input) { return input; }  // 虚函数
+    virtual ~Filter() = default;                          // 虚析构函数（见第 7 节）
+};
+</code></pre>
+<p>此后：</p>
+<pre><code class="language-cpp">filters[0]-&gt;update(10.0f);  // 运行期发现是 KalmanFilter → 调用 KalmanFilter::update
+filters[1]-&gt;update(10.0f);  // 运行期发现是 MovingAverage → 调用 MovingAverage::update
+</code></pre>
+<p><strong>结论：</strong> 没有 <code>virtual</code> → 静态绑定（看指针类型）；有 <code>virtual</code> → 动态绑定（看对象类型）。这就是多态的开关。</p>
+<hr />
+<h2 id="2-virtual-function">2. 虚函数（Virtual Function）</h2>
+<h3 id="21">2.1 基本语法</h3>
+<pre><code class="language-cpp">class BTNode {
+public:
+    virtual ~BTNode() = default;              // 虚析构函数
+    virtual BTStatus tick() = 0;              // 纯虚函数（见第 5 节）
+    virtual void reset() {}                   // 普通虚函数（有默认实现）
+};
+</code></pre>
+<h3 id="22-override">2.2 <code>override</code> 关键字</h3>
+<p>在子类中重写虚函数时，建议加上 <code>override</code>：</p>
+<pre><code class="language-cpp">class SequenceNode : public BTNode {
+public:
+    BTStatus tick() override {   // 明确标注&quot;这是重写&quot;
+        for (auto&amp; child : m_children) {
+            if (child-&gt;tick() == BTStatus::FAILURE)
+                return BTStatus::FAILURE;
+        }
+        return BTStatus::SUCCESS;
+    }
+};
+</code></pre>
+<p><code>override</code> 的作用：
+- 向读者明确表达"这个函数重写了基类的虚函数"
+- 让编译器检查函数签名是否与基类完全一致（如果不一致会报编译错误，而不是静默地变成一个新的函数）</p>
+<h3 id="23-final">2.3 <code>final</code> 关键字</h3>
+<p>如果某个虚函数不希望被进一步重写，可以用 <code>final</code>：</p>
+<pre><code class="language-cpp">class CriticalNode : public BTNode {
+public:
+    BTStatus tick() override final { /* ... */ }  // 子类不能再重写 tick()
+};
+</code></pre>
+<p>也可以用于整个类：</p>
+<pre><code class="language-cpp">class FinalFilter final : public Filter {
+    // 此类不能被继承
+};
+</code></pre>
+<hr />
+<h2 id="3-vtable">3. 多态的本质——虚函数表（vtable）</h2>
+<p>多态不是魔法，它由编译器通过<strong>虚函数表</strong>（vtable）实现。</p>
+<pre><code>Filter 类（有虚函数）:
+┌─────────────────┐
+│  vtable 指针    │ ──→ ┌──────────────────────┐
+│  (隐藏成员)     │     │ &amp;Filter::update      │
+├─────────────────┤     │ &amp;Filter::~Filter     │
+│  其它成员变量    │     └──────────────────────┘
+└─────────────────┘
+
+KalmanFilter 类（重写了 update）:
+┌─────────────────┐
+│  vtable 指针    │ ──→ ┌───────────────────────────┐
+│  (隐藏成员)     │     │ &amp;KalmanFilter::update     │  ← 指向子类版本
+├─────────────────┤     │ &amp;KalmanFilter::~KalmanFilter│
+│  m_state        │     └───────────────────────────┘
+│  m_covariance   │
+│  ...            │
+└─────────────────┘
+</code></pre>
+<p>每个含有虚函数的类都有一个隐藏的<strong>虚函数表指针</strong>（vptr），指向一张函数指针表（vtable）。当通过基类指针调用虚函数时：</p>
+<ol>
+<li>通过对象找到 vptr</li>
+<li>通过 vptr 找到 vtable</li>
+<li>在 vtable 中查找对应的函数指针</li>
+<li>调用该函数</li>
+</ol>
+<p>这个过程发生在运行期，因此有轻微的性能开销（一次额外的指针解引用）。在嵌入式实时系统中，这个开销通常可以接受，但需要意识到它的存在。</p>
+<hr />
+<h2 id="4">4. 重载、隐藏与重写——三个易混淆的概念</h2>
+<p>这三个概念名称相似，但本质完全不同。按"是否发生在继承中"划分：</p>
+<h3 id="41-overloading">4.1 重载（Overloading）——不涉及继承</h3>
+<p>重载发生在<strong>同一个类内部</strong>：函数名相同，但参数列表不同。</p>
+<pre><code class="language-cpp">class Logger {
+public:
+    void log(const char* msg);          // 版本 1
+    void log(const char* msg, int id);  // 版本 2：参数不同 → 重载
+};
+
+Logger logger;
+logger.log(&quot;error&quot;);         // 调用版本 1
+logger.log(&quot;error&quot;, 404);   // 调用版本 2
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发生位置</td>
+<td>同一个类内部</td>
+</tr>
+<tr>
+<td>是否需要 virtual</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否需要继承</td>
+<td>否</td>
+</tr>
+<tr>
+<td>绑定方式</td>
+<td>编译期（静态绑定）</td>
+</tr>
+<tr>
+<td>与多态的关系</td>
+<td>无关</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-hiding">4.2 隐藏（Hiding）——继承中名字遮挡</h3>
+<p>隐藏发生在<strong>继承关系中</strong>：子类定义了一个与父类同名的函数（无论参数是否相同、无论是否为虚函数），父类的同名函数就被遮挡。</p>
+<pre><code class="language-cpp">class Base {
+public:
+    void show(int x) { /* ... */ }
+};
+
+class Derived : public Base {
+public:
+    void show() { /* ... */ }  // 名字相同 → 隐藏了 Base::show(int)
+};
+
+Derived d;
+d.show();       // 调用 Derived::show
+// d.show(10);  // ❌ 编译错误：Base::show(int) 被隐藏了
+</code></pre>
+<p><strong>解决方法：</strong> 使用 <code>using</code> 声明将父类的同名函数引入子类作用域：</p>
+<pre><code class="language-cpp">class Derived : public Base {
+public:
+    using Base::show;          // 将 Base 中所有名为 show 的函数引入
+    void show() { /* ... */ }  // 子类版本
+};
+
+Derived d;
+d.show();      // 调用 Derived::show
+d.show(10);    // 调用 Base::show(int) —— 不再被隐藏
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发生位置</td>
+<td>继承关系中</td>
+</tr>
+<tr>
+<td>触发条件</td>
+<td>子类出现与父类同名的函数</td>
+</tr>
+<tr>
+<td>是否需要 virtual</td>
+<td>否</td>
+</tr>
+<tr>
+<td>绑定方式</td>
+<td>编译期（静态绑定）</td>
+</tr>
+<tr>
+<td>与多态的关系</td>
+<td>无关</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-override">4.3 重写（Override）——多态的核心</h3>
+<p>重写发生在<strong>继承关系中</strong>，子类重新实现父类的虚函数。这是实现多态的机制。</p>
+<pre><code class="language-cpp">class Filter {
+public:
+    virtual float update(float input) { return input; }
+};
+
+class KalmanFilter : public Filter {
+public:
+    float update(float input) override { /* 子类实现 */ return 0.0f; }
+};
+
+Filter* f = new KalmanFilter();
+f-&gt;update(10.0f);  // 动态绑定 → 调用 KalmanFilter::update
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发生位置</td>
+<td>继承关系中</td>
+</tr>
+<tr>
+<td>是否需要 virtual</td>
+<td>是（父类函数必须是虚函数）</td>
+</tr>
+<tr>
+<td>函数签名</td>
+<td>必须与父类完全一致</td>
+</tr>
+<tr>
+<td>绑定方式</td>
+<td>运行期（动态绑定）</td>
+</tr>
+<tr>
+<td>与多态的关系</td>
+<td><strong>多态的实现方式</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 纯虚函数与抽象类</h2>
+<h3 id="51">5.1 纯虚函数</h3>
+<p>如果基类无法提供有意义的默认实现，可以声明为纯虚函数：</p>
+<pre><code class="language-cpp">class BTNode {
+public:
+    virtual BTStatus tick() = 0;  // = 0 表示纯虚函数——没有实现，子类必须重写
+};
+</code></pre>
+<h3 id="52">5.2 抽象类</h3>
+<p>包含纯虚函数的类称为<strong>抽象类</strong>（Abstract Class）。抽象类不能直接实例化：</p>
+<pre><code class="language-cpp">BTNode node;  // ❌ 编译错误：BTNode 是抽象类，不能实例化
+
+class SequenceNode : public BTNode {
+public:
+    BTStatus tick() override { /* ... */ }  // 必须实现
+};
+
+SequenceNode seq;  // ✅ 可以实例化——它实现了所有纯虚函数
+</code></pre>
+<p>抽象类的作用是<strong>定义接口规范</strong>：告诉所有派生类"你必须实现这些函数"，但不规定具体如何实现。这在 GSRL 的行为树、滤波器、控制器体系中大量使用。</p>
+<hr />
+<h2 id="6-static_cast-dynamic_cast">6. 类型转换：<code>static_cast</code> 与 <code>dynamic_cast</code></h2>
+<p>在多态体系中，经常需要将父类指针转换为子类指针。</p>
+<h3 id="61-static_cast">6.1 <code>static_cast</code>——编译期转换</h3>
+<pre><code class="language-cpp">Filter* f = new KalmanFilter();
+KalmanFilter* kf = static_cast&lt;KalmanFilter*&gt;(f);  // 直接转换，不检查
+</code></pre>
+<ul>
+<li>快，但不安全——如果 <code>f</code> 实际不是 <code>KalmanFilter</code>，结果是未定义行为</li>
+<li>不依赖虚函数，编译期完成</li>
+<li>适用于<strong>确定类型正确</strong>的场景</li>
+</ul>
+<h3 id="62-dynamic_cast">6.2 <code>dynamic_cast</code>——运行期检查</h3>
+<pre><code class="language-cpp">Filter* f = getSomeFilter();  // 不确定具体类型
+
+KalmanFilter* kf = dynamic_cast&lt;KalmanFilter*&gt;(f);
+if (kf) {
+    // 转换成功，可以安全使用 KalmanFilter 特有的成员
+    kf-&gt;setProcessNoise(0.1f);
+} else {
+    // 转换失败，f 不是 KalmanFilter
+}
+
+MovingAverage* ma = dynamic_cast&lt;MovingAverage*&gt;(f);
+if (ma) {
+    ma-&gt;setWindowSize(10);
+}
+</code></pre>
+<ul>
+<li>安全：转换失败时返回 <code>nullptr</code></li>
+<li>依赖虚函数表（vtable），要求基类有虚函数</li>
+<li>有运行期开销（类型检查）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>static_cast</code></th>
+<th><code>dynamic_cast</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安全性</td>
+<td>不安全</td>
+<td>安全（失败返回 nullptr）</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>快</td>
+<td>较慢（运行期类型检查）</td>
+</tr>
+<tr>
+<td>依赖虚函数</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>类型确定</td>
+<td>类型不确定，需要安全转换</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>GSRL 中偏好 <code>static_cast</code>，因为嵌入式环境追求性能且类型关系通常在编译期已明确。行为树节点的类型转换会借助 <code>static_cast</code> 完成。</p>
+</blockquote>
+<hr />
+<h2 id="7">7. 虚析构函数——容易被忽视的关键点</h2>
+<p>当通过基类指针删除派生类对象时，如果析构函数不是虚函数，只会调用基类的析构函数，导致派生类的资源泄漏：</p>
+<pre><code class="language-cpp">class Filter {
+public:
+    ~Filter() { /* 释放 Filter 的资源 */ }  // 非虚析构函数——危险！
+};
+
+class KalmanFilter : public Filter {
+public:
+    ~KalmanFilter() { /* 释放矩阵内存 */ }  // 这个析构函数不会被调用！
+private:
+    float* m_buffer = new float[100];       // 这块内存泄漏了
+};
+
+Filter* f = new KalmanFilter();
+delete f;  // 只调用 Filter::~Filter()，不调用 KalmanFilter::~KalmanFilter()
+</code></pre>
+<p><strong>解决方案：</strong> 将基类的析构函数声明为 <code>virtual</code>：</p>
+<pre><code class="language-cpp">class Filter {
+public:
+    virtual ~Filter() = default;  // 虚析构函数——正确！
+};
+</code></pre>
+<p>现在 <code>delete f</code> 会通过虚函数表找到 <code>KalmanFilter::~KalmanFilter()</code>，先调用子类析构，再调用父类析构，资源被正确释放。</p>
+<p><strong>原则：</strong> 如果一个类被设计为基类（会被继承），它的析构函数应该声明为 <code>virtual</code>，即使函数体为空。</p>
+<hr />
+<h2 id="8-gsrl">8. 与 GSRL 的关系</h2>
+<p>多态在 GSRL 中无处不在：</p>
+<ul>
+<li><strong>行为树节点</strong>：<code>BTNode</code> 是抽象基类，定义纯虚函数 <code>tick()</code>。<code>BTSequence</code>、<code>BTSelector</code>、<code>BTCondition</code> 等子类各自重写 <code>tick()</code>，实现不同的行为逻辑。运行时通过基类指针数组遍历所有节点，多态机制确保每个节点执行自己的逻辑。</li>
+<li><strong>控制器</strong>：<code>Controller</code> 是抽象基类，<code>SimplePID</code> 通过重写 <code>controllerCalculate()</code> 实现具体控制算法。上层代码只依赖 <code>Controller*</code> 接口，不关心具体是哪种控制器。</li>
+<li><strong>滤波器</strong>：<code>Filter&lt;T&gt;</code> 定义滤波接口，<code>KalmanFilter</code>、<code>MovingAverage</code> 等各自实现。控制器中持有一个 <code>Filter&lt;fp32&gt;*</code> 成员，通过多态可以在不修改控制器代码的情况下切换滤波器。</li>
+</ul>
+<p>在嵌入式约束下，GSRL 使用多态时遵循以下原则：
+- 虚函数数量尽量少，减少 vtable 体积
+- 避免在中断服务例程（ISR）中进行 <code>dynamic_cast</code> 等带运行期开销的操作
+- 接口类（如 <code>BTNode</code>）保持简洁，纯虚函数数量控制在个位数</p>
+<hr />
+<h2 id="9">9. 总结</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>核心要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态绑定</td>
+<td>编译期根据指针类型决定调用哪个函数（无 <code>virtual</code>）</td>
+</tr>
+<tr>
+<td>动态绑定</td>
+<td>运行期根据对象实际类型决定调用哪个函数（有 <code>virtual</code>）</td>
+</tr>
+<tr>
+<td>虚函数（virtual）</td>
+<td>启用动态绑定的语法机制</td>
+</tr>
+<tr>
+<td>虚函数表（vtable）</td>
+<td>虚函数运行期分发的底层实现——每个类一张函数指针表</td>
+</tr>
+<tr>
+<td><code>override</code></td>
+<td>显式标注重写，编译器检查签名一致性</td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td>禁止进一步重写（函数级或类级）</td>
+</tr>
+<tr>
+<td>纯虚函数（<code>= 0</code>）</td>
+<td>基类不提供实现，子类必须重写</td>
+</tr>
+<tr>
+<td>抽象类</td>
+<td>包含纯虚函数的类，不能直接实例化</td>
+</tr>
+<tr>
+<td>重载（Overload）</td>
+<td>同一类内同名不同参，编译期决议，与多态无关</td>
+</tr>
+<tr>
+<td>隐藏（Hiding）</td>
+<td>继承中子类同名函数遮挡父类版本，编译期决议</td>
+</tr>
+<tr>
+<td>重写（Override）</td>
+<td>子类重写父类虚函数，运行期决议，多态的实现方式</td>
+</tr>
+<tr>
+<td><code>static_cast</code></td>
+<td>编译期类型转换，快但不安全</td>
+</tr>
+<tr>
+<td><code>dynamic_cast</code></td>
+<td>运行期类型转换，安全（依赖虚函数表）</td>
+</tr>
+<tr>
+<td>虚析构函数</td>
+<td>基类析构必须为 <code>virtual</code>，确保通过基类指针删除时正确释放资源</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>多态的前提是继承（详见《面向对象编程.md》）。而多态体系中常见的"只复制指针、不复制数据"的语义，则由移动语义来高效实现（详见《移动语义.md》）。</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
