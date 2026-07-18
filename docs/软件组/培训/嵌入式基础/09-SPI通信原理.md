@@ -302,3 +302,5 @@ void BMI088::readSingleReg(const SPIConfig &cfg, uint8_t reg, uint8_t &rxData)
 GSRL 的 BMI088 IMU 通过 SPI 通信，`drv_spi.c` 封装了 HAL SPI API，`dvc_imu.hpp` 中的 `BMI088` 类在 SPI 驱动之上实现了寄存器的读写、校准和姿态解算。
 
 > 下一篇：[I2C 通信原理与实践](./10-I2C通信原理.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

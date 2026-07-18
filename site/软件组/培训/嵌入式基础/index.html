@@ -318,6 +318,39 @@
                             <li class="nav-item">
                                 <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">文档站指南</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/" class="dropdown-item">指南首页</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/mkdocs%E4%BB%8B%E7%BB%8D%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="dropdown-item">MkDocs介绍与配置</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/markdown%E8%AF%AD%E6%B3%95/" class="dropdown-item">Markdown语法速查</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/git%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="dropdown-item">Git工作流</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83/" class="dropdown-item">文档规范</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/" class="dropdown-item">问题反馈</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E5%BB%BA%E7%AB%99%E8%80%85%E8%AF%B4/" class="dropdown-item">建站者说</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -356,10 +389,6 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">嵌入式基础</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">目录</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -370,83 +399,9 @@
 <h1 id="_1">嵌入式基础</h1>
 <p>本部分系统讲解 STM32 嵌入式开发的核心知识，从 MCU 的基本概念出发，逐步深入 GPIO、中断、通信协议（UART/SPI/I2C/CAN）、定时器、传感器等主题，最终以 GSRL 工程结构全景图收尾。</p>
 <p>建议在学习完 <a href="../C%2B%2B%E5%9F%BA%E7%A1%80/">C++ 基础</a> 后，按编号顺序阅读。本系列与 GSRL 源码紧密结合，每个主题都会说明其在机器人控制中的实际应用场景。</p>
-<h2 id="_2">目录</h2>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>主题</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>01</td>
-<td><a href="01-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E4%B8%8EHAL%E5%BA%93/">嵌入式系统概述与 HAL 库</a></td>
-<td>MCU 概念、HAL 库设计、FreeRTOS 概述、启动流程</td>
-</tr>
-<tr>
-<td>02</td>
-<td><a href="02-%E6%97%B6%E9%92%9F%E6%A0%91%E4%B8%8E%E6%80%BB%E7%BA%BF%E6%9E%B6%E6%9E%84/">时钟树与总线架构</a></td>
-<td>系统时钟配置、AHB/APB 总线、时钟源选择</td>
-</tr>
-<tr>
-<td>03</td>
-<td><a href="03-GPIO%E4%B8%8E%E9%AB%98%E4%BD%8E%E7%94%B5%E5%B9%B3/">GPIO 与高低电平</a></td>
-<td>推挽/开漏输出、上下拉输入、HAL GPIO API</td>
-</tr>
-<tr>
-<td>04</td>
-<td><a href="04-%E4%B8%AD%E6%96%AD%E4%B8%8ENVIC/">中断与 NVIC</a></td>
-<td>中断向量表、优先级分组、外部中断配置</td>
-</tr>
-<tr>
-<td>05</td>
-<td><a href="05-%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6%E4%B8%8EHAL%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86/">回调机制与 HAL 中断处理</a></td>
-<td>HAL 回调函数、中断与回调的衔接</td>
-</tr>
-<tr>
-<td>06</td>
-<td><a href="06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPWM/">定时器与 PWM</a></td>
-<td>定时器时基、PWM 输出、占空比控制</td>
-</tr>
-<tr>
-<td>07</td>
-<td><a href="07-%E8%88%B5%E6%9C%BA%E4%B8%8E%E7%94%B5%E6%9C%BA/">舵机与电机</a></td>
-<td>舵机 PWM 控制、直流电机驱动原理</td>
-</tr>
-<tr>
-<td>08</td>
-<td><a href="08-UART%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">UART 通信原理</a></td>
-<td>串口通信协议、波特率、HAL UART API</td>
-</tr>
-<tr>
-<td>09</td>
-<td><a href="09-SPI%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">SPI 通信原理</a></td>
-<td>SPI 四线制、模式配置、IMU 通信实例</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="10-I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">I2C 通信原理</a></td>
-<td>I2C 总线协议、地址机制、传感器读写</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="11-CAN%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">CAN 通信原理</a></td>
-<td>CAN 总线协议、帧格式、电机通信实例</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="12-IMU%E5%A7%BF%E6%80%81%E4%BC%A0%E6%84%9F%E5%99%A8/">IMU 姿态传感器</a></td>
-<td>BMI088 数据读取、姿态解算概述</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="13-GSRL%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">GSRL 工程结构与运行机制</a></td>
-<td>目录结构、构建体系、代码分层、中断旅程、任务调度</td>
-</tr>
-</tbody>
-</table></div>
+<blockquote>
+<p><strong>作者</strong>: <a href="https://github.com/ZhangChuqing">Qing</a> | <strong>修改日期</strong>: 2026-07-18</p>
+</blockquote></div>
             </div>
         </div>
 

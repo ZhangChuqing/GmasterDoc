@@ -418,3 +418,5 @@ BMI088
 `dvc_imu.hpp/cpp` 中的 `IMU` 基类和 `BMI088` 派生类是 GSRL 姿态感知的核心。它组合了 SPI 驱动（数据采集）、校准参数（零飘/安装误差修正）、AHRS 算法（姿态解算），向上提供简洁的 `getEulerAngle()` / `getGyro()` / `getAccel()` 接口。机器人底盘平衡、云台稳定、导航定位等所有上层控制都依赖于这一层提供的姿态信息。
 
 > 下一篇：[GSRL 工程结构与运行机制](./13-GSRL工程结构与运行机制.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

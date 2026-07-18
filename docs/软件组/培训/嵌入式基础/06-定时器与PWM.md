@@ -227,3 +227,5 @@ GSRL 中 `CubeMX_BSP/Inc/tim.h` 和 `CubeMX_BSP/Src/tim.c` 包含了定时器的
 | HAL API | `PWM_Start` / `SET_COMPARE` / `PWM_Stop` |
 
 > 下一篇：[舵机与电机控制](./07-舵机与电机.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

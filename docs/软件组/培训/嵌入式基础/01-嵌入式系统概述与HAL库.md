@@ -283,3 +283,5 @@ testHandle = osThreadNew(test_task, NULL, &test_attributes);
 GSRL 正是基于 HAL 库分层构建的：Driver 层封装 HAL API，Device 层使用 Driver 层的接口控制具体设备，Algorithm 层提供数学和控制算法。理解 HAL 库的句柄与回调机制，是理解整个 GSRL 代码运转方式的基础。
 
 > 下一篇：[时钟树与总线架构](./02-时钟树与总线架构.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

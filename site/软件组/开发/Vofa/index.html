@@ -318,6 +318,39 @@
                             <li class="nav-item">
                                 <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">文档站指南</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/" class="dropdown-item">指南首页</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/mkdocs%E4%BB%8B%E7%BB%8D%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="dropdown-item">MkDocs介绍与配置</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/markdown%E8%AF%AD%E6%B3%95/" class="dropdown-item">Markdown语法速查</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/git%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="dropdown-item">Git工作流</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83/" class="dropdown-item">文档规范</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/" class="dropdown-item">问题反馈</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E5%BB%BA%E7%AB%99%E8%80%85%E8%AF%B4/" class="dropdown-item">建站者说</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -354,21 +387,25 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#vofa" class="nav-link">Vofa</a>
+            <li class="nav-item" data-bs-level="1"><a href="#vofa" class="nav-link">Vofa+ 调试指南</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#1-vofa" class="nav-link">1. Vofa 下载</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#2-vofa" class="nav-link">2. 添加 Vofa 配置文件</a>
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 下载</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#3-vofa" class="nav-link">3. 使用 Vofa</a>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 集成到工程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 上位机配置</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 常见问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 补充参考</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -379,110 +416,94 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="vofa">Vofa</h1>
-<p>精细调节 PID 和难以把脉完成的 PID 需要使用 Vofa+ 进行精细化调参。新手在使用 Vofa 时可能会遇到一些问题，请阅读此文档。</p>
-<h2 id="1-vofa">1. Vofa 下载</h2>
-<p><a href="https://je00.github.io/downloads/vofa+_1.3.10_x64_installer.exe">点击下载 vofa</a></p>
-<hr />
-<h2 id="2-vofa">2. 添加 Vofa 配置文件</h2>
-<p>直接在 <code>dev</code> 文件夹内加入 <code>.cpp</code> 和 <code>.hpp</code> 文件：</p>
-<p>点击查看 <a href="../dvc_vofa.cpp">vofa.cpp</a></p>
-<p>点击查看 <a href="../dvc_vofa.hpp">vofa.hpp</a></p>
-<p>配合 <code>tsk_test.cpp</code> 使用，只需要调用这里面对应的函数即可使用（初始化 <code>Init</code>、写入函数 <code>WriteData</code> 等）。</p>
-<h4 id="vofa-vofa">方法二附加：VOFA+ 串口调试助手（<code>Vofa</code> 类）使用指南</h4>
-<p>该模块（<code>Vofa</code> 类）具备两大核心功能：</p>
-<ol>
-<li><code>实时数据上传</code>：通过 JustFloat 协议高速发送浮点数据波形。</li>
-<li><code>在线参数调优</code>：通过串口命令行实时修改程序内部参数。</li>
-</ol>
-<h5 id="_1">快速集成</h5>
-<p>由于使用了模板类，建议在全局或类的成员变量中定义。<code>N</code> 代表你需要同时发送的数据通道数量。</p>
+<h1 id="vofa">Vofa+ 调试指南</h1>
+<p>Vofa+ 是用于 PID 精调的串口数据可视化工具，支持实时波形显示和在线参数调节。</p>
+<h2 id="1">1. 下载</h2>
+<p><a href="https://je00.github.io/downloads/vofa+_1.3.10_x64_installer.exe">Vofa+ 1.3.10 安装包</a></p>
+<h2 id="2">2. 集成到工程</h2>
+<p>在工程 <code>dev</code> 目录中加入以下文件：</p>
+<ul>
+<li><a href="../dvc_vofa.cpp">dvc_vofa.cpp</a></li>
+<li><a href="../dvc_vofa.hpp">dvc_vofa.hpp</a></li>
+</ul>
+<p>配合 <code>tsk_test.cpp</code> 使用，调用初始化函数 <code>Init</code> 和写入函数 <code>WriteData</code> 即可。</p>
+<h3 id="_1">快速集成示例</h3>
+<p>模板参数 <code>N</code> 为需要同时发送的数据通道数：</p>
 <pre><code class="language-cpp">#include &quot;dvc_vofa.hpp&quot;
 
-// 定义一个拥有 9 个数据通道的 Vofa 实例
-Vofa&lt;9&gt; vofa;
-</code></pre>
-<p>在任务开始前配置数据源：</p>
-<pre><code class="language-cpp">extern &quot;C&quot; void test_task(void *argument)
+Vofa&lt;9&gt; vofa;  // 9 个数据通道
+
+extern &quot;C&quot; void test_task(void *argument)
 {
-    CAN_Init(&amp;hcan1, can1RxCallback);                  // 初始化CAN1
-    UART_Init(&amp;huart3, dr16ITCallback, 36);            // 初始化DR16串口
-    vofa.Init();                                      // 初始化VOFA
+    CAN_Init(&amp;hcan1, can1RxCallback);
+    UART_Init(&amp;huart3, dr16ITCallback, 36);
+    vofa.Init();
     vofa.AddParameterListener(&quot;data&quot;, [](fp32 *newValue) {
         data = *newValue;
-        printf(&quot;TestParameter updated: %f\n&quot;, *newValue);
+        printf(&quot;Parameter updated: %f\n&quot;, *newValue);
     });
-    TickType_t taskLastWakeTime = xTaskGetTickCount(); // 获取任务开始时间
+    TickType_t taskLastWakeTime = xTaskGetTickCount();
     while (1) {
         motor.openloopControl(0.0f);
         transmitMotorsControlData();
         vofa.writeData(data);
         vofa.sendFrame();
-        vTaskDelayUntil(&amp;taskLastWakeTime, 1); // 确保任务以定周期1ms运行
+        vTaskDelayUntil(&amp;taskLastWakeTime, 1);
     }
 }
 </code></pre>
-<h5 id="_2">在线调参使用方法</h5>
-<p>使用 <code>AddParameterListener</code> 绑定参数名和回调函数：</p>
-<pre><code class="language-cpp">// 示例：调节云台 PID
-vofa.AddParameterListener(&quot;gimbal_p&quot;, [](fp32 *val) {
+<h3 id="_2">在线调参</h3>
+<p>使用 <code>AddParameterListener</code> 绑定参数名与回调函数：</p>
+<pre><code class="language-cpp">vofa.AddParameterListener(&quot;gimbal_p&quot;, [](fp32 *val) {
     gimbal_pid.kp = *val;
 });
 </code></pre>
-<p>在串口助手中发送以下格式字符串（支持换行符 <code>\n</code> 或回车符 <code>\r</code> 结束）：</p>
-<p>格式：<code>参数名:数值</code></p>
+<p>在 Vofa+ 串口助手中发送 <code>参数名:数值</code>（英文冒号，区分大小写），多条指令用换行分隔：</p>
 <pre><code class="language-text">gimbal_p:15.5
 speed:0
 </code></pre>
-<p>注意：</p>
+<h2 id="3">3. 上位机配置</h2>
 <ol>
-<li>冒号必须是英文冒号 <code>:</code>。</li>
-<li>参数名区分大小写。</li>
-<li>支持一次发送多条指令（需用换行分隔）。</li>
+<li>协议选择：<strong>FireWater</strong>（即 JustFloat 协议）</li>
+<li>数据引擎：开启</li>
+<li>添加控件：拖入 <strong>Waveform</strong>（波形图）</li>
+<li>右键波形图 → 配置 → 绑定数据源，代码中 <code>BindFunction</code> 的调用顺序对应通道索引（第 1 个→ch0，第 2 个→ch1，以此类推）</li>
 </ol>
-<h5 id="vofa_1">VOFA+ 上位机设置</h5>
-<ol>
-<li>协议选择：<code>FireWater</code>（即 JustFloat 协议）。</li>
-<li>数据引擎：开启。</li>
-<li>添加控件：拖入 <code>Waveform</code>（波形图）。</li>
-<li>绑定通道：</li>
-</ol>
-<p>右键波形图 -&gt; 配置 -&gt; 绑定数据源。
-   代码中 <code>BindFunction</code> 的调用顺序对应通道索引：
-   第 1 个绑定的函数 -&gt; <code>ch0</code>
-   第 2 个绑定的函数 -&gt; <code>ch1</code>
-   以此类推。</p>
-<hr />
-<h2 id="3-vofa">3. 使用 Vofa</h2>
-<p>详见 <a href="https://www.bilibili.com/video/BV1q1421R7uK/?spm_id_from=333.337.search-card.all.click">B站 vofa 教程</a></p>
-<p>一般来说调 PID 使用 <code>JustFloat</code> 即可。</p>
 <h2 id="4">4. 常见问题</h2>
-<p>你 先 别 急</p>
+<h3 id="41">4.1 有数据但内容不对</h3>
+<p>检查是否选择了正确的串口模式。</p>
+<h3 id="42">4.2 完全读不到数据</h3>
+<p>按顺序排查：</p>
 <ol>
-<li>有数据但是不是你要的数据：模式没有选择串口。</li>
-<li>
-<p>读不到数据：</p>
-</li>
-<li>
-<p>波特率没对齐。</p>
-</li>
-<li>端口选择错误。</li>
-<li>Tx/Rx 有没有接反（T 对 R，R 对 T）。</li>
-<li>vofa 传奇 bug。</li>
+<li>波特率是否与代码一致（通常 115200 或更高）</li>
+<li>端口是否选择正确（与设备管理器一致）</li>
+<li>TX/RX 是否接反（T 接 R，R 接 T）</li>
+<li>波形乱码或锯齿：确认协议为 FireWater</li>
 </ol>
-<p>如果你打开串口，确认波特率正确、端口正确、接线 Tx/Rx 正确，以上所有问题都排查过并确认没有问题，先别急，这个是 vofa 祖传 bug：</p>
+<h3 id="43-vofa-bug">4.3 Vofa 启动异常（祖传 Bug）</h3>
+<p>如果以上全部确认无误仍然无法工作，这可能是 Vofa+ 的已知问题。解决方法：</p>
 <ol>
-<li>先关闭你的 vofa。</li>
-<li>寻找 <code>C:\Users\[username]\AppData\Local\vofa+</code>，将这个文件夹删掉。</li>
-<li>确认这个文件夹中内容删干净之后，再次重启 vofa。</li>
+<li>关闭 Vofa+</li>
+<li>删除 <code>C:\Users\[用户名]\AppData\Local\vofa+</code> 文件夹</li>
+<li>重新启动 Vofa+</li>
 </ol>
-<p>请注意，这个 vofa 可能在任何时间、任何地点、随机概率崩溃。不要怀疑自己也不要怀疑你的电脑，毕竟这个 vofa 已经很久没更新了。</p>
-<p>补充排查（方法二常见问题）：</p>
-<ol>
-<li>参数修改没反应：检查是否发送了换行、参数名是否完全一致、<code>AddParameterListener</code> 参数名是否常量字符串。</li>
-<li>波形显示乱码或锯齿：确认 VOFA+ 协议为 <code>FireWater</code>，并确认波特率与 <code>usart.c</code> 一致（常见 <code>115200</code> 或更高）。</li>
-<li>可以发送多少个数据：由模板参数 <code>N</code> 决定，例如 <code>Vofa&lt;10&gt;</code> 最多支持 10 个通道；超出 <code>N</code> 的绑定会无效。</li>
-</ol></div>
+<blockquote>
+<p>Vofa+ 已长期未更新，此 Bug 可能在任意时间随机触发，与你的电脑或代码无关。</p>
+</blockquote>
+<h3 id="44">4.4 在线调参无反应</h3>
+<ul>
+<li>参数名是否完全一致（含大小写）</li>
+<li>是否发送了换行符</li>
+<li><code>AddParameterListener</code> 的参数名是否为常量字符串</li>
+</ul>
+<h2 id="5">5. 补充参考</h2>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1q1421R7uK/">B站 Vofa 教程</a></li>
+<li>通道数量上限由模板参数 <code>N</code> 决定</li>
+</ul>
+<blockquote>
+<p><strong>作者</strong>: <a href="https://github.com/ZhangChuqing">Qing</a> | <strong>修改日期</strong>: 2026-07-18</p>
+</blockquote></div>
             </div>
         </div>
 

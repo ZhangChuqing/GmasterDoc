@@ -73,3 +73,11 @@ nav:
   - 机械组: 机械组/index.md
   - 视觉组: 视觉组/index.md
   - 宣运组: 宣运组/index.md
+  - 文档站指南:
+      - 指南首页: 文档站指南/index.md
+      - MkDocs介绍与配置: 文档站指南/mkdocs介绍与配置.md
+      - Markdown语法速查: 文档站指南/markdown语法.md
+      - Git工作流: 文档站指南/git工作流.md
+      - 文档规范: 文档站指南/文档规范.md
+      - 问题反馈: 文档站指南/问题反馈.md
+      - 建站者说: 文档站指南/建站者说.md

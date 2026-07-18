@@ -338,3 +338,5 @@ bool decodeCanRxMessageFromISR(const can_rx_message_t *rxMessage) {
 CAN 是 GSRL 中最重要的通信协议。`drv_can.c` 封装了 HAL CAN 的初始化、过滤、收发和中断处理。所有 `Motor` 派生类（GM6020、M3508、DM4310 等）通过 CAN 接收反馈和发送控制指令。CAN1 通常挂载底盘电机，CAN2 挂载云台电机——两个 CAN 外设独立工作，避免了总线负载过高。
 
 > 下一篇：[IMU 姿态传感器](./12-IMU姿态传感器.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

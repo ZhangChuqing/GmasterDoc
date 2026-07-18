@@ -299,3 +299,5 @@ void EXTI4_IRQHandler(void)     { HAL_GPIO_EXTI_IRQHandler(INT1_ACCEL_Pin); }
 | 优先级 | 数值越小优先级越高，FreeRTOS API 有最高优先级限制 |
 
 > 下一篇：[回调机制与 HAL 中断处理](./05-回调机制与HAL中断处理.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

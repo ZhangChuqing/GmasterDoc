@@ -8,4 +8,4 @@
 
 欢迎探索，欢迎共建，欢迎一起打造我们共同的技术记忆。
 
-> 📧 文档问题？软件组内容由 [Qing](https://github.com/ZhangChuqing) 维护，欢迎直接联系。
+> **维护者**: [Qing](https://github.com/ZhangChuqing) | 软件组文档问题欢迎直接联系

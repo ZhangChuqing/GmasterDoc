@@ -433,3 +433,5 @@ double v3 = std::abs(-3.14);   // ✅
 | 多个值取最值 | `std::min({a,b,c})` / `std::max({a,b,c})` | `<algorithm>` |
 
 **核心原则：能用标准库的，就不要手写。标准库版本更安全（类型检查）、更清晰（意图明确）、优化更好（constexpr + 编译器内建）。**
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

@@ -440,3 +440,5 @@ VecWrapper<int>::type vi;          // 使用时要写 ::type，不直观
 | 模板别名 | ❌ 不支持 | `template<typename T> using Vec = std::vector<T>;` |
 | 引入类成员类型 | 能写但不推荐 | `using PIDParam = SimplePID::PIDParam;` |
 | 等价替换（复用类） | 不支持（只能复制代码） | `using MotorM2006 = MotorM3508;` |
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

@@ -374,3 +374,5 @@ bool decodeCanRxMessageFromQueue(const can_rx_message_t *rxMessage, uint8_t Size
 GSRL 的 Driver 层（`drv_can.c`、`drv_uart.c`、`drv_spi.c`）正是围绕 HAL 回调机制设计的。它重写了 HAL 的 `__weak` 回调函数，在回调内部管理 FreeRTOS 队列和用户注册的回调链，屏蔽了裸 HAL 的使用复杂度。
 
 > 下一篇：[定时器与 PWM](./06-定时器与PWM.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

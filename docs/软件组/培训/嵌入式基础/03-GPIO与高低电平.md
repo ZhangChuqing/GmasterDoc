@@ -309,3 +309,5 @@ STM32 的单个 IO 引脚通常只能提供约 8~25mA 的驱动电流（不同�
 | HAL API | `WritePin` / `ReadPin` / `TogglePin` |
 
 > 下一篇：[中断与 NVIC](./04-中断与NVIC.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

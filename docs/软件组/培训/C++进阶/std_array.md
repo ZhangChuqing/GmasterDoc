@@ -315,3 +315,5 @@ struct array {
 - 电机控制、传感器滤波等场景中，数据维度通常在编译期确定（如 4 个电机、3 轴 IMU），`std::array` 是优于 `std::vector` 的选择
 - `std::array` 配合 STL 算法（`std::any_of`、`std::max_element` 等），可以减少手写循环，提升代码可读性
 - 与 C API 交互时，通过 `.data()` 获取原始指针，兼容性无损失
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18

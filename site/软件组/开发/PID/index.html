@@ -318,6 +318,39 @@
                             <li class="nav-item">
                                 <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="nav-link">宣运组</a>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">文档站指南</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/" class="dropdown-item">指南首页</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/mkdocs%E4%BB%8B%E7%BB%8D%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="dropdown-item">MkDocs介绍与配置</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/markdown%E8%AF%AD%E6%B3%95/" class="dropdown-item">Markdown语法速查</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/git%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="dropdown-item">Git工作流</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83/" class="dropdown-item">文档规范</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/" class="dropdown-item">问题反馈</a>
+</li>
+                                    
+<li>
+    <a href="../../../%E6%96%87%E6%A1%A3%E7%AB%99%E6%8C%87%E5%8D%97/%E5%BB%BA%E7%AB%99%E8%80%85%E8%AF%B4/" class="dropdown-item">建站者说</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -354,17 +387,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#pid" class="nav-link">PID</a>
+            <li class="nav-item" data-bs-level="1"><a href="#pid" class="nav-link">PID 调参指南</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">写在前面</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">古法把脉调参法</a>
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 参数概览</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#vofa" class="nav-link">Vofa</a>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 粗调：手动感受法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-vofa" class="nav-link">3. 精调：Vofa 数据辅助</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -375,14 +408,12 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="pid">PID</h1>
-<h2 id="_1">写在前面</h2>
-<p>理论内容参考必修内容<a href="https://www.bilibili.com/video/BV1B54y1V7hp">从不懂到会用！PID从理论到实践~</a></p>
-<p>如果你在学习之后还是不能马上上手PID调参，可以参考这份文档。</p>
-<p>首先声明，PID调参是一个吃经验的事情，具体操作难以使用语言描述清楚。如果有看不懂的地方请尽情询问 <strong>有调参经验</strong> 的小登和老登。笔者尽量将其写的清楚一些，若有无法理解的点，请反馈。</p>
-<hr />
-<p>串级PID一般来说一共有<strong>11个参数</strong>，包含 内环/速度环 和 外环/位置环 的 P、I、D、output limit、I output limit，还有滤波系数。</p>
-<pre><code class="language-bash">#define YAW_OUTER_KP 
+<h1 id="pid">PID 调参指南</h1>
+<p>理论部分请先参考必修视频：<a href="https://www.bilibili.com/video/BV1B54y1V7hp">从不懂到会用！PID从理论到实践~</a></p>
+<p>本文聚焦实操，帮助你在看过理论后快速上手调参。</p>
+<h2 id="1">1. 参数概览</h2>
+<p>串级 PID 通常有 <strong>11 个参数</strong>，包含内环/速度环和外环/位置环各自的 P、I、D、output limit、I output limit，以及低通滤波系数。</p>
+<pre><code class="language-cpp">#define YAW_OUTER_KP
 #define YAW_OUTER_KI
 #define YAW_OUTER_KD
 #define YAW_OUTER_OUT_LIMIT
@@ -394,60 +425,72 @@
 #define YAW_INNER_IOUT_LIMIT
 #define YAW_INNER_LOWPASS_FILTER_PARA
 </code></pre>
-<p>通常来说，P的大小对应数据运动幅度大小，I是微分累计，D用于消抖。</p>
-<p>经验告诉我们调车过程中一般很少会加I，D一般都给的很小，P可以给的比较大。低通滤波为1则没开滤波，一般开到0.8就不小了。</p>
-<p>重负载的PID会比轻负载<strong>好调很多</strong>，新手建议从<strong>重负载</strong>开始。</p>
-<p>如果你的PID参数过于激进，请注意收一收。</p>
-<p>PID调参数值的确定可以借鉴数学的二分法，就比如说调P的时候，Kp为5时不动，为6时疯狂转动，那么下一步我们就应该取5.5（注意精度），这样调参能够最快找出合适的值</p>
-<p><strong>值得注意的是</strong>，PID各个参数的大小是<strong>相对的</strong>。比如3508的 P上限在16000，给到大几千的数据较为正常；而4310的单位为弧度制，P经常给到比较小的十位数甚至个位数。</p>
-<hr />
-<p>串级PID精细调参可以大致分为<strong>两步</strong>，把脉粗调和vofa精调。</p>
-<p>类比于显微镜，找到目标微生物后需要先调节粗准焦螺旋调节合适的距离，然后再使用细准焦螺旋调节清晰度。</p>
-<p><strong>把脉调参</strong>先调节内外环PID到一个合适的范围，再使用<strong>vofa数据</strong>将PID输出数据更加稳定。</p>
-<p>但有的电机位置不好，比如串级摩擦轮这些东西，把脉会出现“生命危险”。只能使用vofa调参。</p>
-<h2 id="_2">古法把脉调参法</h2>
-<p>这个方法适用于<strong>初步粗调参</strong>。</p>
-<h3 id="_3">先调内环</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>响应的幅度，越大越"用力"</td>
+</tr>
+<tr>
+<td>I</td>
+<td>消除稳态误差，一般给 0 或极小值</td>
+</tr>
+<tr>
+<td>D</td>
+<td>抑制震荡，一般给较小值</td>
+</tr>
+<tr>
+<td>output limit</td>
+<td>输出上限，防止过冲</td>
+</tr>
+<tr>
+<td>低通滤波</td>
+<td>1 表示无滤波，0.8 已是较大滤波</td>
+</tr>
+</tbody>
+</table>
+<p><strong>经验规律</strong>：</p>
+<ul>
+<li>实际调车中很少加 I，D 通常较小，P 可以较大</li>
+<li>重负载比轻负载<strong>好调很多</strong>，新手建议从重负载场景开始</li>
+<li>PID 数值可以用<strong>二分法</strong>逼近：假设 P=5 不动、P=6 疯狂抖动，则下一步试 P=5.5</li>
+<li>不同电机的参数尺度不同：3508 的 P 上限约 16000（给几千属正常），4310 使用弧度制（P 通常在十位甚至个位数）</li>
+</ul>
+<h2 id="2">2. 粗调：手动感受法</h2>
+<p>适用于能直接接触电机转子的场景（如底盘 yaw/pitch 轴、拨弹轮）。先调内环再调外环。</p>
+<h3 id="21">2.1 内环</h3>
 <ol>
-<li>将<strong>外环</strong>位置<strong>限制</strong>住</li>
+<li><strong>限制外环</strong>：将外环 P 给极小，output limit 也极小，避免外环干扰判断。</li>
+<li><strong>清零内环</strong>：只保留内环 P，I/D/output limit/I limit 全部清零。</li>
+<li><strong>逐步加大 P</strong>：握住转子延伸结构（如枪管、拨盘），感受电机状态，直到轻轻拨动时能感到<strong>将要抖动但尚未剧烈抖动</strong>。根据需求可加少量 D 增加稳定性。</li>
 </ol>
+<h3 id="22">2.2 外环</h3>
+<ol>
+<li>放开 output limit。</li>
+<li>逐步加大 P，直到用手拨不动且抖动在可接受范围。</li>
+<li>加 D 至抖动基本消除。</li>
+</ol>
+<h2 id="3-vofa">3. 精调：Vofa 数据辅助</h2>
+<p>Vofa 使用方法详见 <a href="../Vofa/">Vofa 调试</a>。</p>
+<h3 id="31">3.1 可手动粗调的场景</h3>
+<ol>
+<li>将 <strong>output limit 调小</strong>至波形图中常见极大值附近，防止过冲。</li>
+<li>微调 P 和 D，观察波形。</li>
+</ol>
+<p>理想效果参考：</p>
+<p><img alt="vofa优秀调参" src="../vofa%E4%BC%98%E7%A7%80%E8%B0%83%E5%8F%82.png" /></p>
+<h3 id="32">3.2 无法手动接触的场景（如摩擦轮）</h3>
+<p>建议先复用前辈的 PID 参数作为起点，再通过 Vofa 观察速度环和位置环的实际值与目标值偏差，定位是内环还是外环的问题，针对性调整。</p>
 <blockquote>
-<p>对应操作：将外环P给极小，再将外环output limit给到极小。如果外环没有限制住会有抖动，不能确定是内环影响还是外环影响。</p>
-</blockquote>
-<ol>
-<li>调节<strong>内环PID</strong></li>
-</ol>
-<blockquote>
-<p>对应操作：将内环<strong>除了P以外的数据</strong>清零。然后将P给大，握住转子<strong>延申处</strong>结构（比如：调节车的yaw和pitch轴时，握住枪管；调节拨弹轮时，抓住拨盘）感受电机状态。直至轻轻拨动电机时能感受到一点<strong>将要</strong>轻微抖动的迹象（但没有真正剧烈抖动）。根据实际需求可以选择加一点点D使其更稳定。</p>
-</blockquote>
-<h3 id="_4">再调外环</h3>
-<ol>
-<li>
-<p>先把output limit放大。</p>
-</li>
-<li>
-<p>根据经验给点P，直至用手拨拨不动并且抖得不太过分。</p>
-</li>
-<li>
-<p>加D直至抖动几乎消除。</p>
-</li>
-</ol>
-<h2 id="vofa">Vofa</h2>
-<p>Vofa使用方法详见<a href="../Vofa/">Vofa</a></p>
-<h3 id="_5">如果你很幸运，调的电机可以用把脉方式先粗调。</h3>
-<p>那经验告诉我们需要注意的点有：</p>
-<ol>
-<li>把<strong>output limit调小</strong>至波形图常见极大值，防止过度变疯。</li>
-<li>微调一下P和D</li>
-</ol>
-<p>(欢迎补充)</p>
-<blockquote>
-<p>最好的情况大概如图：
-<img alt="vofa优秀调参" src="../vofa%E4%BC%98%E7%A7%80%E8%B0%83%E5%8F%82.png" /></p>
-</blockquote>
-<h3 id="vofa_1">如果很不巧，你只能使用vofa调参</h3>
-<p>建议先复用前辈的PID，然后开vofa细调。</p>
-<p>分别打开速度环和位置环的曲线情况，对比实际值和目标值。看谁的数据先出现异常。根据PID原理进行调参。（笔者在这一块经验很充足，期待优秀的男神vofa大师曹汇东学长的补全🌹🌹🌹）</p></div>
+<p>PID 调参是经验活，方法虽可传授，手感需亲自积累。如有疑问请多请教有调参经验的队员。</p>
+<p><strong>作者</strong>: <a href="https://github.com/ZhangChuqing">Qing</a> | <strong>修改日期</strong>: 2026-07-18</p>
+</blockquote></div>
             </div>
         </div>
 

@@ -277,3 +277,5 @@ RoboMaster 裁判系统通过 UART 下发比赛状态数据，GSRL 中的 `dvc_r
 GSRL 中 `drv_uart.c` 封装了 DMA + 空闲中断的 UART 接收模式，`dvc_remotecontrol` 和 `dvc_referee` 等设备类依赖此驱动接收数据。遥控器、裁判系统的数据均通过 UART 进入系统。
 
 > 下一篇：[SPI 通信原理与实践](./09-SPI通信原理.md)
+
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18
