@@ -1,18 +1,16 @@
 # using 别名
 
-`using` 关键字用于给类型定义别名。语法为：
+`using` 关键字用来给类型起一个别名，语法很直白：
 
 ```cpp
 using 新名字 = 原类型;
 ```
 
----
+它要解决的根本问题，是类型名字有时又长又难读，或者需要在不改动原类型的前提下换一个更贴近语境的称呼。要看清 `using` 好在哪，得先回到它之前的做法。
 
-## 1. typedef 基础写法
+## 从 typedef 说起
 
-在 `using` 出现之前，C 语言用 `typedef` 定义类型别名。先回顾 `typedef` 的写法，才能理解 `using` 好在哪。
-
-### 1.1 普通类型
+在 `using` 出现以前，C 语言用 `typedef` 定义类型别名。对普通类型来说，两者做的事完全一样，只是排列顺序不同：`typedef` 把新名字放在原类型后面，`using` 则让新名字在等号左边、原类型在右边。
 
 ```cpp
 // typedef 的语法：typedef 原类型 新名字;
@@ -28,9 +26,7 @@ using fp32 = float;
 using u8   = unsigned char;
 ```
 
-### 1.2 函数指针类型
-
-`typedef` 定义函数指针的语法较难读，因为新名字被夹在返回类型和参数列表之间：
+一旦类型变复杂，`typedef` 的写法就开始别扭。函数指针是最典型的例子——新名字被夹在返回类型和参数列表中间，阅读顺序不再是从左到右：
 
 ```cpp
 // typedef 函数指针语法拆解：
@@ -45,7 +41,7 @@ typedef int (*ComputeFunc)(float a, float b, int mode);
 //       指向 "参数为(float,float,int)、返回int" 的函数
 ```
 
-`typedef` 的问题在于：阅读顺序不是从左到右的，需要先找到被夹在中间的"新名字"，再反向解读两边的类型信息。函数签名越复杂，这种"夹心"写法就越难读。
+读这行代码得先在中间找到 `ComputeFunc`，再向两边反推类型信息，签名越复杂越费劲。`using` 把新名字提到最左边，从左到右自然读下来即可：
 
 ```cpp
 // using 写同一件事：新名字在最左边，然后 =，然后类型，从左到右自然阅读
@@ -53,9 +49,7 @@ using ComputeFunc = int (*)(float a, float b, int mode);
 //                  ↑返回  ↑指针  ↑参数
 ```
 
-### 1.3 模板别名（复习 template）
-
-`template` 是 C++ 的泛型机制。在模板定义中使用占位符（如 `T`），编译器在调用时根据实际类型生成具体代码：
+`using` 与 `typedef` 之间还有一道本质的分界线，就是模板别名。`template` 是 C++ 的泛型机制，在定义里用占位符（如 `T`），编译器按调用时的实际类型生成具体代码：
 
 ```cpp
 // 模板函数：T 是占位符
@@ -66,7 +60,7 @@ myMax(3, 5);      // 编译器生成 int    myMax(int, int)
 myMax(3.0, 5.0);  // 编译器生成 double myMax(double, double)
 ```
 
-`using` 支持模板别名——给模板类绑定部分参数后起名。`typedef` 做不到这一点：
+`using` 可以给一个模板类绑定部分参数后再起名，让另一个参数继续待定；`typedef` 做不到这一点：
 
 ```cpp
 // ✅ using：模板参数 T 可以保留
@@ -79,17 +73,13 @@ Vec3<double> vd;  // Eigen::Matrix<double, 3, 1>
 // ❌ typedef：不支持模板参数，无法表达 "T 待定" 的别名
 ```
 
----
+正是这条分界线，让 `using` 在现代 C++ 里几乎全面取代了 `typedef`。
 
-## 2. 工程代码（GSRL 源码）
+## GSRL 中的用法
 
-### 2.1 行为树：函数指针别名
+GSRL 里 `using` 的用法可以归到几类，从简单的函数指针别名到复用整个类。
 
-**源码位置：** `GSRL/Algorithm/inc/alg_behavior_tree.hpp`
-
-行为树中的 `BTAction` 和 `BTCondition` 继承自 `BTNode`。它们不自己实现业务逻辑，而是通过函数指针让用户注册回调。
-
-**结构关系（伪代码）：**
+行为树用它给函数指针命名。`BTAction` 和 `BTCondition` 继承自 `BTNode`，它们不自己实现业务逻辑，而是通过函数指针让用户注册回调。源码位于 `GSRL/Algorithm/inc/alg_behavior_tree.hpp`：
 
 ```bash
 BTNode（基类，定义虚函数 tick()）
@@ -103,8 +93,6 @@ BTNode（基类，定义虚函数 tick()）
         存储  ConditionFunc m_condition
         重写  tick() → 调用 m_condition(m_context) → 返回 成功/失败
 ```
-
-**源码片段（`alg_behavior_tree.hpp`）：**
 
 ```cpp
 class BTAction : public BTNode
@@ -136,9 +124,7 @@ public:
 };
 ```
 
-**实际调用位置：** `Chariot/inc/crt_chassis_behavior.hpp` 和 `Chariot/src/crt_chassis_behavior.cpp`
-
-`ChassisBehaviorTree` 类用 `BTAction` 和 `BTCondition` 作为成员，注册 3 个条件节点 + 10 个动作节点：
+有了 `ActionFunc`、`ConditionFunc` 这两个短名，`ChassisBehaviorTree` 就能把 `BTAction` 和 `BTCondition` 当成员用，注册 3 个条件节点和 10 个动作节点。声明在 `Chariot/inc/crt_chassis_behavior.hpp`，构造时传入回调则在 `Chariot/src/crt_chassis_behavior.cpp`：
 
 ```cpp
 // 声明（crt_chassis_behavior.hpp）
@@ -180,11 +166,7 @@ ChassisBehaviorTree::ChassisBehaviorTree()
   → 行为树 tick() 遍历节点 → 节点调用存储的函数指针 → 执行实际业务逻辑
 ```
 
-### 2.2 模板类型别名：KalmanFilter 和 RLSFilter
-
-**源码位置：** `GSRL/Algorithm/inc/alg_filter.hpp` 和 `GSRL/Algorithm/src/alg_filter.cpp`
-
-`KalmanFilter` 是模板类（继承自 `Filter<T>`），内部使用 Eigen 矩阵库。矩阵类型由模板参数决定，原始名称很长（如 `Eigen::Matrix<T, StateSize, StateSize>`）。在类内用 `using` 起短名，之后整个类内部使用短名即可：
+模板类型别名在滤波器里用得最充分。`KalmanFilter` 是模板类，继承自 `Filter<T>`，内部用 Eigen 矩阵库，而 Eigen 的矩阵类型名字很长，比如 `Eigen::Matrix<T, StateSize, StateSize>`。在类内用 `using` 起个短名，之后整个类内部就都用短名。源码位于 `GSRL/Algorithm/inc/alg_filter.hpp` 和 `GSRL/Algorithm/src/alg_filter.cpp`：
 
 ```cpp
 template <typename T, int StateSize, int MeasSize, int ControlSize>
@@ -207,14 +189,14 @@ private:
 };
 ```
 
-**类外使用时，通过 `类名::别名` 拿到正确的类型：**
+类外要用这些类型时，通过 `类名::别名` 拿到：
 
 ```cpp
 KalmanFilter<fp32, 3, 1, 0> kf;                              // 三维状态、一维观测
 KalmanFilter<fp32, 3, 1, 0>::StateVector state;              // 等价于 Eigen::Vector<fp32, 3>
 ```
 
-有时不仅类内定义别名，类外还会把常用的模板实例化组合固化：
+除了简化类内类型名，还可以在类外再用一层 `using`，把常用的模板实例化组合固化成短名，这样调用者不必每次写出完整的模板参数：
 
 ```cpp
 // alg_filter.cpp — 固定模板参数，命名常用维度的滤波器
@@ -241,13 +223,7 @@ alg_filter.cpp 类外：
   → 用户只需写 KalmanFilter2D，不用每次写完整的模板参数
 ```
 
-### 2.3 引入其他类的类型
-
-**源码位置：** `GSRL/Algorithm/inc/alg_pid.hpp` 和 `Chariot/inc/crt_chassis.hpp`
-
-当类 A 需要使用类 B 中定义的类型时，用 `using` 引入，可以缩短访问路径，也让外部用户通过类 A 的接口直接找到类型定义。
-
-**复习：子类与父类**（参考 `培训/面向对象编程.md`）
+当一个类需要用到另一个类里定义的类型时，`using` 可以把那个类型引入进来，既缩短访问路径，也让外部用户能顺着当前类的接口直接找到类型定义。源码位于 `GSRL/Algorithm/inc/alg_pid.hpp` 和 `Chariot/inc/crt_chassis.hpp`。理解这一用法要先记得子类能访问父类的 public 成员（参考 `培训/面向对象编程.md`）：
 
 ```bash
 class Parent {
@@ -262,7 +238,7 @@ class Child : public Parent {
 };
 ```
 
-**例1 — CascadePID：** 继承自 `Controller`，内部使用 `SimplePID`。通过 `using` 把 `SimplePID` 的类型暴露到自己的接口中：
+`CascadePID` 继承自 `Controller`，内部用到 `SimplePID`。它通过 `using` 把 `SimplePID` 的类型暴露进自己的接口，用户写 `CascadePID::PIDParam` 即可：
 
 ```cpp
 class SimplePID {
@@ -286,7 +262,7 @@ public:
 };
 ```
 
-**例2 — Chassis：** 引入数学库的类型，在类内起短名：
+`Chassis` 则是引入数学库的类型，在类内起短名，省得每次都写 `GSRLMath::` 前缀：
 
 ```cpp
 class Chassis
@@ -297,11 +273,7 @@ public:
 };
 ```
 
-### 2.4 等价替换：避免代码重复
-
-**源码位置：** `GSRL/Device/inc/dvc_motor.hpp`
-
-当两个电机的通信协议和控制逻辑完全相同时，不需要把 A 的代码复制一份给 B。直接用 `using` 让 B 成为 A 的别名即可：
+`using` 还有一个不太起眼却很实用的用法——等价替换。当两个类的实现完全一致时，不必把代码复制一遍，直接让一个名字成为另一个的别名即可。源码位于 `GSRL/Device/inc/dvc_motor.hpp`：
 
 ```cpp
 // M2006 电机与 M3508 电机协议相同，直接复用
@@ -325,11 +297,11 @@ using MotorDM2325 = MotorDM4310;
   → 零额外 ROM 占用，一处维护
 ```
 
----
+别名和原类型指向同一个类，不产生新代码，因此不额外占用 ROM，维护也只需改一处。
 
-## 3. 动手写
+## 在自己的代码里用 using
 
-### 3.1 普通类型别名
+最基础的用法是简化常用类型名，让声明更贴近语义：
 
 ```cpp
 #include <cstdint>
@@ -347,7 +319,7 @@ u8   motorId   = 1;        // 等价于 uint8_t motorId
 u32  timestamp = 1000000;  // 等价于 uint32_t timestamp
 ```
 
-### 3.2 函数指针：状态机跳转表
+函数指针别名常用来搭建状态机的跳转表——每种状态对应一个处理函数，用一个数组按状态索引查表调用：
 
 ```cpp
 #include <cstdint>
@@ -397,7 +369,7 @@ private:
 };
 ```
 
-**同样功能用 `typedef` 对比：**
+同样的函数指针，用 `typedef` 得把名字夹在中间，用 `using` 则一目了然：
 
 ```cpp
 // ❌ typedef：新名字夹在中间
@@ -408,7 +380,7 @@ typedef void (*StateHandler)(Robot *robot);
 using StateHandler = void (*)(Robot *robot);
 ```
 
-### 3.3 模板别名
+模板别名的差距更明显。`using` 一行搞定，`typedef` 只能用 `struct` 包一层，每次使用还要写 `::type`：
 
 ```cpp
 #include <vector>
@@ -429,9 +401,7 @@ struct VecWrapper {
 VecWrapper<int>::type vi;          // 使用时要写 ::type，不直观
 ```
 
----
-
-## 4. 总结
+把这些场景放在一起，`using` 相对 `typedef` 的取舍就很清楚了：
 
 | 场景 | typedef | using |
 |------|---------|-------|
@@ -441,4 +411,4 @@ VecWrapper<int>::type vi;          // 使用时要写 ::type，不直观
 | 引入类成员类型 | 能写但不推荐 | `using PIDParam = SimplePID::PIDParam;` |
 | 等价替换（复用类） | 不支持（只能复制代码） | `using MotorM2006 = MotorM3508;` |
 
-> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-26

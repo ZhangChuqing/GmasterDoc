@@ -1,14 +1,10 @@
 # 模板（Template）
 
-模板是 C++ 的泛型编程机制。它让你**写一次代码，适配多种类型**——编译器在编译期根据实际使用的类型自动生成对应的代码，不产生运行时开销。
+模板是 C++ 的泛型编程机制。它的根本，不是运行时的多态，而是编译期的代码生成：写一次逻辑，编译器在编译期按实际用到的类型自动生成对应的代码，运行时不产生任何额外开销。理解了这一点，模板的种种规则和用法都能顺着推出来。
 
----
+## 没有模板时的困境
 
-## 1. 概念——它解决什么问题
-
-### 1.1 没有模板时怎么做
-
-假设你需要一个取最大值的函数。对于 `int` 和 `float`，逻辑完全相同，但类型不同，你不得不写两遍：
+假设需要一个取最大值的函数。对 `int` 和 `float`，逻辑完全相同，但类型不同，就不得不各写一份。
 
 ```cpp
 // 不做泛型：每种类型写一份
@@ -17,17 +13,9 @@ float maxFloat(float a, float b) { return a > b ? a : b; }
 // double、long、unsigned……每加一种类型就多一份代码
 ```
 
-```bash
-问题：
-  maxInt(3, 5)        → 返回 5       ✅
-  maxFloat(3.0f, 5.0f) → 返回 5.0f   ✅
-  maxFloat(3, 5)      → 能工作，但隐式转换，类型不安全
-  maxInt(3.0, 5.0)    → 截断为 int，精度丢失
+这样做不仅冗余，还容易出错：`maxFloat(3, 5)` 能工作但发生了隐式转换，类型不安全；`maxInt(3.0, 5.0)` 会把小数截断成整数，精度丢失。有 N 种类型就有 N 份几乎相同的代码，是维护上的噩梦。
 
-写 N 种类型 = N 份几乎相同的代码，维护噩梦。
-```
-
-### 1.2 函数模板的做法
+函数模板把类型抽出来作为占位符，一份代码即可适配所有类型。
 
 ```cpp
 // 写一次，适配所有类型
@@ -41,22 +29,13 @@ myMax(3.0f, 5.0f);    // T = float，  编译器生成 float  myMax(float, float
 myMax(3.0, 5.0);      // T = double， 编译器生成 double myMax(double, double)
 ```
 
-**关键理解：模板不是"运行时的多态"，而是"编译期的代码生成"。每当你用一种新类型调用模板函数，编译器就为你生成一份该类型的专属代码。这份生成的代码与手写的同类型函数完全等价，没有任何虚函数调用或运行时分发开销。**
+每当用一种新类型调用模板，编译器就为这种类型生成一份专属代码，与手写的同类型函数完全等价，没有虚函数调用、也没有运行时分发。这就像刻一枚印章，`T` 是留空的部分；调用时把 `T` 填成具体类型，盖出来的才是那份真正的代码。盖三次产生三份代码，不盖就什么也不产生——这正是零开销原则（zero-overhead principle）的体现。
 
-### 1.3 类比
+## 语法基础
 
-- 写模板 = 做一个印章（模具），`T` 是留空的部分
-- 调用模板 = 用印章盖在纸上，`T` 被填入具体类型，盖出来的就是那份专属代码
-- 盖 3 次产生 3 份代码，不盖就不产生——零开销原则（zero-overhead principle）
-
----
-
-## 2. 语法基础
-
-### 2.1 函数模板
+函数模板的形式是在函数前面加一行 `template <typename 占位符名>`，占位符随后在参数和返回值里使用。
 
 ```cpp
-// 语法：template <typename 占位符名>  返回类型 函数名(参数列表)
 template <typename T>
 T add(T a, T b) {
     return a + b;
@@ -66,7 +45,7 @@ add(1, 2);       // T = int
 add(1.5f, 2.5f); // T = float
 ```
 
-可以有多个模板参数：
+模板参数可以有多个，各自独立推导：
 
 ```cpp
 // 两个不同类型的参数
@@ -79,7 +58,7 @@ multiply(3, 4.5f);   // T1 = int, T2 = float, 返回 float
 multiply(2.0, 3);    // T1 = double, T2 = int, 返回 double
 ```
 
-### 2.2 类模板
+类同样可以模板化。下面的 `Box` 能存放任意类型的单个值：
 
 ```cpp
 // 一个容器，可以存放任意类型的单个值
@@ -98,20 +77,9 @@ Box<float>  floatBox(3.14f); // T = float，编译器生成 Box<float> 类
 Box<fp32>   fpBox(1.0f);   // T = fp32，  编译器生成 Box<fp32>  类
 ```
 
-```bash
-模板类实例化过程：
+类模板本身不占内存、不产生代码，只有用到某个具体类型时编译器才生成对应的类。需要注意的是，`Box<int>` 和 `Box<float>` 是两个完全独立的类型，彼此之间没有继承关系，也不能互相赋值。
 
-  template <typename T> class Box { ... };    ← 模具（不占内存，不产生代码）
-
-  使用 Box<int>       → 编译器生成 class Box<int>  { int m_value;    ... };
-  使用 Box<float>     → 编译器生成 class Box<float>{ float m_value;  ... };
-
-  Box<int> 和 Box<float> 是两个完全独立的类，它们之间没有继承关系。
-```
-
-### 2.3 非类型模板参数——值作为模板参数
-
-除了 `typename`，模板参数还可以是**编译期常量值**（整数、枚举、指针等）：
+模板参数不一定是类型，也可以是编译期就能确定的常量值，比如整数、枚举、指针。这类非类型参数常用来固定数组大小：
 
 ```cpp
 // N 不是类型，而是一个编译期确定的整数值
@@ -129,9 +97,9 @@ FixedArray<int, 10> arr10;  // m_data 是 int[10]，40 字节
 // arr5 和 arr10 是不同类型，互不兼容
 ```
 
-实际上 `std::array<T, N>` 就是这样实现的——`N` 是非类型模板参数（参考 `培训/std_array.md`）。
+标准库的 `std::array<T, N>` 正是这样实现的，`N` 就是非类型模板参数（参考 `培训/std_array.md`）。
 
-### 2.4 默认模板参数
+模板参数还能带默认值，不显式指定时就用默认值，多个参数都可以这样处理：
 
 ```cpp
 // 不指定 T 时，默认为 fp32
@@ -144,11 +112,7 @@ class LowPassFilter : public Filter<T> {
 
 LowPassFilter<>      lp1;  // T = fp32（使用默认值）
 LowPassFilter<float> lp2;  // T = float（显式指定）
-```
 
-多个参数都可以有默认值：
-
-```cpp
 template <typename T = fp32, size_t WindowSize = 10>
 class MovingAverageFilter : public Filter<T> {
     T m_buffer[WindowSize];  // 大小由模板参数决定
@@ -159,13 +123,11 @@ MovingAverageFilter<>        maf1;  // T = fp32, WindowSize = 10
 MovingAverageFilter<float, 5> maf2;  // T = float, WindowSize = 5
 ```
 
----
+## GSRL 中的模板
 
-## 3. 工程代码分析（GSRL 中的实际使用）
+GSRL 用模板实现的是"静态多态"：在编译期确定类型和维度，把抽象的代价全部消化在编译阶段，运行时不留负担。几个典型场景可以看出它的用法。
 
-### 3.1 滤波器基类：类型占位
-
-**源码位置：** `GSRL/Algorithm/inc/alg_filter.hpp`
+滤波器基类用模板把数值类型抽象出来，声明"我能处理任意类型 T 的数据"（源码位置：`GSRL/Algorithm/inc/alg_filter.hpp`）：
 
 ```cpp
 // 模板化的抽象接口——"我能处理任意类型 T 的数据"
@@ -178,27 +140,14 @@ public:
 };
 ```
 
-```bash
-Filter 模板实例化：
+所有具体滤波器都继承自 `Filter<T>`，继承时把 `T` 原样传给基类，从而保证输入输出类型一致：`LowPassFilter<T>`、`KalmanFilter<T, ...>`、`RLSFilter<T, ...>` 都是 `public Filter<T>`。其中 `fp32` 就是 `float`，只是类型名不同。
 
-  Filter<float>  → filterCalculate(float)   → float
-  Filter<double> → filterCalculate(double)  → double
-  Filter<fp32>   → filterCalculate(fp32)    → fp32（fp32 就是 float，但类型名不同）
-
-所有滤波器类（LowPassFilter、KalmanFilter、RLSFilter）都继承自 Filter<T>，
-继承时把 T 传给基类，确保输入输出类型一致：
-  LowPassFilter<T>     : public Filter<T>
-  KalmanFilter<T, ...> : public Filter<T>
-  RLSFilter<T, ...>    : public Filter<T>
-```
-
-### 3.2 卡尔曼滤波器：多维模板参数
-
-**源码位置：** `GSRL/Algorithm/inc/alg_filter.hpp`
+卡尔曼滤波器进一步用非类型参数描述维度（源码位置同上）：
 
 ```cpp
 template <typename T = fp32, int StateSize = 1, int MeasSize = 1, int ControlSize = 0>
-class KalmanFilter : public Filter<T>
+class KalmanFilter :
+    public Filter<T>
 {
 public:
     using StateVector   = Eigen::Vector<T, StateSize>;    // 状态向量
@@ -219,25 +168,7 @@ private:
 };
 ```
 
-```bash
-KalmanFilter 的模板参数含义：
-
-  T             — 数值精度（fp32 / float / double）
-  StateSize     — 状态向量维度（如：位置+速度 = 2）
-  MeasSize      — 观测向量维度（如：单轴位置 = 1）
-  ControlSize   — 控制输入维度（无控制 = 0）
-
-三个维度参数都是 int，不是 typename——它们不是类型，而是决定矩阵大小的整数值。
-ControlSize = 0 时，ControlMatrix 是 Eigen::Matrix<T, StateSize, 0>，
-即零列矩阵，相关函数通过 SFINAE 在编译期移除（见 3.4 节）。
-
-实例化示例：
-  KalmanFilter<fp32, 2, 1, 0>   → 位置-速度 2D 滤波器，无控制输入
-  KalmanFilter<fp32, 3, 1, 0>   → 位置-速度-加速度 3D 滤波器
-  KalmanFilter<fp32, 4, 2, 2>   → 四维状态、二维观测、二维控制
-```
-
-工程中的类型别名（参考 `培训/using别名.md`）：
+这里 `T` 是数值精度（`fp32`/`float`/`double`），`StateSize`、`MeasSize`、`ControlSize` 三个都是 `int` 而非 `typename`——它们不是类型，而是决定矩阵尺寸的整数值。状态向量维度对应位置加速度这类量的个数，观测维度对应传感器读数的个数，控制维度为 0 表示没有控制输入。不同的维度组合生成完全不同的类，例如 `KalmanFilter<fp32, 2, 1, 0>` 是位置-速度的 2D 滤波器，`KalmanFilter<fp32, 3, 1, 0>` 则多了一维加速度。工程里再用 `using` 别名把常用组合固化成好记的名字（参考 `培训/using别名.md`）：
 
 ```cpp
 using KalmanFilter1D = KalmanFilter<fp32, 1, 1, 0>;
@@ -245,9 +176,7 @@ using KalmanFilter2D = KalmanFilter<fp32, 2, 1, 0>;
 using KalmanFilter3D = KalmanFilter<fp32, 3, 1, 0>;
 ```
 
-### 3.3 行为树组合节点：整数模板参数
-
-**源码位置：** `GSRL/Algorithm/inc/alg_behavior_tree.hpp`
+行为树的组合节点用整数模板参数控制子节点数组的大小（源码位置：`GSRL/Algorithm/inc/alg_behavior_tree.hpp`）：
 
 ```cpp
 template <uint8_t MaxChildren = BT_DEFAULT_MAX_CHILDREN>
@@ -280,21 +209,9 @@ class BTSelector : public BTComposite<MaxChildren>
 };
 ```
 
-```bash
-行为树模板参数的作用：
+`BTSequence<8>` 的子节点数组是 `BTNode*[8]`，`BTSequence<16>` 则是 `BTNode*[16]`。数组大小在编译期确定，整个节点对象放在栈上，不做堆分配；不同的 `MaxChildren` 值产生互不兼容的类，这本身就是编译期类型安全的一部分。
 
-  BTSequence<8>    → m_children 是 BTNode*[8]，最多 8 个子节点
-  BTSequence<16>   → m_children 是 BTNode*[16]，最多 16 个子节点
-
-所有数组大小在编译期确定 → 整个节点对象在栈上，无堆分配。
-不同 MaxChildren 值产生不同的类，互不兼容（这是编译期类型安全的一部分）。
-```
-
-### 3.4 SFINAE：编译期移除不适用的函数
-
-**源码位置：** `GSRL/Algorithm/inc/alg_filter.hpp`
-
-当 `ControlSize = 0`（无控制输入）时，带控制输入的 `predict`/`update`/`setControlMatrix` 不应存在——调用它们本身就是逻辑错误。
+模板还能在编译期决定某个函数是否存在。当 `ControlSize = 0`（无控制输入）时，`ControlMatrix` 是零列矩阵，`m_control * control` 在语义上没有意义，带控制输入的 `predict` 就不该存在。GSRL 用 SFINAE 让它在这种情况下直接消失（源码位置：`GSRL/Algorithm/inc/alg_filter.hpp`）：
 
 ```cpp
 // 仅在 ControlSize > 0 时，这个函数才存在
@@ -307,27 +224,11 @@ predict(const ControlVector &control)
 }
 ```
 
-```bash
-机制解释（SFINAE = Substitution Failure Is Not An Error）：
+SFINAE（Substitution Failure Is Not An Error，替换失败不是错误）的意思是：当模板参数替换失败时，编译器不报错，只是把这个候选函数从可选集合里悄悄剔除。于是对 `KalmanFilter<fp32, 2, 1, 0>`（`ControlSize = 0`），`kf.predict()` 正常调用，而 `kf.predict(controlVec)` 会编译报错，因为那个带参数的版本根本不存在；对 `KalmanFilter<fp32, 2, 1, 2>`，两个版本同时可用。与其在运行时才发现调用无意义，不如在编译期让这个重载彻底不出现——调用者在 IDE 里都看不到它，从根本上堵住了误用。
 
-  KalmanFilter<fp32, 2, 1, 0> kf;  // ControlSize = 0
-  kf.predict();                      // ✅ 调用无控制输入的版本
-  // kf.predict(controlVec);         // ❌ 编译错误！
-  // std::enable_if<false, void>::type 替换失败，
-  // 这个函数在编译期就被移除了，根本不存在
+## 在 GSRL 场景中动手写
 
-  KalmanFilter<fp32, 2, 1, 2> kf2; // ControlSize = 2 > 0
-  kf2.predict();                     // ✅ 无控制输入版本
-  kf2.predict(controlVec);           // ✅ 带控制输入版本（EnableControl = true 生效）
-```
-
-**为什么要这样做：** 如果 `ControlSize = 0`，`ControlMatrix` 是零列矩阵，`m_control * control` 在语义上无意义。与其在运行时报错，不如在**编译期直接让这个函数不存在**——调用者在 IDE 里就看不到这个重载，从根本上消除误用的可能性。
-
----
-
-## 4. 动手写：在 GSRL 场景中使用模板
-
-### 4.1 传感器数据缓冲区
+一个通用的环形缓冲区，类型和容量都作为模板参数，适合缓存固定数量的传感器读数：
 
 ```cpp
 #include <array>
@@ -367,7 +268,7 @@ RingBuffer<fp32, 100>  motorBuffer;  // 存储 100 个电机电流值
 RingBuffer<int, 5>     counterBuffer; // 存储 5 个计数值
 ```
 
-### 4.2 配置化滤波器管理器
+模板参数甚至可以是另一个模板实例化出来的类型。下面的滤波器组用两个参数决定"用什么滤波器"和"几个滤波器"：
 
 ```cpp
 #include <array>
@@ -401,10 +302,11 @@ motorFilterBank[0].filterCalculate(2.5f);  // 第 1 个电机
 legFilterBank[1].reset();                   // 重置右腿滤波器
 ```
 
-### 4.3 常见错误
+## 几个容易踩的坑
+
+模板最典型的错误是把定义和实现拆到不同文件。模板要在调用处才实例化，而调用处必须看得到实现，否则链接失败。
 
 ```cpp
-// 错误1：模板定义和实现在不同文件，忘记显式实例化
 // —— 头文件 myfilter.hpp ——
 template <typename T>
 class MyFilter {
@@ -424,49 +326,27 @@ T MyFilter<T>::filterCalculate(T input) {
 // 解决方案 B：在 .cpp 末尾显式实例化常用类型
 template class MyFilter<float>;
 template class MyFilter<double>;
+```
 
-// 错误2：混淆"模板参数的类型"和"非类型参数的值"
+另外两类错误是混淆类型占位符和值占位符，以及误以为参数相近的实例化类型可以互换：
+
+```cpp
+// 混淆"模板参数的类型"和"非类型参数的值"
 template <typename int, int T>  // ❌ 第一个是 typename 但不能叫 int
 class Bad {};
-// 正确：
 template <typename T, int N>    // ✅ T 是类型占位符，N 是值占位符
 class Good {};
 
-// 错误3：不同类型实例化出来的类不兼容
+// 不同类型实例化出来的类不兼容
 KalmanFilter<fp32, 2, 1, 0> kf2d;
 KalmanFilter<fp32, 3, 1, 0> kf3d;
 // kf2d = kf3d;  // ❌ 编译错误：这两个是完全不同的类型
-// 即使它们看起来"差不多"，模板参数一不同就是不同的类
+// 模板参数一不同就是不同的类，哪怕它们看起来"差不多"
 ```
 
----
+## 模板与虚函数
 
-## 5. 本质——模板不是代码，是代码生成器
-
-```cpp
-template <typename T>
-T myMax(T a, T b) { return a > b ? a : b; }
-```
-
-这行模板定义**本身不产生任何机器码**。只有当你写出 `myMax(3, 5)` 时，编译器才：
-
-1. 推导出 `T = int`
-2. 把模板中的 `T` 全部替换成 `int`
-3. 生成 `int myMax(int a, int b) { return a > b ? a : b; }`
-4. 编译这份生成的代码
-
-```bash
-调用                     编译器生成的等价代码
-myMax(3, 5)         →    int    myMax(int a, int b)    { return a > b ? a : b; }
-myMax(3.0f, 5.0f)   →    float  myMax(float a, float b)  { return a > b ? a : b; }
-myMax(3.0, 5.0)     →    double myMax(double a, double b) { return a > b ? a : b; }
-
-三份独立代码，各自针对具体类型优化。没有虚表，没有运行时分支。
-```
-
----
-
-## 6. 模板 vs 虚函数（多态）
+回到最开始那句话：模板是编译期的代码生成器，而不是运行时的分发机制。这一点决定了它和虚函数的分工。虚函数在运行时通过虚表查找决定调用哪份实现，代价是一次指针解引用，好处是类型可以运行时才确定；模板则在编译期就把一切定死，运行时零开销，代价是每种类型各生成一份代码，且类型必须编译期已知。
 
 | 特性 | 模板（编译期多态） | 虚函数（运行时多态） |
 |------|-------------------|---------------------|
@@ -477,34 +357,6 @@ myMax(3.0, 5.0)     →    double myMax(double a, double b) { return a > b ? a :
 | 灵活性 | 类型必须编译期已知 | 类型可以运行时动态决定 |
 | GSRL 中的使用 | 滤波器、行为树组合节点 | 行为树基类 `BTNode::tick()` |
 
-GSRL 的做法：**用模板做编译期类型适配（滤波器维度），用虚函数做运行时行为分发（行为树节点）。二者各取所长。**
+GSRL 让两者各取所长：用模板做编译期的类型和维度适配（滤波器的精度与状态维度、行为树的容量上限），用虚函数做运行时的行为分发（行为树节点的 `tick()`）。模板承担的抽象——类型推导、代码生成、SFINAE 的条件裁剪——全部在编译期完成，运行时与手写的具体类型代码没有性能差异，正契合嵌入式环境对性能的要求。
 
----
-
-## 7. 总结
-
-| 要点 | 说明 |
-|------|------|
-| 核心概念 | 编译期的代码生成器——写一次逻辑，适配多种类型 |
-| 函数模板 | `template <typename T> T func(T a);` |
-| 类模板 | `template <typename T> class MyClass { T data; };` |
-| 非类型参数 | `template <int N>` ——用值而非类型作参数（如 `std::array<T, N>` 的 N） |
-| 默认参数 | `template <typename T = fp32>` ——不指定时使用默认值 |
-| 实例化 | 调用时编译器生成具体类型的代码，不同的模板参数 = 不同的类/函数 |
-| SFINAE | 利用模板替换失败不是错误，在编译期条件性地启用/禁用函数 |
-| 头文件 | 模板实现通常放在头文件，否则需要显式实例化 |
-| 与虚函数的关系 | 模板 = 编译期多态（零开销），虚函数 = 运行时多态（灵活），GSRL 中两者配合使用 |
-
----
-
-## 8. 与 GSRL 的关系
-
-GSRL 广泛使用模板来实现"静态多态"——在编译期确定类型和维度，避免运行时开销：
-
-- **滤波器泛型**：`Filter<T>` 定义了统一的滤波器接口，`LowPassFilter`、`KalmanFilter`、`RLSFilter`、`MedianFilter` 通过模板参数适配不同的数值精度和维度
-- **行为树容量控制**：`BTComposite<MaxChildren>` 的子节点数组大小由模板参数控制，编译期确定上限，无需动态分配
-- **编译期安全**：`KalmanFilter` 用 SFINAE 在 `ControlSize = 0` 时移除控制相关的函数，避免无意义的调用
-- **类型固化**：通过 `using` 别名（如 `KalmanFilter2D`）将常用模板实例化为具体类型，简化上层代码（详见 `培训/using别名.md`）
-- **零开销抽象**：模板的所有"抽象"——类型推导、代码生成——都在编译期完成，运行时与手写具体类型代码无性能差异，符合嵌入式环境的性能要求
-
-> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-18
+> **作者**: [Qing](https://github.com/ZhangChuqing) | **修改日期**: 2026-07-26
